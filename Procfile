@@ -1,2 +1,2 @@
 # Modify this Procfile to fit your needs
-web: gunicorn groupapp:app
+web: gunicorn server:app
