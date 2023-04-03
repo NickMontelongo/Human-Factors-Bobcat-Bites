@@ -174,6 +174,11 @@ def display(meal_id=None):
         user=user,
     )
 
+@app.route("/main", methods=["GET", "POST"])
+#@login_required
+def display_main():
+    return render_template("homepage.html")
+
 
 @app.route("/handle_display", methods=["POST"])
 @login_required

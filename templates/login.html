@@ -11,57 +11,26 @@
 
 <body>
     <center>
-        <h2>BOBCAT BITES: Login Page</h2>
-
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-        <div id="id01" class="modal">
-
-            <form class="modal-content animate" action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
-                        title="Close Modal">&times;</span>
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                </div>
-
-                <div class="container">
-                    <form method="POST" action="">
-                        {{ form.hidden_tag() }}
-                        <h3>Please enter a valid email address:
-                            {{ form.user_email }}</h3>
-                        <h3>Enter a password 9 to 30 characters
-                            {{ form.user_password}}</h3>
-                        {{ form.submit }}
-                        {% for error in form.user_email.errors %} <p style="color: rgb(100,0,0);"
-                            ,style="font-size:400%" ;> <b>
-                                {{error}} </b></p> {% endfor %}
-                        {% if error %}
-                        <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;> <b><strong>Login Error:</strong>
-                                {{ error }} </b></p>
-                        {% endif %}
-                </div>
-
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancelbtn">Cancel</button>
-                </div>
+        <div class="white-box">
+            <h1> <b> CULINARY EXPLORER: Login</b></h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <h3>Please enter a valid email address:
+                    {{ form.user_email }}</h3>
+                <h3>Enter a password 9 to 30 characters
+                    {{ form.user_password}}</h3>
+                {{ form.submit }}
+                {% for error in form.user_email.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;> <b>
+                        {{error}} </b></p> {% endfor %}
+                {% if error %}
+                <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;> <b><strong>Login Error:</strong>
+                        {{ error }} </b></p>
+                {% endif %}
             </form>
+            <h3> Don't have an account? Sign up here</h3>
+            <a href="{{url_for('register')}}">Register Page</a><br>
         </div>
-
-        <h3> Don't have an account? Sign up here</h3>
-        <a href="{{url_for('register')}}">Register Page</a><br>
-
-        <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
+    </center>
 </body>
 
 </html>
