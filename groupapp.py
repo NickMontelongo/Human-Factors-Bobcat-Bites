@@ -15,6 +15,7 @@ from flask_login import logout_user, login_user, login_required, current_user
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField
 from wtforms.validators import email, length, InputRequired, ValidationError
+from wtforms_alchemy import QuerySelectMultipleField
 
 # used for hashing/encrypting password
 from flask_bcrypt import Bcrypt
@@ -42,6 +43,8 @@ def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
 
+class ProfileForm(FlaskForm):
+    taste_choices = QuerySelectMultipleField("Choices")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -122,6 +125,13 @@ class Person(database.Model, UserMixin):
     hashed_password = database.Column(
         database.LargeBinary(60), unique=False, nullable=False
     )
+    #added
+    taste_preferences = database.Column(database.JSON, nullable=False)
+    ingredient_preferences = database.Column(database.JSON, nullable=False)
+    allergens = database.Column(database.JSON, nullable=False)
+    budget_max = database.Column(database.Integer, nullable=False)
+    budget_min = database.Column(database.Integer, nullable=False)
+
 
 
 class UserRecipes(database.Model):
@@ -175,9 +185,16 @@ def display(meal_id=None):
     )
 
 @app.route("/main", methods=["GET", "POST"])
-#@login_required
+@login_required
 def display_main():
+    """route is the main route to access website features, directed from user authenticated login"""
     return render_template("homepage.html")
+
+@app.route("/user_profile", methods=["Get", "POST"])
+@login_required
+def create_profile():
+    form = ProfileForm()
+    #form.taste_choices.query = Taste.query.all()
 
 
 @app.route("/handle_display", methods=["POST"])
@@ -215,10 +232,6 @@ def user_saved_recipes():
         "userSavedRecipes.html", recipes_list=recipes_list, user=user
     )
 
-@app.route("/main_page", methods=["GET", "POST"])
-def loadBasePage():
-    return flask.render_template("mainpage.html")
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """this route allows a user to create a user and saves it the the database"""
@@ -253,7 +266,7 @@ def login():
                 user.hashed_password, form.user_password.data
             ):
                 login_user(user)
-                return redirect(url_for("display"))
+                return redirect(url_for("display_main"))
             else:
                 password_error = "The password you have entered does not match"
     return render_template("login.html", error=password_error, form=form)
