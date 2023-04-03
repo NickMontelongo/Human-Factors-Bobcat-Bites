@@ -1,2 +1,3 @@
 .env
 secrets
+wireguard.conf
