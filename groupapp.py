@@ -210,6 +210,9 @@ def user_saved_recipes():
         "userSavedRecipes.html", recipes_list=recipes_list, user=user
     )
 
+@app.route("/main_page", methods=["GET", "POST"])
+def loadBasePage():
+    return flask.render_template("mainpage.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
