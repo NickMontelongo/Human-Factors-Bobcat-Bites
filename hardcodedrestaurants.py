@@ -22,8 +22,8 @@ masterListRestaurants = []
 # Rules
 # restaurant list names must equal query string on main page
 # restaurant ingredients and info all lowercase
-# acceptable allergens: dairy, eggs, fish, shellfish, tree nuts, peanuts, gluten, soybeans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
-# tastes: sweet, salty, sour, bitter, and savory
+# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
+# tastes: sweet, salty, sour, spicy, bitter, and savory
 #list objects for absurdbird creation
 absurdbird = []
 foodNamesAbsurdBird = ["3 chicken tender basket", "4 chicken tender basket", "5 chicken tender basket", "tender slider", "snack box", "fried oreo", "mac and cheese", "fries" ]
@@ -37,13 +37,15 @@ flavorProfileAbsurdBird = [["savory", "salty"], ["savory", "salty"], ["savory", 
 burger512 = []
 foodNames =["korean flame", "blue mushroom", "guadalupe burger", "hays co burger", "the classic", "fiesta fries", "firebird fries", "disco fries", "fries", "chicken strips"]
 foodPrices=[7.99, 7.99, 7.99, 7.99, 6.99, 6.19, 5.69, 4.69, 2.19, 5.99]
-foodIngredients =[[]]
-foodAllergens = []
-flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"]], ["savory", "salty"], ["savory", "sweet", "salty"], ["savory", "salty"], ["salty", "savory"], 
+foodIngredients =[["bread", "fried onions", "pico de gallo", "cheese", "kimchi", "beef", "gochujang mayo"], ["blue cheese", "bread", "beef", "mushrooms", "bacon"], ["cheese", "guacamole", "pico de gallo", "tortilla strips", "bread", "black bean", "beef"], 
+                  ["cheese", "fried onions", "barbeque sauce", "bacon", "bread", "beef", "gochujang mayo"], ["black beans", "cheese", "guacamole", "potatoes", "flour", "pico de gallo"],["pickles", "tomatoes", "beef", "bread", "lettuce", "cheese"], ["teriyaki", "chicken", "flour", "cilantro", "kimchi", "gochujang mayo", "potatoes"],
+                  ["cheese", "bacon", "potatoes", "flour", "fried onions"], ["potatoes", "flour", "seasoning"], ["chicken", "flour", "seasoning"]]
+foodAllergens = [["gluten", "beef", "dairy", "eggs"], ["gluten", "beef", "dairy", "pork"], ["dairy", "gluten", "beef", "beans"], ["dairy", "gluten", "pork", "beef", "eggs"], ["dairy", "beef", "gluten" ],["beans", "dairy"], ["chicken", "eggs"], ["dairy", "pork"], ["none"], ["gluten", "chicken"]]
+flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"], ["savory", "salty"], ["savory", "sweet", "salty"], ["savory", "salty"], ["salty", "savory"], ["salty"], ["salty"], ["salty"], ["salty", "savory"]]
 # Test looper
-for i in range(len(foodAllergensAbsurdBird)):
-    newItem = Food(foodNamesAbsurdBird[i], foodPriceAbsurdBird[i], foodIngredientsAbsurdBird[i], foodAllergensAbsurdBird[i], flavorProfileAbsurdBird[i])
-    absurdbird.append(newItem)
+for i in range(len(foodNames)):
+    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
+    burger512.append(newItem)
     print(f' Name: {newItem.name}')
     print(f' Price: {newItem.price}')
     print(f' Ingredients: {newItem.ingredients}')
