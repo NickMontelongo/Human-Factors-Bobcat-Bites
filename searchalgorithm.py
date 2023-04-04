@@ -131,5 +131,3 @@ userPreferredIngredients = ["garlic", "onion"]
 
 food_recommendation(restaurant, userPriceRange, userPreferredIngredients, userAllergens, userTastePreferences)
 
-#foodNamesAbsurdBird = ["chicken tenders", "mac and cheese", "fried oreo", "tender slider", "tender slider basket", "fries" ]
-#foodPriceAbsurdBird = []

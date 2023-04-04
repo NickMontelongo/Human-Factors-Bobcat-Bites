@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href='/static/styles/profile.css' />
+</head>
+
+<body>
+    <div class="light-blue-box">
+        <left>
+            <h3>User: {% if current_user.is_authenticated %}
+                {{ user }}
+                {% endif %} 's Profile</h3>
+            <h3> Finished Browsing Recipes? Logout here:
+                <a href="{{url_for('logout')}}">Logout</a><br>
+                Wanna Browse Your Saved Recipes?
+                <a href="{{url_for('user_saved_recipes')}}">Your Saved Recipes</a><br>
+            </h3>
+
+        </left>
+    </div>
+    <center>
+
+
+    </center>
+    </div>
+
+</body>
+
+</html>
