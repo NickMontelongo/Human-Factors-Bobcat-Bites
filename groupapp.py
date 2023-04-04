@@ -3,7 +3,7 @@ well as contains the definitions for the table models and the
 flask forms documentation"""
 
 import os
-from flask import Flask, url_for, redirect, render_template
+from flask import Flask, url_for, redirect, request, render_template
 import flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -160,6 +160,12 @@ def title():
     """renders a base page that allows user to be redirected to login or signup
     Parameters: (none)
     Returns: html file for display"""
+    return render_template("title.html")
+
+@app.route("/recbyrest/<restaurant>", methods=["GET", "POST"])
+def getRecommendationByRestaurant(restaurant):
+    #restaurant = request.args.get('restaurant')
+    print(f'This is restaurant: {restaurant}')
     return render_template("title.html")
 
 
