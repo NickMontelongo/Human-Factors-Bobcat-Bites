@@ -125,12 +125,12 @@ class Person(database.Model, UserMixin):
     hashed_password = database.Column(
         database.LargeBinary(60), unique=False, nullable=False
     )
-    #added
-    taste_preferences = database.Column(database.JSON, nullable=False)
-    ingredient_preferences = database.Column(database.JSON, nullable=False)
-    allergens = database.Column(database.JSON, nullable=False)
-    budget_max = database.Column(database.Integer, nullable=False)
-    budget_min = database.Column(database.Integer, nullable=False)
+    #To add
+    #taste_preferences = database.Column(database.JSON, nullable=False)
+    #ingredient_preferences = database.Column(database.JSON, nullable=False)
+    #allergens = database.Column(database.JSON, nullable=False)
+    #budget_max = database.Column(database.Integer, nullable=False)
+    #budget_min = database.Column(database.Integer, nullable=False)
 
 
 
