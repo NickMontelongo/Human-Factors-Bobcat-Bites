@@ -1,31 +1,166 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href='/static/styles/profile.css' />
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: #8D734A;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+    <title>Bobcat Bites: Profile Builder</title>
+    <link rel="stylesheet" href="static/styles/homepage.css" type="text/css" />
 </head>
 
 <body>
-    <div class="light-blue-box">
-        <left>
-            <h3>User: {% if current_user.is_authenticated %}
-                {{ user }}
-                {% endif %} 's Profile</h3>
-            <h3> Finished Browsing Recipes? Logout here:
-                <a href="{{url_for('logout')}}">Logout</a><br>
-                Wanna Browse Your Saved Recipes?
-                <a href="{{url_for('user_saved_recipes')}}">Your Saved Recipes</a><br>
-            </h3>
 
-        </left>
+    <div class="header">
+        <h1><strong>Bobcat Bites</strong></h1>
+        <h2>Food Recommendation System</h2>
     </div>
-    <center>
 
+    <div class="navbar">
+        <a href="#home">My Profile</a>
+        <a href="#news">My Favorites</a>
+        <a href="#news">Placeholder</a>
+        <a href="#news">Random Recommendation</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">Recommendation by Place
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='absurdbird')}}">Absurd Bird</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='ajsbbq')}}">AJs BBQ</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='asadolg')}}">Asado Latin Grill</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='blimpieas')}}">Blimpie American Subs</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='burger512')}}">Burger 512</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='campuscoffee')}}">Campus Coffee and
+                    Tea</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='chickfila')}}">Chick Fil A</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='coffee&pie')}}">Coffee and Pi Market</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='createpd')}}">Create Premium Deli</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='dunkin')}}">Dunkin Doughnuts</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='einsteinsb')}}">Einstein's Bagles</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='kawasushi')}}">Kawa Sushi</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='mccoycafe')}}">McCoy Cafe</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='meltlab')}}">Melt Lab</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='mondosubs')}}">Mondo Subs</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='panda')}}">Panda Express</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='pizzahut')}}">Pizza Hut Express</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='pom&honey')}}">Pom and Honey</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='revolutionn')}}">Revolution Noodle</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='thesalty')}}">The Salty</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='shakesmart')}}">Shake Smart</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='starbucks')}}">Starbucks</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='teaco')}}">The Tea Co</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='tutaco')}}">Tu Taco</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='wingit')}}">Wing it</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='woodsst')}}">Woods St Pizza & Pasta</a>
+            </div>
+        </div>
+        <a href="https://forms.gle/sTzdMcBxncWQruvh8" style="float:right">Survey</a>
+    </div>
 
-    </center>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <p>Profile Stuff goes here</p>
+
+            </div>
+
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Log in/out stuff goes here</h2>
+                <div class="fakeimg" style="height:100px;">Image</div>
+                <p>Log in/Log out</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This page was created on March 7 2023, at 11:05 (CST) for use in the Group Project Spring 2023. This service
+            and
+            its intellectual property is a registered trademark of Group 3 of Human Factors 4326.251 </p>
     </div>
 
 </body>

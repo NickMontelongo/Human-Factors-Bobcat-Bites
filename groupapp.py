@@ -243,6 +243,7 @@ def display_main():
 def create_profile():
     form = ProfileForm()
     #form.taste_choices.query = Taste.query.all()
+    return render_template("profile.html")
 
 
 @app.route("/handle_display", methods=["POST"])
