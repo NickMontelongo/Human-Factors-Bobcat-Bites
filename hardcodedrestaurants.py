@@ -46,21 +46,21 @@ flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"], ["savory", "s
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
 foodPrices= [4.95, 4.49, 3.25]
-foodIngredients= [["bread", "pork", "mayo", "cilantro", "vinegar", "onion", "carrot", "cilantro", "chilies"],["rice wrappers", "rice noodle", "carrot", "cucumber", "shrimp", "mint", "basil", "cilantro"], ["pork", "garlic", "ginger", "coleslaw", "onion", "soy sauce", "egg roll wrapper", "egg", "sesame oil"]]
+foodIngredients= [["bread", "pork", "mayo", "cilantro", "vinegar", "onion", "carrot", "cilantro", "chilies"],["rice wrapper", "rice noodle", "carrot", "cucumber", "shrimp", "mint", "basil", "cilantro"], ["pork", "garlic", "ginger", "coleslaw", "onion", "soy sauce", "egg roll wrapper", "egg", "sesame oil"]]
 foodAllergens = [["pork", "eggs", "gluten", "chilies"],["gluten", "shrimp"],["pork", "egg", "garlic"]]
 flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 
-pizzahut=[]
-foodNames =[]
-foodPrices =[]
-foodIngredients=[]
-foodAllergens =[]
-flavorProfile =[]
+#pizzahut=[]
+#foodNames =[]
+#foodPrices =[]
+#foodIngredients=[]
+#foodAllergens =[]
+#flavorProfile =[]
 
 # Test looper
 for i in range(len(foodNames)):
     newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
-    burger512.append(newItem)
+    teaco.append(newItem)
     print(f' Name: {newItem.name}')
     print(f' Price: {newItem.price}')
     print(f' Ingredients: {newItem.ingredients}')
