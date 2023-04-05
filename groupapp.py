@@ -172,23 +172,26 @@ database.Table(
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
 
-#needs work
+#needs work to figure out how to store food score according to each user should be in
+#table person_userrecommendedfood
 class Userrecommendedfood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     restaurant_list = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
-    
+    #food_score = database.Column(database.Float, nullable=False)
+
 
 database.Table(
         "person_userrecommendedfood",
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userrecommendedfood_id", database.ForeignKey("userrecommendedfood.id"), primary_key = True),
-        food_score = database.Column(database.Float, nullable=False)
+        database.Column("food_score", database.Float, nullable=False)
     )
 
 
 # database creation
 with app.app_context():
+    #database.drop_all()
     database.create_all()
 
 
