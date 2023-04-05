@@ -125,9 +125,9 @@ class Person(database.Model, UserMixin):
         database.LargeBinary(60), unique=False, nullable=False
     )
     #profile info
-    budget_max = database.Column(database.Integer, nullable=False)
-    budget_min = database.Column(database.Integer, nullable=False)
-    preffered_ingredients = database.Column(database.String(200), nullable=False)
+    budget_max = database.Column(database.Integer)
+    budget_min = database.Column(database.Integer)
+    preffered_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
     #users favorite foods
@@ -164,16 +164,17 @@ class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     parent_restaurant = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
-    persons = database.relationship("Person", secondary="person_userfavoritefoods", back_populates="userfavoritefoods")
+    persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
 
 database.Table(
-        "person_userfavoritefoods",
+        "person_userfavoritefood",
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
 
 #needs work to figure out how to store food score according to each user should be in
 #table person_userrecommendedfood
+'''
 class Userrecommendedfood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     restaurant_list = database.Column(database.String(20), nullable=False)
@@ -187,11 +188,11 @@ database.Table(
         database.Column("userrecommendedfood_id", database.ForeignKey("userrecommendedfood.id"), primary_key = True),
         database.Column("food_score", database.Float, nullable=False)
     )
+'''
 
 
 # database creation
 with app.app_context():
-    #database.drop_all()
     database.create_all()
 
 
