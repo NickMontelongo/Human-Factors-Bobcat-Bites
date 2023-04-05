@@ -19,7 +19,6 @@ from wtforms_alchemy import QuerySelectMultipleField
 
 # used for hashing/encrypting password
 from flask_bcrypt import Bcrypt
-import api
 
 app = Flask(__name__)
 
@@ -132,8 +131,9 @@ class Person(database.Model, UserMixin):
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
     #users favorite foods
-
+    userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
     #users recommended foods list
+    
 
 class Taste(database.Model):
     id = database.Column(database.Integer, primary_key=True)
@@ -160,17 +160,31 @@ database.Table(
     )
 
 # needs work
-class UserFavoriteFoods(database.Model):
+class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     parent_restaurant = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
+    persons = database.relationship("Person", secondary="person_userfavoritefoods", back_populates="userfavoritefoods")
+
+database.Table(
+        "person_userfavoritefoods",
+        database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
+        database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
+    )
 
 #needs work
-class UserRecommendedFoods(database.Model):
+class Userrecommendedfood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     restaurant_list = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
-    food_score = database.Column(database.Float, nullable=False)
+    
+
+database.Table(
+        "person_userrecommendedfood",
+        database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
+        database.Column("userrecommendedfood_id", database.ForeignKey("userrecommendedfood.id"), primary_key = True),
+        food_score = database.Column(database.Float, nullable=False)
+    )
 
 
 # database creation
