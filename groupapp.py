@@ -116,37 +116,61 @@ class LoginForm(FlaskForm):
                 "This email is not in our records. Please sign up with your email."
             )
 
-
+###############################MODELS FOR DATABASE ######################################################
 class Person(database.Model, UserMixin):
     """Person class that will be used to store the email and password information"""
-
+    #login info for person
     id = database.Column(database.Integer, primary_key=True)
     email = database.Column(database.String(30), unique=True, nullable=False)
     hashed_password = database.Column(
         database.LargeBinary(60), unique=False, nullable=False
     )
-    #To add
-    #taste_preferences = database.Column(database.JSON, nullable=False)
-    #ingredient_preferences = database.Column(database.JSON, nullable=False)
-    #allergens = database.Column(database.JSON, nullable=False)
-    #budget_max = database.Column(database.Integer, nullable=False)
-    #budget_min = database.Column(database.Integer, nullable=False)
+    #profile info
+    budget_max = database.Column(database.Integer, nullable=False)
+    budget_min = database.Column(database.Integer, nullable=False)
+    preffered_ingredients = database.Column(database.String(200), nullable=False)
+    tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
+    allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
+    #users favorite foods
 
+    #users recommended foods list
 
-
-class UserRecipes(database.Model):
-    """User based Recipes that are saved to be accessed to the user"""
-
+class Taste(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    recipe_id = database.Column(database.Integer, unique=False, nullable=False)
-    # foreign key to link recipes to person(user)
-    # maybe add more stuff to database?
-    user_id = database.Column(
-        database.Integer,
-        # database.ForeignKey("person.id"),
-        unique=False,
-        nullable=False,
+    taste_name = database.Column(database.String(10), nullable=False)
+    #link to person
+    persons = database.relationship("Person", secondary="person_taste", back_populates="tastes")
+
+database.Table(
+        "person_taste",
+        database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
+        database.Column("taste_id", database.ForeignKey("taste.id"), primary_key = True)
     )
+
+class Allergen(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    taste_name = database.Column(database.String(20), nullable=False)
+    persons = database.relationship("Person", secondary="person_allergen", back_populates="allergens")
+    #link to person
+
+database.Table(
+        "person_allergen",
+        database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
+        database.Column("allergen_id", database.ForeignKey("allergen.id"), primary_key = True)
+    )
+
+# needs work
+class UserFavoriteFoods(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    parent_restaurant = database.Column(database.String(20), nullable=False)
+    food_name = database.Column(database.String(20), nullable=False)
+
+#needs work
+class UserRecommendedFoods(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    restaurant_list = database.Column(database.String(20), nullable=False)
+    food_name = database.Column(database.String(20), nullable=False)
+    food_score = database.Column(database.Float, nullable=False)
 
 
 # database creation

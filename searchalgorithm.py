@@ -1,3 +1,4 @@
+import math
 ##TO DO:
 ## 1) TEST FOOD RECOMMENDATION FUNCTION
 ## 2) WRITE SUPPLEMENTARY FUNCTIONS
@@ -36,13 +37,15 @@ def food_recommendation(restaurant, userPriceRange, userPreferredIngredients, us
                 if eachFlavor in userTastePreferences:
                     foodRecommendationScore += 1
     #4) Update individual food item's score based on price range
-        if userPriceRange[0] < eachFoodItem.price < userPriceRange[1]:
+        if eachFoodItem.price <= userPriceRange[1]:
             foodRecommendationScore += 2
         else:
             #average distance calculates the average between the max/min and the larger the gap
             #between the food item's price and the median score the lower the score is added
             avgDistance = 1/( .001 + abs(((userPriceRange[0] + userPriceRange[1])/2) - eachFoodItem.price))
             foodRecommendationScore += avgDistance
+            # truncates to two decimal places
+            foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
 
         #If food recommendation score > 1 then food item has more in common beyond  price range and can be added
         if foodRecommendationScore > 1:
