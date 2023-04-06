@@ -143,10 +143,32 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-                <h1>User Email: {% if current_user.is_authenticated %}
-                    {{ user }}
-                    {% endif %}'s Profile</h1>
-                <p>Profile Stuff goes here</p>
+                <h1><b>User Email: {% if current_user.is_authenticated %}
+                        {{ user }}
+                        {% endif %}'s Profile</b></h1>
+                <!--             BUTTONS GO HERE            -->
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <h3>Please select your preferred tastes for your flavor profile (can select multiple):
+                        {{ form.taste_choices }}</h3>
+                    <h3>Please select any allergens you have to food (can select multiple):
+                        {{ form.allergen_choices}}</h3>
+                    <h3>Please input the minimum value of your budget range (accepts numbers only):
+                        ${{form.budget_min}}</h3>
+                    <h3>Please input the maximum value of your budget range (accepts numbers only):
+                        ${{form.budget_max}}</h3>
+                    <h3>Please input the ingredients you like: </h3>
+                    <h2>(keep in the form of ingredient1, ingredient2, etc) example: eggs, lettuce, milk</h2>
+                    {{form.user_preferred_ingredients}}
+                    {{ form.submit }}
+                    {% for error in form.user_email.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;>
+                        <b>
+                            {{error}} </b></p> {% endfor %}
+                    {% if error %}
+                    <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;> <b><strong>Login Error:</strong>
+                            {{ error }} </b></p>
+                    {% endif %}
+                </form>
 
             </div>
 

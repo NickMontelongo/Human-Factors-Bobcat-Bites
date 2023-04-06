@@ -13,7 +13,7 @@ from flask_login import logout_user, login_user, login_required, current_user
 
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
-from wtforms import EmailField, SubmitField, PasswordField
+from wtforms import EmailField, SubmitField, PasswordField, DecimalField, StringField
 from wtforms.validators import email, length, InputRequired, ValidationError
 from wtforms_alchemy import QuerySelectMultipleField
 
@@ -42,8 +42,17 @@ def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
 
+#######################################FLASK FORMS ####################################################
 class ProfileForm(FlaskForm):
-    taste_choices = QuerySelectMultipleField("Choices")
+    """Class that will be utilized in profile.html to create the user fields for 
+    profile creation """
+    taste_choices = QuerySelectMultipleField("Flavor Choices")
+    allergen_choices = QuerySelectMultipleField("Allergen Choices")
+    budget_min = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
+    budget_max = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
+    user_preferred_ingredients = StringField(validators=[InputRequired(), length(min=0, max= 200)],render_kw={"placeholder": "Your preferred ingredients"})
+    submit = SubmitField("Create User Profile")
+
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -190,6 +199,7 @@ database.Table(
     )
 '''
 
+########################################################################################################
 
 # database creation
 with app.app_context():
