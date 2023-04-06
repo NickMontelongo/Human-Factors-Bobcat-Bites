@@ -13,7 +13,7 @@ from flask_login import logout_user, login_user, login_required, current_user
 
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
-from wtforms import EmailField, SubmitField, PasswordField, DecimalField, StringField
+from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField
 from wtforms.validators import email, length, InputRequired, ValidationError
 from wtforms_alchemy import QuerySelectMultipleField
 
@@ -24,6 +24,7 @@ app = Flask(__name__)
 
 # bcrypt object is utilized in password hashing/encryption
 bcrypt = Bcrypt(app)
+
 
 # fetches session key and Database URI from .env file
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
@@ -46,11 +47,14 @@ def load_user(user_id):
 class ProfileForm(FlaskForm):
     """Class that will be utilized in profile.html to create the user fields for 
     profile creation """
-    taste_choices = QuerySelectMultipleField("Flavor Choices")
-    allergen_choices = QuerySelectMultipleField("Allergen Choices")
+    taste_choices = QuerySelectMultipleField("Flavor Choices", get_label='taste_name')
+    allergen_choices = QuerySelectMultipleField("Allergen Choices", get_label='allergen_name')
     budget_min = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
     budget_max = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
-    user_preferred_ingredients = StringField(validators=[InputRequired(), length(min=0, max= 200)],render_kw={"placeholder": "Your preferred ingredients"})
+    user_preferred_ingredients = TextAreaField(
+        [InputRequired(), length(min=0, max=400)],
+        render_kw={"Placeholder": "Input ingredients here in ingredient, format (Maximum 400 characters)"},
+    )
     submit = SubmitField("Create User Profile")
 
 
@@ -84,7 +88,7 @@ class RegisterForm(FlaskForm):
             raise ValidationError(
                 "Email already on file, please login via the link below or register a different one."
             )
-
+        
 
 class LoginForm(FlaskForm):
     """Class that will be utilized by login.html to create the user entry field
@@ -158,7 +162,7 @@ database.Table(
 
 class Allergen(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    taste_name = database.Column(database.String(20), nullable=False)
+    allergen_name = database.Column(database.String(20), nullable=False)
     persons = database.relationship("Person", secondary="person_allergen", back_populates="allergens")
     #link to person
 
@@ -204,7 +208,6 @@ database.Table(
 # database creation
 with app.app_context():
     database.create_all()
-
 
 # app routes
 @app.route("/")
@@ -355,3 +358,21 @@ def unauthorized_callback():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+def loadTastes():
+    tastearray = ["spicy", "sweet", "sour", "salty", "bitter", "savory"]
+    for eachentry in tastearray:
+        taste1 = Taste(taste_name=eachentry)
+        database.session.add(taste1)
+        database.session.commit()
+    return
+
+def loadAllergens():
+    allergen_array= ["dairy", "eggs", "chicken", "beef", "pork", "fish", "shellfish", "tree nuts", "nuts", "gluten", "beans", "mustard", "cinnamon"]
+    for eachentry in allergen_array:
+        allergen1 = Allergen(allergen_name=eachentry)
+        database.session.add(allergen1)
+        database.session.commit()
+    return
+

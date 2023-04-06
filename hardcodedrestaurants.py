@@ -22,7 +22,7 @@ masterListRestaurants = []
 # Rules
 # restaurant list names must equal query string on main page
 # restaurant ingredients and info all lowercase
-# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
+# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamon, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
 # tastes: sweet, salty, sour, spicy, bitter, and savory
 #list objects for absurdbird creation
 absurdbird = []

@@ -148,6 +148,7 @@
                         {% endif %}'s Profile</b></h1>
                 <!--             BUTTONS GO HERE            -->
                 <form method="POST" action="">
+                    {{ form.csrf_token }}
                     {{ form.hidden_tag() }}
                     <h3>Please select your preferred tastes for your flavor profile (can select multiple):
                         {{ form.taste_choices }}</h3>
@@ -159,8 +160,7 @@
                         ${{form.budget_max}}</h3>
                     <h3>Please input the ingredients you like: </h3>
                     <h5>(keep in the form of ingredient1, ingredient2, etc) </h5>
-                    <h5>example: eggs, lettuce, milk</h5>
-                    {{form.user_preferred_ingredients}}<br>
+                    {{form.user_preferred_ingredients(rows = '10', cols='50')}}<br>
                     {{ form.submit }}
                 </form>
 
