@@ -253,8 +253,9 @@ def display_main():
 def create_profile():
     user = current_user.email
     form = ProfileForm()
-    #form.taste_choices.query = Taste.query.all()
-    return render_template("profile.html", user=user)
+    form.taste_choices.query = Taste.query.all()
+    form.allergen_choices.query = Allergen.query.all()
+    return render_template("profile.html", user=user, form=form)
 
 
 @app.route("/handle_display", methods=["POST"])
