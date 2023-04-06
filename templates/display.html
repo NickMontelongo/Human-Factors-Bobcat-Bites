@@ -10,17 +10,17 @@
 
 <body>
     <div class="light-blue-box">
-    <left>
-        <h3>User Email: {% if current_user.is_authenticated %}
-            {{ user }}
-            {% endif %}</h3>
-        <h3> Finished Browsing Recipes? Logout here:
-            <a href="{{url_for('logout')}}">Logout</a><br>
-            Wanna Browse Your Saved Recipes?
-            <a href ="{{url_for('user_saved_recipes')}}">Your Saved Recipes</a><br>
-        </h3>
-        
-    </left>
+        <left>
+            <h3>User Email: {% if current_user.is_authenticated %}
+                {{ user }}
+                {% endif %}</h3>
+            <h3> Finished Browsing Recipes? Logout here:
+                <a href="{{url_for('logout')}}">Logout</a><br>
+                Wanna Browse Your Saved Recipes?
+                <a href="{{url_for('user_saved_recipes')}}">Your Saved Recipes</a><br>
+            </h3>
+
+        </left>
     </div>
     <center>
         <div class="white-box">

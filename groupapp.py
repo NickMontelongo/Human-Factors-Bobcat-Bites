@@ -241,9 +241,10 @@ def display_main():
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
 def create_profile():
+    user = current_user.email
     form = ProfileForm()
     #form.taste_choices.query = Taste.query.all()
-    return render_template("profile.html")
+    return render_template("profile.html", user=user)
 
 
 @app.route("/handle_display", methods=["POST"])
