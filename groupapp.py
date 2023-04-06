@@ -3,7 +3,7 @@ well as contains the definitions for the table models and the
 flask forms documentation"""
 
 import os
-from flask import Flask, url_for, redirect, request, render_template
+from flask import Flask, url_for, redirect, render_template
 import flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -217,11 +217,24 @@ def title():
     Returns: html file for display"""
     return render_template("title.html")
 
-@app.route("/recbyrest/<restaurant>", methods=["GET", "POST"])
+@app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
 def getRecommendationByRestaurant(restaurant):
     #restaurant = request.args.get('restaurant')
     print(f'This is restaurant: {restaurant}')
-    return render_template("title.html")
+    return render_template("displayrec.html")
+
+
+@app.route("/recommendrand/", methods=["GET", "POST"])
+def getRecommendationByRand():
+    return render_template("displayrand.html")
+
+@app.route("/recommendbysearch/", methods=["GET", "POST"])
+def getRecommendationBySearch():
+    return render_template("displaysearch.html")
+
+@app.route("/usersavedfavorites/", methods=["GET", "POST"])
+def displaySavedResults():
+    return render_template("favorites.html")
 
 
 @app.route("/display")

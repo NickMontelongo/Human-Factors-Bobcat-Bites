@@ -99,10 +99,10 @@
     </div>
 
     <div class="navbar">
-        <a href="#home">My Profile</a>
-        <a href="#news">My Favorites</a>
-        <a href="#news">Placeholder</a>
-        <a href="#news">Random Recommendation</a>
+        <a href="{{url_for('create_profile')}}">My Profile</a>
+        <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
+        <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
+        <a href="{{url_for('getRecommendationByRand')}}">Random Recommendation</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()">Recommendation by Place
                 <i class="fa fa-caret-down"></i>
