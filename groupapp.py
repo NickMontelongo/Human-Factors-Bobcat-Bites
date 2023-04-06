@@ -218,6 +218,7 @@ def title():
     return render_template("title.html")
 
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
+@login_required
 def getRecommendationByRestaurant(restaurant):
     #restaurant = request.args.get('restaurant')
     print(f'This is restaurant: {restaurant}')
@@ -225,16 +226,20 @@ def getRecommendationByRestaurant(restaurant):
 
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
+@login_required
 def getRecommendationByRand():
     return render_template("displayrand.html")
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
+@login_required
 def getRecommendationBySearch():
     return render_template("displaysearch.html")
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
+@login_required
 def displaySavedResults():
-    return render_template("favorites.html")
+    user = current_user.email
+    return render_template("favorites.html", user=user)
 
 
 @app.route("/display")

@@ -87,8 +87,8 @@
       }
     }
   </script>
-  <title>Bobcat Bites: Home</title>
-  <link rel="stylesheet" href="static/styles/homepage.css" type="text/css" />
+  <title>Bobcat Bites: Recommendation by Search</title>
+  <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css" />
 </head>
 
 <body>
@@ -113,7 +113,8 @@
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='asadolg')}}">Asado Latin Grill</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='blimpieas')}}">Blimpie American Subs</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='burger512')}}">Burger 512</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='campuscoffee')}}">Campus Coffee and Tea</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='campuscoffee')}}">Campus Coffee and
+          Tea</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='chickfila')}}">Chick Fil A</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='coffee&pie')}}">Coffee and Pi Market</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='createpd')}}">Create Premium Deli</a>
@@ -141,27 +142,26 @@
 
   <div class="row">
     <div class="leftcolumn">
-        <div class="card">
-            <h1><b>Bobcat Bites: Recommendation By Search</b></h1>
-            <!--             BUTTONS GO HERE            -->
-        <h3> Search bar and terms go here</h3>
+      <div class="card">
+        <h1><b>Bobcat Bites: Recommendation by Search</b></h1>
+        <!--             BUTTONS GO HERE            -->
 
-
-        </div>
+      </div>
 
     </div>
     <div class="rightcolumn">
-        <div class="card">
-            <h3>Need to Log out?</h3>
-            <p> Logout here:
-                <a href="{{url_for('logout')}}">Logout</a>
-            </p><br>
-        </div>
+      <div class="card">
+        <h3>Need to Log out?</h3>
+        <p> Logout here:
+          <a href="{{url_for('logout')}}">Logout</a>
+        </p><br>
+      </div>
     </div>
-</div>
+  </div>
 
   <div class="footer">
-    <p>This page was created on March 7 2023, at 11:05 (CST) for use in the Group Project Spring 2023. This service and
+    <p>This page was created on March 7 2023, at 11:05 (CST) for use in the Group Project Spring 2023. This service
+      and
       its intellectual property is a registered trademark of Group 3 of Human Factors 4326.251 </p>
   </div>
 
