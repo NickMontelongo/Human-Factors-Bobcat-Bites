@@ -137,10 +137,10 @@ class Person(database.Model, UserMixin):
     hashed_password = database.Column(
         database.LargeBinary(60), unique=False, nullable=False
     )
-    #profile info
-    budget_max = database.Column(database.Integer)
-    budget_min = database.Column(database.Integer)
-    preffered_ingredients = database.Column(database.String(200))
+    #profile info FIX make budget_max/budget_min Float not Integer
+    budget_max = database.Column(database.Float)
+    budget_min = database.Column(database.Float)
+    preferred_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
     #users favorite foods
@@ -150,7 +150,7 @@ class Person(database.Model, UserMixin):
 
 class Taste(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    taste_name = database.Column(database.String(10), nullable=False)
+    taste_name = database.Column(database.String(10), unique=True, nullable=False)
     #link to person
     persons = database.relationship("Person", secondary="person_taste", back_populates="tastes")
 
@@ -162,7 +162,7 @@ database.Table(
 
 class Allergen(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    allergen_name = database.Column(database.String(20), nullable=False)
+    allergen_name = database.Column(database.String(20), unique=True, nullable=False)
     persons = database.relationship("Person", secondary="person_allergen", back_populates="allergens")
     #link to person
 
@@ -238,14 +238,21 @@ def display_main():
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
 def create_profile():
-    user = current_user.email
-    form = ProfileForm()
+    useremail = current_user.email
+    user = Person.query.filter_by(email=useremail).first()
+    form = ProfileForm(data={"taste_choices": user.tastes})
     form.taste_choices.query = Taste.query.all()
-    form.allergen_choices.query = Allergen.query.all()
+    form.allergen_choices.query = Allergen.query.all()   
     if form.validate_on_submit():
-        print(form.taste_choices.data)
-        print(form.allergen_choices.data)
-    return render_template("profile.html", user=user, form=form)
+        user.tastes.clear()
+        user.allergens.clear()
+        user.tastes.extend(form.taste_choices.data)
+        user.allergens.extend(form.allergen_choices.data)
+        user.budget_max = form.budget_max.data
+        user.budget_min = form.budget_min.data
+        user.preferred_ingredients = form.user_preferred_ingredients.data
+        database.session.commit()
+    return render_template("profile.html", user=useremail, form=form)
 
 
 @app.route("/register", methods=["GET", "POST"])
