@@ -41,7 +41,7 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
             foodRecommendationScore += 2
     #   +1 if the food item is less than maxprice but not in minimum range ie cheaper than budget
         elif eachFoodItem.price <= maxprice:
-            foodRecommendationScore += 1
+            foodRecommendationScore += 1.5
         else:
             #average distance calculates the average between the max/min and the larger the gap
             #between the food item's price and the median score the lower the score is added
