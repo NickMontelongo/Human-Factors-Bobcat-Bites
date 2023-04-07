@@ -129,6 +129,7 @@ class LoginForm(FlaskForm):
             )
 
 ###############################MODELS FOR DATABASE ######################################################
+
 class Person(database.Model, UserMixin):
     """Person class that will be used to store the email and password information"""
     #login info for person
@@ -137,7 +138,7 @@ class Person(database.Model, UserMixin):
     hashed_password = database.Column(
         database.LargeBinary(60), unique=False, nullable=False
     )
-    #profile info FIX make budget_max/budget_min Float not Integer
+    #profile info 
     budget_max = database.Column(database.Float)
     budget_min = database.Column(database.Float)
     preferred_ingredients = database.Column(database.String(200))
@@ -145,7 +146,7 @@ class Person(database.Model, UserMixin):
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
     #users favorite foods
     userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
-    #users recommended foods list
+
     
 
 class Taste(database.Model):
@@ -172,7 +173,7 @@ database.Table(
         database.Column("allergen_id", database.ForeignKey("allergen.id"), primary_key = True)
     )
 
-# needs work
+
 class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     parent_restaurant = database.Column(database.String(20), nullable=False)
@@ -184,9 +185,6 @@ database.Table(
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
-
-#needs work to figure out how to store food score according to each user should be in
-#table person_userrecommendedfood
 
 
 ########################################################################################################
@@ -240,7 +238,7 @@ def display_main():
 def create_profile():
     useremail = current_user.email
     user = Person.query.filter_by(email=useremail).first()
-    form = ProfileForm(data={"taste_choices": user.tastes})
+    form = ProfileForm(data={"taste_choices": user.tastes, "allergen_choices": user.allergens, "user_preferred_ingredients": user.preferred_ingredients, "budget_max": user.budget_max,"budget_min": user.budget_min})
     form.taste_choices.query = Taste.query.all()
     form.allergen_choices.query = Allergen.query.all()   
     if form.validate_on_submit():
