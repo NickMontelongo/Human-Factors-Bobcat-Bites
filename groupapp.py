@@ -49,8 +49,8 @@ class ProfileForm(FlaskForm):
     profile creation """
     taste_choices = QuerySelectMultipleField("Flavor Choices", get_label='taste_name')
     allergen_choices = QuerySelectMultipleField("Allergen Choices", get_label='allergen_name')
-    budget_min = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
-    budget_max = DecimalField(validators=[InputRequired(), length(min=0, max= 100)],places=2)
+    budget_min = DecimalField(validators=[InputRequired()],places=2)
+    budget_max = DecimalField(validators=[InputRequired()],places=2)
     user_preferred_ingredients = TextAreaField(
         [InputRequired(), length(min=0, max=400)],
         render_kw={"Placeholder": "Input ingredients here in ingredient, format (Maximum 400 characters)"},
@@ -187,21 +187,7 @@ database.Table(
 
 #needs work to figure out how to store food score according to each user should be in
 #table person_userrecommendedfood
-'''
-class Userrecommendedfood(database.Model):
-    id = database.Column(database.Integer, primary_key=True)
-    restaurant_list = database.Column(database.String(20), nullable=False)
-    food_name = database.Column(database.String(20), nullable=False)
-    #food_score = database.Column(database.Float, nullable=False)
 
-
-database.Table(
-        "person_userrecommendedfood",
-        database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
-        database.Column("userrecommendedfood_id", database.ForeignKey("userrecommendedfood.id"), primary_key = True),
-        database.Column("food_score", database.Float, nullable=False)
-    )
-'''
 
 ########################################################################################################
 
@@ -242,26 +228,6 @@ def displaySavedResults():
     return render_template("favorites.html", user=user)
 
 
-@app.route("/display")
-@app.route("/display/<meal_id>")
-@login_required
-def display(meal_id=None):
-    """This route displayes either a random or given meal"""
-    user = current_user.email
-    if meal_id is None:
-        meal = api.get_random_meal()
-    else:
-        meal = api.get_meal(meal_id)
-    return flask.render_template(
-        "display.html",
-        name=meal[0],
-        category=meal[1],
-        instructions=meal[2],
-        ingredients=meal[3],
-        id=meal[4],
-        img=meal[5],
-        user=user,
-    )
 
 @app.route("/main", methods=["GET", "POST"])
 @login_required
@@ -276,43 +242,11 @@ def create_profile():
     form = ProfileForm()
     form.taste_choices.query = Taste.query.all()
     form.allergen_choices.query = Allergen.query.all()
+    if form.validate_on_submit():
+        print(form.taste_choices.data)
+        print(form.allergen_choices.data)
     return render_template("profile.html", user=user, form=form)
 
-
-@app.route("/handle_display", methods=["POST"])
-@login_required
-def handle_display():
-    """this route handles a display reroute"""
-    form_data = flask.request.form
-    recipe_id = form_data["recipe_id"]
-    return flask.redirect(f"/display/{recipe_id}")
-
-
-@app.route("/save_recipe", methods=["POST"])
-@login_required
-def save_recipe():
-    """this route handles when the user wants to save a recipe and adds it to the database"""
-    form_data = flask.request.form
-    recipe_id = form_data["recipe_id"]
-    id = current_user.id
-    save_recipe = UserRecipes(recipe_id=recipe_id, user_id=current_user.id)
-    database.session.add(save_recipe)
-    database.session.commit()
-    return flask.redirect(f"/display/{recipe_id}")
-
-
-@app.route("/user_saved_recipes")
-@login_required
-def user_saved_recipes():
-    """this route displayes the recipes a user has previously saved"""
-    user = current_user.email
-    recipes = UserRecipes.query.filter_by(user_id=current_user.id)
-    recipes_list = []
-    for recipe in recipes:
-        recipes_list.append((recipe.recipe_id, api.get_meal_name(recipe.recipe_id)))
-    return flask.render_template(
-        "userSavedRecipes.html", recipes_list=recipes_list, user=user
-    )
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

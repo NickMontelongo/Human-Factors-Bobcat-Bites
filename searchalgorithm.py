@@ -5,7 +5,7 @@ import math
 ## 3) TEST SUPPLEMENTARY FUNCTIONS
 
 #Note valuecase does matter KEEP EVERYTHING LOWERCASE WHEN CREATING RESTAURANT FOOD LISTS
-def food_recommendation(restaurant, userPriceRange, userPreferredIngredients, userAllergens, userTastePreferences):
+def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients, userAllergens, userTastePreferences):
     #uses restaurant object to produce list
     restaurantFoodList = restaurant.foodList
     #edited list for foods of a selected restaurant that doesn't have allergens
@@ -36,13 +36,16 @@ def food_recommendation(restaurant, userPriceRange, userPreferredIngredients, us
         for eachFlavor in eachFoodItem.flavorProfile:
                 if eachFlavor in userTastePreferences:
                     foodRecommendationScore += 1
-    #4) Update individual food item's score based on price range
-        if eachFoodItem.price <= userPriceRange[1]:
+    #4) Update individual food item's score based on price range +2 if in range
+        if eachFoodItem.price <= maxprice and eachFoodItem.price >= minprice:
             foodRecommendationScore += 2
+    #   +1 if the food item is less than maxprice but not in minimum range ie cheaper than budget
+        elif eachFoodItem.price <= maxprice:
+            foodRecommendationScore += 1
         else:
             #average distance calculates the average between the max/min and the larger the gap
             #between the food item's price and the median score the lower the score is added
-            avgDistance = 1/( .001 + abs(((userPriceRange[0] + userPriceRange[1])/2) - eachFoodItem.price))
+            avgDistance = 1/( .001 + abs(((minprice + maxprice)/2) - eachFoodItem.price))
             foodRecommendationScore += avgDistance
             # truncates to two decimal places
             foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
@@ -62,6 +65,11 @@ def food_recommendation(restaurant, userPriceRange, userPreferredIngredients, us
     # needs to be stored in database
     return userReccomendationList
 
+#def calculateRecommendationMasterList(userRestaurantMasterList):
+    #userMasterRecommendationList =[]
+    #for eachList in userRestaurantMasterList:
+        #calculate for each list
+    #return userRestaurantMasterList
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result  
 # To DO: Figure out how to get images                                   
@@ -129,8 +137,9 @@ for i in range(5):
 restaurant = Restaurant("Ginos Italian", food_list, "123 Coding way")
 userAllergens = ["gluten", "dairy", "shrimp"]
 userTastePreferences = ["salty", "spicy"]
-userPriceRange = (10, 15)
+userMaxPrice= 15
+userMinPrice = 10
 userPreferredIngredients = ["garlic", "onion"]
 
-food_recommendation(restaurant, userPriceRange, userPreferredIngredients, userAllergens, userTastePreferences)
+food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
 
