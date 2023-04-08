@@ -13,7 +13,7 @@ from flask_login import logout_user, login_user, login_required, current_user
 
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
-from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField
+from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
 from wtforms.validators import email, length, InputRequired, ValidationError
 from wtforms_alchemy import QuerySelectMultipleField
 
@@ -44,11 +44,15 @@ def load_user(user_id):
     return Person.query.get(int(user_id))
 
 #######################################FLASK FORMS ####################################################
+class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
+
 class ProfileForm(FlaskForm):
     """Class that will be utilized in profile.html to create the user fields for 
     profile creation """
-    taste_choices = QuerySelectMultipleField("Flavor Choices", get_label='taste_name')
-    allergen_choices = QuerySelectMultipleField("Allergen Choices", get_label='allergen_name')
+    taste_choices = QuerySelectMultipleFieldWithCheckboxes("Flavor Choices", get_label='taste_name')
+    allergen_choices = QuerySelectMultipleFieldWithCheckboxes("Allergen Choices", get_label='allergen_name')
     budget_min = DecimalField(validators=[InputRequired()],places=2)
     budget_max = DecimalField(validators=[InputRequired()],places=2)
     user_preferred_ingredients = TextAreaField(
@@ -199,6 +203,7 @@ def title():
     """renders a base page that allows user to be redirected to login or signup
     Parameters: (none)
     Returns: html file for display"""
+    loadAllergens()
     return render_template("title.html")
 
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
@@ -327,7 +332,10 @@ def loadTastes():
 
 def loadAllergens():
     allergen_array= ["dairy", "eggs", "chicken", "beef", "pork", "fish", "shellfish", "tree nuts", "nuts", "gluten", "beans", "mustard", "cinnamon"]
+    user_allergens = database.session.query.all()
+    print(user_allergens)
     for eachentry in allergen_array:
+        #if eachentry == 
         allergen1 = Allergen(allergen_name=eachentry)
         database.session.add(allergen1)
         database.session.commit()

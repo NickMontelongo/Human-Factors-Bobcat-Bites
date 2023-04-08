@@ -90,6 +90,13 @@ def userDenysResult(userRecommendationList):
     #1) pop first item (current item) off list
     #2) populate page with next Result
 
+def stringToArray(stringToParse):
+    lowercaseString = stringToParse.lower()
+    lowercaseString = lowercaseString.strip()
+    convertedList = lowercaseString.split(', ')
+    return convertedList
+
+
 
 
 
@@ -142,4 +149,9 @@ userMinPrice = 10
 userPreferredIngredients = ["garlic", "onion"]
 
 food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
+
+string = ["POPCORN", "Maple", "Syrup", "CaNdY", "celery"]
+for eachmember in string:
+    if eachmember =="CaNdY":
+        print(f'Match at {eachmember}')
 
