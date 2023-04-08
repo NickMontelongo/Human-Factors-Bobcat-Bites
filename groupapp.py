@@ -158,7 +158,9 @@ class Taste(database.Model):
     taste_name = database.Column(database.String(10), unique=True, nullable=False)
     #link to person
     persons = database.relationship("Person", secondary="person_taste", back_populates="tastes")
-
+    def __str__(self):
+        return self.taste_name
+    
 database.Table(
         "person_taste",
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
@@ -170,6 +172,8 @@ class Allergen(database.Model):
     allergen_name = database.Column(database.String(20), unique=True, nullable=False)
     persons = database.relationship("Person", secondary="person_allergen", back_populates="allergens")
     #link to person
+    def __str__(self):
+        return self.allergen_name
 
 database.Table(
         "person_allergen",
@@ -183,6 +187,8 @@ class Userfavoritefood(database.Model):
     parent_restaurant = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
+    def __str__(self):
+        return self.food_name
 
 database.Table(
         "person_userfavoritefood",
@@ -190,7 +196,35 @@ database.Table(
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
 
+def loadTastes():
+    tasteArray = ["spicy", "sweet", "sour", "salty", "bitter", "savory"]   
+    user_tastes = Taste.query.all()
+    userTasteList = []
+    for eachentry in user_tastes:
+        userTasteList.append(eachentry.taste_name)
+    for eachentry in tasteArray:
+            if eachentry in userTasteList:
+                continue
+            else:
+                taste1 = Taste(taste_name=eachentry)
+                database.session.add(taste1)
+                database.session.commit()
+    return
 
+def loadAllergens():
+    allergen_array= ["dairy", "eggs", "chicken", "beef", "pork", "fish", "shellfish", "tree nuts", "nuts", "gluten", "beans", "mustard", "cinnamon"]
+    user_allergens = Allergen.query.all()
+    userAllergenList = []
+    for eachentry in user_allergens:
+        userAllergenList.append(eachentry.allergen_name)
+    for eachentry in allergen_array:
+            if eachentry in userAllergenList:
+                continue
+            else:
+                allergen1 = Allergen(allergen_name=eachentry)
+                database.session.add(allergen1)
+                database.session.commit()
+    return
 ########################################################################################################
 
 # database creation
@@ -204,6 +238,7 @@ def title():
     Parameters: (none)
     Returns: html file for display"""
     loadAllergens()
+    loadTastes()
     return render_template("title.html")
 
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
@@ -322,22 +357,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-def loadTastes():
-    tastearray = ["spicy", "sweet", "sour", "salty", "bitter", "savory"]
-    for eachentry in tastearray:
-        taste1 = Taste(taste_name=eachentry)
-        database.session.add(taste1)
-        database.session.commit()
-    return
 
-def loadAllergens():
-    allergen_array= ["dairy", "eggs", "chicken", "beef", "pork", "fish", "shellfish", "tree nuts", "nuts", "gluten", "beans", "mustard", "cinnamon"]
-    user_allergens = database.session.query.all()
-    print(user_allergens)
-    for eachentry in allergen_array:
-        #if eachentry == 
-        allergen1 = Allergen(allergen_name=eachentry)
-        database.session.add(allergen1)
-        database.session.commit()
-    return
+
+
 
