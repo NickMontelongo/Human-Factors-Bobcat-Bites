@@ -22,7 +22,7 @@ masterListRestaurants = []
 # Rules
 # restaurant list names must equal query string on main page
 # restaurant ingredients and info all lowercase
-# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamon, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
+# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
 # tastes: sweet, salty, sour, spicy, bitter, and savory
 #list objects for absurdbird creation
 absurdbird = []
@@ -51,11 +51,32 @@ foodAllergens = [["pork", "eggs", "gluten", "chilies"],["gluten", "shrimp"],["po
 flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 
 #pizzahut=[]
-#foodNames =[]
-#foodPrices =[]
-#foodIngredients=[]
-#foodAllergens =[]
-#flavorProfile =[]
+#foodNames =["Cheese Pizza Hand-Tossed Medium", "Cheese Pizza Hand-Tossed Large", "Cheese Pan Pizza Personal", "Cheese Pan Pizza Medium", "Cheese Pan Pizza Large", "Cheese Thin Pizza Medium", "Cheese Thin Pizza Large",]
+#foodPrices =[11.99, 14.99, 4.79, 11.99, 14.99, 11.99, 14.99]
+#foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],]
+#foodAllergens =[["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"]]
+#flavorProfile =[["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"]
+
+thesaltymenu=[]
+foodNames= ["Horchata", "Traditional Glazed", "Churro + Dulce de leche star", "Texas Chocolate sheet cake", "Boston Cream", "Ube Pina Colada(V)"]
+foodPrices= [4.50, 3.50, 4.25, 4.25, 4.65, 4.75]
+foodIngredients= [["brioche", "horchata mixture", "chocolate, cinnamon"],["dough", "vanilla bean glaze"],["broche", "cinnamon", "sugar", "coffee", "whipped cream"], ["chocolate", "dough", "sugar", "glaze"], ["brioche", "vinilla custard", "ganache glaze"], ["vegan brioche", "pineapple jam", "coconut milk glaze", "coconut streusel"]]
+foodAllergens = [["gluten", ""],["gluten", ""],["gluten"],["gluten"], ["gluten"], ["gluten"]]
+flavorProfile = [["sweet"], ["sweet"], ["sweet", "bitter"], ["sweet", "savory"], ["sweet"], ["sweet"]]
+
+pomhoney=[]
+foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
+foodPrices= [7.99, 7.99, 7.99]
+foodIngredients= [[""]]
+foodAllergens = [[""]]
+flavorProfile = [[""]]
+
+ourfavorite=[]
+foodNames= [""]
+foodPrices= [6.99]
+foodIngredients= [[""]]
+foodAllergens = [[""]]
+flavorProfile = [[""]]
 
 # Test looper
 for i in range(len(foodNames)):
