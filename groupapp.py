@@ -64,8 +64,8 @@ class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
 class ProfileForm(FlaskForm):
     """Class that will be utilized in profile.html to create the user fields for 
     profile creation """
-    taste_choices = QuerySelectMultipleFieldWithCheckboxes("Flavor Choices", get_label='taste_name')
-    allergen_choices = QuerySelectMultipleFieldWithCheckboxes("Allergen Choices", get_label='allergen_name')
+    taste_choices = QuerySelectMultipleFieldWithCheckboxes("Flavor Choices", get_label='taste_name', validators=[InputRequired()])
+    allergen_choices = QuerySelectMultipleFieldWithCheckboxes("Allergen Choices", get_label='allergen_name', validators=[InputRequired()])
     budget_min = DecimalField(validators=[InputRequired()],places=2)
     budget_max = DecimalField(validators=[InputRequired()],places=2)
     user_preferred_ingredients = TextAreaField(
@@ -265,7 +265,8 @@ def title():
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRestaurant(restaurant):
-    restaurant = str(request.args.get('restaurant'))
+    form = DisplayResultsForm()
+    print(f' This is restaurant: {restaurant}')
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
@@ -275,21 +276,22 @@ def getRecommendationByRestaurant(restaurant):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
+    print(masterListRestaurants[0].restaurantName)
+    print(restaurant)
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
-            print("got here")
-            currentRestaurantRecommendationList = food_recommendation(eachEntry.restaurantName, currentUserMinBudget,
+            restaurantLocation = eachEntry.restaurantLocation
+            currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes)
             break
     recommendedRestaurantName = currentRestaurantRecommendationList[0].parentListName
+    #TO DO: make File Path
+    recommendedRestaurantName = recommendedRestaurantName.capitalize()
     recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[0].foodItemName
-    print(f'food item: {recommendedFoodName} with score: {recommendedFoodScore} from restaurant: {recommendedRestaurantName}')
-        
-
-
-    return render_template("displayrec.html")
+    return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
