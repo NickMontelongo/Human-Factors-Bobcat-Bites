@@ -11,6 +11,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
+#Algorithm information
+from searchalgorithm import stringToArray
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -42,6 +44,12 @@ database = SQLAlchemy(app)
 def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
+
+currentUserAllergens =[]
+currentUserTastes =[]
+currentUserFoodPreferences = ''
+currentUserMaxBudget = 0
+currentUserMinBudget= 0
 
 #######################################FLASK FORMS ####################################################
 class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
@@ -158,7 +166,7 @@ class Taste(database.Model):
     taste_name = database.Column(database.String(10), unique=True, nullable=False)
     #link to person
     persons = database.relationship("Person", secondary="person_taste", back_populates="tastes")
-    def __str__(self):
+    def __repr__(self):
         return self.taste_name
     
 database.Table(
@@ -172,7 +180,7 @@ class Allergen(database.Model):
     allergen_name = database.Column(database.String(20), unique=True, nullable=False)
     persons = database.relationship("Person", secondary="person_allergen", back_populates="allergens")
     #link to person
-    def __str__(self):
+    def __repr__(self):
         return self.allergen_name
 
 database.Table(
@@ -187,7 +195,7 @@ class Userfavoritefood(database.Model):
     parent_restaurant = database.Column(database.String(20), nullable=False)
     food_name = database.Column(database.String(20), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
-    def __str__(self):
+    def __repr__(self):
         return self.food_name
 
 database.Table(
@@ -197,7 +205,7 @@ database.Table(
     )
 
 def loadTastes():
-    tasteArray = ["spicy", "sweet", "sour", "salty", "bitter", "savory"]   
+    tasteArray = ["spicy", "sweet", "sour", "salty", "savory", "bitter"]   
     user_tastes = Taste.query.all()
     userTasteList = []
     for eachentry in user_tastes:
@@ -208,7 +216,7 @@ def loadTastes():
             else:
                 taste1 = Taste(taste_name=eachentry)
                 database.session.add(taste1)
-                database.session.commit()
+            database.session.commit()
     return
 
 def loadAllergens():
@@ -223,7 +231,7 @@ def loadAllergens():
             else:
                 allergen1 = Allergen(allergen_name=eachentry)
                 database.session.add(allergen1)
-                database.session.commit()
+            database.session.commit()
     return
 ########################################################################################################
 
@@ -245,7 +253,19 @@ def title():
 @login_required
 def getRecommendationByRestaurant(restaurant):
     #restaurant = request.args.get('restaurant')
-    print(f'This is restaurant: {restaurant}')
+    #print(f'This is restaurant: {restaurant}')
+    user = Person.query.filter_by(email=current_user.email).first()
+    print(user.budget_max)
+    print(user.budget_min)
+    print(user.allergens)
+    print(user.tastes)
+    print(type(user.allergens))
+    print(type(user.tastes))
+    stringList =[] 
+    for eachEntry in user.tastes:
+        stringList.append(str(eachEntry))
+    print(f'This is the list: {stringList}')
+
     return render_template("displayrec.html")
 
 
@@ -284,12 +304,31 @@ def create_profile():
     if form.validate_on_submit():
         user.tastes.clear()
         user.allergens.clear()
+        currentUserFoodPreferences =""
+        currentUserAllergens = []
+        currentUserTastes = []
+        currentUserMaxBudget = 0
+        currentUserMinBudget= 0
         user.tastes.extend(form.taste_choices.data)
         user.allergens.extend(form.allergen_choices.data)
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
         user.preferred_ingredients = form.user_preferred_ingredients.data
         database.session.commit()
+        # Initialize global variables for search recognition
+        currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
+        for eachEntry in user.tastes:
+            currentUserTastes.append(str(eachEntry))
+        for eachEntry in user.allergens:
+            currentUserAllergens.append(str(eachEntry))
+        currentUserMaxBudget = user.budget_max
+        currentUserMinBudget = user.budget_min
+        print(currentUserFoodPreferences)
+        print(currentUserTastes)
+        print(currentUserAllergens)
+        print(currentUserMaxBudget)
+        print(currentUserMinBudget)
+
     return render_template("profile.html", user=useremail, form=form)
 
 
