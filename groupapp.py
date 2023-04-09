@@ -217,22 +217,22 @@ database.Table(
     )
 
 def loadTastes():
-    tasteArray = ["spicy", "sweet", "sour", "salty", "savory", "bitter"]   
-    user_tastes = Taste.query.all()
+    tasteArray = ["bitter", "salty", "savory", "sour", "spicy", "sweet", "none"]
     userTasteList = []
     for eachentry in user_tastes:
         userTasteList.append(eachentry.taste_name)
     for eachentry in tasteArray:
-            if eachentry in userTasteList:
-                continue
-            else:
-                taste1 = Taste(taste_name=eachentry)
-                database.session.add(taste1)
-            database.session.commit()
+        if eachentry in userTasteList:
+            continue
+        else:
+            taste1 = Taste(taste_name=eachentry)
+            database.session.add(taste1)
+        database.session.commit()
     return
 
 def loadAllergens():
-    allergen_array= ["dairy", "eggs", "chicken", "beef", "pork", "fish", "shellfish", "tree nuts", "nuts", "gluten", "beans", "mustard", "cinnamon"]
+    allergen_array= ["beans", "beef", "cinnamon", "chicken", "dairy", "eggs", "fish", "gluten", "mustard",
+                      "nuts", "pork", "potatoes", "shellfish", "tree nuts", "none"]
     user_allergens = Allergen.query.all()
     userAllergenList = []
     for eachentry in user_allergens:
@@ -266,7 +266,6 @@ def title():
 @login_required
 def getRecommendationByRestaurant(restaurant):
     form = DisplayResultsForm()
-    print(f' This is restaurant: {restaurant}')
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
@@ -276,8 +275,6 @@ def getRecommendationByRestaurant(restaurant):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    print(masterListRestaurants[0].restaurantName)
-    print(restaurant)
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             restaurantLocation = eachEntry.restaurantLocation
