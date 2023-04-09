@@ -64,8 +64,8 @@ class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
 class ProfileForm(FlaskForm):
     """Class that will be utilized in profile.html to create the user fields for 
     profile creation """
-    taste_choices = QuerySelectMultipleFieldWithCheckboxes("Flavor Choices", get_label='taste_name', validators=[InputRequired()])
-    allergen_choices = QuerySelectMultipleFieldWithCheckboxes("Allergen Choices", get_label='allergen_name', validators=[InputRequired()])
+    taste_choices = QuerySelectMultipleFieldWithCheckboxes("Flavor Choices", get_label='taste_name')
+    allergen_choices = QuerySelectMultipleFieldWithCheckboxes("Allergen Choices", get_label='allergen_name')
     budget_min = DecimalField(validators=[InputRequired()],places=2)
     budget_max = DecimalField(validators=[InputRequired()],places=2)
     user_preferred_ingredients = TextAreaField(
