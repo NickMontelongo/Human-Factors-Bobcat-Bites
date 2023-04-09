@@ -57,8 +57,10 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     #filter results according from largest to smallest score
     userReccomendationList.sort(key=lambda x: x.recommendationScore, reverse=True)
 
-    for eachitem in userReccomendationList:
-        print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
+    #TEST FOR RESULTS
+    #for eachitem in userReccomendationList:
+    #    print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
+    
     #Note this is used to quickly find the recommended items of a restaurant
     #sorted from largest dishScore to smallest DishScore
     # do I need to jasonify?

@@ -43,8 +43,9 @@ foodIngredients = [["chicken", "flour", "buttermilk", "cider vinegar", "garlic",
 foodAllergens = ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chocolate", "sugar"], ["dairy", "gluten"], ["flour", "potatoes"]
 flavorProfile = [["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["sweet"], ["savory"], ["salty"]]
 
-masterListRestaurants.append(setFoodForRestaurant(absurdbird,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile))
+foodlist =setFoodForRestaurant(absurdbird,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile)
+masterListRestaurants.append(Restaurant("Absurd Bird", foodlist, "The Den Food Company" ))
 
 
 burger512 = []
@@ -56,8 +57,9 @@ foodIngredients =[["bread", "fried onions", "pico de gallo", "cheese", "kimchi",
 foodAllergens = [["gluten", "beef", "dairy", "eggs"], ["gluten", "beef", "dairy", "pork"], ["dairy", "gluten", "beef", "beans"], ["dairy", "gluten", "pork", "beef", "eggs"], ["dairy", "beef", "gluten" ],["beans", "dairy"], ["chicken", "eggs"], ["dairy", "pork"], ["none"], ["gluten", "chicken"]]
 flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"], ["savory", "salty"], ["savory", "sweet", "salty"], ["savory", "salty"], ["salty", "savory"], ["salty"], ["salty"], ["salty"], ["salty", "savory"]]
 
-masterListRestaurants.append(setFoodForRestaurant(burger512,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile))
+foodlist = setFoodForRestaurant(burger512,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile)
+masterListRestaurants.append(Restaurant("Burger 512", foodlist, "LBJ Student Center"))
 
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
@@ -66,8 +68,9 @@ foodIngredients= [["bread", "pork", "mayo", "cilantro", "vinegar", "onion", "car
 foodAllergens = [["pork", "eggs", "gluten", "chilies"],["gluten", "shrimp"],["pork", "egg", "garlic"]]
 flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 
-masterListRestaurants.append(setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile))
+foodlist = setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile)
+masterListRestaurants.append(Restaurant("Tea Co", foodlist, "The Den Food Company"))
 
 
 #############################################################################################################################

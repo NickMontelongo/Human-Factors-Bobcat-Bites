@@ -4,7 +4,7 @@ flask forms documentation"""
 
 import random
 import os
-from flask import Flask, url_for, redirect, render_template
+from flask import Flask, url_for, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 # login information
@@ -12,7 +12,7 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import stringToArray
+from searchalgorithm import food_recommendation,stringToArray
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
@@ -265,8 +265,7 @@ def title():
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRestaurant(restaurant):
-    #restaurant = request.args.get('restaurant')
-    #print(f'This is restaurant: {restaurant}')
+    restaurant = str(request.args.get('restaurant'))
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
@@ -276,6 +275,18 @@ def getRecommendationByRestaurant(restaurant):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
+    for eachEntry in masterListRestaurants:
+        if eachEntry.restaurantName == restaurant:
+            print("got here")
+            currentRestaurantRecommendationList = food_recommendation(eachEntry.restaurantName, currentUserMinBudget,
+                                                                      currentUserMaxBudget, currentUserFoodPreferences,
+                                                                      currentUserAllergens, currentUserTastes)
+            break
+    recommendedRestaurantName = currentRestaurantRecommendationList[0].parentListName
+    recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
+    recommendedFoodName = currentRestaurantRecommendationList[0].foodItemName
+    print(f'food item: {recommendedFoodName} with score: {recommendedFoodScore} from restaurant: {recommendedRestaurantName}')
+        
 
 
     return render_template("displayrec.html")
