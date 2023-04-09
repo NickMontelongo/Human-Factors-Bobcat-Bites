@@ -270,8 +270,14 @@ def getRecommendationByRestaurant(restaurant):
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
-        currentUserTastes.append(str(eachEntry))
+        if str(eachEntry) == "none":
+            currentUserTastes.append("none")
+            break
+        currentUserTastes.append(str(eachEntry))   
     for eachEntry in user.allergens:
+        if str(eachEntry) == "none":
+            currentUserAllergens.append("none")
+            break
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
