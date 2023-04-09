@@ -65,11 +65,17 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     # needs to be stored in database
     return userReccomendationList
 
-#def calculateRecommendationMasterList(userRestaurantMasterList):
-    #userMasterRecommendationList =[]
-    #for eachList in userRestaurantMasterList:
-        #calculate for each list
-    #return userRestaurantMasterList
+def calculateRecommendationMasterList(userRestaurantMasterList, minBudget, maxBudget,
+                                      userPrefIngred, userTastes, userAllergens):
+    masterRecommendationList = []
+    for eachList in userRestaurantMasterList:
+        #calculate for each sublist the appropriate recommendation ist
+        sortedIndividualRestaurantList = food_recommendation(eachList, minBudget, maxBudget,
+                                                             userPrefIngred, userAllergens,
+                                                             userTastes )
+        masterRecommendationList.append(sortedIndividualRestaurantList)
+    return masterRecommendationList
+
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result  
 # To DO: Figure out how to get images                                   
@@ -149,5 +155,4 @@ userMinPrice = 10
 userPreferredIngredients = ["garlic", "onion"]
 
 food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
-
 

@@ -2,9 +2,9 @@
 well as contains the definitions for the table models and the
 flask forms documentation"""
 
+import random
 import os
 from flask import Flask, url_for, redirect, render_template
-import flask
 from flask_sqlalchemy import SQLAlchemy
 
 # login information
@@ -12,8 +12,8 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import food_recommendation, stringToArray
-import random
+import searchalgorithm
+from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -74,6 +74,13 @@ class ProfileForm(FlaskForm):
     )
     submit = SubmitField("Create User Profile")
 
+class DisplayResultsForm(FlaskForm):
+    accept = SubmitField("Approve")
+    deny = SubmitField("Deny")
+
+#I need to figure/fix this to add a search bar
+class DisplaySearchResults(FlaskForm):
+    submit = SubmitField("Search for Result")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -250,6 +257,7 @@ def title():
     """renders a base page that allows user to be redirected to login or signup
     Parameters: (none)
     Returns: html file for display"""
+    #Preload databases with tables
     loadAllergens()
     loadTastes()
     return render_template("title.html")

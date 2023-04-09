@@ -17,6 +17,13 @@ class Food:
 #will hold all restaurants
 masterListRestaurants = []
 
+def setFoodForRestaurant(restaurant, foodNamesList, foodPricesList,
+                         foodIngredientsList, foodAllergensList, foodTastesList):
+    for eachEntry in range(len(foodNamesList)):
+        newItem = Food(foodNamesList[eachEntry], foodPricesList[eachEntry], foodIngredientsList[eachEntry],
+                        foodAllergensList[eachEntry], foodTastesList[eachEntry])
+        restaurant.append(newItem)
+    return restaurant
 
 
 # Rules
@@ -25,6 +32,8 @@ masterListRestaurants = []
 # acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
 # tastes: sweet, salty, sour, spicy, bitter, and savory
 #list objects for absurdbird creation
+
+################### 3 test cases for High Fidelity Prototype ##########################################
 absurdbird = []
 foodNames = ["3 chicken tender basket", "4 chicken tender basket", "5 chicken tender basket", "tender slider", "snack box", "fried oreo", "mac and cheese", "fries" ]
 foodPrices = [5.99, 6.99, 7.99, 2.99, 4.99, 2.99, 2.19, 2.99]
@@ -33,6 +42,10 @@ foodIngredients = [["chicken", "flour", "buttermilk", "cider vinegar", "garlic",
 ["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"], ["oreos", "pancake mix", "oil"], ["cheese", "cheese sauce", "pasta"], ["potatoes"]]
 foodAllergens = ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chocolate", "sugar"], ["dairy", "gluten"], ["flour", "potatoes"]
 flavorProfile = [["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["sweet"], ["savory"], ["salty"]]
+
+masterListRestaurants.append(setFoodForRestaurant(absurdbird,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile))
+
 
 burger512 = []
 foodNames =["korean flame", "blue mushroom", "guadalupe burger", "hays co burger", "the classic", "fiesta fries", "firebird fries", "disco fries", "fries", "chicken strips"]
@@ -43,6 +56,9 @@ foodIngredients =[["bread", "fried onions", "pico de gallo", "cheese", "kimchi",
 foodAllergens = [["gluten", "beef", "dairy", "eggs"], ["gluten", "beef", "dairy", "pork"], ["dairy", "gluten", "beef", "beans"], ["dairy", "gluten", "pork", "beef", "eggs"], ["dairy", "beef", "gluten" ],["beans", "dairy"], ["chicken", "eggs"], ["dairy", "pork"], ["none"], ["gluten", "chicken"]]
 flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"], ["savory", "salty"], ["savory", "sweet", "salty"], ["savory", "salty"], ["salty", "savory"], ["salty"], ["salty"], ["salty"], ["salty", "savory"]]
 
+masterListRestaurants.append(setFoodForRestaurant(burger512,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile))
+
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
 foodPrices= [4.95, 4.49, 3.25]
@@ -50,6 +66,12 @@ foodIngredients= [["bread", "pork", "mayo", "cilantro", "vinegar", "onion", "car
 foodAllergens = [["pork", "eggs", "gluten", "chilies"],["gluten", "shrimp"],["pork", "egg", "garlic"]]
 flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 
+masterListRestaurants.append(setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
+                                                  foodAllergens, flavorProfile))
+
+print(masterListRestaurants)
+
+#############################################################################################################################
 #pizzahut=[]
 #foodNames =["Cheese Pizza Hand-Tossed Medium", "Cheese Pizza Hand-Tossed Large", "Cheese Pan Pizza Personal", "Cheese Pan Pizza Medium", "Cheese Pan Pizza Large", "Cheese Thin Pizza Medium", "Cheese Thin Pizza Large",]
 #foodPrices =[11.99, 14.99, 4.79, 11.99, 14.99, 11.99, 14.99]
