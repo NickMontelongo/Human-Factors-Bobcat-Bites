@@ -151,7 +151,5 @@ userPreferredIngredients = ["garlic", "onion"]
 food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
 
 string = ["POPCORN", "Maple", "Syrup", "CaNdY", "celery"]
-for eachmember in string:
-    if eachmember =="CaNdY":
-        print(f'Match at {eachmember}')
+print(len(string))
 

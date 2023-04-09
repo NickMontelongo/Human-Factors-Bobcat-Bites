@@ -12,7 +12,8 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import stringToArray
+from searchalgorithm import food_recommendation, stringToArray
+import random
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -26,6 +27,9 @@ app = Flask(__name__)
 
 # bcrypt object is utilized in password hashing/encryption
 bcrypt = Bcrypt(app)
+
+#Importing Individually Defined restaurant lists
+from hardcodedrestaurants import masterListRestaurants
 
 
 # fetches session key and Database URI from .env file
@@ -254,17 +258,16 @@ def title():
 def getRecommendationByRestaurant(restaurant):
     #restaurant = request.args.get('restaurant')
     #print(f'This is restaurant: {restaurant}')
+    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     user = Person.query.filter_by(email=current_user.email).first()
-    print(user.budget_max)
-    print(user.budget_min)
-    print(user.allergens)
-    print(user.tastes)
-    print(type(user.allergens))
-    print(type(user.tastes))
-    stringList =[] 
+    currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
-        stringList.append(str(eachEntry))
-    print(f'This is the list: {stringList}')
+        currentUserTastes.append(str(eachEntry))
+    for eachEntry in user.allergens:
+        currentUserAllergens.append(str(eachEntry))
+    currentUserMaxBudget = user.budget_max
+    currentUserMinBudget = user.budget_min
+
 
     return render_template("displayrec.html")
 
@@ -272,11 +275,32 @@ def getRecommendationByRestaurant(restaurant):
 @app.route("/recommendrand/", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRand():
+    #Random Instantiation and use in masterlist
+    randomIndex = random.randint(0,5)
+
+    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    user = Person.query.filter_by(email=current_user.email).first()
+    currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
+    for eachEntry in user.tastes:
+        currentUserTastes.append(str(eachEntry))
+    for eachEntry in user.allergens:
+        currentUserAllergens.append(str(eachEntry))
+    currentUserMaxBudget = user.budget_max
+    currentUserMinBudget = user.budget_min
     return render_template("displayrand.html")
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
 def getRecommendationBySearch():
+    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    user = Person.query.filter_by(email=current_user.email).first()
+    currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
+    for eachEntry in user.tastes:
+        currentUserTastes.append(str(eachEntry))
+    for eachEntry in user.allergens:
+        currentUserAllergens.append(str(eachEntry))
+    currentUserMaxBudget = user.budget_max
+    currentUserMinBudget = user.budget_min
     return render_template("displaysearch.html")
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
@@ -304,31 +328,12 @@ def create_profile():
     if form.validate_on_submit():
         user.tastes.clear()
         user.allergens.clear()
-        currentUserFoodPreferences =""
-        currentUserAllergens = []
-        currentUserTastes = []
-        currentUserMaxBudget = 0
-        currentUserMinBudget= 0
         user.tastes.extend(form.taste_choices.data)
         user.allergens.extend(form.allergen_choices.data)
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
         user.preferred_ingredients = form.user_preferred_ingredients.data
         database.session.commit()
-        # Initialize global variables for search recognition
-        currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
-        for eachEntry in user.tastes:
-            currentUserTastes.append(str(eachEntry))
-        for eachEntry in user.allergens:
-            currentUserAllergens.append(str(eachEntry))
-        currentUserMaxBudget = user.budget_max
-        currentUserMinBudget = user.budget_min
-        print(currentUserFoodPreferences)
-        print(currentUserTastes)
-        print(currentUserAllergens)
-        print(currentUserMaxBudget)
-        print(currentUserMinBudget)
-
     return render_template("profile.html", user=useremail, form=form)
 
 
