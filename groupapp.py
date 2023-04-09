@@ -12,7 +12,7 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-import searchalgorithm
+from searchalgorithm import stringToArray
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
@@ -404,7 +404,6 @@ def unauthorized_callback():
     Parameters(none)
     Returns: redirect to beginning route ie '/' route"""
     return redirect(url_for("title"))
-
 
 if __name__ == "__main__":
     app.run(debug=True)

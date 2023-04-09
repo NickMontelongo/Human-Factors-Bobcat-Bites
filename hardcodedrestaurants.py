@@ -69,7 +69,6 @@ flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 masterListRestaurants.append(setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
                                                   foodAllergens, flavorProfile))
 
-print(masterListRestaurants)
 
 #############################################################################################################################
 #pizzahut=[]
@@ -101,14 +100,14 @@ foodAllergens = [[""]]
 flavorProfile = [[""]]
 
 # Test looper
-for i in range(len(foodNames)):
-    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
-    teaco.append(newItem)
-    print(f' Name: {newItem.name}')
-    print(f' Price: {newItem.price}')
-    print(f' Ingredients: {newItem.ingredients}')
-    print(f' Allergens: {newItem.allergens}')
-    print(f' Flavors: {newItem.flavorProfile}')
-    print("  ")
+#for i in range(len(foodNames)):
+#    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
+#    teaco.append(newItem)
+#    print(f' Name: {newItem.name}')
+#    print(f' Price: {newItem.price}')
+#    print(f' Ingredients: {newItem.ingredients}')
+#    print(f' Allergens: {newItem.allergens}')
+#    print(f' Flavors: {newItem.flavorProfile}')
+#    print("  ")
 
 
