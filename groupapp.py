@@ -218,6 +218,7 @@ database.Table(
 
 def loadTastes():
     tasteArray = ["bitter", "salty", "savory", "sour", "spicy", "sweet", "none"]
+    user_tastes = Taste.query.all()
     userTasteList = []
     for eachentry in user_tastes:
         userTasteList.append(eachentry.taste_name)
