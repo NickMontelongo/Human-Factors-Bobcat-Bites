@@ -150,6 +150,4 @@ userPreferredIngredients = ["garlic", "onion"]
 
 food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
 
-string = ["POPCORN", "Maple", "Syrup", "CaNdY", "celery"]
-print(len(string))
 

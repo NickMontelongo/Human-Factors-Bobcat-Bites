@@ -54,6 +54,7 @@ currentUserTastes =[]
 currentUserFoodPreferences = ''
 currentUserMaxBudget = 0
 currentUserMinBudget= 0
+masterListWithRecommendation =[]
 
 #######################################FLASK FORMS ####################################################
 class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
