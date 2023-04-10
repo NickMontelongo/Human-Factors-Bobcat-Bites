@@ -4,7 +4,7 @@ flask forms documentation"""
 
 import random
 import os
-from flask import Flask, url_for, redirect, render_template, request
+from flask import Flask, url_for, redirect, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 
 # login information
@@ -16,7 +16,7 @@ from searchalgorithm import food_recommendation,calculateRecommendationMasterLis
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
-from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
+from wtforms import Form, StringField, SelectField, EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
 from wtforms.validators import email, length, InputRequired, ValidationError
 from wtforms_alchemy import QuerySelectMultipleField
 
@@ -57,6 +57,13 @@ currentUserMinBudget= 0
 masterListWithRecommendation =[]
 
 #######################################FLASK FORMS ####################################################
+class FoodSearchForm(FlaskForm):
+    choices = [('Name', 'Name'), ('Flavor', 'Flavor'),
+               ('Ingredient', 'Ingredient')]
+    select = SelectField('Search for Recommendations', choices=choices)
+    search = StringField('', validators=[InputRequired()])
+    submit = SubmitField("Search for Result")
+
 class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
     option_widget = widgets.CheckboxInput()
@@ -77,10 +84,6 @@ class ProfileForm(FlaskForm):
 class DisplayResultsForm(FlaskForm):
     accept = SubmitField("Approve")
     deny = SubmitField("Deny")
-
-#I need to figure/fix this to add a search bar
-class DisplaySearchResults(FlaskForm):
-    submit = SubmitField("Search for Result")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -332,16 +335,23 @@ def getRecommendationByRand():
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
 def getRecommendationBySearch():
-    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
-    user = Person.query.filter_by(email=current_user.email).first()
-    currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
-    for eachEntry in user.tastes:
-        currentUserTastes.append(str(eachEntry))
-    for eachEntry in user.allergens:
-        currentUserAllergens.append(str(eachEntry))
-    currentUserMaxBudget = user.budget_max
-    currentUserMinBudget = user.budget_min
-    return render_template("displaysearch.html")
+    search = FoodSearchForm(request.form)
+    if request.method == "POST":
+        return searchResults(search)
+    return render_template("displaysearch.html", form=search)
+
+@app.route("/recommendbysearch/results", methods=["GET","POST"])
+@login_required
+def searchResults(search):
+    results = []
+    searchString = search.data['search']
+    if not results:
+        flash('No Results have been found.')
+        return redirect(url_for('getRecommendationBySearch'))
+    else:
+        #display the results here
+        return
+    return render_template("displayresults.html", results=results)
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
 @login_required
