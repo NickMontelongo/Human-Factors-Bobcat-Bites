@@ -325,7 +325,7 @@ def getRecommendationByRand():
     recommendedRestaurantName = masterListWithRecommendation[randomIndex][0].parentListName
     recommendedFoodScore = masterListWithRecommendation[randomIndex][0].recommendationScore
     recommendedFoodName = masterListWithRecommendation[randomIndex][0].foodItemName
-    return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
+    return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
 
