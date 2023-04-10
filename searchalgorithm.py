@@ -58,15 +58,15 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
             foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
 
         #If food recommendation score > 1 then food item has more in common beyond  price range and can be added
-        if foodRecommendationScore > 0:
+        if foodRecommendationScore > 1:
             userReccomendationList.append(UserRecommendedFoods(eachFoodItem.name, foodRecommendationScore, restaurant.restaurantName))
 
     #filter results according from largest to smallest score
     userReccomendationList.sort(key=lambda x: x.recommendationScore, reverse=True)
 
     #TEST FOR RESULTS
-    for eachitem in userReccomendationList:
-        print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
+    #for eachitem in userReccomendationList:
+        #print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
     
     #Note this is used to quickly find the recommended items of a restaurant
     #sorted from largest dishScore to smallest DishScore
