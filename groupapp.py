@@ -12,12 +12,12 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import food_recommendation,stringToArray
+from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
-from wtforms.validators import email, length, InputRequired, ValidationError, DataRequired
+from wtforms.validators import email, length, InputRequired, ValidationError
 from wtforms_alchemy import QuerySelectMultipleField
 
 # used for hashing/encrypting password
@@ -302,18 +302,32 @@ def getRecommendationByRestaurant(restaurant):
 @login_required
 def getRecommendationByRand():
     #Random Instantiation and use in masterlist
-    randomIndex = random.randint(0,5)
-
-    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
-        currentUserTastes.append(str(eachEntry))
+        if str(eachEntry) == "none":
+            currentUserTastes.append("none")
+            break
+        currentUserTastes.append(str(eachEntry))   
     for eachEntry in user.allergens:
+        if str(eachEntry) == "none":
+            currentUserAllergens.append("none")
+            break
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    return render_template("displayrand.html")
+    randomIndex = random.randint(0,(len(masterListRestaurants) - 1))
+    restaurantLocation = masterListRestaurants[randomIndex].restaurantLocation
+    masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
+                                                                      currentUserMaxBudget, currentUserFoodPreferences,
+                                                                      currentUserAllergens, currentUserTastes)
+    recommendedRestaurantName = masterListWithRecommendation[randomIndex][0].parentListName
+    recommendedFoodScore = masterListWithRecommendation[randomIndex][0].recommendationScore
+    recommendedFoodName = masterListWithRecommendation[randomIndex][0].foodItemName
+    return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
+
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
