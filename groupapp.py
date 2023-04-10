@@ -17,7 +17,7 @@ from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
-from wtforms.validators import email, length, InputRequired, ValidationError
+from wtforms.validators import email, length, InputRequired, ValidationError, DataRequired
 from wtforms_alchemy import QuerySelectMultipleField
 
 # used for hashing/encrypting password

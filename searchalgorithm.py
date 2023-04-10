@@ -10,18 +10,25 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     restaurantFoodList = restaurant.foodList
     #edited list for foods of a selected restaurant that doesn't have allergens
     restaurantFoodListEdited = []
+    if "none" not in userAllergens:
     #1) filter restaurant foods based on allergens
-    for eachFoodItem in restaurantFoodList:
-        noAllergens = False
-        for eachAllergen in eachFoodItem.allergens:
-            if eachAllergen in userAllergens:
-                noAllergens = True
-        if noAllergens == False:
-            restaurantFoodListEdited.append(eachFoodItem)
+        for eachFoodItem in restaurantFoodList:
+            noAllergens = False
+            for eachAllergen in eachFoodItem.allergens:
+                if eachAllergen in userAllergens:
+                    noAllergens = True
+            if noAllergens == False:
+                restaurantFoodListEdited.append(eachFoodItem)
+    else:
+        restaurantFoodListEdited = restaurantFoodList
     #Test to evaluate edited list with items that have matching allergens removed
     #for eachItem in restaurantFoodListEdited:
     #    print(eachItem.name)
-    
+    if "none" in userPreferredIngredients:
+        userPreferredIngredients =[]
+    if "none" in userTastePreferences:
+        userTastePreferences = []
+
     #Variable to store a list of objects-values in dishName, dishScore, parentList
     userReccomendationList =[]
 
@@ -51,15 +58,15 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
             foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
 
         #If food recommendation score > 1 then food item has more in common beyond  price range and can be added
-        if foodRecommendationScore > 1:
+        if foodRecommendationScore > 0:
             userReccomendationList.append(UserRecommendedFoods(eachFoodItem.name, foodRecommendationScore, restaurant.restaurantName))
 
     #filter results according from largest to smallest score
     userReccomendationList.sort(key=lambda x: x.recommendationScore, reverse=True)
 
     #TEST FOR RESULTS
-    #for eachitem in userReccomendationList:
-    #    print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
+    for eachitem in userReccomendationList:
+        print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
     
     #Note this is used to quickly find the recommended items of a restaurant
     #sorted from largest dishScore to smallest DishScore
