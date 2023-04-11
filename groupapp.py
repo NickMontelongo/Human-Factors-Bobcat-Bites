@@ -80,6 +80,22 @@ class ProfileForm(FlaskForm):
         render_kw={"Placeholder": "Input ingredients here in ingredient, format (Maximum 400 characters)"},
     )
     submit = SubmitField("Create User Profile")
+    def validate_budget_max(self, budget_max):
+        budget_min = current_user.budget_min
+        if budget_max.data <= budget_min:
+            raise ValidationError(
+                "Maximum budget range must be greater than minimum budget range.")
+        if (budget_max.data <= 0):
+            raise ValidationError("Maximum Budget values cannot be less than or equal to zero.")
+    def validate_budget_min(self, budget_min):
+        budget_max = current_user.budget_max
+        if budget_max <= budget_min.data:
+            raise ValidationError(
+                "Minimum budget range must be greater than maximum budget range.")
+        if budget_min.data <0:
+            raise ValidationError(
+                "Minimum budget range cannot be less than zero.")
+
 
 class DisplayResultsForm(FlaskForm):
     accept = SubmitField("Approve")
@@ -220,7 +236,7 @@ database.Table(
     )
 
 def loadTastes():
-    tasteArray = ["bitter", "salty", "savory", "sour", "spicy", "sweet", "none"]
+    tasteArray = ["bitter", "salty", "savory", "sour", "spicy", "sweet"]
     user_tastes = Taste.query.all()
     userTasteList = []
     for eachentry in user_tastes:
@@ -236,7 +252,7 @@ def loadTastes():
 
 def loadAllergens():
     allergen_array= ["beans", "beef", "cinnamon", "chicken", "dairy", "eggs", "fish", "gluten", "mustard",
-                      "nuts", "pork", "potatoes", "shellfish", "tree nuts", "none"]
+                      "nuts", "pork", "potatoes", "shellfish", "tree nuts"]
     user_allergens = Allergen.query.all()
     userAllergenList = []
     for eachentry in user_allergens:
@@ -372,7 +388,10 @@ def display_main():
 def create_profile():
     useremail = current_user.email
     user = Person.query.filter_by(email=useremail).first()
-    form = ProfileForm(data={"taste_choices": user.tastes, "allergen_choices": user.allergens, "user_preferred_ingredients": user.preferred_ingredients, "budget_max": user.budget_max,"budget_min": user.budget_min})
+    form = ProfileForm(data={"taste_choices": user.tastes,
+                            "allergen_choices": user.allergens, 
+                            "user_preferred_ingredients": user.preferred_ingredients,
+                            "budget_max": user.budget_max,"budget_min": user.budget_min})
     form.taste_choices.query = Taste.query.all()
     form.allergen_choices.query = Allergen.query.all()   
     if form.validate_on_submit():
@@ -448,9 +467,3 @@ def unauthorized_callback():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-

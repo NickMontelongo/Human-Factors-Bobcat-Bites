@@ -156,8 +156,16 @@
                         {{ form.allergen_choices}}</h3>
                     <h3>Please input the minimum value of your budget range (use numbers in the format x.xx):
                         ${{form.budget_min}}</h3>
+                    {% for error in form.budget_min.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;>
+                        <b>
+                            {{error}} </b>
+                    </p> {% endfor %}
                     <h3>Please input the maximum value of your budget range (use numbers in the format x.xx):
                         ${{form.budget_max}}</h3>
+                    {% for error in form.budget_max.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;>
+                        <b>
+                            {{error}} </b>
+                    </p> {% endfor %}
                     <h3>Please input the ingredients you like: </h3>
                     <h5>(keep in the form of ingredient1, ingredient2, etc) </h5>
                     {{form.user_preferred_ingredients(rows = '10', cols='50')}}<br>
