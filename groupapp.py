@@ -98,8 +98,9 @@ class ProfileForm(FlaskForm):
 
 
 class DisplayResultsForm(FlaskForm):
-    accept = SubmitField("Approve")
-    deny = SubmitField("Deny")
+    accept = SubmitField(label="Approve")
+    deny = SubmitField(label="Deny")
+    reset = SubmitField(label="Reset")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -321,15 +322,17 @@ def getRecommendationByRestaurant(restaurant):
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             restaurantLocation = eachEntry.restaurantLocation
+            restaurantName = eachEntry.restaurantName
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes)
             break
-    recommendedRestaurantName = currentRestaurantRecommendationList[0].parentListName
+    recommendedRestaurantName = restaurantName
     #TO DO: make File Path
     recommendedRestaurantName = recommendedRestaurantName.capitalize()
     recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
-    recommendedFoodName = currentRestaurantRecommendationList[0].foodItemName
+    recommendedFoodName = currentRestaurantRecommendationList[0].name
+
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
@@ -355,12 +358,13 @@ def getRecommendationByRand():
     currentUserMinBudget = user.budget_min
     randomIndex = random.randint(0,(len(masterListRestaurants) - 1))
     restaurantLocation = masterListRestaurants[randomIndex].restaurantLocation
+    restaurantName = masterListRestaurants[randomIndex].restaurantName
     masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes)
-    recommendedRestaurantName = masterListWithRecommendation[randomIndex][0].parentListName
+    recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomIndex][0].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomIndex][0].foodItemName
+    recommendedFoodName = masterListWithRecommendation[randomIndex][0].name
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
@@ -383,7 +387,7 @@ def searchResults(search):
         return redirect(url_for('getRecommendationBySearch'))
     else:
         #display the results here
-        return
+        print('hi')
     return render_template("displayresults.html", results=results)
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])

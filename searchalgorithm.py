@@ -29,9 +29,6 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     if "none" in userTastePreferences:
         userTastePreferences = []
 
-    #Variable to store a list of objects-values in dishName, dishScore, parentList
-    userReccomendationList =[]
-
     #2) Update individual food item's score based on ingredients that match 
     for eachFoodItem in restaurantFoodListEdited:
         #Recommendation Score variable
@@ -57,22 +54,23 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
             # truncates to two decimal places
             foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
 
+        eachFoodItem.recommendationScore = foodRecommendationScore
         #If food recommendation score > 1 then food item has more in common beyond  price range and can be added
-        if foodRecommendationScore > 1:
-            userReccomendationList.append(UserRecommendedFoods(eachFoodItem.name, foodRecommendationScore, restaurant.restaurantName))
-
+#        if foodRecommendationScore > 1:
+#            userReccomendationList.append(UserRecommendedFoods(eachFoodItem.name, foodRecommendationScore, restaurant.restaurantName))
+        
     #filter results according from largest to smallest score
-    userReccomendationList.sort(key=lambda x: x.recommendationScore, reverse=True)
+    restaurantFoodListEdited.sort(key=lambda x: x.recommendationScore, reverse=True)
 
     #TEST FOR RESULTS
-    #for eachitem in userReccomendationList:
-        #print(f'Food name: {eachitem.foodItemName} Score: {eachitem.recommendationScore} Parent List: {eachitem.parentListName}')
+    for eachitem in restaurantFoodListEdited:
+        print(f'Food name: {eachitem.name} Score: {eachitem.recommendationScore} Parent List: {restaurant.restaurantName}')
     
     #Note this is used to quickly find the recommended items of a restaurant
     #sorted from largest dishScore to smallest DishScore
     # do I need to jasonify?
     # needs to be stored in database
-    return userReccomendationList
+    return restaurantFoodListEdited
 
 def calculateRecommendationMasterList(userRestaurantMasterList, minBudget, maxBudget,
                                       userPrefIngred, userTastes, userAllergens):
@@ -120,11 +118,6 @@ def stringToArray(stringToParse):
 
 ################################## MODEL DEFINITION #########################################################################
 #user Recommendation Food Items used in database stored list
-class UserRecommendedFoods:
-    def __init__ (self, foodItemName, recommendationScore, parentListName):
-        self.foodItemName = foodItemName
-        self.recommendationScore = recommendationScore
-        self.parentListName = parentListName
 #storage of the actual restaurant
 class Restaurant:
     def __init__ (self, restaurantName, foodList, restaurantLocation):
@@ -140,6 +133,7 @@ class Food:
         self.ingredients = ingredients
         self.allergens = allergens
         self.flavorProfile = flavorProfile
+        self.recommendationScore = 0.0
 
 
 ######################################### RUNNABLE TEST CODE ###############################################################################

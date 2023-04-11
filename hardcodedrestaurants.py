@@ -13,6 +13,7 @@ class Food:
         self.ingredients = ingredients
         self.allergens = allergens
         self.flavorProfile = flavorProfile
+        self.recommendationScore = 0.0
 
 #will hold all restaurants
 masterListRestaurants = []

@@ -163,7 +163,8 @@
           <h2 class="foodinfo">Located: {{restaurantLoc}}</h2>
           <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
           {{ form.hidden_tag() }}
-          <h3>{{form.accept}} {{form.deny}}</h3>
+          {{ form.csrf_token }}
+          <h3>{{form.accept}} {{form.deny}} {{form.reset}}</h3>
         </center>
       </div>
 
