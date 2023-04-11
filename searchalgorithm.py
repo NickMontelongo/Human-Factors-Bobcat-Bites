@@ -63,8 +63,8 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     restaurantFoodListEdited.sort(key=lambda x: x.recommendationScore, reverse=True)
 
     #TEST FOR RESULTS
-    for eachitem in restaurantFoodListEdited:
-        print(f'Food name: {eachitem.name} Score: {eachitem.recommendationScore} Parent List: {restaurant.restaurantName}')
+#    for eachitem in restaurantFoodListEdited:
+#        print(f'Food name: {eachitem.name} Score: {eachitem.recommendationScore} Parent List: {restaurant.restaurantName}')
     
     #Note this is used to quickly find the recommended items of a restaurant
     #sorted from largest dishScore to smallest DishScore

@@ -332,7 +332,13 @@ def getRecommendationByRestaurant(restaurant):
     recommendedRestaurantName = recommendedRestaurantName.capitalize()
     recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[0].name
-
+    if form.validate_on_submit():
+        if form.accept.data:
+            print('accept was used')
+        if form.deny.data:
+            print('deny was used')
+        if form.reset.data:
+            print('reset was used')
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
@@ -364,7 +370,7 @@ def getRecommendationByRand():
                                                                       currentUserAllergens, currentUserTastes)
     recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomIndex][0].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomIndex][0].name
+    recommendedFoodName = masterListWithRecommendation[randomIndex][0].namew
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
