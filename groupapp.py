@@ -234,6 +234,23 @@ database.Table(
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
+def loadCurrentUserBaseProfile():
+    '''Function to load up the baseline for user profile, allows user to skip profile creation
+    Parameters: (none)   Returns: (none)'''
+    baseAllergens = ['none']
+    baseTastes = ['none']
+    basePrefIngredients = 'none'
+    baseFavFoods = ['none']
+    if current_user.budget_min == None:
+        current_user.budget_min = 3.00
+    if current_user.budget_max == None:
+        current_user.budget_max = 20.00
+    if current_user.preferred_ingredients == None:
+        current_user.preferred_ingredients = "none"
+    database.session.commit()
+
+
+
 
 def loadTastes():
     tasteArray = ["bitter", "salty", "savory", "sour", "spicy", "sweet"]
@@ -381,6 +398,7 @@ def displaySavedResults():
 @login_required
 def display_main():
     """route is the main route to access website features, directed from user authenticated login"""
+    loadCurrentUserBaseProfile()
     return render_template("homepage.html")
 
 @app.route("/user_profile", methods=["Get", "POST"])
