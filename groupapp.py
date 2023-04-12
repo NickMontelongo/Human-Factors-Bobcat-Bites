@@ -14,6 +14,7 @@ from flask_login import logout_user, login_user, login_required, current_user
 #Algorithm information
 from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
 from hardcodedrestaurants import masterListRestaurants
+import copy
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import Form, StringField, SelectField, EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -46,7 +47,7 @@ database = SQLAlchemy(app)
 def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
-
+global masterListRestaurantsCopy
 currentUserAllergens =[]
 currentUserTastes =[]
 currentUserFoodPreferences = ''
@@ -317,6 +318,8 @@ def getRecommendationByRestaurant(restaurant):
     print('At the beginning of recommend by restaurant')
     print(f' Master List value is: {masterListRestaurants}')
     user = Person.query.filter_by(email=current_user.email).first()
+    if current_user.restaurant_flag == True:
+        masterListRestaurantsCopy = copy.deepcopy(masterListRestaurants)
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
         if str(eachEntry) == "none":
@@ -330,18 +333,17 @@ def getRecommendationByRestaurant(restaurant):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    masterListIndex = 0
-    for eachEntry in masterListRestaurants:
+    for eachEntry in masterListRestaurantsCopy:
         if eachEntry.restaurantName == restaurant:
-            restaurantLocation = eachEntry.restaurantLocation
-            masterListIndex = masterListRestaurants.index(eachEntry)
-            restaurantName = eachEntry.restaurantName
+            masterIndex = masterListRestaurantsCopy.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
-                                                                      currentUserMaxBudget, currentUserFoodPreferences,
-                                                                      currentUserAllergens, currentUserTastes)
+                                                                currentUserMaxBudget, currentUserFoodPreferences,
+                                                                currentUserAllergens, currentUserTastes)
             break
-
-    recommendedRestaurantName = restaurantName
+    current_user.restaurant_flag = False
+    database.session.commit()
+    recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
+    restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     #TO DO: make File Path
     recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[0].name
@@ -349,14 +351,12 @@ def getRecommendationByRestaurant(restaurant):
         if form.accept.data:
             print('accept was used')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
-            masterListRestaurants[masterListIndex].foodList.pop(0)
+            currentRestaurantRecommendationList.foodList.pop(0)
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
         if form.deny.data:
             print('deny was used')
-            itemToRemove = masterListRestaurants[masterListIndex].foodList[0]
-            masterListRestaurants[masterListIndex].foodList.pop(0)
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')
-            masterListRestaurants[masterListIndex].foodList.append(itemToRemove)
+            currentRestaurantRecommendationList.foodList.pop(0)
+            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
         if form.reset.data:
             print('reset was used')
