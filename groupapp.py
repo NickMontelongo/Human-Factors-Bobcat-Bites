@@ -310,9 +310,9 @@ def title():
 #NOTES
 #NEED TO DEBUG 4/11/2023
 #1) Need to figure out how to reset everything since importing master list
-@app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
+@app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRestaurant(restaurant):
+def getRecommendationByRestaurant(restaurant, list_index):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     print('At the beginning of recommend by restaurant')

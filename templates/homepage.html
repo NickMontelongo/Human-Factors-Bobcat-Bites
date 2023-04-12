@@ -99,6 +99,7 @@
   </div>
 
   <div class="navbar">
+    <a href="{{url_for('display_main')}}"> Main Page</a>
     <a href="{{url_for('create_profile')}}">My Profile</a>
     <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
     <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
@@ -108,35 +109,44 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content" id="myDropdown">
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird')}}">Absurd Bird</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ')}}">AJs BBQ</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill')}}">Asado Latin Grill</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs')}}">Blimpie American
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird',list_index=0)}}">Absurd Bird</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ',list_index=0)}}">AJs BBQ</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',list_index=0)}}">Asado Latin
+          Grill</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',list_index=0)}}">Blimpie
+          American
           Subs</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512')}}">Burger 512</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Campus Coffee and Tea')}}">Campus Coffee and
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512',list_index=0)}}">Burger 512</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Campus Coffee and Tea',list_index=0)}}">Campus
+          Coffee and
           Tea</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A')}}">Chick Fil A</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market')}}">Coffee and Pi
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A',list_index=0)}}">Chick Fil A</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',list_index=0)}}">Coffee and
+          Pi
           Market</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli')}}">Create Premium Deli</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts')}}">Dunkin Doughnuts</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einsteins Bagles')}}">Einstein's Bagles</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi')}}">Kawa Sushi</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe')}}">McCoy Cafe</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab')}}">Melt Lab</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Mondo Subs')}}">Mondo Subs</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express')}}">Panda Express</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut')}}">Pizza Hut Express</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey')}}">Pom and Honey</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle')}}">Revolution Noodle</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty')}}">The Salty</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart')}}">Shake Smart</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks')}}">Starbucks</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co')}}">The Tea Co</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco')}}">Tu Taco</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It')}}">Wing it</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta')}}">Woods St Pizza &
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',list_index=0)}}">Create
+          Premium Deli</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',list_index=0)}}">Dunkin
+          Doughnuts</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einsteins Bagles',list_index=0)}}">Einstein's
+          Bagles</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi',list_index=0)}}">Kawa Sushi</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe',list_index=0)}}">McCoy Cafe</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab',list_index=0)}}">Melt Lab</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Mondo Subs',list_index=0)}}">Mondo Subs</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express',list_index=0)}}">Panda Express</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut',list_index=0)}}">Pizza Hut Express</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey',list_index=0)}}">Pom and Honey</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',list_index=0)}}">Revolution
+          Noodle</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty',list_index=0)}}">The Salty</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart',list_index=0)}}">Shake Smart</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks',list_index=0)}}">Starbucks</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co',list_index=0)}}">The Tea Co</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',list_index=0)}}">Tu Taco</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',list_index=0)}}">Wing it</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',list_index=0)}}">Woods St
+          Pizza &
           Pasta</a>
       </div>
     </div>
@@ -146,17 +156,23 @@
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
-        <h2>Bobcat Bites Version 0.0.1 prototype</h2>
-        <h5>Current update, April 3rd, 2023</h5>
+        <h2>Bobcat Bites Version 0.0.5 prototype</h2>
+        <h5>Current as of April 20th, 2023</h5>
         <div class="fakeimg" style="height:200px;">Image</div>
         <h3>How This Website Works</h3>
         <p>It is HIGHLY RECOMMENDED to customize your profile to your likeness before
           selecting any of the recommendation options. However if you do choose to test
-          these features please know that the website will produce results considering your
-          budget is between 3 to 20 dollars with no other considerations to still function.
-        </p>
-        <p>Added Links to pages, created profile page, updated homepage info</p>
-        <p>Specific Bug 1 was fixed, Bug 2 was fixed, Bug 3 was fixed, etc etc. </p>
+          these features please know that the website will produce results based on the following profile:
+        <p>Budget: $3.00-$20.00, No allergens, No preferred food items, and No preferred tastes </p>
+        <h3> Getting recommendation based on food items</h3>
+        <p>For Search: the results will be based entirely on your search query, it will be provide results
+          filtering out results from your allergens and your saved list.<br>
+          For Random Recommendation: Will Recommend food items randomly, filtering out results based
+          on allergens and your saved list. If you choose to leave to another part of the website your
+          progress is reset. <br>
+          For Recommendation by Restaurant: This will populate with results for a particular restaurant,
+          filtering out results based on allergens and your saved list. If you choose to leave to another
+          part of the website, progress is reset (also is reset if you reach the end of the list)<br>
       </div>
 
     </div>
