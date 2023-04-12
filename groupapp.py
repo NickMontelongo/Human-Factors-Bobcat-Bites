@@ -308,8 +308,7 @@ def title():
 
 #NOTES
 #NEED TO DEBUG 4/11/2023
-#1) Switching from profile to Recommmend by Restaurant Has an error
-#2) Need to figure out how to reset everything since importing master list
+#1) Need to figure out how to reset everything since importing master list
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRestaurant(restaurant):
@@ -333,11 +332,7 @@ def getRecommendationByRestaurant(restaurant):
     currentUserMinBudget = user.budget_min
     masterListIndex = 0
     for eachEntry in masterListRestaurants:
-        print('in for loop')
-        print(f'This is restaurants value: {restaurant}')
-        print(f'This is eachEntry.restaurantName: {eachEntry.restaurantName}')
         if eachEntry.restaurantName == restaurant:
-            print('in loop for rec by restaurant')
             restaurantLocation = eachEntry.restaurantLocation
             masterListIndex = masterListRestaurants.index(eachEntry)
             restaurantName = eachEntry.restaurantName
