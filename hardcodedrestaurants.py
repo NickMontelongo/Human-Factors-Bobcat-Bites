@@ -73,6 +73,13 @@ foodlist = setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
                                                   foodAllergens, flavorProfile)
 masterListRestaurants.append(Restaurant("Tea Co", foodlist, "The Den Food Company"))
 
+masterListRestaurantsCopy = masterListRestaurants
+
+#NEEDED TO RESET EVERYTHING
+def renewMasterListRestaurants():
+    masterListRestaurants = masterListRestaurantsCopy
+    return masterListRestaurants
+
 
 #############################################################################################################################
 #pizzahut=[]

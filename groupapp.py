@@ -23,13 +23,11 @@ from wtforms_alchemy import QuerySelectMultipleField
 # used for hashing/encrypting password
 from flask_bcrypt import Bcrypt
 
+
 app = Flask(__name__)
 
 # bcrypt object is utilized in password hashing/encryption
 bcrypt = Bcrypt(app)
-
-#Importing Individually Defined restaurant lists
-from hardcodedrestaurants import masterListRestaurants
 
 
 # fetches session key and Database URI from .env file
@@ -188,6 +186,9 @@ class Person(database.Model, UserMixin):
     preferred_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
+    #flags for keeping track of user reset
+    rand_flag = database.Column(database.Boolean)
+    restaurant_flag =  database.Column(database.Boolean)
     #users favorite foods
     userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
 
@@ -248,6 +249,10 @@ def loadCurrentUserBaseProfile():
         current_user.budget_max = 20.00
     if current_user.preferred_ingredients == None:
         current_user.preferred_ingredients = "none"
+    if current_user.rand_flag != True:
+        current_user.rand_flag = True
+    if current_user.restaurant_flag != True:
+        current_user.restaurant_flag = True
     database.session.commit()
 
 
@@ -300,11 +305,18 @@ def title():
     loadTastes()
     return render_template("title.html")
 
+
+#NOTES
+#NEED TO DEBUG 4/11/2023
+#1) Switching from profile to Recommmend by Restaurant Has an error
+#2) Need to figure out how to reset everything since importing master list
 @app.route("/recommendbyrestaurant/<restaurant>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRestaurant(restaurant):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    print('At the beginning of recommend by restaurant')
+    print(f' Master List value is: {masterListRestaurants}')
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
@@ -319,26 +331,43 @@ def getRecommendationByRestaurant(restaurant):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
+    masterListIndex = 0
     for eachEntry in masterListRestaurants:
+        print('in for loop')
+        print(f'This is restaurants value: {restaurant}')
+        print(f'This is eachEntry.restaurantName: {eachEntry.restaurantName}')
         if eachEntry.restaurantName == restaurant:
+            print('in loop for rec by restaurant')
             restaurantLocation = eachEntry.restaurantLocation
+            masterListIndex = masterListRestaurants.index(eachEntry)
             restaurantName = eachEntry.restaurantName
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes)
             break
+
     recommendedRestaurantName = restaurantName
     #TO DO: make File Path
-    recommendedRestaurantName = recommendedRestaurantName.capitalize()
     recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[0].name
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
+            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
+            masterListRestaurants[masterListIndex].foodList.pop(0)
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
         if form.deny.data:
             print('deny was used')
+            itemToRemove = masterListRestaurants[masterListIndex].foodList[0]
+            masterListRestaurants[masterListIndex].foodList.pop(0)
+            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')
+            masterListRestaurants[masterListIndex].foodList.append(itemToRemove)
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
         if form.reset.data:
             print('reset was used')
+            current_user.restaurant_flag = True
+            database.session.commit()
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
@@ -370,7 +399,7 @@ def getRecommendationByRand():
                                                                       currentUserAllergens, currentUserTastes)
     recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomIndex][0].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomIndex][0].namew
+    recommendedFoodName = masterListWithRecommendation[randomIndex][0].name
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
@@ -414,6 +443,7 @@ def display_main():
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
 def create_profile():
+    print('at user profile')
     useremail = current_user.email
     user = Person.query.filter_by(email=useremail).first()
     form = ProfileForm(data={"taste_choices": user.tastes,
@@ -430,6 +460,8 @@ def create_profile():
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
         user.preferred_ingredients = form.user_preferred_ingredients.data
+        current_user.restaurant_flag = True
+        current_user.rand_flag = True
         database.session.commit()
     return render_template("profile.html", user=useremail, form=form)
 
