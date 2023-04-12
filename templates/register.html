@@ -18,7 +18,7 @@
                 <h3>Enter your email address: {{ form.user_email}} </h3>
                 <h3>Enter your password (8-30 characters): {{ form.user_password}} </h3>
                 {{ form.submit }} <br><br>
-                {% for error in form.user_email.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;> <b>
+                {% for error in form.user_email.errors %} <p style="color: blue;" ,style="font-size:400%" ;> <b>
                         {{error}} </b></p> {% endfor %}
 
                 <img src="static/images/texasstate.jpg" alt="go Bobcats!" width="400" height="300">
