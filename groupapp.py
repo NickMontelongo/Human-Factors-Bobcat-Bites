@@ -334,7 +334,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
     #TO DO: make File Path
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
-    recommendedFoodImage = "/static/images/" + recommendedFoodName + ".jpg"
+    recommendedFoodImage = "/static/foodimages/" + recommendedFoodName + ".jpg"
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
@@ -395,7 +395,8 @@ def getRecommendationByRand():
     recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
     recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
-    recommendedFoodImage = "/static/images/" + recommendedFoodName + ".jpg"
+    recommendedFoodImage = "/static/foodimages/" + recommendedFoodName + ".jpg"
+    print(recommendedFoodImage)
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
