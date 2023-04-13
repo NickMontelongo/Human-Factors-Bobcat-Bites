@@ -73,9 +73,8 @@ foodlist = setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
                                                   foodAllergens, flavorProfile)
 masterListRestaurants.append(Restaurant("Tea Co", foodlist, "The Den Food Company"))
 
-global trashArray
 trashArray = [1,2,3,4,5,6,7]
-trashArray = [1,2,3,4,5,6,7]
+
 
 
 

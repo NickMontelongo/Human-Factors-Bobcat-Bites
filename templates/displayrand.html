@@ -159,8 +159,11 @@
           <h2 class="foodinfo">{{restaurantName}}</h2>
           <h2 class="foodinfo">Located: {{restaurantLoc}}</h2>
           <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
+          <form method="post">
           {{ form.hidden_tag() }}
+          {{ form.csrf_token }}
           <h3>{{form.accept}} {{form.deny}}</h3>
+        </form>
         </center>
       </div>
 
