@@ -47,7 +47,7 @@ database = SQLAlchemy(app)
 def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
-global masterListRestaurantsCopy
+
 currentUserAllergens =[]
 currentUserTastes =[]
 currentUserFoodPreferences = ''
@@ -315,11 +315,7 @@ def title():
 def getRecommendationByRestaurant(restaurant, list_index):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
-    print('At the beginning of recommend by restaurant')
-    print(f' Master List value is: {masterListRestaurants}')
     user = Person.query.filter_by(email=current_user.email).first()
-    if current_user.restaurant_flag == True:
-        masterListRestaurantsCopy = copy.deepcopy(masterListRestaurants)
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
         if str(eachEntry) == "none":
@@ -333,36 +329,30 @@ def getRecommendationByRestaurant(restaurant, list_index):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    for eachEntry in masterListRestaurantsCopy:
+    for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
-            masterIndex = masterListRestaurantsCopy.index(eachEntry)
+            masterIndex = masterListRestaurants.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
                                                                 currentUserAllergens, currentUserTastes)
             break
-    current_user.restaurant_flag = False
-    database.session.commit()
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     #TO DO: make File Path
-    recommendedFoodScore = currentRestaurantRecommendationList[0].recommendationScore
-    recommendedFoodName = currentRestaurantRecommendationList[0].name
+    recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
+    recommendedFoodName = currentRestaurantRecommendationList[list_index].name
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
-            currentRestaurantRecommendationList.foodList.pop(0)
-            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index+1))
         if form.deny.data:
             print('deny was used')
-            currentRestaurantRecommendationList.foodList.pop(0)
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
-            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index+1))
         if form.reset.data:
             print('reset was used')
-            current_user.restaurant_flag = True
-            database.session.commit()
-            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant))
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
