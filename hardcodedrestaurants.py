@@ -92,9 +92,9 @@ flavorProfile = [["sweet"], ["sweet"], ["sweet", "bitter"], ["sweet", "savory"],
 pomhoney=[]
 foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
 foodPrices= [7.99, 7.99, 7.99]
-foodIngredients= [[""]]
-foodAllergens = [[""]]
-flavorProfile = [[""]]
+foodIngredients= [["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"]]
+foodAllergens = [["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"]]
+flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"]]
 
 ourfavorite=[]
 foodNames= [""]
