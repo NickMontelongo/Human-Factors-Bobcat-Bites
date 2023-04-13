@@ -1,3 +1,13 @@
+.notificationimg {
+  background-image: url("/static/images/texasstatedininglogo.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 * {
   box-sizing: border-box;
   font-family: serif;
