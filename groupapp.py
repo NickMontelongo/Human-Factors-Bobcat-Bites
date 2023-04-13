@@ -315,6 +315,7 @@ def title():
 def getRecommendationByRestaurant(restaurant, list_index):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    list_index = int(list_index)
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     for eachEntry in user.tastes:
@@ -343,13 +344,23 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
     if form.validate_on_submit():
         if form.accept.data:
+            if list_index < len(currentRestaurantRecommendationList) - 1:
+                list_index = list_index + 1
+            else:
+                flash('You cycled through the entire menu, bringing you back to the beginning.')
+                list_index = 0
             print('accept was used')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
-            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index+1))
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
+            if list_index < len(currentRestaurantRecommendationList) - 1:
+                list_index = list_index + 1
+            else:
+                flash('You cycled through the entire menu, bringing you back to the beginning.')
+                list_index = 0
             print('deny was used')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
-            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index+1))
+            return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index=list_index))
         if form.reset.data:
             print('reset was used')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
