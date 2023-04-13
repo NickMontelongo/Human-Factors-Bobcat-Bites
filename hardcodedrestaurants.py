@@ -78,13 +78,12 @@ trashArray = [1,2,3,4,5,6,7]
 
 
 
-#############################################################################################################################
-#pizzahut=[]
-#foodNames =["Cheese Pizza Hand-Tossed Medium", "Cheese Pizza Hand-Tossed Large", "Cheese Pan Pizza Personal", "Cheese Pan Pizza Medium", "Cheese Pan Pizza Large", "Cheese Thin Pizza Medium", "Cheese Thin Pizza Large",]
-#foodPrices =[11.99, 14.99, 4.79, 11.99, 14.99, 11.99, 14.99]
-#foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],]
-#foodAllergens =[["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"]]
-#flavorProfile =[["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"]
+# pizzahut=[]
+# foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
+# foodPrices =[4.79, 4.79, 4.79, 4.79, 14.99, 11.99, 14.99]
+# foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],["cheese", "bread", "tomato sause"],]
+# foodAllergens =[["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"],["gluton", "dairy"]]
+# flavorProfile =[["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"],["savory", "cheesey"]]
 
 thesaltymenu=[]
 foodNames= ["Horchata", "Traditional Glazed", "Churro + Dulce de leche star", "Texas Chocolate sheet cake", "Boston Cream", "Ube Pina Colada(V)"]
