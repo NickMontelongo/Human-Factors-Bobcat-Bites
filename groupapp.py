@@ -334,7 +334,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
     #TO DO: make File Path
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
-    recommendedFoodImage = "/static/foodimages/" + recommendedFoodName + ".jpg"
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
@@ -358,7 +357,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
             print('reset was used')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodImage = recommendedFoodImage, form=form)
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
@@ -395,8 +394,6 @@ def getRecommendationByRand():
     recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
     recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
-    recommendedFoodImage = "/static/foodimages/" + recommendedFoodName + ".jpg"
-    print(recommendedFoodImage)
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
@@ -407,7 +404,7 @@ def getRecommendationByRand():
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
             return redirect(url_for("getRecommendationByRand"))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodImage = recommendedFoodImage, form=form)
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
 ####NEED TO DO######
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
