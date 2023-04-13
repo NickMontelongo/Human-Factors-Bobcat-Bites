@@ -48,12 +48,6 @@ def load_user(user_id):
     """used by login manager to load user based on their id"""
     return Person.query.get(int(user_id))
 
-currentUserAllergens =[]
-currentUserTastes =[]
-currentUserFoodPreferences = ''
-currentUserMaxBudget = 0
-currentUserMinBudget= 0
-masterListWithRecommendation =[]
 
 #######################################FLASK FORMS ####################################################
 class FoodSearchForm(FlaskForm):
@@ -314,6 +308,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
     list_index = int(list_index)
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
+    currentUserTastes = []
+    currentUserAllergens = []
     for eachEntry in user.tastes:
         if str(eachEntry) == "none":
             currentUserTastes.append("none")
@@ -371,6 +367,8 @@ def getRecommendationByRand():
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
+    currentUserTastes = []
+    currentUserAllergens = []
     for eachEntry in user.tastes:
         if str(eachEntry) == "none":
             currentUserTastes.append("none")
@@ -387,15 +385,16 @@ def getRecommendationByRand():
     masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes)
-    randomFoodIndex = random.randint(0,(len((masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
+    randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
     while masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore < 1.5:
-        randomFoodIndex = random.randint(0,(len((masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
+        randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+        randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
     restaurantLocation = masterListWithRecommendation[randomRestaurantIndex].restaurantLocation
     restaurantName = masterListWithRecommendation[randomRestaurantIndex].restaurantName
     recommendedRestaurantName = restaurantName
     recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomRandomIndex].foodList[randomFoodIndex].name
-        if form.validate_on_submit():
+    recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
+    if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')

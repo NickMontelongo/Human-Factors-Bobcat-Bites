@@ -74,14 +74,13 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
 
 def calculateRecommendationMasterList(userRestaurantMasterList, minBudget, maxBudget,
                                       userPrefIngred, userTastes, userAllergens):
-    masterRecommendationList = []
-    for eachList in userRestaurantMasterList:
+    for eachRestaurant in userRestaurantMasterList:
         #calculate for each sublist the appropriate recommendation ist
-        sortedIndividualRestaurantList = food_recommendation(eachList, minBudget, maxBudget,
+        sortedRecommendationsIndividualRestaurantList = food_recommendation(eachRestaurant, minBudget, maxBudget,
                                                              userPrefIngred, userAllergens,
                                                              userTastes )
-        masterRecommendationList.append(sortedIndividualRestaurantList)
-    return masterRecommendationList
+        eachRestaurant.foodList = sortedRecommendationsIndividualRestaurantList
+    return userRestaurantMasterList
 
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result  
