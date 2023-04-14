@@ -405,29 +405,68 @@ def getRecommendationByRand():
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
-####NEED TO DO######
+
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
 def getRecommendationBySearch():
     form = FoodSearchForm()
     if form.validate_on_submit():
-        searchStringf = form.choice_select.data
-        searchTypef = form.search.data
-        print(f'was validated, searchStringf: {searchStringf}, searchTypef: {searchTypef}')
-        path = url_for("searchResults",searchString=searchStringf, searchType=searchTypef )
-        print(path)
-        return redirect(url_for("searchResults",searchString=searchStringf, searchType=searchTypef ))
+        searchString = form.choice_select.data
+        searchType = form.search.data
+        return redirect(url_for("searchResults",searchString=searchString, searchType=searchType ))
     return render_template("displaysearch.html", form=form)
 
 @app.route("/recommendbysearch/results/<searchString>/<searchType>", methods=["GET","POST"])
 @login_required
-def searchResults(searchString, searchType):
-    print(f'Search String: {searchString}, Search Type:{searchType}')
+def searchResults(searchType, searchString):
     results = []
+    currentUserFoodPreferences = stringToArray(current_user.preferred_ingredients)
+    currentUserTastes = []
+    currentUserAllergens = []
+    for eachEntry in current_user.tastes:
+        if str(eachEntry) == "none":
+            currentUserTastes.append("none")
+            break
+        currentUserTastes.append(str(eachEntry))   
+    for eachEntry in current_user.allergens:
+        if str(eachEntry) == "none":
+            currentUserAllergens.append("none")
+            break
+        currentUserAllergens.append(str(eachEntry))
+    currentUserMaxBudget = current_user.budget_max
+    currentUserMinBudget = current_user.budget_min
+    currentRestaurantRecommendationList = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
+                                                                currentUserMaxBudget, currentUserFoodPreferences,
+                                                                currentUserAllergens, currentUserTastes)
+    print(f'This is search string {searchString}')
+    print(f'This is searchType: {searchType}')
+    if searchString == "Name":
+        print('In name')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                if searchType in eachFoodItem.name:
+                    results.append(eachFoodItem)
+                    break
+    elif searchString == "Ingredient":
+        print('In ingredients')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                for eachIngredient in eachFoodItem.ingredients:
+                    if searchType in eachIngredient:
+                        results.append(eachFoodItem)
+                        break
+    else: #searchType =="Flavor"
+        print('In flavor')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                for eachFlavor in eachFoodItem.flavorProfile:
+                    if searchType in eachFlavor:
+                        results.append(eachFoodItem)
+                        break
         #display the results here
-    print('Display the result')
-    return render_template("displayresults.html", results=results)
+    return render_template("displayresults.html", results=results, len=len(results), searchType=searchType)
 
+@app.route("/")
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
 @login_required
 def displaySavedResults():

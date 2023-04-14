@@ -9,6 +9,11 @@ Bobcat Bites food recommendation website
 #5) Implement Picture Linking system  EASY       X
 #6) Implement Flashing Messages EASY
 
+NOTE ON #1)
+-NEED to Connect Individual item results
+-Why do variables switch?
+-Guards for lack of results
+
 NOTE ON #4)
 Need to take pictures of places on campus
 

@@ -158,24 +158,20 @@
     <div class="leftcolumn">
       <div class="card">
         <center>
-          <h1><b>Bobcat Bites: Recommendation by Search</b></h1>
-          <!--             BUTTONS GO HERE            -->
-          <form method="post" action="/recommendbysearch/">
-          {{ form.csrf_token }}
-          {{ form.search }} 
-          {{ form.choice_select }}
-          <br>
-          <br>
-          <br>
-          {{form.submit}}
-          </form>
-          <p>
-          <h2>How this search works</h2>
-          This search works by selecting the appropriate search filter, with
-          name being the food name, flavor being the flavor you are interested in,
-          and ingredient being the ingredient you are interested in. PLEASE INPUT ONLY
-          ONE SEARCHABLE TERM AS IT WILL EVALUATE ANYTHING YOU PUT AS ONE TERM.
-          </p>
+            <h1><b>Bobcat Bites: Results: {{foodName}}</b></h1>
+            <!--             BUTTONS GO HERE            -->
+
+            <h2 class="foodinfo">{{foodName}}</h2>
+            <h3>From</h3>
+            <img src= "/static/foodimages/{{foodName}}.jpg" alt="FoodImage" width="400" height="500">
+            <h2 class="foodinfo">{{restaurantName}}</h2>
+            <h2 class="foodinfo">Located: {{restaurantLoc}}</h2>
+            <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
+            <form method="post">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <h3>{{form.accept}} {{form.deny}} {{form.reset}}</h3>
+            </form>
         </center>
       </div>
 

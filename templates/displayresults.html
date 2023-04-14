@@ -159,9 +159,7 @@
                 <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',list_index=0)}}">Tu Taco</a>
                 <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',list_index=0)}}">Wing it</a>
                 <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',list_index=0)}}">Woods
-                    St
-                    Pizza &
-                    Pasta</a>
+                    St Pizza & Pasta</a>
             </div>
         </div>
         <a href="https://forms.gle/sTzdMcBxncWQruvh8" style="float:right">Survey</a>
@@ -171,10 +169,15 @@
         <div class="leftcolumn">
             <div class="card">
                 <center>
-                    <h1><b>Bobcat Bites: Recommendation by Search</b></h1>
+                    <h1><b>Bobcat Bites: Search Results</b></h1>
                     <!--             BUTTONS GO HERE            -->
+                    <h2>Based on your search of {{searchType}}, the following results matched:</h2>
                     <p>
-                        Stuff here
+                    <ol>
+                        {%for i in range(0, len)%}
+                        <ul><a href="#News">{{results[i].name}}</a></ul>
+                        {%endfor%}
+                    </ol>
                     </p>
                     <p>
                     <h2>How this search works</h2>
