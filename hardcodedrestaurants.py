@@ -170,6 +170,13 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy", "meaty"], ["savory",
                  ["savory", "meaty", "saucy"], ["savory", "cheesy", "meaty"],["savory", "salty"],["sweet", "sugary"]]
 >>>>>>> 9d7953d01d323c5ee9fb5a879590252bc8727080
 
+chickfila=[]
+foodNames= [""]
+foodPrices= []
+foodIngredients= [[""]]
+foodAllergens = [[""]]
+flavorProfile = [[""]]
+
 # Test looper
 #for i in range(len(foodNames)):
 #    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
