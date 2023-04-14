@@ -14,7 +14,6 @@ from flask_login import logout_user, login_user, login_required, current_user
 #Algorithm information
 from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
 from hardcodedrestaurants import masterListRestaurants
-import copy
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import Form, StringField, SelectField, EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -53,8 +52,8 @@ def load_user(user_id):
 class FoodSearchForm(FlaskForm):
     choices = [('Name', 'Name'), ('Flavor', 'Flavor'),
                ('Ingredient', 'Ingredient')]
-    select = SelectField('Search for Recommendations', choices=choices)
-    search = StringField('', validators=[InputRequired()])
+    choice_select = SelectField('Search for Recommendations', choices=choices)
+    search = StringField('search', validators=[InputRequired()])
     submit = SubmitField("Search for Result")
 
 class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
@@ -410,22 +409,21 @@ def getRecommendationByRand():
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
 def getRecommendationBySearch():
-    search = FoodSearchForm(request.form)
-    if request.method == "POST":
-        return searchResults(search)
-    return render_template("displaysearch.html", form=search)
+    form = FoodSearchForm()
+    if form.validate_on_submit():
+        searchString = str(form.choice_select.data)
+        searchType = str(form.search.data)
+        print(f'was validated, searchString: {searchString}, searchType: {searchType}')
+        return redirect(url_for("searchResults", searchType=searchType, searchString=searchString))
+    return render_template("displaysearch.html", form=form)
 
-@app.route("/recommendbysearch/results", methods=["GET","POST"])
+@app.route("/recommendbysearch/results/<searchString><searchType>", methods=["GET","POST"])
 @login_required
-def searchResults(search):
+def searchResults(searchString, searchType):
+    print(f'This is the arguments {searchString}, {searchType}')
     results = []
-    searchString = search.data['search']
-    if not results:
-        flash('No Results have been found.')
-        return redirect(url_for('getRecommendationBySearch'))
-    else:
         #display the results here
-        print('hi')
+    print('Display the result')
     return render_template("displayresults.html", results=results)
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
@@ -446,7 +444,6 @@ def display_main():
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
 def create_profile():
-    print('at user profile')
     useremail = current_user.email
     user = Person.query.filter_by(email=useremail).first()
     form = ProfileForm(data={"taste_choices": user.tastes,

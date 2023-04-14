@@ -6,13 +6,13 @@ Bobcat Bites food recommendation website
 #2) Connect User favorited profile
 #3) TEST TEST TEST
 #4) Hard Code all Restaurants EASY- BUT TEDIOUS
-#5) Implement Picture Linking system  EASY
+#5) Implement Picture Linking system  EASY       X
 #6) Implement Flashing Messages EASY
 
 NOTE ON #4)
 Need to take pictures of places on campus
 
-NOTE ON #5)
+NOTE ON #5)  --DONE-- NICK M 4/13
 This will be easy since all pictures are the same route:
 "/static/images/<foodnamehere>.jpg"
 This is why its important the pictures be names == to the food item as it is on each 

@@ -1,0 +1,208 @@
+{% from "_formhelpers.html" import render_field %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: #8D734A;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+    <title>Bobcat Bites: Recommendation by Search</title>
+    <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <h1><strong>Bobcat Bites</strong></h1>
+        <h2>Food Recommendation System</h2>
+    </div>
+
+    <div class="navbar">
+        <a href="{{url_for('display_main')}}"> Main Page</a>
+        <a href="{{url_for('create_profile')}}">My Profile</a>
+        <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
+        <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
+        <a href="{{url_for('getRecommendationByRand')}}">Random Recommendation</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">Recommendation by Place
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird',list_index=0)}}">Absurd
+                    Bird</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ',list_index=0)}}">AJs BBQ</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',list_index=0)}}">Asado
+                    Latin
+                    Grill</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',list_index=0)}}">Blimpie
+                    American
+                    Subs</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512',list_index=0)}}">Burger
+                    512</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Campus Coffee and Tea',list_index=0)}}">Campus
+                    Coffee and
+                    Tea</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A',list_index=0)}}">Chick Fil
+                    A</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',list_index=0)}}">Coffee
+                    and
+                    Pi
+                    Market</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',list_index=0)}}">Create
+                    Premium Deli</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',list_index=0)}}">Dunkin
+                    Doughnuts</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einsteins Bagles',list_index=0)}}">Einstein's
+                    Bagles</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi',list_index=0)}}">Kawa
+                    Sushi</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe',list_index=0)}}">McCoy
+                    Cafe</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab',list_index=0)}}">Melt Lab</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Mondo Subs',list_index=0)}}">Mondo
+                    Subs</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express',list_index=0)}}">Panda
+                    Express</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut',list_index=0)}}">Pizza Hut
+                    Express</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey',list_index=0)}}">Pom and
+                    Honey</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',list_index=0)}}">Revolution
+                    Noodle</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty',list_index=0)}}">The Salty</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart',list_index=0)}}">Shake
+                    Smart</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks',list_index=0)}}">Starbucks</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co',list_index=0)}}">The Tea Co</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',list_index=0)}}">Tu Taco</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',list_index=0)}}">Wing it</a>
+                <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',list_index=0)}}">Woods
+                    St
+                    Pizza &
+                    Pasta</a>
+            </div>
+        </div>
+        <a href="https://forms.gle/sTzdMcBxncWQruvh8" style="float:right">Survey</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <center>
+                    <h1><b>Bobcat Bites: Recommendation by Search</b></h1>
+                    <!--             BUTTONS GO HERE            -->
+                    <p>
+                        Fuck This SHIT IM OUT
+                    </p>
+                    <p>
+                    <h2>How this search works</h2>
+                    This search works by selecting the appropriate search filter, with
+                    name being the food name, flavor being the flavor you are interested in,
+                    and ingredient being the ingredient you are interested in. PLEASE INPUT ONLY
+                    ONE SEARCHABLE TERM AS IT WILL EVALUATE ANYTHING YOU PUT AS ONE TERM.
+                    </p>
+                </center>
+            </div>
+
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h3>Need to Logout?</h3>
+                <p> Logout here:
+                    <a href="{{url_for('logout')}}">Logout</a>
+                </p><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This page was created on March 7 2023, at 11:05 (CST) for use in the Group Project Spring 2023. This service
+            and
+            its intellectual property is a registered trademark of Group 3 of Human Factors 4326.251 </p>
+    </div>
+
+</body>
+
+</html>
