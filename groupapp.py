@@ -411,16 +411,18 @@ def getRecommendationByRand():
 def getRecommendationBySearch():
     form = FoodSearchForm()
     if form.validate_on_submit():
-        searchString = str(form.choice_select.data)
-        searchType = str(form.search.data)
-        print(f'was validated, searchString: {searchString}, searchType: {searchType}')
-        return redirect(url_for("searchResults", searchType=searchType, searchString=searchString))
+        searchStringf = form.choice_select.data
+        searchTypef = form.search.data
+        print(f'was validated, searchStringf: {searchStringf}, searchTypef: {searchTypef}')
+        path = url_for("searchResults",searchString=searchStringf, searchType=searchTypef )
+        print(path)
+        return redirect(url_for("searchResults",searchString=searchStringf, searchType=searchTypef ))
     return render_template("displaysearch.html", form=form)
 
-@app.route("/recommendbysearch/results/<searchString><searchType>", methods=["GET","POST"])
+@app.route("/recommendbysearch/results/<searchString>/<searchType>", methods=["GET","POST"])
 @login_required
 def searchResults(searchString, searchType):
-    print(f'This is the arguments {searchString}, {searchType}')
+    print(f'Search String: {searchString}, Search Type:{searchType}')
     results = []
         #display the results here
     print('Display the result')
