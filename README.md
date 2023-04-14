@@ -2,7 +2,7 @@
 Bobcat Bites food recommendation website
 
 #MAJOR TODOS --updated 4/12/2023
-#1) Implement Search Bar w/ Results Page
+#1) Implement Search Bar w/ Results Page --In Progress--
 #2) Connect User favorited profile
 #3) TEST TEST TEST
 #4) Hard Code all Restaurants EASY- BUT TEDIOUS

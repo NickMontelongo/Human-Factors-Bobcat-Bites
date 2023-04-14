@@ -416,7 +416,7 @@ def getRecommendationBySearch():
         return redirect(url_for("searchResults",searchString=searchString, searchType=searchType ))
     return render_template("displaysearch.html", form=form)
 
-@app.route("/recommendbysearch/results/<searchString>/<searchType>", methods=["GET","POST"])
+@app.route("/recommendbysearch/results?searchString=<searchString>&searchType=<searchType>", methods=["GET","POST"])
 @login_required
 def searchResults(searchType, searchString):
     results = []
