@@ -14,7 +14,6 @@ from flask_login import logout_user, login_user, login_required, current_user
 #Algorithm information
 from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
 from hardcodedrestaurants import masterListRestaurants
-import copy
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
 from wtforms import Form, StringField, SelectField, EmailField, SubmitField, PasswordField, DecimalField, TextAreaField, widgets
@@ -53,8 +52,8 @@ def load_user(user_id):
 class FoodSearchForm(FlaskForm):
     choices = [('Name', 'Name'), ('Flavor', 'Flavor'),
                ('Ingredient', 'Ingredient')]
-    select = SelectField('Search for Recommendations', choices=choices)
-    search = StringField('', validators=[InputRequired()])
+    choice_select = SelectField('Search for Recommendations', choices=choices)
+    search = StringField('search', validators=[InputRequired()])
     submit = SubmitField("Search for Result")
 
 class QuerySelectMultipleFieldWithCheckboxes(QuerySelectMultipleField):
@@ -406,28 +405,68 @@ def getRecommendationByRand():
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, form=form)
 
-####NEED TO DO######
+
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
 @login_required
 def getRecommendationBySearch():
-    search = FoodSearchForm(request.form)
-    if request.method == "POST":
-        return searchResults(search)
-    return render_template("displaysearch.html", form=search)
+    form = FoodSearchForm()
+    if form.validate_on_submit():
+        searchString = form.choice_select.data
+        searchType = form.search.data
+        return redirect(url_for("searchResults",searchString=searchString, searchType=searchType ))
+    return render_template("displaysearch.html", form=form)
 
-@app.route("/recommendbysearch/results", methods=["GET","POST"])
+@app.route("/recommendbysearch/results?searchString=<searchString>&searchType=<searchType>", methods=["GET","POST"])
 @login_required
-def searchResults(search):
+def searchResults(searchType, searchString):
     results = []
-    searchString = search.data['search']
-    if not results:
-        flash('No Results have been found.')
-        return redirect(url_for('getRecommendationBySearch'))
-    else:
+    currentUserFoodPreferences = stringToArray(current_user.preferred_ingredients)
+    currentUserTastes = []
+    currentUserAllergens = []
+    for eachEntry in current_user.tastes:
+        if str(eachEntry) == "none":
+            currentUserTastes.append("none")
+            break
+        currentUserTastes.append(str(eachEntry))   
+    for eachEntry in current_user.allergens:
+        if str(eachEntry) == "none":
+            currentUserAllergens.append("none")
+            break
+        currentUserAllergens.append(str(eachEntry))
+    currentUserMaxBudget = current_user.budget_max
+    currentUserMinBudget = current_user.budget_min
+    currentRestaurantRecommendationList = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
+                                                                currentUserMaxBudget, currentUserFoodPreferences,
+                                                                currentUserAllergens, currentUserTastes)
+    print(f'This is search string {searchString}')
+    print(f'This is searchType: {searchType}')
+    if searchString == "Name":
+        print('In name')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                if searchType in eachFoodItem.name:
+                    results.append(eachFoodItem)
+                    break
+    elif searchString == "Ingredient":
+        print('In ingredients')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                for eachIngredient in eachFoodItem.ingredients:
+                    if searchType in eachIngredient:
+                        results.append(eachFoodItem)
+                        break
+    else: #searchType =="Flavor"
+        print('In flavor')
+        for eachEntry in currentRestaurantRecommendationList:
+            for eachFoodItem in eachEntry.foodList:
+                for eachFlavor in eachFoodItem.flavorProfile:
+                    if searchType in eachFlavor:
+                        results.append(eachFoodItem)
+                        break
         #display the results here
-        print('hi')
-    return render_template("displayresults.html", results=results)
+    return render_template("displayresults.html", results=results, len=len(results), searchType=searchType)
 
+@app.route("/")
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
 @login_required
 def displaySavedResults():
@@ -446,7 +485,6 @@ def display_main():
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
 def create_profile():
-    print('at user profile')
     useremail = current_user.email
     user = Person.query.filter_by(email=useremail).first()
     form = ProfileForm(data={"taste_choices": user.tastes,
