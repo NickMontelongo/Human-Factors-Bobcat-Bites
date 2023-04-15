@@ -242,7 +242,6 @@ flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], 
                  ["fresh", "savory", "spicy"], ["fresh", "savory", "spicy"], ["fresh", "savory", "meaty"], ["fresh", "savory", "meaty"], ["fresh", "savory", "bitter"], 
                  ["fresh", "savory"], ["fresh", "savory"], ["fresh", "cheese", "onion"]]
 
-<<<<<<< HEAD
 DunkinDoughnuts=[]
 foodNames= ["Sausage, Egg & Cheese Sandwich", "Bacon, Egg & Cheese Sandwich", "Turkey Sausage, Egg & Cheese Sandwich", "Egg & Cheese Sandwich","Sourdough Breakfast Sandwich", "Wake-Up Wrap", "Hash Brown", 
             "Muffins", "Donuts", "Munchkins Donut Hole Treats"]
@@ -254,8 +253,6 @@ foodAllergens = [["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "
                  ["starch"], ["egg", "chocolate", "dairy"], ["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "soy"]]
 flavorProfile = [["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey", "meaty"], ["savory", "cheesey"], 
                  ["savory"], ["sweet", "savory"], ["sweet", "savory"], ["sweet", "savory"]]
-
-=======
 
 WingIt=[]
 foodNames= ["Regular Tender Basket", "Large Tender Basket", "5 Wings", "Loaded Baked Potato", "Fried Cauliflower Basket", "Waffle Sliders", "Mac & Cheese",
@@ -302,7 +299,16 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
                  ["savory", "cheesy"], ["savory", "healthy"], ["savory", "cheesy"], ["healthy", "crunchy"], ["fruity", "healthy"],
                  ["healthy", "crunchy"], ["sweet"], ["savory", "meaty"], ["savory", "fresh"], ["savory", "cheesy"],
                  ["savory", "bready"], ["savory", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"], ["sweet"]]
->>>>>>> e4228611c384673a2c8fc4368322440865974095
+
+AsadoLatinGrill=[]
+foodNames= ["Refried Beans", "Black Beans", "Spanish Rice", "Grilled Chili Lime Chicken",
+            "Flank Steak Fajita", "Salsa Fresca", "Classic Guacamole", "Queso", "Chorizo Tofu", "cilantro lime rice"]
+foodPrices= [1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99] #FIND ACTUAL VALUES
+foodIngredients= [["Beans"], ["beans"], ["rice"], ["chicken", "lime"], ["Beef"], ["tomatoes", "jalapenos"], ["avocado"],
+                  ["cheese"], ["tofu", "Chorizo"], ["rice"]]
+foodAllergens = [[], [], ["gluten"], ["poultry"], [], ["tomato"], ["avocado"], ["dairy"], [], ["gluten"]]
+flavorProfile = [["savory"], ["savory"], ["savory"], ["savory", "meaty"], ["savory", "meaty"], ["spicy", "fresh"],
+                 ["fresh", "savory"], ["cheesy", "savory"], ["savory"], ["savory"]]
 
 
 EiensteinsBagels=[]
