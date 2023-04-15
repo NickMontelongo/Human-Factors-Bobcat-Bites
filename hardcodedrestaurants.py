@@ -103,6 +103,126 @@ foodIngredients= [[""]]
 foodAllergens = [[""]]
 flavorProfile = [[""]]
 
+ajsbbq=[]
+foodNames= ["Nachos Plain", "Nachos Chopped BBQ chicken", "Nachos Chopped brisket", "Nachos Beyond beef", "Jumbo Sandwiches", 
+            "Jumbo Sandwiches with side", "1 meat BBQ Plate", "2 meat BBQ Plate", "3 meat BBQ Plate", "Jumbo sausage wrap", 
+            "Brisket Mac n' Cheese", "Beyond beef Mac vegetarian", "Cheesecake Bites(3)"]
+foodPrices= [6.00, 8.00, 9.00, 9.00, 8.00, 10.00, 9.00, 11.00, 14.00, 5.00, 8.00, 9.00, 4.00]
+foodIngredients= [["cheese", "corn chips"],["cheese", "corn chips", "BBQ sause", "chicken"],["cheese", "corn chips", "brisket"],["cheese", "corn chips", "vegetarian beef"],
+                  ["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"], ["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"],["sausage", "sauce", "tortilla"], ["cheese", "brisket", "pasta"], ["vegetarian beef", "cheese", "pasta"],["cheese", "egg", "sauce"]]
+foodAllergens = [["dairy", "gluten"],["dairy", "gluten", "chicken"],["dairy", "gluten", "beef"],["dairy", "gluten"], ["gluten", "chicken", "beef", "pork"], ["gluten", "chicken", "beef", "pork"],
+                 ["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["gluten", "pork"], ["cheese", "brisket", "pasta"], ["gluten", "dairy", "pasta"],
+                   ["dairy", "egg", "gluten"]]
+flavorProfile = [["cheesey", "savory"], ["cheesey", "sweet", "savory"], ["cheesey", "meaty", "dry"], ["cheesey", "sweet"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
+                 ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["sweet", "gluten", "savory"]]
+
+ShakeSmart=[]
+foodNames= ["Rawcai bowl", "Raw-PB Bowl", "The Buzz Bowl", "Original Acai Bowl", "PB&A bowl", "Dragon Bowl", "Peanut Butter toast",
+            "Almond Butter Toast", "Avocado Toast", "Turks and Matoes wrap", "Rubi's Tuna Salad", "Veggie Delight"]
+foodPrices= [7.50, 7.50, 7.50, 7.50, 7.50, 7.50, 4.75, 5.25, 5.75, 8.45, 8.45, 7.95]
+foodIngredients= [["granola", "banana", "chocolate", "coconut"], ["granola", "banana", "peanut butter"], ["granola", "pineapple", "coconut"],
+                  ["strawberry", "apple", "granola"], ["peanut butter", "banana", "granola"], ["pineapple", "granola", "chia"],
+                  ["peanut butter", "bread"], ["almond butter", "bread", "banana"], ["avocado", "bread"],["hummus", "tomato"],
+                  ["tuna", "carrots", "spinach"], ["tomato", "hummus"]]
+foodAllergens = [[], ["peanut butter"], [], [], ["peanut butter"], [], ["peanut butter"], ["nuts"], [], [], [], []]
+flavorProfile = [["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
+                 ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
+                 ["Sweet", "bready"], ["Sweet", "healthy"], ["Savory", "healthy"], ["fresh", "healthy"],
+                 ["fresh", "healthy"], ["fresh", "healthy"]]
+
+TuTaco=[]
+foodNames= ["Migas Taco", "Bean & Cheese Taco", "Bacon, Egg, & Cheese Taco", "Chilaquiles Taco", "Chorizo & Egg Taco", "Egg Taco",
+            "Chicken Quesadilla", "Cheese Quesadilla", "Al Pastor Quesadilla", "Beef Quesadilla", "Steak Quesadilla", "Beyond Meat Quesadilla",
+            "Al Pastor Taco Salad", "Beef Taco Salad", "Beyond Meat Taco Salad", "Chicken Taco Salad", "Steak Taco Salad",
+            "Chicken Burrito", "Steak Burrito", "Beyond Meat Burrito", "Beef Burrito", "Al Pastor Burrito", "Chicken Taco",
+            "Steak Taco", "Beyond Meat Taco", "Beef Taco", "Al Pastor Taco", "Nachos", "Chips and Salsa",
+            "Chips and Guacamole"]
+foodPrices= [2.59, 2.39, 2.59, 2.59, 2.59, 1.99, 7.49, 5.99, 7.49, 6.99, 8.49, 7.49, 7.49, 6.99, 7.49, 7.49, 8.49, 7.49,
+             8.99, 7.49, 6.99, 7.49, 2.99, 3.09, 3.09, 2.39, 3.09, 5.99, 1.99, 3.19]
+foodIngredients= [["egg", "cheese", "bread"], ["bean", "cheese"], ["bacon", "egg", "cheese"],["egg", "cheese", "bread"],
+                  ["egg", "cheese", "bread", "chorizo"], ["egg", "bread"], ["chicken", "bread", "cheese"],
+                  ["bread", "cheese"], ["pork", "bread", "cheese"], ["beef", "bread", "cheese"], ["beef", "bread", "cheese"],
+                  ["bread", "cheese"], ["pork", "bread", "cheese"], ["beef", "bread", "cheese"], ["bread", "cheese"],
+                  ["Chicken", "bread", "cheese"], ["beef", "bread", "cheese"], ["chicken", "bread", "cheese"], ["steak", "bread", "cheese"],
+                  ["bread", "cheese"], ["beef", "bread", "cheese"], ["pork", "bread", "cheese"], ["chicken", "bread", "cheese"],
+                  ["steak", "bread", "cheese"], ["bread", "cheese"], ["beef", "bread", "cheese"], ["pork", "bread", "cheese"],
+                  ["chips", "cheese"], ["chips", "salsa"], ["chips", "Avocado"]]
+foodAllergens = [["eggs", "gluten", "dairy"], ["gluten", "dairy"], ["eggs"], ["eggs"], ["eggs"], ["eggs"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten"], ["gluten"], ["gluten"]]
+flavorProfile = [["egg", "cheese", "savory"], ["savory"], ["savory", "salty"], ["savory"], ["egg", "cheese", "bread"],
+                 ["savory"], ["chicken", "savory"], ["savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"],
+                 ["savory"], ["savory", "meaty"], ["savory", "meaty"], ["savory"], ["savory", "meaty"], ["savory", "meaty"],
+                 ["savory", "meaty"], ["savory", "meaty"], ["savory", "meaty"],["savory","meaty"], ["savory", "meaty"],
+                 ["savory", "meaty"], ["savory", "meaty"], ["savory","meaty"],["savory"], ["savory", "meaty"], ["savory", "cheesy"],
+                 ["savory", "salty"],["savory", "healthy"]]
+
+WoodsStPizza=[]
+foodNames= ["Cheese Pizza Slice", "Pepperoni Pizza Slice", "Alfredo and Veggie Pizza Slice", "Bacon and Herbs Pizza Slice",
+            "Pepperoni Calzone", "Weekly Pasta Bowl", "Garlic Knots", "Cookie"]
+foodPrices= [3.29, 3.29, 4.19, 4.19, 4.49, 5.49, 1.09, 1.99]
+foodIngredients= [["cheese", "bread", "tomato sauce"], ["cheese", "bread", "tomato sauce", "pepperoni"], ["cheese", "bread", "Alfredo sauce", "Veggies"],
+                  ["cheese", "bread", "tomato sauce", "Bacon"], ["cheese", "bread", "tomato sauce", "pepperoni"], ["pasta", "sauce"],
+                  ["garlic"], ["sugar", "chocolate"]]
+foodAllergens = [["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
+flavorProfile = [["savory", "cheesy"], ["savory", "cheesy", "meaty"], ["savory", "cheesy", "meaty"], ["savory", "cheesy", "saucy"],
+                 ["savory", "meaty", "saucy"], ["savory", "cheesy", "meaty"],["savory", "salty"],["sweet", "sugary"]]
+
+RevolutionNoodle=[]
+foodNames= ["Shio Ramen", "Veggie Ramen", "Spicy Miso Ramen", "Curry Ramen", "Smoked Brisket Ramen", "Tsukimi Ramen", "Flying Pig Sandwich",
+            "Chicken Run Sandwich", "Kickin Tofu Sandwich", "Chicken Dumplings", "Pork Dumplings", "Veggie Dumplings", "Vietnamese Sandwich",
+            "Spring Rolls", "Egg Rolls"]
+foodPrices= [7.99, 7.99, 7.99, 7.99, 7.99, 7.99, 5.99, 5.99, 3.99, 7.29, 7.29, 7.29, 4.95, 4.49, 3.25]
+foodIngredients= [["Chicken", "Noodle", "Broth", "egg"], ["Chicken", "Noodle", "Broth", "egg"], ["Curry", "Noodle", "Broth", "egg"],
+                  ["Brisket", "Noodle", "Broth", "egg"], ["Pork", "Noodle", "Broth", "egg"], ["Por", "Noodle", "Broth", "egg"],
+                  ["pork", "bread"], ["Chicken", "bread"], ["Tofu", "bread"], ["Chicken", "bread"], ["Pork", "bread"],
+                  ["Veggies", "bread"], ["Bread", "Beef"], ["Veggies"], ["Veggies", "egg", "pork"]]
+foodAllergens = [["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"],
+                 ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
+flavorProfile = [["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "Fresh"], ["savory", "salty", "meaty"], ["savory", "salty"],
+                 ["savory", "salty", "meaty"]]
+
+chickfila=[]
+foodNames= ["Chicken Sandwich", "Deluxe Sandwich w/ cheese", "Spicy Chicken Sandwich", "Spicy Deluxe Sandwich w/ cheese", "Grilled Chicken Sandwich", "Grilled Chicken Club w/ cheese", 
+            "5 ct Chicken Nuggets", "8 ct Chicken Nuggets", "12 ct Chicken Nuggets", "30 ct Chicken Nuggets", "5 ct Grilled Nuggets", "8 ct Grilled Nuggets", "12 ct Grilled Nuggets", 
+            "2 ct Chick-n-Strips", "3 ct Chick-n-Strips", "4 ct Chick-n-Strips", "Cool Wrap", "Cobb Salad", "Spicy Southwest Salad", "Grilled Market Salad", "Chicken Biscuit", 
+            "Spicy Chicken Biscuit", "4 ct Chick-n-Minis", "Egg White Grill", "Hash Brown Scramble Burrito w/ Nuggets", "Hash Brown Scramble Bowl w/ Nuggets", "Chicken, Egg & Cheese Biscuit", 
+            "Bacon, Egg & Cheese Biscuit", "Sausage, Egg & Cheese Biscuit", "Chicken, Egg & Cheese Muffin", "Bacon, Egg & Cheese Muffin", "Sausage, Egg & Cheese Muffin"]
+foodPrices= [6.49, 7.39, 6.89, 7.79, 11.05, 4.50, 6.59, 9.05, 22.55, 4.79, 7.65, 10.89, 4.75, 6.99, 8.79, 10.49, 12.35, 12.59, 12.59, 8.95, 9.29, 10.25, 10.85, 10.79, 10.79, 10.39,
+             9.49, 9.49, 10.49, 9.75, 9.75]
+foodIngredients= [["chicken", "bread", "breading", "pickles"],["chicken", "bread", "breading", "tomato", "lettuce", "pickles", "cheese"],["chicken", "spice", "bread", "breading", "pickles"],
+                  ["chicken", "bread", "breading", "spice", "tomato", "lettuce", "pickles", "cheese"],["chicken", "spice", "bread", "breading", "pickles"], ["bread", "chicken", "tomato", "lettuce", "Honey Roasted BBQ sauce"], 
+                  ["chicken", "bread", "tomato", "lettuce", "bacon", "Honey Roasted BBQ Sauce"], ["chicken", "breading"], ["chicken", "breading"], 
+                  ["chicken", "breading"], ["chicken", "breading"], ["chicken"], ["chicken"], ["chicken"], ["chicken", "breading"], ["chicken", "breading"], 
+                  ["chicken", "breading"], ["chicken", "cheese", "lettuce", "tortilla", "Avocado lime ranch Dressing"], ["chicken", "breading", "mixed greens", "corn", "cheese", "bacon", "egg", "tomato", "Avocado lime ranch Dressing"], 
+                  ["chicken", "spice", "mixed greens", "tomatoes", "cheese", "corn", "black beans", "poblano chiles", "red pepper", "creamy salad dressing"], ["chicken", "mixed greens", "cheese", "apples", "strawberries", "blueberries", "nut granola", "almonds", "Zesty Apple Cider Vinaigrette"], 
+                  ["chicken", "biscuit"], ["chicken", "spice", "biscuit"], ["chicken", "biscuit"], ["chicken", "english muffin", "cheese"], ["chicken", "hask browns", "egg", "cheese", "tortilla", "jalapeno salsa"], 
+                  ["chicken", "hash browns", "egg", "cheese", "Jalapeno Salsa"], ["chicken", "egg", "cheese"], ["bacon", "egg", "cheese", "biscuit"], ["sausage", "egg", "cheese", "biscuit"], ["chicken", "egg", "cheese", "english muffin"], 
+                  ["bacon", "egg", "cheese", "english muffin"], ["sausage", "egg", "cheese", "english muffin"]]
+foodAllergens = [["gluten", "chicken"], ["dairy", "chicken", "gluten"], ["gluten", "chicken"], ["dairy", "chicken", "gluten"], ["dairy", "chicken", "gluten"], 
+                 ["dairy", "chicken", "gluten", "pork"], ["chicken", "gluten"], ["chicken", "gluten"], ["chicken", "gluten"], ["chicken", "gluten"],
+                 ["chicken"], ["chicken"], ["chicken"], ["chicken", "gluten"], ["chicken", "gluten"], ["chicken", "gluten"], ["chicken", "gluten"], 
+                 ["chicken", "avocado"], ["chicken", "dairy"], ["chicken", "dairy", "fruit"], ["chicken"], ["gluten", "chicken"], ["chicken", "gluten"], 
+                 ["chicken", "dairy", "gluten"], ["chicken", "dairy", "gluten"], ["chicken", "dairy"], ["chicken", "egg", "dairy"], ["chicken", "egg", "dairy", "pork"], 
+                 ["pork", "egg", "dairy", "gluten"], ["chicken", "egg", "dairy", "gluten"], ["pork", "egg", "dairy", "gluten"], ["pork", "egg", "dairy", "gluten"]]
+flavorProfile = [["meaty", "savory"], ["fresh", "meaty", "savory"], ["meaty", "savory"], ["fresh", "meaty", "savory"], ["fresh", "meaty", "savory"], 
+                 ["fresh", "meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"],
+                 ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
+                 ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["meaty", "savory"], ["meaty", "savory", "spicy"],
+                 ["meaty", "savory"], ["meaty", "savory"],  ["meaty", "savory"], ["cheesey", "savory", "spicy"], ["meaty", "savory", "cheesey"], 
+                 ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"]]
+
 # Test looper
 #for i in range(len(foodNames)):
 #    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
