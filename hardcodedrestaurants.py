@@ -242,7 +242,17 @@ flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], 
                  ["fresh", "savory", "spicy"], ["fresh", "savory", "spicy"], ["fresh", "savory", "meaty"], ["fresh", "savory", "meaty"], ["fresh", "savory", "bitter"], 
                  ["fresh", "savory"], ["fresh", "savory"], ["fresh", "cheese", "onion"]]
 
-
+DunkinDoughnuts=[]
+foodNames= ["Sausage, Egg & Cheese Sandwich", "Bacon, Egg & Cheese Sandwich", "Turkey Sausage, Egg & Cheese Sandwich", "Egg & Cheese Sandwich","Sourdough Breakfast Sandwich", "Wake-Up Wrap", "Hash Brown", 
+            "Muffins", "Donuts", "Munchkins Donut Hole Treats"]
+foodPrices= [5.39, 5.39, 5.39, 4.39, 5.99, 1.59, 0.99, 1.35, 3.50]
+foodIngredients= [["croissannt", "bagel", "english muffin", "sausage", "egg", "cheese"], ["bagel", "biscuit", "croissant", "english muffin", "bacon", "egg", "cheese"], 
+                  ["english muffin", "turkey sausage", "egg", "cheese"], ["bagle", "croissant", "english muffin", "egg", "cheese"], ["sourdough bread", "egg", "bacon", "cheese"], ["tortilla", "egg" , "cheese", "bacon", "sausage", "turkey sausage"], 
+                  ["potatoe"], ["buttermilk", "flour", "carrot", "blueberry", "chocolate chip", "coffee", "corn"], ["wheat flour" ,"yeast donut concentrate", "egg"], ["wheat flour" ,"yeast donut concentrate", "egg"]]
+foodAllergens = [["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "pork"], ["dairy", "egg", "gluten", "soy"], 
+                 ["starch"], ["egg", "chocolate", "dairy"], ["dairy", "egg", "gluten", "soy"], ["dairy", "egg", "gluten", "soy"]]
+flavorProfile = [["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey"], ["savory", "cheesey", "meaty"], ["savory", "cheesey"], 
+                 ["savory"], ["sweet", "savory"], ["sweet", "savory"], ["sweet", "savory"]]
 
 
 # Test looper
