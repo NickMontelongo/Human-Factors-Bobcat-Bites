@@ -318,7 +318,16 @@ foodIngredients= [[""]]
 foodAllergens = [[""]]
 flavorProfile = [[""]]
 
-
+MeltLab=[]
+foodNames= ["Classic Sandwich", "Sunrise Sandwich", "The Italian Sandwich", "Mac Attack Sandwich", "The Big Cheese Sandwich", 
+            "Lil Buffalo Sandwich", "Turkey Melt Sandwich", "Patty Melt", "Vegan Classic", "Vegan Patty Melt", "Vegan Eggplant Parm", 
+            "Classic Mac & Cheese Bake", "Vegan Mac Bake", "Buffalo Mac Bake"]
+foodPrices= [2.99, 4.99, 6.99, 6.49, 4.99, 6.49, 6.99, 10.99, 3.99, 9.99, 6.99, 5.99, 6.99, 6.99]
+foodIngredients= [[""]]
+foodAllergens = [[""]]
+flavorProfile = [["meaty", "fresh", "savory"], ["fresh", "savory"], ["meaty", "fresh", "savory"], ["savory" ,"cheesey"], ["savory" ,"cheesey"], 
+                 ["sweet", "savory", "tangy", "meaty"], ["meaty", "savory"], ["savory" ,"cheesey", "meaty"], ["fresh", "savory"], ["fresh", "savory"], 
+                ["fresh", "savory"], ["cheesey", "savory"], ["cheesey", "fresh", "savory"], ["sweet", "cheese", "tangy", "savory"]]
 
 # Test looper
 #for i in range(len(foodNames)):
