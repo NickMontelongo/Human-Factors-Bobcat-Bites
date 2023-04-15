@@ -304,6 +304,16 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
                  ["savory", "bready"], ["savory", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"], ["sweet"]]
 >>>>>>> e4228611c384673a2c8fc4368322440865974095
 
+
+EiensteinsBagels=[]
+foodNames= [""]
+foodPrices= []
+foodIngredients= [[""]]
+foodAllergens = [[""]]
+flavorProfile = [[""]]
+
+
+
 # Test looper
 #for i in range(len(foodNames)):
 #    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
