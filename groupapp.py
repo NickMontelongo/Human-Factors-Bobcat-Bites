@@ -180,7 +180,7 @@ class Person(database.Model, UserMixin):
     preferred_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
-    
+
     #users favorite foods
     userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
 
@@ -217,8 +217,8 @@ database.Table(
 
 class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    parent_restaurant = database.Column(database.String(20), nullable=False)
-    food_name = database.Column(database.String(20), nullable=False)
+    parent_restaurant = database.Column(database.String(40), nullable=False)
+    food_name = database.Column(database.String(40), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
     def __repr__(self):
         return self.food_name
@@ -228,13 +228,10 @@ database.Table(
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
+
 def loadCurrentUserBaseProfile():
-    '''Function to load up the baseline for user profile, allows user to skip profile creation
+    '''Function to load up the base information for user profile, allows user to skip profile creation
     Parameters: (none)   Returns: (none)'''
-    baseAllergens = ['none']
-    baseTastes = ['none']
-    basePrefIngredients = 'none'
-    baseFavFoods = ['none']
     if current_user.budget_min == None:
         current_user.budget_min = 3.00
     if current_user.budget_max == None:
@@ -243,7 +240,30 @@ def loadCurrentUserBaseProfile():
         current_user.preferred_ingredients = "none"
     database.session.commit()
 
-
+def loadUserFavoriteFoods(masterListofRestaurants):
+    '''Function to load every food item into userFavoriteFoods, that starts the process to
+    building the relationship between current user and their preferred foods
+    Parameters: (List of Restaurants with food objects)   Returns: (none)'''
+    databaseUserFavFood = Userfavoritefood.query.all()
+    databaseFoodList =[]
+    databaseRestaurantList=[]
+    #Loads every pre-existing entry in database to an array (none if there is none)
+    for eachEntry in databaseUserFavFood:
+        databaseFoodList.append(eachEntry.food_name)
+        databaseRestaurantList.append(eachEntry.parent_restaurant)
+    #evaluates each food item in master list and if in the database does not attempt to add
+    #if not in the database, database model object created using restaurant name/food name and committed
+    for eachRestaurant in masterListofRestaurants:
+        for eachFoodItem in eachRestaurant.foodList:
+    #checks foodname/restaurant combination for passing since common items like fries can exist in multiple restaurants
+            if (eachFoodItem.name in databaseFoodList) and (eachRestaurant.restaurantName in databaseRestaurantList):
+                continue
+            else:
+                foodItem = Userfavoritefood(parent_restaurant=eachRestaurant.restaurantName,
+                                            food_name=eachFoodItem.name)
+                database.session.add(foodItem)
+                database.session.commit()
+    return
 
 
 def loadTastes():
@@ -291,6 +311,7 @@ def title():
     #Preload databases with tables
     loadAllergens()
     loadTastes()
+    loadUserFavoriteFoods(masterListRestaurants)
     return render_template("title.html")
 
 
