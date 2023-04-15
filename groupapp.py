@@ -221,7 +221,7 @@ class Userfavoritefood(database.Model):
     food_name = database.Column(database.String(40), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
     def __repr__(self):
-        return self.food_name
+        return self.id
 
 database.Table(
         "person_userfavoritefood",
