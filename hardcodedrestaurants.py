@@ -223,6 +223,28 @@ flavorProfile = [["meaty", "savory"], ["fresh", "meaty", "savory"], ["meaty", "s
                  ["meaty", "savory"], ["meaty", "savory"],  ["meaty", "savory"], ["cheesey", "savory", "spicy"], ["meaty", "savory", "cheesey"], 
                  ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"], ["meaty", "savory", "cheesey"]]
 
+CreatePremiumDeli=[]
+foodNames= ["6 inch The Piglet", "6 inch Jones Club", "6 inch Pesto Chicken", "6 inch The Italian", "6 inch The OG", "6 inch Edgy Veggie", "12 inch The Piglet", "12 inch Jones Club", "12 inch Pesto Chicken", 
+            "12 inch The Italian", "12 inch The OG", "12 inch Edgy Veggie", "West Coast Cobb Salad", "Chopped Wedge Salad", "Classic Ceasar Salad"]
+foodPrices= [4.99, 5.99, 6.49, 5.49, 5.99, 5.49, 7.99, 8.99, 9.99, 8.49, 8.99, 7.99, 7.49, 5.49, 4.99]
+foodIngredients= [["cheese", "ham", "lettuce", "tomato", "mayo", "Mustard"], ["turkey", "ham", "cheese", "bacon", "lettuce", "tomato", "jalapeno ranch"], 
+                  ["pesto chicken", "spinach", "cheese", "tomato", "black olives", "pesto mayo"], ["cheese", "ham", "salami", "pepperoni", "capicola", "lettuce", "tomato", "Onion", "oil & vinegar", "salt & pepper"], 
+                  ["turkey", "cheese", "lettuce", "tomato", "honey", "Dijon Dressing"], ["beet", "vegan cheese", "spinach", "tomato", "onion", "bell pepper", "oil & vinegar", "salt & pepper"], 
+                  ["cheese", "ham", "lettuce", "tomato", "mayo", "mustard"], ["turkey", "ham", "cheese", "bacon", "lettuce", "tomato", "jalapeno Ranch"], 
+                  ["cheese", "ham", "salami", "pepperoni", "capicola", "lettuce", "tomato", "Onion", "oil & vinegar", "salt & pepper"], ["turkey", "cheese", "lettuce", "tomato", "Honey Dijon Dressing"], 
+                  ["beet", "vegan cheese", "spinach", "tomato", "onion", "bell pepper", "oil & vinegar", "salt & pepper"], ["chicken", "romaine", "spinach", "bacon", "egg", "tomato", "black olives", "Guacamole"], 
+                  ["romaine", "tomato", "red onion", "bacon", "cheese", "walnut"], ["romaine", "croutons", "parmesan", "red onion"]]
+foodAllergens = [["dairy", "pork"],["turkey", "pork", "dairy"], ["chicken", "dairy", "olives"], ["dairy", "pork"], ["turkey", "dairy"], ["beet", "onion", "pepper"], 
+                 ["dairy", "pork", "mayo", "mustard"], ["turkey", "pork", "dairy", "jalapeno"], ["pesto chicken", "spinach", "cheese", "tomato", "black olives", "pesto mayo"], 
+                 ["dairy", "pork", "gluten"], ["gluten", "dairy", "turkey"], ["gluten", "onion", "beet"], ["chicken", "pork", "egg", "olive", "guacamole"], ["walnuts", "onion", "pork", "dairy"], 
+                 ["cheese", "onion", "gluten"]]
+flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], 
+                 ["fresh", "savory", "spicy"], ["fresh", "savory", "spicy"], ["fresh", "savory", "meaty"], ["fresh", "savory", "meaty"], ["fresh", "savory", "bitter"], 
+                 ["fresh", "savory"], ["fresh", "savory"], ["fresh", "cheese", "onion"]]
+
+
+
+
 # Test looper
 #for i in range(len(foodNames)):
 #    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
