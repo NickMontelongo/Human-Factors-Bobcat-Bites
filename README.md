@@ -30,8 +30,8 @@ NEXT UPDATE
 DUE: 4/15/2023?
 IMPLEMENT USER FAVORITING SYSTEM
 NEEDS TO DO:
-- Link search query results to the individual results page
-- Produce messages to the user (#4)
+- Link search query results to the individual results page -Favoriting System
+- Produce messages to the user -Favoriting System
 - Edit search algorithm to exclude favorite items saved by user (possibly implement a dictionary?)
 - Write a loading function that sets every single food item to exist in Database
 - Figure out how to pull food item and restaurant item from database

@@ -180,9 +180,7 @@ class Person(database.Model, UserMixin):
     preferred_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
-    #flags for keeping track of user reset
-    rand_flag = database.Column(database.Boolean)
-    restaurant_flag =  database.Column(database.Boolean)
+    
     #users favorite foods
     userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
 
@@ -530,8 +528,6 @@ def create_profile():
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
         user.preferred_ingredients = form.user_preferred_ingredients.data
-        current_user.restaurant_flag = True
-        current_user.rand_flag = True
         database.session.commit()
     return render_template("profile.html", user=useremail, messageToUser=messageToUser,form=form)
 
