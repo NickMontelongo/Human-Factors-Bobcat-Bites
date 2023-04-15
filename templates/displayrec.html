@@ -161,12 +161,17 @@
           <img src= "/static/foodimages/{{foodName}}.jpg" alt="FoodImage" width="400" height="500">
           <h2 class="foodinfo">{{restaurantName}}</h2>
           <h2 class="foodinfo">Located: {{restaurantLoc}}</h2>
+          <h2 class="foodinfo">Price: ${{foodPrice}} </h2>
           <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
           <form method="post">
           {{ form.hidden_tag() }}
           {{ form.csrf_token }}
           <h3>{{form.accept}} {{form.deny}} {{form.reset}}</h3>
           </form>
+          {% if messageToUser!='' %}
+          <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
+          </p>
+          {%endif%}
         </center>
       </div>
 

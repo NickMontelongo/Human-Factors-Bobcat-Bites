@@ -1,54 +1,37 @@
 # Human-Factors-Bobcat-Bites
 Bobcat Bites food recommendation website
 
-#MAJOR TODOS --updated 4/12/2023
-#1) Implement Search Bar w/ Results Page --In Progress--
-#2) Connect User favorited profile
+#MAJOR TODOS --updated 4/14/2023
+#1) Connect User favorited profile and connect search results to individual food items
+#2) Hard Code all Restaurants EASY- BUT TEDIOUS Being Worked On
 #3) TEST TEST TEST
-#4) Hard Code all Restaurants EASY- BUT TEDIOUS
-#5) Implement Picture Linking system  EASY       X
-#6) Implement Flashing Messages EASY
+#4) Implement Flashing Messages EASY
 
 NOTE ON #1)
 -NEED to Connect Individual item results
 -Why do variables switch?
 -Guards for lack of results
 
-NOTE ON #4)
+NOTE ON #2)
 Need to take pictures of places on campus
 
-NOTE ON #5)  --DONE-- NICK M 4/13
-This will be easy since all pictures are the same route:
-"/static/images/<foodnamehere>.jpg"
-This is why its important the pictures be names == to the food item as it is on each 
-restaurants food list we can basically handle this by saying:
-restaurantImageString = "/static/images/" + FOODITEMNAME + ".jpg"
-
-NOTE ON #6) 
+NOTE ON #4) 
 This should be easy MOST (not all) of the flashing messages are encoded in the groupapp.py file
 and technically just need the appropriate code to display on the html side, need to
 google how but should only require basic functionality
 Flashing Messages should occur:
-1) when user has cycled through all results in (recommend by restaurant) and will be reloaded
+1) when user has cycled through all results in (recommend by restaurant) and will be reloaded x
 2) when user is adding to their favorites, the item is added
 3) when user is resetting information in (recommend by restaurant)
-4) when the profile has been updated?
+4) when the profile has been updated? x
 Data Log 4/12/2023
-
-TO DO:
-NEXT UPDATE 
-DUE: 4/14/2023
-IMPLEMENT AND MAKE A MOSTLY FULLY RUNNING SEARCH BAR
-NEEDS TO DO:
-- Search for a food item based on one supplied criteria
-x have a brief description on the search page explaining how it works (keep it generic for search terms)
-- can search based on name, flavor, ingredients
-- If cant find any results user is alerted
 
 NEXT UPDATE 
 DUE: 4/15/2023?
 IMPLEMENT USER FAVORITING SYSTEM
 NEEDS TO DO:
+- Link search query results to the individual results page -Favoriting System
+- Produce messages to the user -Favoriting System
 - Edit search algorithm to exclude favorite items saved by user (possibly implement a dictionary?)
 - Write a loading function that sets every single food item to exist in Database
 - Figure out how to pull food item and restaurant item from database

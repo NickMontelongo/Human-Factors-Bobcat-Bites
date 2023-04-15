@@ -151,6 +151,10 @@
                         {{ user }}
                         {% endif %}'s Profile</b></h1>
                 <!--             BUTTONS GO HERE            -->
+                {% if messageToUser!='' %}
+                <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
+                </p>
+                {%endif%}
                 <form method="POST" action="">
                     {{ form.csrf_token }}
                     {{ form.hidden_tag() }}
