@@ -157,7 +157,7 @@
                         <ul><a href="{{url_for('displayFoodItem',foodName=results[i].get('name'), restaurantName=results[i].get('rname'), restaurantLocation=results[i].get('rlocation'), foodPrice=results[i].get('price'),foodScore=results[i].get('score'))}}">{{results[i].get('name')}}</a></ul>
                         {%endfor%}
                         {% if len==0 %}
-                        <p style="color: blue" ,style="font-size:400%" ;><b>Sorry No Results found for {{searchString}}. </b>
+                        <p style="color: blue" ,style="font-size:400%" ;><b>Sorry, no saved results yet. </b>
                         </p>
                         {%endif%}
                     </ol>
