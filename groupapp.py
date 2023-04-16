@@ -520,23 +520,22 @@ def searchResults(searchType, searchString):
 
 @app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
 @login_required
-def displayFoodItem(messageConfirmation, foodName,restaurantName, 
+def displayFoodItem(foodName,restaurantName, 
                     restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
-    messageConfirmation=''
     if form.validate_on_submit():
         if form.accept.data:
             foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
-            messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationBySearch"))
         if form.deny.data:         
             return redirect(url_for("getRecommendationBySearch"))
     return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
                            foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
-                            messageConfirmation=messageConfirmation, form=form)
+                            form=form)
 
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])

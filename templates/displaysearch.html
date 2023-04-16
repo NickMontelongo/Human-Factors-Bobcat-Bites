@@ -159,6 +159,13 @@
       <div class="card">
         <center>
           <h1><b>Bobcat Bites: Recommendation by Search</b></h1>
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+          <h3 style="color: greenyellow" ,style="font-size:400%" ;>{{message}}</h3>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
           <!--             BUTTONS GO HERE            -->
           <form method="post" action="/recommendbysearch/">
           {{ form.csrf_token }}
