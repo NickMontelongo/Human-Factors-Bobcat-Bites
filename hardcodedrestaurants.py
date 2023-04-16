@@ -21,7 +21,7 @@ masterListRestaurants = []
 
 def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, restaurantName, restaurantLocation,
-                         foodList showResults=False):
+                         foodList, showResults=False):
     """Use this function to create the restaurant object will lowercase all food names,
     uppercase the restaurant location and restaurant name. And finally create the object and 
     display it"""
