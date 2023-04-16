@@ -343,12 +343,19 @@ def getRecommendationByRestaurant(restaurant, list_index):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
+    favFoodArray = user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
-                                                                currentUserAllergens, currentUserTastes)
+                                                                currentUserAllergens, currentUserTastes, userFavoriteList,
+                                                                restaurant)
             break
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
@@ -406,9 +413,15 @@ def getRecommendationByRand():
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
     randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+    favFoodArray = current_user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
-                                                                      currentUserAllergens, currentUserTastes)
+                                                                      currentUserAllergens, currentUserTastes,userFavoriteList)
     randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
     while masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore < 1.5:
         randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
@@ -463,9 +476,15 @@ def searchResults(searchType, searchString):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = current_user.budget_max
     currentUserMinBudget = current_user.budget_min
+    favFoodArray = current_user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     currentRestaurantRecommendationList = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
-                                                                currentUserAllergens, currentUserTastes)
+                                                                currentUserAllergens, currentUserTastes, userFavoriteList)
     if searchType == "Name":
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
@@ -541,9 +560,9 @@ def displaySavedResults():
     minBudget = current_user.budget_min
     favFoodArray = current_user.userfavoritefoods
     userFavoriteList = []
-    for eachDatabaseString in favFoodArray:
-        eachDatabaseString = str(eachDatabaseString)
-        tempArray = stringToArrayNoLower(eachDatabaseString)
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
