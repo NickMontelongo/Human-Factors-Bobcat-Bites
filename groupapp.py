@@ -365,24 +365,19 @@ def getRecommendationByRestaurant(restaurant, list_index):
             else:
                 messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
                 list_index = 0
-            print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
             messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
                 messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
-                list_index = 0
-            print('deny was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
+                list_index = 0       
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index=list_index))
         if form.reset.data:
-            print('reset was used')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, 
@@ -427,16 +422,12 @@ def getRecommendationByRand():
     messageConfirmation =''
     if form.validate_on_submit():
         if form.accept.data:
-            print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
             messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
             database.session.commit()
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRand"))
         if form.deny.data:
-            print('deny was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
             return redirect(url_for("getRecommendationByRand"))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodName=recommendedFoodName, 
@@ -476,7 +467,6 @@ def searchResults(searchType, searchString):
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
                                                                 currentUserAllergens, currentUserTastes)
     if searchType == "Name":
-        print('In name')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 if searchString in eachFoodItem.name:
@@ -486,7 +476,6 @@ def searchResults(searchType, searchString):
                                     'rlocation': eachEntry.restaurantLocation})
                     break
     elif searchType == "Ingredient":
-        print('In ingredients')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 for eachIngredient in eachFoodItem.ingredients:
@@ -497,7 +486,6 @@ def searchResults(searchType, searchString):
                                         'rlocation': eachEntry.restaurantLocation})
                         break
     else: #searchType =="Flavor"
-        print('In flavor')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 for eachFlavor in eachFoodItem.flavorProfile:
@@ -519,16 +507,12 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
     messageConfirmation=''
     if form.validate_on_submit():
         if form.accept.data:
-            print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
             messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
-            print(f'Food item: {foodName} from Restaurant {restaurantName} was added to favorites')
             return redirect(url_for("getRecommendationBySearch"))
-        if form.deny.data:
-            print('deny was used')
-            print(f'Food item: {foodName} from Restaurant {restaurantName} was deleted from list')          
+        if form.deny.data:         
             return redirect(url_for("getRecommendationBySearch"))
     return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
                            foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
@@ -561,24 +545,19 @@ def displaySavedResults():
         eachDatabaseString = str(eachDatabaseString)
         tempArray = stringToArrayNoLower(eachDatabaseString)
         userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
-    print(userFavoriteList)
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
     for eachFavoritedItem in userFavoriteList:
         for eachRestaurant in masterListRestaurantsRec:
-            print(f'restaurant in master list name: {eachRestaurant.restaurantName}')
-            print(f'favorite food item name: {eachFavoritedItem.get("restaurantName")}')
             if eachFavoritedItem.get('restaurantName') == eachRestaurant.restaurantName:
                 for eachFoodItem in eachRestaurant.foodList:
                     if eachFavoritedItem.get('name') == eachFoodItem.name:
-                        print("in second if statement")
                         results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
                                         'score': eachFoodItem.recommendationScore,
                                         'rname':eachRestaurant.restaurantName,
                                         'rlocation': eachRestaurant.restaurantLocation})
             else:
                 continue
-    print(results)
     return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
 
@@ -623,7 +602,6 @@ def create_profile():
         user.tastes.clear()
         user.allergens.clear()
         user.tastes.extend(form.taste_choices.data)
-        print(type(form.allergen_choices.data))
         user.allergens.extend(form.allergen_choices.data)
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
