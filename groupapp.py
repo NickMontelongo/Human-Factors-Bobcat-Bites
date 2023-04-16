@@ -563,8 +563,7 @@ def displaySavedResults():
             print(f'restaurant in master list name: {eachRestaurant.restaurantName}')
             print(f'favorite food item name: {eachFavoritedItem.get("restaurantName")}')
             if eachFavoritedItem.get('restaurantName') == eachRestaurant.restaurantName:
-                print("in first if statement")
-                for eachFoodItem in eachRestaurant:
+                for eachFoodItem in eachRestaurant.foodList:
                     if eachFavoritedItem.get('name') == eachFoodItem.name:
                         print("in second if statement")
                         results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
