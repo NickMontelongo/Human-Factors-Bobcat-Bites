@@ -533,12 +533,40 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
 @login_required
 def displaySavedResults():
     userEmail = current_user.email
+    results = []
+    userPrefIngred = stringToArray(user.preferred_ingredients)
+    userTastes = []
+    userAllergens = []
+    for eachEntry in current_user.tastes:
+        if str(eachEntry) == "none":
+            userTastes.append("none")
+            break
+        userTastes.append(str(eachEntry))   
+    for eachEntry in current_user.allergens:
+        if str(eachEntry) == "none":
+            userAllergens.append("none")
+            break
+        userAllergens.append(str(eachEntry))
+    maxBudget = current_user.budget_max
+    minBudget = current_user.budget_min
     favFoodArray = current_user.userfavoritefoods
     favFoodNames =[]
     favFoodRestaurantNames=[]
-    for eachFood in favFoodArray:
-
-    return render_template("favorites.html", userEmail=userEmail)
+    for eachFoodString in favFoodArray:
+        tempArray = stringToArray(eachFoodString)
+        favFoodNames.append(tempArray[0])
+        favFoodRestaurantNames.append(tempArray[1])
+    masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
+                                                                    userPrefIngred, userTastes, userAllergens)
+    for eachRestaurant in masterListRestaurantsRec:
+        if eachRestaurant in favFoodRestaurantNames:
+            for eachFoodItem in eachRestaurant:
+                if eachFoodItem in favFoodNames:
+                    results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
+                                        'score': eachFoodItem.recommendationScore,
+                                        'rname':eachRestaurant.restaurantName,
+                                        'rlocation': eachRestaurant.restaurantLocation})
+    return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
 
 
