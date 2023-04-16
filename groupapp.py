@@ -393,7 +393,7 @@ def getRecommendationByRestaurant(restaurant, list_index, messageToUser, message
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRand( messageToUser, messageConfirmation):
+def getRecommendationByRand():
     #Random Instantiation and use in masterlist
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
@@ -432,19 +432,17 @@ def getRecommendationByRand( messageToUser, messageConfirmation):
     recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
     recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
     foodPrice = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].price
-    messageConfirmation =''
     if form.validate_on_submit():
         if form.accept.data:
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
-            messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
             database.session.commit()
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRand"))
         if form.deny.data:
             return redirect(url_for("getRecommendationByRand"))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, 
-                           messageConfirmation = messageConfirmation, foodPrice=foodPrice, form=form)
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodPrice=foodPrice, form=form)
 
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
