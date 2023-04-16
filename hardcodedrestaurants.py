@@ -21,7 +21,7 @@ masterListRestaurants = []
 
 def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, restaurantName, restaurantLocation,
-                         foodList):
+                         foodList, showResults=False):
     """Use this function to create the restaurant object will lowercase all food names,
     uppercase the restaurant location and restaurant name. And finally create the object and 
     display it"""
@@ -40,14 +40,16 @@ def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
     restaurantLocation = restaurantLocation.upper()
     for i in range(len(foodNames)):
         newFoodItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
-        print(f' Name: {newFoodItem.name}')
-        print(f' Price: {newFoodItem.price}')
-        print(f' Ingredients: {newFoodItem.ingredients}')
-        print(f' Allergens: {newFoodItem.allergens}')
-        print(f' Flavors: {newFoodItem.flavorProfile}')
+        if showResults:
+            print(f' Name: {newFoodItem.name}')
+            print(f' Price: {newFoodItem.price}')
+            print(f' Ingredients: {newFoodItem.ingredients}')
+            print(f' Allergens: {newFoodItem.allergens}')
+            print(f' Flavors: {newFoodItem.flavorProfile}')
         foodList.append(newFoodItem)
-    print(f' This is restaurantName: {restaurantName}')
-    print(f' This is restaurant Location: {restaurantLocation}')
+    if showResults:    
+        print(f' This is restaurantName: {restaurantName}')
+        print(f' This is restaurant Location: {restaurantLocation}')
     return (Restaurant(restaurantName, foodList, restaurantLocation))
 
 # Rules

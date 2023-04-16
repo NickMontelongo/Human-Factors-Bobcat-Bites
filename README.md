@@ -5,6 +5,7 @@ Bobcat Bites food recommendation website
 #1) Hard Code all Restaurants EASY- BUT TEDIOUS Being Worked On
 #2) TEST TEST TEST
 #3) Implement Messages EASY
+#4) correct value amounts to $x.00 instead of $x.0
 
 
 NOTE ON #1)
