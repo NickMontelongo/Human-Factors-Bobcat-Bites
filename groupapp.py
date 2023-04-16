@@ -365,6 +365,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
             print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
+            database.session.commit()
             messageConfirmation = f'The food item {foodItem} was added to your favorites'
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
@@ -510,9 +511,13 @@ def searchResults(searchType, searchString):
 @login_required
 def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
+    user = Person.query.filter_by(email=current_user.email).first()
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
+            foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            messageConfirmation = f'The food item {foodItem} was added to your favorites'
             print(f'Food item: {foodName} from Restaurant {restaurantName} was added to favorites')
             return redirect(url_for("getRecommendationBySearch"))
         if form.deny.data:
@@ -520,7 +525,8 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
             print(f'Food item: {foodName} from Restaurant {restaurantName} was deleted from list')          
             return redirect(url_for("getRecommendationBySearch"))
     return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
-                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation, form=form)
+                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
+                            messageConfirmation=messageConfirmation, form=form)
 
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
