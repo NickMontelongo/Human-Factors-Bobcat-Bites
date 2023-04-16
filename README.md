@@ -48,6 +48,7 @@ QUALITY OF LIFE IMPROVEMENTS TO CONSIDER (AS OF 4/16/2023)
 6) Have some form of distinction betweeen pages ie 
     redirect links that indicate previous page to current page example:
     <recommendbysearch main page>/<searchResults (currentPage)>
+7) Implement a x/5 stars user review button (maybe done by me idk)
 (Any more can be discussed)
 
 FUTURE IMPROVEMENTS
