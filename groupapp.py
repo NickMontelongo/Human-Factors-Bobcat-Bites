@@ -349,9 +349,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
-    for eachEntry in masterListRestaurants:
-        print(f'eachentry.restaurantname: {eachEntry.restaurantName}')
-        print(f'restaurant: {restaurant}')      
+    for eachEntry in masterListRestaurants:     
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
@@ -361,7 +359,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
             break
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
-    #TO DO: make File Path
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
     foodPrice = currentRestaurantRecommendationList[list_index].price
