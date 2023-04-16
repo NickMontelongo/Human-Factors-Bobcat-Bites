@@ -550,23 +550,27 @@ def displaySavedResults():
     maxBudget = current_user.budget_max
     minBudget = current_user.budget_min
     favFoodArray = current_user.userfavoritefoods
-    favFoodNames =[]
-    favFoodRestaurantNames=[]
+    userFavoriteList = []
     for eachDatabaseString in favFoodArray:
         eachDatabaseString = str(eachDatabaseString)
         tempArray = stringToArray(eachDatabaseString)
-        favFoodNames.append(tempArray[0])
-        favFoodRestaurantNames.append(tempArray[1])
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
+    print(userFavoriteList)
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
-    for eachRestaurant in masterListRestaurantsRec:
-        if eachRestaurant.restaurantName in favFoodRestaurantNames:
-            for eachFoodItem in eachRestaurant:
-                if eachFoodItem.name in favFoodNames:
-                    results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
+    for eachFavoritedItem in userFavoriteList:
+        for eachRestaurant in masterListRestaurantsRec:
+            if eachFavoritedItem.get('name') == eachRestaurant.restaurantName:
+                print("in first if statement")
+                for eachFoodItem in eachRestaurant:
+                    if eachFavoritedItem.get('restaurantName') == eachFoodItem.name:
+                        print("in second if statement")
+                        results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
                                         'score': eachFoodItem.recommendationScore,
                                         'rname':eachRestaurant.restaurantName,
                                         'rlocation': eachRestaurant.restaurantLocation})
+            else:
+                continue
     print(results)
     return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
