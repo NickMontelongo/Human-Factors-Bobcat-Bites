@@ -86,28 +86,12 @@ def calculateRecommendationMasterList(userRestaurantMasterList, minBudget, maxBu
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result  
 # To DO: Figure out how to get images                                   
-def returnUserRecommendedResult(userRecommendationList, userRestaurantChoice, specificSearch=False):
-    variable = 0
-# Specific Restaurant Search
-
-# General Restaurant Search
-def userAcceptsResult(userRecommendationList):
-    variable = 0
-    #Needs to 
-    #1) pop first item (current item) off list
-    #2) return poped item which will be put in user recommendation list
-
-def userDenysResult(userRecommendationList):
-    variable = 0
-    #Needs to
-    #1) pop first item (current item) off list
-    #2) populate page with next Result
-
 def stringToArray(stringToParse):
     lowercaseString = stringToParse.lower()
     lowercaseString = lowercaseString.strip()
     convertedList = lowercaseString.split(', ')
     return convertedList
+
 
 
 

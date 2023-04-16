@@ -221,7 +221,7 @@ class Userfavoritefood(database.Model):
     food_name = database.Column(database.String(40), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
     def __repr__(self):
-        return f'{self.food_name},{self.parent_restaurant}'
+        return f'{self.food_name}, {self.parent_restaurant}'
 
 database.Table(
         "person_userfavoritefood",
@@ -532,8 +532,13 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
 @login_required
 def displaySavedResults():
-    user = current_user.email
-    return render_template("favorites.html", user=user)
+    userEmail = current_user.email
+    favFoodArray = current_user.userfavoritefoods
+    favFoodNames =[]
+    favFoodRestaurantNames=[]
+    for eachFood in favFoodArray:
+
+    return render_template("favorites.html", userEmail=userEmail)
 
 
 
