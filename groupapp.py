@@ -323,7 +323,7 @@ def title():
 #1) Need to figure out how to reset everything since importing master list
 @app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRestaurant(restaurant, list_index, messageToUser, messageConfirmation):
+def getRecommendationByRestaurant(restaurant, list_index):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     list_index = int(list_index)
@@ -350,6 +350,8 @@ def getRecommendationByRestaurant(restaurant, list_index, messageToUser, message
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     for eachEntry in masterListRestaurants:
+        print(f'eachentry.restaurantname: {eachEntry.restaurantName}')
+        print(f'restaurant: {restaurant}')      
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
@@ -363,32 +365,29 @@ def getRecommendationByRestaurant(restaurant, list_index, messageToUser, message
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
     foodPrice = currentRestaurantRecommendationList[list_index].price
-    messageToUser=''
-    messageConfirmation =''
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
-                messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
+                flash("You cycled through the entire menu, your next choice will restart you at the beginning.")
                 list_index = 0
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
-            messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
-                messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
+                flash("You cycled through the entire menu, your next choice will restart you at the beginning.")
                 list_index = 0       
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index=list_index))
         if form.reset.data:
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, 
-                           messageToUser=messageToUser, messageConfirmation=messageConfirmation, form=form)
+                           foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, form=form)
 
 
 @app.route("/recommendrand/", methods=["GET", "POST"])

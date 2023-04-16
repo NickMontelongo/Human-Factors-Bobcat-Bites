@@ -153,14 +153,13 @@
       <div class="card">
         <center>
           <h1><b>Bobcat Bites: Recommendation by Restaurant</b></h1>
-          {% if messageToUser!='' %}
-          <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
-          </p>
-          {%endif%}
-          {% if messageConfirmation !='' %}
-          <p style="color: greenyellow" ,style="font-size:400%" ;><b>{{messageConfirmation}} </b>
-          </p>
-          {%endif%}
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+          <h3 style="color: darkgreen" ,style="font-size:400%" ;>{{message}}</h3>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
           <!--             BUTTONS GO HERE            -->
           <h3>Based on your Flavor Profile, your Preferred Ingredients, Budget, and Allergens your recommendation is:
           </h3>
