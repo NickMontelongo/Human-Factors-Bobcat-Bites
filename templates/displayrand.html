@@ -148,6 +148,10 @@
     <div class="leftcolumn">
       <div class="card">
         <center>
+          {% if messageConfirmation !='' %}
+          <p style="color: greenyellow" ,style="font-size:400%" ;><b>{{messageConfirmation}} </b>
+          </p>
+          {%endif%}
           <h1><b>Bobcat Bites: Random Recommendation</b></h1>
           <!--             BUTTONS GO HERE            -->
           <h3>Based on your Flavor Profile, your Preferred Ingredients, Budget, and Allergens</h3>

@@ -354,6 +354,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
     foodPrice = currentRestaurantRecommendationList[list_index].price
     messageToUser=''
+    messageConfirmation =''
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
@@ -362,6 +363,9 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
                 list_index = 0
             print('accept was used')
+            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            messageConfirmation = f'The food item {foodItem} was added to your favorites'
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
@@ -378,7 +382,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, 
-                           messageToUser=messageToUser,form=form)
+                           messageToUser=messageToUser, messageConfirmation=messageConfirmation, form=form)
 
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
@@ -416,9 +420,14 @@ def getRecommendationByRand():
     recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
     recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
     foodPrice = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].price
+    messageConfirmation =''
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
+            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            messageConfirmation = f'The food item {foodItem} was added to your favorites'
+            database.session.commit()
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRand"))
         if form.deny.data:
@@ -426,7 +435,8 @@ def getRecommendationByRand():
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
             return redirect(url_for("getRecommendationByRand"))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodPrice=foodPrice, form=form)
+                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, 
+                           messageConfirmation = messageConfirmation, foodPrice=foodPrice, form=form)
 
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
@@ -545,6 +555,7 @@ def create_profile():
         user.tastes.clear()
         user.allergens.clear()
         user.tastes.extend(form.taste_choices.data)
+        print(type(form.allergen_choices.data))
         user.allergens.extend(form.allergen_choices.data)
         user.budget_max = form.budget_max.data
         user.budget_min = form.budget_min.data
