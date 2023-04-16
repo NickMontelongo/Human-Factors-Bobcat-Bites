@@ -387,11 +387,13 @@ def getRecommendationByRestaurant(restaurant, list_index):
                            foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, form=form)
 
 
-@app.route("/recommendrand/", methods=["GET", "POST"])
+@app.route("/recommendrand/<restaurantIndex>&<foodIndex>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRand():
-    #Random Instantiation and use in masterlist
-    form = DisplayResultsForm()
+    form = DisplayResultsForm(restaurantIndex, foodIndex)
+    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    foodIndex = int(foodIndex)
+    restaurantIndex= int(restaurantIndex)
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     currentUserTastes = []
@@ -408,8 +410,7 @@ def getRecommendationByRand():
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
-    favFoodArray = current_user.userfavoritefoods
+    favFoodArray = user.userfavoritefoods
     userFavoriteList = []
     for eachDatabaseEntry in favFoodArray:
         eachDatabaseEntry = str(eachDatabaseEntry)
@@ -418,27 +419,27 @@ def getRecommendationByRand():
     masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
                                                                       currentUserAllergens, currentUserTastes,userFavoriteList)
-    randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
-    while masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore < 1.5:
-        randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
-        randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
-    restaurantLocation = masterListWithRecommendation[randomRestaurantIndex].restaurantLocation
-    restaurantName = masterListWithRecommendation[randomRestaurantIndex].restaurantName
-    recommendedRestaurantName = restaurantName
-    recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
-    foodPrice = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].price
+    recommendedRestaurantName = masterListRestaurants[restaurantIndex].restaurantName
+    restaurantLocation = masterListRestaurants[restaurantIndex].restaurantLocation
+    recommendedFoodScore = masterListWithRecommendation[foodIndex].recommendationScore
+    recommendedFoodName = masterListWithRecommendation[foodIndex].name
+    recommendedFoodPrice = masterListWithRecommendation[foodIndex].price
     if form.validate_on_submit():
         if form.accept.data:
-            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
+            restaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+            foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))
+            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
             flash(f'The food item {foodItem.food_name} was added to your favorites')
-            return redirect(url_for("getRecommendationByRand"))
+            return redirect(url_for("getRecommendationByRestaurant",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
         if form.deny.data:
-            return redirect(url_for("getRecommendationByRand"))
-    return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodPrice=foodPrice, form=form)
+            restaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+            foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))   
+            return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
+    return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
+                           foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
+
 
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
