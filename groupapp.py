@@ -512,6 +512,7 @@ def searchResults(searchType, searchString):
 def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
+    messageConfirmation=''
     if form.validate_on_submit():
         if form.accept.data:
             print('accept was used')
