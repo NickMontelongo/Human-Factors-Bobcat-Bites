@@ -389,8 +389,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
 
 @app.route("/recommendrand/<restaurantIndex>&<foodIndex>", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRand():
-    form = DisplayResultsForm(restaurantIndex, foodIndex)
+def getRecommendationByRand(restaurantIndex, foodIndex):
+    form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     foodIndex = int(foodIndex)
     restaurantIndex= int(restaurantIndex)
@@ -421,12 +421,12 @@ def getRecommendationByRand():
                                                                       currentUserAllergens, currentUserTastes,userFavoriteList)
     recommendedRestaurantName = masterListRestaurants[restaurantIndex].restaurantName
     restaurantLocation = masterListRestaurants[restaurantIndex].restaurantLocation
-    recommendedFoodScore = masterListWithRecommendation[foodIndex].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[foodIndex].name
-    recommendedFoodPrice = masterListWithRecommendation[foodIndex].price
+    recommendedFoodScore = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].recommendationScore
+    recommendedFoodName = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].name
+    recommendedFoodPrice = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].price
     if form.validate_on_submit():
         if form.accept.data:
-            restaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
             foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
             user.userfavoritefoods.append(foodItem)
@@ -434,10 +434,10 @@ def getRecommendationByRand():
             flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRestaurant",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
         if form.deny.data:
-            restaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
             foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))   
             return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
-    return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
+    return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
 
 
