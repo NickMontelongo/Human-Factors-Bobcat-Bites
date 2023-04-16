@@ -373,6 +373,22 @@ flavorProfile = [["meaty", "fresh", "savory"], ["fresh", "savory"], ["meaty", "f
                  ["sweet", "savory", "tangy", "meaty"], ["meaty", "savory"], ["savory" ,"cheesey", "meaty"], ["fresh", "savory"], ["fresh", "savory"], 
                 ["fresh", "savory"], ["cheesey", "savory"], ["cheesey", "fresh", "savory"], ["sweet", "cheese", "tangy", "savory"]]
 
+
+MondoSubs=[]
+foodNames= ["6 inch all american hero" ,"12 inch all american hero", "6 inch very veggie", "12 inch very veggie", "6 inch home on the ranch", 
+            "12 inch home on the ranch", ""]
+foodPrices= [4.49, 7.99, 3.69, 6.99, 4.49, 7.99, ]
+foodIngredients= [["ham", "roast beef", "turkey", "cheese"], ["ham", "roast beef", "turkey", "cheese"], ["hummus", "guacamole", "bell peppers", "cucumbers", "carrots", "lettuce", "tomato"], 
+                  ["hummus", "guacamole", "bell peppers", "cucumbers", "carrots", "lettuce", "tomato"], ["turkey", "bacon", "cheese", "ranch dressing"], 
+                  ["turkey", "bacon", "cheese", "ranch dressing"], ]
+foodAllergens = [["dairy", "beef", "pork", "turkey"], ["dairy", "beef", "pork", "turkey"], ["guacamole", "peppers"], ["guacamole", "peppers"], 
+                 ["pork", "turkey", "dairy"], ["pork", "turkey", "dairy"], ]
+flavorProfile = [["meaty", "savory"], ["meaty", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["savory", "crisp"],["savory", "crisp"],
+                 [""], ]
+
+
+
+
 # Test looper
 #for i in range(len(foodNames)):
 #    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
