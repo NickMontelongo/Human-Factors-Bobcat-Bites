@@ -366,7 +366,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
             user.userfavoritefoods.append(foodItem)
             database.session.commit()
-            messageConfirmation =str(f'The food item {foodItem} was added to your favorites')
+            messageConfirmation =str(f'The food item {foodItem.food_name} was added to your favorites')
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
@@ -427,7 +427,7 @@ def getRecommendationByRand():
             print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
-            messageConfirmation =str(f'The food item {foodItem} was added to your favorites')
+            messageConfirmation =str(f'The food item {foodItem.food_name} was added to your favorites')
             database.session.commit()
             print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
             return redirect(url_for("getRecommendationByRand"))
@@ -517,7 +517,7 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
             print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
-            messageConfirmation =str(f'The food item {foodItem} was added to your favorites')
+            messageConfirmation =str(f'The food item {foodItem.food_name} was added to your favorites')
             print(f'Food item: {foodName} from Restaurant {restaurantName} was added to favorites')
             return redirect(url_for("getRecommendationBySearch"))
         if form.deny.data:
