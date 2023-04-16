@@ -413,15 +413,32 @@ flavorProfile = [["meaty", "fresh", "savory"], ["fresh", "savory"], ["meaty", "f
 
 MondoSubs=[]
 foodNames= ["6 inch all american hero" ,"12 inch all american hero", "6 inch very veggie", "12 inch very veggie", "6 inch home on the ranch", 
-            "12 inch home on the ranch", ""]
-foodPrices= [4.49, 7.99, 3.69, 6.99, 4.49, 7.99, ]
+            "12 inch home on the ranch", "6 inch turkey sub", "12 inch turkey sub", "6 inch the classic italian", "12 inch the classic italian", 
+            "6 inch tuna tuna", "12 inch tuna tuna", "6 inch roast beef wrangler", "12 inch roast beef wrangler", "6 inch piggy wiggy" , "12 inch piggy wiggy" , 
+            "6 inch buffalo chicken", "12 inch buffalo chicken", "6 inch cajun chicken", "12 inch cajun chicken", "6 inch italian meatball", "12 inch italian meatball", 
+            "6 inch turkey melt", "12 inch turkey melt", "chicken ceasar wrap"]
+foodPrices= [4.49, 7.99, 3.69, 6.99, 4.49, 7.99, 3.99, 6.99, 4.49, 7.99, 3.79, 6.79, 4.79, 8.49, 3.79, 6.59, 4.29, 7.99, 4.19, 7.99, 3.89, 7.49, 4.19, 
+             7.59, 5.99]
 foodIngredients= [["ham", "roast beef", "turkey", "cheese"], ["ham", "roast beef", "turkey", "cheese"], ["hummus", "guacamole", "bell peppers", "cucumbers", "carrots", "lettuce", "tomato"], 
                   ["hummus", "guacamole", "bell peppers", "cucumbers", "carrots", "lettuce", "tomato"], ["turkey", "bacon", "cheese", "ranch dressing"], 
-                  ["turkey", "bacon", "cheese", "ranch dressing"], ]
+                  ["turkey", "bacon", "cheese", "ranch dressing"], ["turkey", "lettuce", "tomato", "mayo"], ["turkey", "lettuce", "tomato", "mayo"], 
+                  ["capicola", "salami", "pepperoni", "red pepper", "cheese"], ["capicola", "salami", "pepperoni", "red pepper", "cheese"], 
+                  ["tuna", "cheese", "mayo"], ["roast beef", "red onion", "cheese", "mayo"], ["roast beef", "red onion", "cheese", "mayo"], 
+                  ["ham", "cheese", "ranch dressing"], ["ham", "cheese", "ranch dressing"], ["chicken", "spicy buffalo sauce", "provolone", "blue cheese"], 
+                  ["chicken", "spicy buffalo sauce", "provolone", "blue cheese"], ["chicken", "mayo", "onion", "bell pepper", "tomato", "lettuce", "cheese"], 
+                  ["chicken", "mayo", "onion", "bell pepper", "tomato", "lettuce", "cheese"], ["meatballs", "marinara sauce", "provolone", "parmesan cheese"], 
+                  ["meatballs", "marinara sauce", "provolone", "parmesan cheese"], ["ham", "turkey", "tomato", "mayo", "cheese"], ["ham", "turkey", "tomato", "mayo", "cheese"], 
+                  ["chicken", "creamy ceasar dressing", "chopped romaine", "parmesan cheese", "tomato", "red onion"]]
 foodAllergens = [["dairy", "beef", "pork", "turkey"], ["dairy", "beef", "pork", "turkey"], ["guacamole", "peppers"], ["guacamole", "peppers"], 
-                 ["pork", "turkey", "dairy"], ["pork", "turkey", "dairy"], ]
+                 ["pork", "turkey", "dairy"], ["pork", "turkey", "dairy"], ["turkey", "dairy"], ["turkey", "dairy"], ["pork", "dairy"], ["pork", "dairy"],
+                 ["fish", "dairy"], ["fish", "dairy"], ["dairy", "beef"], ["dairy", "beef"], ["beef", "dairy"], ["beef", "dairy"], ["dairy", "chicken"], ["dairy", "chicken"],
+                 ["chicken", "dairy", "peppers"], ["chicken", "dairy", "peppers"], ["beef", "dairy"], ["beef", "dairy"], ["pork", "turkey", "dairy"], 
+                 ["pork", "turkey", "dairy"], ["chicken", "dairy"]]
 flavorProfile = [["meaty", "savory"], ["meaty", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["savory", "crisp"],["savory", "crisp"],
-                 [""], ]
+                 ["fresh", "savory"], ["fresh", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["fresh", "savory"], ["fresh", "savory"], 
+                 ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
+                 ["savory", "meaty", "tangy"], ["savory", "meaty", "tangy"], ["meaty", "savory"], ["meaty", "savory"], ["savory", "meaty"], ["savory", "meaty"], 
+                 ["meaty", "savory"]]
 
 
 
