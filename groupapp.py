@@ -49,6 +49,7 @@ def load_user(user_id):
 
 
 #######################################FLASK FORMS ####################################################
+
 class FoodSearchForm(FlaskForm):
     choices = [('Name', 'Name'), ('Flavor', 'Flavor'),
                ('Ingredient', 'Ingredient')]
@@ -88,11 +89,13 @@ class ProfileForm(FlaskForm):
             raise ValidationError(
                 "Minimum budget range cannot be less than zero.")
 
+class DisplayFavoritesForm(FlaskForm):
+    remove = SubmitField(label="Remove from Favorites")
 
 class DisplayResultsForm(FlaskForm):
-    accept = SubmitField(label="Approve")
-    deny = SubmitField(label="Deny")
-    reset = SubmitField(label="Reset")
+    accept = SubmitField(label="Favorite this food item")
+    deny = SubmitField(label="Deny this food item")
+    reset = SubmitField(label="Reset Results")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -507,6 +510,7 @@ def searchResults(searchType, searchString):
         #display the results here
     return render_template("displayresults.html", results=results, len=len(results), searchString=searchString)
 
+
 @app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>")
 @login_required
 def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
@@ -577,6 +581,21 @@ def displaySavedResults():
     return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
 
+@app.route("/favorites/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>")
+@login_required
+def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
+    form = DisplayFavoritesForm()
+    user = current_user
+    messageConfirmation=''
+    if form.validate_on_submit():
+        foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
+        user.userfavoritefoods.remove(foodItem)
+        database.session.commit()
+        return redirect(url_for("displaySavedResults"))
+    return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
+                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
+                            messageConfirmation=messageConfirmation, form=form)
+
 
 @app.route("/main", methods=["GET", "POST"])
 @login_required
@@ -584,6 +603,7 @@ def display_main():
     """route is the main route to access website features, directed from user authenticated login"""
     loadCurrentUserBaseProfile()
     return render_template("homepage.html")
+
 
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required
