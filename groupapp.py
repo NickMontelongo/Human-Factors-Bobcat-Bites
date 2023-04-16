@@ -323,7 +323,7 @@ def title():
 #1) Need to figure out how to reset everything since importing master list
 @app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRestaurant(restaurant, list_index):
+def getRecommendationByRestaurant(restaurant, list_index, messageToUser, messageConfirmation):
     form = DisplayResultsForm()
     #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     list_index = int(list_index)
@@ -393,7 +393,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
 
 @app.route("/recommendrand/", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRand():
+def getRecommendationByRand( messageToUser, messageConfirmation):
     #Random Instantiation and use in masterlist
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
@@ -520,7 +520,8 @@ def searchResults(searchType, searchString):
 
 @app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
 @login_required
-def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
+def displayFoodItem(messageConfirmation, foodName,restaurantName, 
+                    restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
     messageConfirmation=''
