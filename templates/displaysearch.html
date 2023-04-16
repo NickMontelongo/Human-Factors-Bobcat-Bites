@@ -104,7 +104,7 @@
     <a href="{{url_for('create_profile')}}">My Profile</a>
     <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
     <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
-    <a href="{{url_for('getRecommendationByRand')}}">Random Recommendation</a>
+    <a href="{{url_for('getRecommendationByRand',restaurantIndex=0, foodIndex=0)}}">Random Recommendation</a>
     <div class="dropdown">
       <button class="dropbtn" onclick="myFunction()">Recommendation by Place
         <i class="fa fa-caret-down"></i>
@@ -162,7 +162,7 @@
           {% with messages = get_flashed_messages() %}
             {% if messages %}
               {% for message in messages %}
-          <h3 style="color: greenyellow" ,style="font-size:400%" ;>{{message}}</h3>
+          <h3 style="color: darkgreen" ,style="font-size:400%" ;>{{message}}</h3>
               {% endfor %}
             {% endif %}
           {% endwith %}

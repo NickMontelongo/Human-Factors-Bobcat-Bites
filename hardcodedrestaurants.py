@@ -36,8 +36,6 @@ def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
     for eachFlavorList in flavorProfile:
         for eachFlavor in eachFlavorList:
             eachFlavor = eachFlavor.lower()
-    restaurantName = restaurantName.upper()
-    restaurantLocation = restaurantLocation.upper()
     for i in range(len(foodNames)):
         newFoodItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
         if showResults:
