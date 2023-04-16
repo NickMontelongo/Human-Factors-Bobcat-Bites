@@ -522,6 +522,7 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
             print('accept was used')
             foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
             user.userfavoritefoods.append(foodItem)
+            database.session.commit()
             messageConfirmation =f'The food item {foodItem.food_name} was added to your favorites'
             print(f'Food item: {foodName} from Restaurant {restaurantName} was added to favorites')
             return redirect(url_for("getRecommendationBySearch"))
