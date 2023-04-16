@@ -534,7 +534,7 @@ def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodS
 def displaySavedResults():
     userEmail = current_user.email
     results = []
-    userPrefIngred = stringToArray(user.preferred_ingredients)
+    userPrefIngred = stringToArray(current_user.preferred_ingredients)
     userTastes = []
     userAllergens = []
     for eachEntry in current_user.tastes:
@@ -552,9 +552,11 @@ def displaySavedResults():
     favFoodArray = current_user.userfavoritefoods
     favFoodNames =[]
     favFoodRestaurantNames=[]
-    for eachFoodString in favFoodArray:
-        tempArray = stringToArray(eachFoodString)
-        favFoodNames.append(tempArray[0])
+    for eachDatabaseString in favFoodArray:
+        eachDatabaseString = str(eachDatabaseString)
+        print(eachDatabaseString)
+        print(type(eachDatabaseString))
+        tempArray = stringToArray(eachDatabaseString)
         favFoodRestaurantNames.append(tempArray[1])
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
