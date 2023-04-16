@@ -511,7 +511,7 @@ def searchResults(searchType, searchString):
     return render_template("displayresults.html", results=results, len=len(results), searchString=searchString)
 
 
-@app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>")
+@app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
 @login_required
 def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
@@ -581,7 +581,7 @@ def displaySavedResults():
     return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
 
-@app.route("/favorites/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>")
+@app.route("/favorites/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
 @login_required
 def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayFavoritesForm()
@@ -592,7 +592,7 @@ def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,food
         user.userfavoritefoods.remove(foodItem)
         database.session.commit()
         return redirect(url_for("displaySavedResults"))
-    return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
+    return render_template("displayfavoriteitem.html", foodName=foodName,restaurantName=restaurantName,
                            foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
                             messageConfirmation=messageConfirmation, form=form)
 
