@@ -152,6 +152,13 @@
                         {{ userEmail }}
                         {% endif %}'s Favorited Foods</b></h1>
                 <!--             BUTTONS GO HERE            -->
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+              <h3 style="color: darkgreen" ,style="font-size:400%" ;>{{message}}</h3>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
                 <p>
                     <ol>
                         {%for i in range(0, len)%}

@@ -583,15 +583,14 @@ def displaySavedResults():
 def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayFavoritesForm()
     user = current_user
-    messageConfirmation=''
     if form.validate_on_submit():
         foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
         user.userfavoritefoods.remove(foodItem)
         database.session.commit()
+        flash(f'{foodItem.food_name} was removed from your favorites')
         return redirect(url_for("displaySavedResults"))
     return render_template("displayfavoriteitem.html", foodName=foodName,restaurantName=restaurantName,
-                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
-                            messageConfirmation=messageConfirmation, form=form)
+                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation, form=form)
 
 
 @app.route("/main", methods=["GET", "POST"])
