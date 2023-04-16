@@ -5,7 +5,8 @@ import math
 ## 3) TEST SUPPLEMENTARY FUNCTIONS
 
 #Note valuecase does matter KEEP EVERYTHING LOWERCASE WHEN CREATING RESTAURANT FOOD LISTS
-def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients, userAllergens, userTastePreferences):
+def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients,
+                        userAllergens, userTastePreferences,userSavedFavorites=[]):
     #uses restaurant object to produce list
     restaurantFoodList = restaurant.foodList
     #edited list for foods of a selected restaurant that doesn't have allergens
