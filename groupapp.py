@@ -12,7 +12,7 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
+from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray, stringToArrayNoLower
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
@@ -553,17 +553,19 @@ def displaySavedResults():
     userFavoriteList = []
     for eachDatabaseString in favFoodArray:
         eachDatabaseString = str(eachDatabaseString)
-        tempArray = stringToArray(eachDatabaseString)
+        tempArray = stringToArrayNoLower(eachDatabaseString)
         userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     print(userFavoriteList)
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
     for eachFavoritedItem in userFavoriteList:
         for eachRestaurant in masterListRestaurantsRec:
-            if eachFavoritedItem.get('name') == eachRestaurant.restaurantName:
+            print(f'restaurant in master list name: {eachRestaurant.restaurantName}')
+            print(f'favorite food item name: {eachFavoritedItem.get("restaurantName")}')
+            if eachFavoritedItem.get('restaurantName') == eachRestaurant.restaurantName:
                 print("in first if statement")
                 for eachFoodItem in eachRestaurant:
-                    if eachFavoritedItem.get('restaurantName') == eachFoodItem.name:
+                    if eachFavoritedItem.get('name') == eachFoodItem.name:
                         print("in second if statement")
                         results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
                                         'score': eachFoodItem.recommendationScore,

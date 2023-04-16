@@ -92,6 +92,11 @@ def stringToArray(stringToParse):
     convertedList = lowercaseString.split(', ')
     return convertedList
 
+def stringToArrayNoLower(stringToParse):
+    stringToParse = stringToParse.strip()
+    convertedList = stringToParse.split(', ')
+    return convertedList
+
 
 
 
