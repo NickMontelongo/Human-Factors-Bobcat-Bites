@@ -554,20 +554,20 @@ def displaySavedResults():
     favFoodRestaurantNames=[]
     for eachDatabaseString in favFoodArray:
         eachDatabaseString = str(eachDatabaseString)
-        print(eachDatabaseString)
-        print(type(eachDatabaseString))
         tempArray = stringToArray(eachDatabaseString)
+        favFoodNames.append(tempArray[0])
         favFoodRestaurantNames.append(tempArray[1])
     masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
                                                                     userPrefIngred, userTastes, userAllergens)
     for eachRestaurant in masterListRestaurantsRec:
-        if eachRestaurant in favFoodRestaurantNames:
+        if eachRestaurant.restaurantName in favFoodRestaurantNames:
             for eachFoodItem in eachRestaurant:
-                if eachFoodItem in favFoodNames:
+                if eachFoodItem.name in favFoodNames:
                     results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
                                         'score': eachFoodItem.recommendationScore,
                                         'rname':eachRestaurant.restaurantName,
                                         'rlocation': eachRestaurant.restaurantLocation})
+    print(results)
     return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
 
