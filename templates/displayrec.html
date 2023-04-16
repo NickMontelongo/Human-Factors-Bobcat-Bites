@@ -153,6 +153,14 @@
       <div class="card">
         <center>
           <h1><b>Bobcat Bites: Recommendation by Restaurant</b></h1>
+          {% if messageToUser!='' %}
+          <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
+          </p>
+          {%endif%}
+          {% if messageConfirmation !='' %}
+          <p style="color: greenyellow" ,style="font-size:400%" ;><b>{{messageConfirmation}} </b>
+          </p>
+          {%endif%}
           <!--             BUTTONS GO HERE            -->
           <h3>Based on your Flavor Profile, your Preferred Ingredients, Budget, and Allergens your recommendation is:
           </h3>
@@ -168,10 +176,6 @@
           {{ form.csrf_token }}
           <h3>{{form.accept}} {{form.deny}} {{form.reset}}</h3>
           </form>
-          {% if messageToUser!='' %}
-          <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
-          </p>
-          {%endif%}
         </center>
       </div>
 

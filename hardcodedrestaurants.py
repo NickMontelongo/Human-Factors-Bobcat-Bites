@@ -18,14 +18,37 @@ class Food:
 #will hold all restaurants
 masterListRestaurants = []
 
-def setFoodForRestaurant(restaurant, foodNamesList, foodPricesList,
-                         foodIngredientsList, foodAllergensList, foodTastesList):
-    for eachEntry in range(len(foodNamesList)):
-        newItem = Food(foodNamesList[eachEntry], foodPricesList[eachEntry], foodIngredientsList[eachEntry],
-                        foodAllergensList[eachEntry], foodTastesList[eachEntry])
-        restaurant.append(newItem)
-    return restaurant
 
+def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, restaurantName, restaurantLocation,
+                         foodList):
+    """Use this function to create the restaurant object will lowercase all food names,
+    uppercase the restaurant location and restaurant name. And finally create the object and 
+    display it"""
+    for eachName in foodNames:
+        eachName = eachName.lower()
+    for eachFoodIngredientList in foodIngredients:
+        for eachIngredient in eachFoodIngredientList:
+            eachIngredient = eachIngredient.lower()
+    for eachAllergenList in foodAllergens:
+        for eachAllergen in eachAllergenList:
+            eachAllergen = eachAllergen.lower()
+    for eachFlavorList in flavorProfile:
+        for eachFlavor in eachFlavorList:
+            eachFlavor = eachFlavor.lower()
+    restaurantName = restaurantName.upper()
+    restaurantLocation = restaurantLocation.upper()
+    for i in range(len(foodNames)):
+        newFoodItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
+        print(f' Name: {newFoodItem.name}')
+        print(f' Price: {newFoodItem.price}')
+        print(f' Ingredients: {newFoodItem.ingredients}')
+        print(f' Allergens: {newFoodItem.allergens}')
+        print(f' Flavors: {newFoodItem.flavorProfile}')
+        foodList.append(newFoodItem)
+    print(f' This is restaurantName: {restaurantName}')
+    print(f' This is restaurant Location: {restaurantLocation}')
+    return (Restaurant(restaurantName, foodList, restaurantLocation))
 
 # Rules
 # restaurant list names must equal query string on main page
@@ -44,9 +67,32 @@ foodIngredients = [["chicken", "flour", "buttermilk", "cider vinegar", "garlic",
 foodAllergens = ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chocolate", "sugar"], ["dairy", "gluten"], ["flour", "potatoes"]
 flavorProfile = [["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["sweet"], ["savory"], ["salty"]]
 
-foodlist =setFoodForRestaurant(absurdbird,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile)
-masterListRestaurants.append(Restaurant("Absurd Bird", foodlist, "The Den Food Company" ))
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Absurd Bird", "The Den Food Company",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+
+ajsbbq=[]
+foodNames= ["Nachos Plain", "Nachos Chopped BBQ chicken", "Nachos Chopped brisket", "Nachos Beyond beef", "Jumbo Sandwiches", 
+            "Jumbo Sandwiches with side", "1 meat BBQ Plate", "2 meat BBQ Plate", "3 meat BBQ Plate", "Jumbo sausage wrap", 
+            "Brisket Mac n' Cheese", "Beyond beef Mac vegetarian", "Cheesecake Bites(3)"]
+foodPrices= [6.00, 8.00, 9.00, 9.00, 8.00, 10.00, 9.00, 11.00, 14.00, 5.00, 8.00, 9.00, 4.00]
+foodIngredients= [["cheese", "corn chips"],["cheese", "corn chips", "BBQ sause", "chicken"],["cheese", "corn chips", "brisket"],["cheese", "corn chips", "vegetarian beef"],
+                  ["bread", "bbq sauce", "chicken", "brisket", "sausage", "vegetarian beef"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"], ["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
+                  ["brisket", "sausage", "chicken", "BBQ sauce"],["sausage", "sauce", "tortilla"], ["cheese", "brisket", "pasta"], ["vegetarian beef", "cheese", "pasta"],["cheese", "egg", "sauce"]]
+foodAllergens = [["dairy", "gluten"],["dairy", "gluten", "chicken"],["dairy", "gluten", "beef"],["dairy", "gluten"], ["gluten", "chicken", "beef", "pork"], ["gluten", "chicken", "beef", "pork"],
+                 ["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["gluten", "pork"], ["cheese", "brisket", "pasta"], ["gluten", "dairy", "pasta"],
+                   ["dairy", "egg", "gluten"]]
+flavorProfile = [["cheesey", "savory"], ["cheesey", "sweet", "savory"], ["cheesey", "meaty", "dry"], ["cheesey", "sweet"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
+                 ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["sweet", "savory"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "AJs BBQ", "In front of Student Writing Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
 
 
 burger512 = []
@@ -58,9 +104,11 @@ foodIngredients =[["bread", "fried onions", "pico de gallo", "cheese", "kimchi",
 foodAllergens = [["gluten", "beef", "dairy", "eggs"], ["gluten", "beef", "dairy", "pork"], ["dairy", "gluten", "beef", "beans"], ["dairy", "gluten", "pork", "beef", "eggs"], ["dairy", "beef", "gluten" ],["beans", "dairy"], ["chicken", "eggs"], ["dairy", "pork"], ["none"], ["gluten", "chicken"]]
 flavorProfile = [["savory", "salty", "spicy"],["savory", "salty"], ["savory", "salty"], ["savory", "sweet", "salty"], ["savory", "salty"], ["salty", "savory"], ["salty"], ["salty"], ["salty"], ["salty", "savory"]]
 
-foodlist = setFoodForRestaurant(burger512,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile)
-masterListRestaurants.append(Restaurant("Burger 512", foodlist, "LBJ Student Center"))
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Burger 512", "LBJ Student Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
 
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
@@ -69,11 +117,13 @@ foodIngredients= [["bread", "pork", "mayo", "cilantro", "vinegar", "onion", "car
 foodAllergens = [["pork", "eggs", "gluten", "chilies"],["gluten", "shrimp"],["pork", "egg", "garlic"]]
 flavorProfile = [["savory", "spicy"], ["savory"], ["savory"]]
 
-foodlist = setFoodForRestaurant(teaco,foodNames, foodPrices, foodIngredients,
-                                                  foodAllergens, flavorProfile)
-masterListRestaurants.append(Restaurant("Tea Co", foodlist, "The Den Food Company"))
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Tea Co", "The Den Food Company",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
 
-trashArray = [1,2,3,4,5,6,7]
+
+
 
 pizzahut=[]
 foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
@@ -103,21 +153,6 @@ foodIngredients= [[""]]
 foodAllergens = [[""]]
 flavorProfile = [[""]]
 
-ajsbbq=[]
-foodNames= ["Nachos Plain", "Nachos Chopped BBQ chicken", "Nachos Chopped brisket", "Nachos Beyond beef", "Jumbo Sandwiches", 
-            "Jumbo Sandwiches with side", "1 meat BBQ Plate", "2 meat BBQ Plate", "3 meat BBQ Plate", "Jumbo sausage wrap", 
-            "Brisket Mac n' Cheese", "Beyond beef Mac vegetarian", "Cheesecake Bites(3)"]
-foodPrices= [6.00, 8.00, 9.00, 9.00, 8.00, 10.00, 9.00, 11.00, 14.00, 5.00, 8.00, 9.00, 4.00]
-foodIngredients= [["cheese", "corn chips"],["cheese", "corn chips", "BBQ sause", "chicken"],["cheese", "corn chips", "brisket"],["cheese", "corn chips", "vegetarian beef"],
-                  ["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
-                  ["brisket", "sausage", "chicken", "BBQ sauce"], ["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
-                  ["brisket", "sausage", "chicken", "BBQ sauce"],["bread", "BBQ sauce", "chicken", "brisket", "sausage", "vegetarian breef", "potato", "mayo", "cabage", "cheese", "pasta", "chips"],
-                  ["brisket", "sausage", "chicken", "BBQ sauce"],["sausage", "sauce", "tortilla"], ["cheese", "brisket", "pasta"], ["vegetarian beef", "cheese", "pasta"],["cheese", "egg", "sauce"]]
-foodAllergens = [["dairy", "gluten"],["dairy", "gluten", "chicken"],["dairy", "gluten", "beef"],["dairy", "gluten"], ["gluten", "chicken", "beef", "pork"], ["gluten", "chicken", "beef", "pork"],
-                 ["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["brisket", "sausage", "chicken"],["gluten", "pork"], ["cheese", "brisket", "pasta"], ["gluten", "dairy", "pasta"],
-                   ["dairy", "egg", "gluten"]]
-flavorProfile = [["cheesey", "savory"], ["cheesey", "sweet", "savory"], ["cheesey", "meaty", "dry"], ["cheesey", "sweet"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
-                 ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["sweet", "gluten", "savory"]]
 
 ShakeSmart=[]
 foodNames= ["Rawcai bowl", "Raw-PB Bowl", "The Buzz Bowl", "Original Acai Bowl", "PB&A bowl", "Dragon Bowl", "Peanut Butter toast",
@@ -390,14 +425,7 @@ flavorProfile = [["meaty", "savory"], ["meaty", "savory"], ["fresh", "savory"], 
 
 
 # Test looper
-#for i in range(len(foodNames)):
-#    newItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
-#    teaco.append(newItem)
-#    print(f' Name: {newItem.name}')
-#    print(f' Price: {newItem.price}')
-#    print(f' Ingredients: {newItem.ingredients}')
-#    print(f' Allergens: {newItem.allergens}')
-#    print(f' Flavors: {newItem.flavorProfile}')
-#    print("  ")
+
+
 
 

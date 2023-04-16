@@ -147,12 +147,23 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
+                <center>
                 <h1><b>User: {% if current_user.is_authenticated %}
-                        {{ user }}
+                        {{ userEmail }}
                         {% endif %}'s Favorited Foods</b></h1>
                 <!--             BUTTONS GO HERE            -->
-
-                <h3>favorites go here</h3>
+                <p>
+                    <ol>
+                        {%for i in range(0, len)%}
+                        <ul><a href="{{url_for('displayFavorites',foodName=results[i].get('name'), restaurantName=results[i].get('rname'), restaurantLocation=results[i].get('rlocation'), foodPrice=results[i].get('price'),foodScore=results[i].get('score'))}}">{{results[i].get('name')}}</a></ul>
+                        {%endfor%}
+                        {% if len==0 %}
+                        <p style="color: blue" ,style="font-size:400%" ;><b>Sorry, no saved results yet. </b>
+                        </p>
+                        {%endif%}
+                    </ol>
+                </p>
+                </center>
             </div>
 
         </div>

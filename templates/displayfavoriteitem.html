@@ -1,3 +1,4 @@
+{% from "_formhelpers.html" import render_field %}
 <!DOCTYPE html>
 <html>
 
@@ -87,7 +88,7 @@
       }
     }
   </script>
-  <title>Bobcat Bites: Random Recommendation</title>
+  <title>Bobcat Bites: Recommendation by Search</title>
   <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css" />
 </head>
 
@@ -111,18 +112,25 @@
       <div class="dropdown-content" id="myDropdown">
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird',list_index=0)}}">Absurd Bird</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ',list_index=0)}}">AJs BBQ</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',list_index=0)}}">Asado Latin Grill</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',list_index=0)}}">Blimpie American
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',list_index=0)}}">Asado Latin
+          Grill</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',list_index=0)}}">Blimpie
+          American
           Subs</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512',list_index=0)}}">Burger 512</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Campus Coffee and Tea',list_index=0)}}">Campus Coffee and
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Campus Coffee and Tea',list_index=0)}}">Campus
+          Coffee and
           Tea</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A',list_index=0)}}">Chick Fil A</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',list_index=0)}}">Coffee and Pi
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',list_index=0)}}">Coffee and
+          Pi
           Market</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',list_index=0)}}">Create Premium Deli</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',list_index=0)}}">Dunkin Doughnuts</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einsteins Bagels',list_index=0)}}">Einstein's Bagels</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',list_index=0)}}">Create
+          Premium Deli</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',list_index=0)}}">Dunkin
+          Doughnuts</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einsteins Bagles',list_index=0)}}">Einstein's
+          Bagles</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi',list_index=0)}}">Kawa Sushi</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe',list_index=0)}}">McCoy Cafe</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab',list_index=0)}}">Melt Lab</a>
@@ -130,14 +138,16 @@
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express',list_index=0)}}">Panda Express</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut',list_index=0)}}">Pizza Hut Express</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey',list_index=0)}}">Pom and Honey</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',list_index=0)}}">Revolution Noodle</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',list_index=0)}}">Revolution
+          Noodle</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty',list_index=0)}}">The Salty</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart',list_index=0)}}">Shake Smart</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks',list_index=0)}}">Starbucks</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co',list_index=0)}}">The Tea Co</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',list_index=0)}}">Tu Taco</a>
         <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',list_index=0)}}">Wing it</a>
-        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',list_index=0)}}">Woods St Pizza &
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',list_index=0)}}">Woods St
+          Pizza &
           Pasta</a>
       </div>
     </div>
@@ -148,27 +158,24 @@
     <div class="leftcolumn">
       <div class="card">
         <center>
-          <h1><b>Bobcat Bites: Random Recommendation</b></h1>
-          {% if messageConfirmation !='' %}
-          <p style="color: greenyellow" ,style="font-size:400%" ;><b>{{messageConfirmation}} </b>
-          </p>
-          {%endif%}
-          <!--             BUTTONS GO HERE            -->
-          <h3>Based on your Flavor Profile, your Preferred Ingredients, Budget, and Allergens</h3>
-          <h3>Your Random Top Recommendation is:</h3>
-          </h3>
-          <h2 class="foodinfo">{{foodName}}</h2>
-          <h3>From</h3>
-          <img src= "/static/foodimages/{{foodName}}.jpg" alt="FoodImage" width="400" height="500">
-          <h2 class="foodinfo">{{restaurantName}}</h2>
-          <h2 class="foodinfo">Located: {{restaurantLoc}}</h2>
-          <h2 class="foodinfo">Price: ${{foodPrice}} </h2>
-          <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
-          <form method="post">
-          {{ form.hidden_tag() }}
-          {{ form.csrf_token }}
-          <h3>{{form.accept}} {{form.deny}}</h3>
-        </form>
+            <h1><b>Bobcat Bites: Favorite Food Results: {{foodName}}</b></h1>
+            <!--             BUTTONS GO HERE            -->
+            {% if messageConfirmation !='' %}
+            <p style="color: greenyellow" ,style="font-size:400%" ;><b>{{messageConfirmation}} </b>
+            </p>
+            {%endif%}
+            <h2 class="foodinfo">{{foodName}}</h2>
+            <h3>From</h3>
+            <img src= "/static/foodimages/{{foodName}}.jpg" alt="FoodImage" width="400" height="500">
+            <h2 class="foodinfo">{{restaurantName}}</h2>
+            <h2 class="foodinfo">Located: {{restaurantLocation}}</h2>
+            <h2 class="foodinfo">Price: ${{foodPrice}} </h2>
+            <h2 class="foodinfo"> With a Score: {{foodScore}}</h2>
+            <form method="post">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <h3>{{form.remove}}</h3>
+            </form>
         </center>
       </div>
 
