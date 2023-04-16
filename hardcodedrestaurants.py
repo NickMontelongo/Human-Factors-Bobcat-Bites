@@ -440,7 +440,20 @@ flavorProfile = [["meaty", "savory"], ["meaty", "savory"], ["fresh", "savory"], 
                  ["savory", "meaty", "tangy"], ["savory", "meaty", "tangy"], ["meaty", "savory"], ["meaty", "savory"], ["savory", "meaty"], ["savory", "meaty"], 
                  ["meaty", "savory"]]
 
-
+PandaExpress=[]
+foodNames= ["bowl", "plate", "bigger plate"]
+foodPrices= [7.90, 9.40, 10.90]
+foodIngredients= [["chow mein", "fried rice", "white steamed rice" ,"super greens", "brown steamed rice", "shrimp", "broccoli", "sweet and spicy sauce", "chicken", "angus steak", "onion", 
+                   "bell peppers", "mushrooms", "black pepper sauce", "honey sauce", "walnuts", "teriyaki sauce", "sweet sauce", "organic honey", "beef", "sweet-tangy sauce", "pineapples", "chili sauce", 
+                   "string beans", "mild ginger soy sauce", "celery", "kale", "cabbage"], ["chow mein", "fried rice", "white steamed rice" ,"super greens", "brown steamed rice", "shrimp", "broccoli", "sweet and spicy sauce", "chicken", "angus steak", "onion", 
+                   "bell peppers", "mushrooms", "black pepper sauce", "honey sauce", "walnuts", "teriyaki sauce", "sweet sauce", "organic honey", "beef", "sweet-tangy sauce", "pineapples", "chili sauce", 
+                   "string beans", "mild ginger soy sauce", "celery", "kale", "cabbage"], ["chow mein", "fried rice", "white steamed rice" ,"super greens", "brown steamed rice", "shrimp", "broccoli", "sweet and spicy sauce", "chicken", "angus steak", "onion", 
+                   "bell peppers", "mushrooms", "black pepper sauce", "honey sauce", "walnuts", "teriyaki sauce", "sweet sauce", "organic honey", "beef", "sweet-tangy sauce", "pineapples", "chili sauce", 
+                   "string beans", "mild ginger soy sauce", "celery", "kale", "cabbage"]]
+foodAllergens = [["gluten, shellfish", "soybeans", "wheat", "sesame", "egg", "dairy", "treenuts"], ["gluten, shellfish", "soybeans", "wheat", "sesame", "egg", "dairy", "treenuts"], 
+                 ["gluten, shellfish", "soybeans", "wheat", "sesame", "egg", "dairy", "treenuts"]]
+flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], 
+                 ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 
 # Test looper
