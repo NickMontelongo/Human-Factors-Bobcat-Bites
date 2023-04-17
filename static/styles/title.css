@@ -37,3 +37,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+img {
+  height:auto;
+  max-width: 80%;
+  min-width: 40%;
+}
