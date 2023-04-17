@@ -338,7 +338,7 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
 AsadoLatinGrill=[]
 foodNames= ["Refried Beans", "Black Beans", "Spanish Rice", "Grilled Chili Lime Chicken",
             "Flank Steak Fajita", "Salsa Fresca", "Classic Guacamole", "Queso", "Chorizo Tofu", "cilantro lime rice"]
-foodPrices= [1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99] #FIND ACTUAL VALUES
+foodPrices= [2.99, 2.99, 2.99, 7.49, 8.99, 1.99, 3.99, 3.19, 6.99, 2.99] 
 foodIngredients= [["Beans"], ["beans"], ["rice"], ["chicken", "lime"], ["Beef"], ["tomatoes", "jalapenos"], ["avocado"],
                   ["cheese"], ["tofu", "Chorizo"], ["rice"]]
 foodAllergens = [[], [], ["gluten"], ["poultry"], [], ["tomato"], ["avocado"], ["dairy"], [], ["gluten"]]
