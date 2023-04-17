@@ -454,7 +454,15 @@ flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["sav
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 
-# Test looper
+#DO NOT DELETE NICK 4/17/2023
+restaurantName = ""
+restaurantLocation = "Click the buttons to begin"
+dummyRestaurant=[]
+foodNames= ["This is a Placeholder"]
+foodPrices=[0.00]
+foodIngredients =[[""]]
+foodAllergens=[[""]]
+flavorProfile=[[""]]
 
 
 
