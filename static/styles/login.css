@@ -2,6 +2,13 @@ h1 {
   color: #8D734A;
 }
 
+a:link{
+  color: lightblue
+}
+
+a:visited{
+  color: cornflowerblue
+}
 
 h3 {
   color: white;

@@ -7,11 +7,18 @@ h2 {
 }
 
 h3 {
-  color: cornflowerblue
+  color: #8D734A;
 }
 
 p {
   font-family: 'Lucida Sans';
+}
+a:link{
+  color: lightblue
+}
+
+a:visited{
+  color: cornflowerblue
 }
 
 .white-box {
