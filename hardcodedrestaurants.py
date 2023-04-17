@@ -346,19 +346,21 @@ flavorProfile = [["savory"], ["savory"], ["savory"], ["savory", "meaty"], ["savo
                  ["fresh", "savory"], ["cheesy", "savory"], ["savory"], ["savory"]]
 
 KawaSushi=[]
-foodNames= ["All American Roll", "All Star Combo", "Atomic Roll", "California Roll","California Combo", "California Roll Plus",
-            "Caterpillar Roll", "Crunchy California Roll", "Crunchy Shrimp Roll", "Dragon Roll- Grilled Eel",
-            "Dragon Roll- Salmon", "Dragon Roll- Tuna", "Dynamite Roll", "Grilled Eel Roll", "Inari Sushi", "Nigiri Delux",
-            "Philadelphia Roll Imitation Crab", "Philadelphia Roll Smoked Salmon", "Potsticker- Chicken", "Potsticker- Pork",
-            "Rainbow Roll", "Salmon & Avocado Roll", "Salmon Roll", "Salmon Lovers Combo", "Sashimi", "Shaggy Dog Roll",
-            "South West Roll", "Spicy California Roll", "Spicy California Roll Plus", "Spicy Crab Roll Plus", "Spicy Shrimp Roll",
-            "Spicy Tuna Roll", "Spring Roll- Shrimp", "Summer Roll", "Sushi & Nigiri Combo", "Sushi Delight Combo",
-            "Sushic Combo", "Tailgater's Special", "Tempura Imitation Crab Roll", "Tempura Shrimp Roll", "Tuna & Avocado Roll",
-            "Tuna Roll", "Tuna Lovers Combo", "Veggie Roll Plus", "Crunchy California Burrito", "Dynamite Tuna Burrito",
-            "Volcano Burrito", "Salmon Poke Bowl", "Tuna Poke Bowl"]
-foodPrices= [3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45
-             , 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45
-             , 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45] #NEEDS PRICES
+foodNames= ["All American Roll", "All Star Combo", "Atomic Roll", "California Roll","California Combo",
+            "California Roll Plus", "Caterpillar Roll", "Crunchy California Roll", "Crunchy Shrimp Roll", "Dragon Roll- Grilled Eel",
+            "Dragon Roll- Salmon", "Dragon Roll- Tuna", "Dynamite Roll", "Grilled Eel Roll", "Inari Sushi",
+            "Nigiri Delux", "Philadelphia Roll Imitation Crab", "Philadelphia Roll Smoked Salmon", "Potsticker- Chicken", "Potsticker- Pork",
+            "Rainbow Roll", "Salmon & Avocado Roll", "Salmon Roll", "Salmon Lovers Combo", "Sashimi",
+            "Shaggy Dog Roll", "South West Roll", "Spicy California Roll", "Spicy California Roll Plus", "Spicy Crab Roll Plus",
+            "Spicy Shrimp Roll", "Spicy Tuna Roll", "Spring Roll- Shrimp", "Summer Roll", "Sushi & Nigiri Combo",
+            "Sushi Delight Combo", "Sushi Combo", "Tailgater's Special", "Tempura Imitation Crab Roll", "Tempura Shrimp Roll",
+            "Tuna & Avocado Roll", "Tuna Roll", "Tuna Lovers Combo", "Veggie Roll Plus", "Crunchy California Burrito",
+            "Dynamite Tuna Burrito", "Volcano Burrito", "Salmon Poke Bowl", "Tuna Poke Bowl"]
+foodPrices= [8.99, 11.99, 8.49, 8.49, 11.99, 8.99, 8.49, 8.49, 8.49, 8.49,
+             8.49, 8.49, 8.49, 8.49, 8.49, 11.99, 8.49, 8.49, 5.99, 5.99,
+             8.49, 8.49, 8.49, 11.99, 10.99, 8.49, 8.49, 8.49, 8.99, 8.99,
+             8.49, 8.49, 8.49, 8.49, 11.99, 10.99, 11.99, 11.99, 8.49, 8.49,
+             8.49, 8.49, 11.99, 8.49, 9.49, 9.49, 9.49, 9.49, 9.49]
 foodIngredients= [["imitation crab", "rice", "avocado"], ["imitation crab", "rice", "avocado"], ["imitation crab", "rice", "cream cheese"],
                   ["imitation crab", "rice", "cucumber"], ["imitation crab", "rice", "cucumber"], ["imitation crab", "rice", "cucumber"], ["cucumber", "rice", "avocado"],
                   ["imitation crab", "rice", "cucumber"], ["rice", "fish"], ["rice", "fish"], ["rice", "fish"], ["rice", "fish"],
