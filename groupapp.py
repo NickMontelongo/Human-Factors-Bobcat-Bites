@@ -361,7 +361,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
-    foodPrice = currentRestaurantRecommendationList[list_index].price
+    recommendedFoodPrice = currentRestaurantRecommendationList[list_index].price
+    recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
@@ -384,7 +385,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
         if form.reset.data:
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, form=form)
+                           foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
 
 
 @app.route("/recommendrand/<restaurantIndex>&<foodIndex>", methods=["GET", "POST"])
@@ -424,6 +425,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
     recommendedFoodScore = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].recommendationScore
     recommendedFoodName = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].name
     recommendedFoodPrice = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].price
+    recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
             restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
@@ -519,6 +521,7 @@ def displayFoodItem(foodName,restaurantName,
                     restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
     user = Person.query.filter_by(email=current_user.email).first()
+    foodPrice = f'{foodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
             foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
@@ -580,6 +583,7 @@ def displaySavedResults():
 def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
     form = DisplayFavoritesForm()
     user = current_user
+    foodPrice = f'{foodPrice:.2f}'
     if form.validate_on_submit():
         foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
         user.userfavoritefoods.remove(foodItem)
