@@ -163,13 +163,13 @@
                     <h3>Please select any allergens you have to food (can select multiple):
                         {{ form.allergen_choices}}</h3>
                     <h3>Please input the minimum value of your budget range (use numbers in the format x.xx):
-                        ${{form.budget_min}}</h3>
+                        ${{form.budget_min.2f}}</h3>
                     {% for error in form.budget_min.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;>
                         <b>
                             {{error}} </b>
                     </p> {% endfor %}
                     <h3>Please input the maximum value of your budget range (use numbers in the format x.xx):
-                        ${{form.budget_max}}</h3>
+                        ${{form.budget_max.2f}}</h3>
                     {% for error in form.budget_max.errors %} <p style="color: rgb(100,0,0);" ,style="font-size:400%" ;>
                         <b>
                             {{error}} </b>
