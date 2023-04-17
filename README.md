@@ -15,7 +15,7 @@ Need to take pictures of places on campus
 
 NEXT UPDATE 
 LAST CONCRETE UPDATE
-Due: 4/??/2023
+Due: 4/30/2023
 QUALITY OF LIFE UPDATES
 - Messages implemented for user interaction
     Blue for errors

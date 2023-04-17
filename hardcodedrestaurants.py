@@ -198,7 +198,7 @@ flavorProfile = [["egg", "cheese", "savory"], ["savory"], ["savory", "salty"], [
                  ["savory", "meaty"], ["savory", "meaty"], ["savory","meaty"],["savory"], ["savory", "meaty"], ["savory", "cheesy"],
                  ["savory", "salty"],["savory", "healthy"]]
 
-WoodsStPizza=[]
+WoodsStPizzaAndPasta=[]
 foodNames= ["Cheese Pizza Slice", "Pepperoni Pizza Slice", "Alfredo and Veggie Pizza Slice", "Bacon and Herbs Pizza Slice",
             "Pepperoni Calzone", "Weekly Pasta Bowl", "Garlic Knots", "Cookie"]
 foodPrices= [3.29, 3.29, 4.19, 4.19, 4.49, 5.49, 1.09, 1.99]
@@ -391,6 +391,30 @@ flavorProfile = [["savory", "umami"], ["savory", "umami"], ["savory", "umami"], 
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"],
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"],
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"]]
+
+CoffeeandPiMarket=[]
+foodNames= ["chex mix", "paqui chips", "zapp's chips", "stacy's pita chips", "gardettos", "kettle chips", "PopTart",
+            "nutri-grain bar", "black forest gummy", "kind bar", "belvita", "ctc cereal bar", "trix cereal bar",
+            "clif bar", "luna bar", "rice krispie treat", "nature valley bar", "rxbar", "kellogs protein bar", "think thin bar",
+            "milk duds", "hershey's bar", "twizzlers", "trolli gummy", "welch's fruit snack", "haribo fruit snack", "lifesavers", "gummy bears"]
+foodPrices= [4.39, 2.39, 1.29, 1.19, 4.49, 1.39, 1.55, 1.39, 2.49, 3.25, 1.79, 2.39, 1.09, 2.49, 2.49, 1.29, 1.49, 3.89,
+             2.85, 2.85, 1.89, 2.05, 2.05, 3.19, 3.19, 1.19, 2.49, 1.19]
+foodIngredients= [["corn", "bread", "salt"], ["corn"], ["potato"], ["bread"], ["rye", "salt"], ["potato"], ["bread", "sugar"],
+                  ["bread", "sugar"], ["gluten", "sugar"], ["granola", "nuts"], ["bread"], ["cereal"], ["cereal", "sugar"],
+                  ["granola", "nuts"], ["granola", "nuts"], ["cereal", "sugar"], ["granola", "nuts"], ["granola", "nuts"],
+                  ["granola", "nuts"], ["granola", "nuts"], ["chocolate", "malt"], ["chocolate"], ["gluten", "sugar"],
+                  ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"]]
+foodAllergens = [["gluten"], ["corn", "gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "nuts"],
+                 ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "malt"], ["gluten", "chocolate"], ["gluten", "sugar"],
+                 ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"]]
+flavorProfile = [["savory", "salty"], ["savory", "salty", "spicy"], ["savory", "salty"], ["savory", "salty"],  ["savory", "salty"],  ["savory", "salty"],  ["sweet", "sugary"],
+                 ["healthy", "nutty"], ["sweet", "chewy"], ["healthy", "nutty"],["healthy", "nutty"], ["healthy", "nutty"], ["sweet", "crunchy"],
+                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "sugary"],["healthy", "nutty"], ["healthy", "nutty"],
+                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "chewy"], ["sweet"], ["sweet", "chewy"],
+                 ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"]]
+
 
 EiensteinsBagels=[]
 foodNames= [""]
