@@ -94,7 +94,7 @@ class DisplayFavoritesForm(FlaskForm):
 
 class DisplayResultsForm(FlaskForm):
     accept = SubmitField(label="Favorite this food item")
-    deny = SubmitField(label="Deny this food item")
+    deny = SubmitField(label="Next food item")
     reset = SubmitField(label="Reset Results")
 
 class RegisterForm(FlaskForm):
