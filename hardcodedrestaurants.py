@@ -415,6 +415,35 @@ flavorProfile = [["savory", "salty"], ["savory", "salty", "spicy"], ["savory", "
                  ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "chewy"], ["sweet"], ["sweet", "chewy"],
                  ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"]]
 
+McCoyCafe=[]
+foodNames= ["parfait", "fruit", "pineapple", "chicken salad snacker", "apple snacker", "simply eggs", "grapes and cheddar",
+            "pepperoni and cheese", "mediterranean dipper", "buffalo chicken wrap", "veggie and ranch wrap", "chicken BLT wrap",
+            "big italy wrap", "oreo delight", "vanilla goodness", "apple pie trifle", "kickin chicken sandwich", "turkey swiss sandwich",
+            "egg salad sandwich", "turkey and cheddar blt sandwich", "pb&j sandwich", "ham and cheese sandwich", "italian wedge sandwich",
+            "chicken salad sandwich", "chicken caesar salad", "cobb salad", "southwest chicken salad", "the lil garden salad",
+            "deluxe garden salad", "asian chicken salad", "bacon egg and cheese taco", "chorizo breakfast burrito", "sausage breakfast burrito"]
+foodPrices= [4.69, 4.19, 4.69, 5.19, 4.29, 5.19, 3.99, 4.69, 5.49, 5.59, 5.59, 6.19, 6.19, 3.29, 3.29, 4.19, 6.19, 7.19,
+             6.19, 6.69, 4.39, 6.49, 6.19, 9.19, 7.99, 7.99, 7.99, 5.59, 7.29, 7.69, 5.19, 4.99, 4.99]
+foodIngredients= [["yogurt", "granola", "fruit"], ["fruit"], ["pineapple"], ["chicken", "mayo", "egg"], ["apple", "peanut butter"],
+                  ["egg"], ["fruit", "cheese"], ["meat", "cheese"], ["hummus", "bread"], ["chicken", "bread"], ["vegetables", "ranch", "bread"],
+                  ["chicken", "bacon", "vegetables"], ["sausage", "bread", "vegetables"], ["cookie"], ["sugar"], ["fruit", "bread", "sugar"],
+                  ["chicken", "bread"], ["turkey", "bread"], ["egg", "bread"], ["turkey", "cheese", "bacon"], ["peanut butter", "jelly", "bread"],
+                  ["ham", "cheese", "bread"], ["vegetables", "bread"], ["Chicken", "mayo", "bread"], ["chicken", "vegetables"],
+                  ["vegetables"], ["vegetables", "chicken"], ["vegetables"], ["vegetables"], ["vegetables"], ["bacon", "egg", "cheese", "bread"],
+                  ["chorizo", "bread", "cheese"], ["sausage", "bread", "cheese"]]
+foodAllergens = [["nuts", "dairy"], [], [], ["dairy", "poultry"], ["nuts"], ["poultry"], ["dairy"], ["dairy"], ["gluten"],
+                 ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"],
+                 ["poultry", "gluten"], ["turkey", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["nuts", "gluten"],
+                 ["dairy", "gluten"], ["gluten"], ["poultry", "gluten"], ["poultry"], [], ["poultry"], [], [], ["poultry"],
+                 ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"]]
+flavorProfile = [["sweet", "healthy"], ["sweet", "healthy"], ["sweet", "healthy"], ["savory", "creamy"], ["helathy", "crunchy"],
+                 ["savory"], ["savory", "sweet", "healthy"], ["meaty", "cheesy"], ["savory", "healthy"], ["meaty", "savory"],
+                 ["savory", "healthy"], ["meaty", "crunchy"], ["meaty", "saucy"], ["sweet", "creamy"], ["sweet", "creamy"],
+                 ["crunchy", "sweet", "fruity"], ["savory", "meaty"], ["savory", "meaty"], ["savory"], ["savory", "meaty"],
+                 ["savory", "sweet"], ["savory", "meaty"], ["savory", "healthy"],  ["savory", "meaty"], ["savory", "healthy"],
+                 ["savory", "healthy"], ["savory", "meaty"], ["savory", "healthy"], ["savory", "healthy"], ["savory", "healthy"],
+                 ["savory", "cheesy"], ["savory", "meaty"], ["savory", "meaty"]]
+
 
 EiensteinsBagels=[]
 foodNames= [""]
