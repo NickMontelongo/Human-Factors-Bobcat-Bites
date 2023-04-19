@@ -402,9 +402,15 @@ foodNames= ["Classic Sandwich", "Sunrise Sandwich", "The Italian Sandwich", "Mac
             "Lil Buffalo Sandwich", "Turkey Melt Sandwich", "Patty Melt", "Vegan Classic", "Vegan Patty Melt", "Vegan Eggplant Parm", 
             "Classic Mac & Cheese Bake", "Vegan Mac Bake", "Buffalo Mac Bake"]
 foodPrices= [2.99, 4.99, 6.99, 6.49, 4.99, 6.49, 6.99, 10.99, 3.99, 9.99, 6.99, 5.99, 6.99, 6.99]
-foodIngredients= [[""]]
-foodAllergens = [[""]]
-flavorProfile = [["meaty", "fresh", "savory"], ["fresh", "savory"], ["meaty", "fresh", "savory"], ["savory" ,"cheesey"], ["savory" ,"cheesey"], 
+foodIngredients= [["cheese", "bread"], ["cheese", "hashbrowns", "egg", "bacon", "maple butter", "bread"], ["provolone", "salami", "pepperoni", "ham", "tomato", "arugula", "banana pepper", "garlic aioli", "bread"], 
+                  ["mac and cheese", "chicken", "ranch", "jalapeno"], ["American", "cheddar", "swiss", "bread"], ["chicken", "buffalo sauce", "coleslaw", "blue cheese", "american", "bread"], 
+                  ["turkey", "cheese", "avacado", "tomato", "arugula", "honey mustard", "bacon", "bread"], ["jalapenos", "cheese", "bacon", "tortilla chips", "cream cheese", "bread"], 
+                  ["vegan cheese", "bread"], ["beyond patty", "vegan cheese", "vegan mayo", "pickles", "onion", "bread"], ["eggplant", "tomato", "vegan cheese", "garlic", "red pepper", "basil"], 
+                  ["cheddar", "pasta"], ["vegan cheese", "pasta"], ["cheese", "pasta", "buffalo cheese sause", "bacon", "blue cheese", "onion" "chicken"]]
+foodAllergens = [["dairy", "gluten"], ["dairy", "egg", "pork"], ["dariy", "pork", "garlic"], ["gluten", "dairy", "chicken",], ["dairy", "gluten"], 
+                 ["chicken", "dairy", "gluten"], ["dariy", "turkey", "avacado", "pork", "gluten"], ["gluten"], ["gluten"], ["garlic", "basil"], 
+                 ["gluten", "dairy"], ["gluten"],["dairy", "gluten", "chicken"]]
+flavorProfile = [["cheesey", "fresh", "savory"], ["cheesey", "fresh", "savory"], ["meaty", "fresh", "savory"], ["savory" ,"cheesey"], ["savory" ,"cheesey"], 
                  ["sweet", "savory", "tangy", "meaty"], ["meaty", "savory"], ["savory" ,"cheesey", "meaty"], ["fresh", "savory"], ["fresh", "savory"], 
                 ["fresh", "savory"], ["cheesey", "savory"], ["cheesey", "fresh", "savory"], ["sweet", "cheese", "tangy", "savory"]]
 
