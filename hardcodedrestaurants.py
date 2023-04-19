@@ -64,7 +64,7 @@ foodPrices = [5.99, 6.99, 7.99, 2.99, 4.99, 2.99, 2.19, 2.99]
 foodIngredients = [["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"], ["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"],
 ["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"], ["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"],
 ["chicken", "flour", "buttermilk", "cider vinegar", "garlic", "mustard", "dill", "red pepper", "potatoes"], ["oreos", "pancake mix", "oil"], ["cheese", "cheese sauce", "pasta"], ["potatoes"]]
-foodAllergens = ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chocolate", "sugar"], ["dairy", "gluten"], ["flour", "potatoes"]
+foodAllergens = ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chicken", "gluten", "dairy", "mustard"], ["chocolate", "sugar"], ["dairy", "gluten"], [""]
 flavorProfile = [["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["savory", "salty"], ["sweet"], ["savory"], ["salty"]]
 
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
@@ -198,7 +198,7 @@ flavorProfile = [["egg", "cheese", "savory"], ["savory"], ["savory", "salty"], [
                  ["savory", "meaty"], ["savory", "meaty"], ["savory","meaty"],["savory"], ["savory", "meaty"], ["savory", "cheesy"],
                  ["savory", "salty"],["savory", "healthy"]]
 
-WoodsStPizza=[]
+WoodsStPizzaAndPasta=[]
 foodNames= ["Cheese Pizza Slice", "Pepperoni Pizza Slice", "Alfredo and Veggie Pizza Slice", "Bacon and Herbs Pizza Slice",
             "Pepperoni Calzone", "Weekly Pasta Bowl", "Garlic Knots", "Cookie"]
 foodPrices= [3.29, 3.29, 4.19, 4.19, 4.49, 5.49, 1.09, 1.99]
@@ -338,7 +338,7 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
 AsadoLatinGrill=[]
 foodNames= ["Refried Beans", "Black Beans", "Spanish Rice", "Grilled Chili Lime Chicken",
             "Flank Steak Fajita", "Salsa Fresca", "Classic Guacamole", "Queso", "Chorizo Tofu", "cilantro lime rice"]
-foodPrices= [1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99, 1.99] #FIND ACTUAL VALUES
+foodPrices= [2.99, 2.99, 2.99, 7.49, 8.99, 1.99, 3.99, 3.19, 6.99, 2.99] 
 foodIngredients= [["Beans"], ["beans"], ["rice"], ["chicken", "lime"], ["Beef"], ["tomatoes", "jalapenos"], ["avocado"],
                   ["cheese"], ["tofu", "Chorizo"], ["rice"]]
 foodAllergens = [[], [], ["gluten"], ["poultry"], [], ["tomato"], ["avocado"], ["dairy"], [], ["gluten"]]
@@ -346,19 +346,21 @@ flavorProfile = [["savory"], ["savory"], ["savory"], ["savory", "meaty"], ["savo
                  ["fresh", "savory"], ["cheesy", "savory"], ["savory"], ["savory"]]
 
 KawaSushi=[]
-foodNames= ["All American Roll", "All Star Combo", "Atomic Roll", "California Roll","California Combo", "California Roll Plus",
-            "Caterpillar Roll", "Crunchy California Roll", "Crunchy Shrimp Roll", "Dragon Roll- Grilled Eel",
-            "Dragon Roll- Salmon", "Dragon Roll- Tuna", "Dynamite Roll", "Grilled Eel Roll", "Inari Sushi", "Nigiri Delux",
-            "Philadelphia Roll Imitation Crab", "Philadelphia Roll Smoked Salmon", "Potsticker- Chicken", "Potsticker- Pork",
-            "Rainbow Roll", "Salmon & Avocado Roll", "Salmon Roll", "Salmon Lovers Combo", "Sashimi", "Shaggy Dog Roll",
-            "South West Roll", "Spicy California Roll", "Spicy California Roll Plus", "Spicy Crab Roll Plus", "Spicy Shrimp Roll",
-            "Spicy Tuna Roll", "Spring Roll- Shrimp", "Summer Roll", "Sushi & Nigiri Combo", "Sushi Delight Combo",
-            "Sushic Combo", "Tailgater's Special", "Tempura Imitation Crab Roll", "Tempura Shrimp Roll", "Tuna & Avocado Roll",
-            "Tuna Roll", "Tuna Lovers Combo", "Veggie Roll Plus", "Crunchy California Burrito", "Dynamite Tuna Burrito",
-            "Volcano Burrito", "Salmon Poke Bowl", "Tuna Poke Bowl"]
-foodPrices= [3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45
-             , 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45
-             , 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45, 3.45] #NEEDS PRICES
+foodNames= ["All American Roll", "All Star Combo", "Atomic Roll", "California Roll","California Combo",
+            "California Roll Plus", "Caterpillar Roll", "Crunchy California Roll", "Crunchy Shrimp Roll", "Dragon Roll- Grilled Eel",
+            "Dragon Roll- Salmon", "Dragon Roll- Tuna", "Dynamite Roll", "Grilled Eel Roll", "Inari Sushi",
+            "Nigiri Delux", "Philadelphia Roll Imitation Crab", "Philadelphia Roll Smoked Salmon", "Potsticker- Chicken", "Potsticker- Pork",
+            "Rainbow Roll", "Salmon & Avocado Roll", "Salmon Roll", "Salmon Lovers Combo", "Sashimi",
+            "Shaggy Dog Roll", "South West Roll", "Spicy California Roll", "Spicy California Roll Plus", "Spicy Crab Roll Plus",
+            "Spicy Shrimp Roll", "Spicy Tuna Roll", "Spring Roll- Shrimp", "Summer Roll", "Sushi & Nigiri Combo",
+            "Sushi Delight Combo", "Sushi Combo", "Tailgater's Special", "Tempura Imitation Crab Roll", "Tempura Shrimp Roll",
+            "Tuna & Avocado Roll", "Tuna Roll", "Tuna Lovers Combo", "Veggie Roll Plus", "Crunchy California Burrito",
+            "Dynamite Tuna Burrito", "Volcano Burrito", "Salmon Poke Bowl", "Tuna Poke Bowl"]
+foodPrices= [8.99, 11.99, 8.49, 8.49, 11.99, 8.99, 8.49, 8.49, 8.49, 8.49,
+             8.49, 8.49, 8.49, 8.49, 8.49, 11.99, 8.49, 8.49, 5.99, 5.99,
+             8.49, 8.49, 8.49, 11.99, 10.99, 8.49, 8.49, 8.49, 8.99, 8.99,
+             8.49, 8.49, 8.49, 8.49, 11.99, 10.99, 11.99, 11.99, 8.49, 8.49,
+             8.49, 8.49, 11.99, 8.49, 9.49, 9.49, 9.49, 9.49, 9.49]
 foodIngredients= [["imitation crab", "rice", "avocado"], ["imitation crab", "rice", "avocado"], ["imitation crab", "rice", "cream cheese"],
                   ["imitation crab", "rice", "cucumber"], ["imitation crab", "rice", "cucumber"], ["imitation crab", "rice", "cucumber"], ["cucumber", "rice", "avocado"],
                   ["imitation crab", "rice", "cucumber"], ["rice", "fish"], ["rice", "fish"], ["rice", "fish"], ["rice", "fish"],
@@ -389,6 +391,59 @@ flavorProfile = [["savory", "umami"], ["savory", "umami"], ["savory", "umami"], 
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"],
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"],
                  ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"], ["savory", "umami"]]
+
+CoffeeandPiMarket=[]
+foodNames= ["chex mix", "paqui chips", "zapp's chips", "stacy's pita chips", "gardettos", "kettle chips", "PopTart",
+            "nutri-grain bar", "black forest gummy", "kind bar", "belvita", "ctc cereal bar", "trix cereal bar",
+            "clif bar", "luna bar", "rice krispie treat", "nature valley bar", "rxbar", "kellogs protein bar", "think thin bar",
+            "milk duds", "hershey's bar", "twizzlers", "trolli gummy", "welch's fruit snack", "haribo fruit snack", "lifesavers", "gummy bears"]
+foodPrices= [4.39, 2.39, 1.29, 1.19, 4.49, 1.39, 1.55, 1.39, 2.49, 3.25, 1.79, 2.39, 1.09, 2.49, 2.49, 1.29, 1.49, 3.89,
+             2.85, 2.85, 1.89, 2.05, 2.05, 3.19, 3.19, 1.19, 2.49, 1.19]
+foodIngredients= [["corn", "bread", "salt"], ["corn"], ["potato"], ["bread"], ["rye", "salt"], ["potato"], ["bread", "sugar"],
+                  ["bread", "sugar"], ["gluten", "sugar"], ["granola", "nuts"], ["bread"], ["cereal"], ["cereal", "sugar"],
+                  ["granola", "nuts"], ["granola", "nuts"], ["cereal", "sugar"], ["granola", "nuts"], ["granola", "nuts"],
+                  ["granola", "nuts"], ["granola", "nuts"], ["chocolate", "malt"], ["chocolate"], ["gluten", "sugar"],
+                  ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"]]
+foodAllergens = [["gluten"], ["corn", "gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "nuts"],
+                 ["gluten", "nuts"], ["gluten", "nuts"], ["gluten", "malt"], ["gluten", "chocolate"], ["gluten", "sugar"],
+                 ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"], ["gluten", "sugar"]]
+flavorProfile = [["savory", "salty"], ["savory", "salty", "spicy"], ["savory", "salty"], ["savory", "salty"],  ["savory", "salty"],  ["savory", "salty"],  ["sweet", "sugary"],
+                 ["healthy", "nutty"], ["sweet", "chewy"], ["healthy", "nutty"],["healthy", "nutty"], ["healthy", "nutty"], ["sweet", "crunchy"],
+                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "sugary"],["healthy", "nutty"], ["healthy", "nutty"],
+                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "chewy"], ["sweet"], ["sweet", "chewy"],
+                 ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"]]
+
+McCoyCafe=[]
+foodNames= ["parfait", "fruit", "pineapple", "chicken salad snacker", "apple snacker", "simply eggs", "grapes and cheddar",
+            "pepperoni and cheese", "mediterranean dipper", "buffalo chicken wrap", "veggie and ranch wrap", "chicken BLT wrap",
+            "big italy wrap", "oreo delight", "vanilla goodness", "apple pie trifle", "kickin chicken sandwich", "turkey swiss sandwich",
+            "egg salad sandwich", "turkey and cheddar blt sandwich", "pb&j sandwich", "ham and cheese sandwich", "italian wedge sandwich",
+            "chicken salad sandwich", "chicken caesar salad", "cobb salad", "southwest chicken salad", "the lil garden salad",
+            "deluxe garden salad", "asian chicken salad", "bacon egg and cheese taco", "chorizo breakfast burrito", "sausage breakfast burrito"]
+foodPrices= [4.69, 4.19, 4.69, 5.19, 4.29, 5.19, 3.99, 4.69, 5.49, 5.59, 5.59, 6.19, 6.19, 3.29, 3.29, 4.19, 6.19, 7.19,
+             6.19, 6.69, 4.39, 6.49, 6.19, 9.19, 7.99, 7.99, 7.99, 5.59, 7.29, 7.69, 5.19, 4.99, 4.99]
+foodIngredients= [["yogurt", "granola", "fruit"], ["fruit"], ["pineapple"], ["chicken", "mayo", "egg"], ["apple", "peanut butter"],
+                  ["egg"], ["fruit", "cheese"], ["meat", "cheese"], ["hummus", "bread"], ["chicken", "bread"], ["vegetables", "ranch", "bread"],
+                  ["chicken", "bacon", "vegetables"], ["sausage", "bread", "vegetables"], ["cookie"], ["sugar"], ["fruit", "bread", "sugar"],
+                  ["chicken", "bread"], ["turkey", "bread"], ["egg", "bread"], ["turkey", "cheese", "bacon"], ["peanut butter", "jelly", "bread"],
+                  ["ham", "cheese", "bread"], ["vegetables", "bread"], ["Chicken", "mayo", "bread"], ["chicken", "vegetables"],
+                  ["vegetables"], ["vegetables", "chicken"], ["vegetables"], ["vegetables"], ["vegetables"], ["bacon", "egg", "cheese", "bread"],
+                  ["chorizo", "bread", "cheese"], ["sausage", "bread", "cheese"]]
+foodAllergens = [["nuts", "dairy"], [], [], ["dairy", "poultry"], ["nuts"], ["poultry"], ["dairy"], ["dairy"], ["gluten"],
+                 ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"],
+                 ["poultry", "gluten"], ["turkey", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["nuts", "gluten"],
+                 ["dairy", "gluten"], ["gluten"], ["poultry", "gluten"], ["poultry"], [], ["poultry"], [], [], ["poultry"],
+                 ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"]]
+flavorProfile = [["sweet", "healthy"], ["sweet", "healthy"], ["sweet", "healthy"], ["savory", "creamy"], ["helathy", "crunchy"],
+                 ["savory"], ["savory", "sweet", "healthy"], ["meaty", "cheesy"], ["savory", "healthy"], ["meaty", "savory"],
+                 ["savory", "healthy"], ["meaty", "crunchy"], ["meaty", "saucy"], ["sweet", "creamy"], ["sweet", "creamy"],
+                 ["crunchy", "sweet", "fruity"], ["savory", "meaty"], ["savory", "meaty"], ["savory"], ["savory", "meaty"],
+                 ["savory", "sweet"], ["savory", "meaty"], ["savory", "healthy"],  ["savory", "meaty"], ["savory", "healthy"],
+                 ["savory", "healthy"], ["savory", "meaty"], ["savory", "healthy"], ["savory", "healthy"], ["savory", "healthy"],
+                 ["savory", "cheesy"], ["savory", "meaty"], ["savory", "meaty"]]
+
 
 EiensteinsBagels=[]
 foodNames= [""]
@@ -460,7 +515,15 @@ flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["sav
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 
-# Test looper
+#DO NOT DELETE NICK 4/17/2023
+restaurantName = ""
+restaurantLocation = "Click the buttons to begin"
+dummyRestaurant=[]
+foodNames= ["This is a Placeholder"]
+foodPrices=[0.00]
+foodIngredients =[[""]]
+foodAllergens=[[""]]
+flavorProfile=[[""]]
 
 
 
