@@ -95,7 +95,7 @@
 
     <div class="header">
         <h1><strong>Bobcat Bites</strong></h1>
-        <h2>Food Recommendation System</h2>
+        <h2>Food Recommendation </h2>
     </div>
 
     <div class="navbar">
@@ -103,7 +103,7 @@
         <a href="{{url_for('create_profile')}}">My Profile</a>
         <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
         <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
-        <a href="{{url_for('getRecommendationByRand')}}">Random Recommendation</a>
+        <a href="{{url_for('getRecommendationByRand',restaurantIndex=0, foodIndex=0)}}">Random Recommendation</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()">Recommendation by Place
                 <i class="fa fa-caret-down"></i>
@@ -152,7 +152,7 @@
                         {% endif %}'s Profile</b></h1>
                 <!--             BUTTONS GO HERE            -->
                 {% if messageToUser!='' %}
-                <p style="color: blue" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
+                <p style="color: darkgreen" ,style="font-size:400%" ;><b>{{messageToUser}} </b>
                 </p>
                 {%endif%}
                 <form method="POST" action="">

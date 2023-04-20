@@ -1,11 +1,12 @@
 import math
-##TO DO:
-## 1) TEST FOOD RECOMMENDATION FUNCTION
-## 2) WRITE SUPPLEMENTARY FUNCTIONS
-## 3) TEST SUPPLEMENTARY FUNCTIONS
+
 
 #Note valuecase does matter KEEP EVERYTHING LOWERCASE WHEN CREATING RESTAURANT FOOD LISTS
-def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients, userAllergens, userTastePreferences):
+
+#Default argument is userSavedFavorites, a List containing dictionaries of favorited food items
+# in [{'name': '<foodnamestring>', 'restaurantName' : '<restaurantnamestring>'}]
+def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients,
+                        userAllergens, userTastePreferences,userSavedFavorites=[],restaurantName=''):
     #uses restaurant object to produce list
     restaurantFoodList = restaurant.foodList
     #edited list for foods of a selected restaurant that doesn't have allergens
@@ -21,6 +22,11 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
                 restaurantFoodListEdited.append(eachFoodItem)
     else:
         restaurantFoodListEdited = restaurantFoodList
+    #re-edits restaurantFoodListEdited to remove all favorited Food items
+    for eachFavoritedFoodItem in userSavedFavorites:
+        for eachFoodItem in restaurantFoodListEdited:
+            if (eachFavoritedFoodItem.get('name') == eachFoodItem.name) and (eachFavoritedFoodItem.get('restaurantName') == restaurantName):
+                restaurantFoodListEdited.remove(eachFoodItem)
     #Test to evaluate edited list with items that have matching allergens removed
     #for eachItem in restaurantFoodListEdited:
     #    print(eachItem.name)
@@ -73,40 +79,29 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
     return restaurantFoodListEdited
 
 def calculateRecommendationMasterList(userRestaurantMasterList, minBudget, maxBudget,
-                                      userPrefIngred, userTastes, userAllergens):
+                                      userPrefIngred, userTastes, userAllergens, userFavoriteFoodsList=[]):
     for eachRestaurant in userRestaurantMasterList:
         #calculate for each sublist the appropriate recommendation ist
         sortedRecommendationsIndividualRestaurantList = food_recommendation(eachRestaurant, minBudget, maxBudget,
-                                                             userPrefIngred, userAllergens,
-                                                             userTastes )
+                                                             userPrefIngred, userAllergens,userTastes, userFavoriteFoodsList, 
+                                                             eachRestaurant)
         eachRestaurant.foodList = sortedRecommendationsIndividualRestaurantList
     return userRestaurantMasterList
 
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result  
 # To DO: Figure out how to get images                                   
-def returnUserRecommendedResult(userRecommendationList, userRestaurantChoice, specificSearch=False):
-    variable = 0
-# Specific Restaurant Search
-
-# General Restaurant Search
-def userAcceptsResult(userRecommendationList):
-    variable = 0
-    #Needs to 
-    #1) pop first item (current item) off list
-    #2) return poped item which will be put in user recommendation list
-
-def userDenysResult(userRecommendationList):
-    variable = 0
-    #Needs to
-    #1) pop first item (current item) off list
-    #2) populate page with next Result
-
 def stringToArray(stringToParse):
     lowercaseString = stringToParse.lower()
     lowercaseString = lowercaseString.strip()
     convertedList = lowercaseString.split(', ')
     return convertedList
+
+def stringToArrayNoLower(stringToParse):
+    stringToParse = stringToParse.strip()
+    convertedList = stringToParse.split(', ')
+    return convertedList
+
 
 
 

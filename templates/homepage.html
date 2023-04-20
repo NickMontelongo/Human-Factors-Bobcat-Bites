@@ -95,7 +95,7 @@
 
   <div class="header">
     <h1><strong>Bobcat Bites</strong></h1>
-    <h2>Food Recommendation System</h2>
+    <h2>Food Recommendation </h2>
   </div>
 
   <div class="navbar">
@@ -103,7 +103,7 @@
     <a href="{{url_for('create_profile')}}">My Profile</a>
     <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
     <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
-    <a href="{{url_for('getRecommendationByRand')}}">Random Recommendation</a>
+    <a href="{{url_for('getRecommendationByRand',restaurantIndex=0, foodIndex=0)}}">Random Recommendation</a>
     <div class="dropdown">
       <button class="dropbtn" onclick="myFunction()">Recommendation by Place
         <i class="fa fa-caret-down"></i>
@@ -156,18 +156,35 @@
   <div class="row">
     <div class="leftcolumn">
       <div class="card">
-        <h2>Bobcat Bites Version 0.0.5 prototype</h2>
+        <h2>Bobcat Bites Version 1.0.2 BETA</h2>
         <h5>Current as of April 20th, 2023</h5>
         <div class="notificationimg" style="height:200px;"></div>
         <h3>How This Website Works</h3>
-        <p>It is <b>HIGHLY RECOMMENDED</b> to customize your profile to your likeness before
-          selecting any of the recommendation options. However if you do choose to test
-          these features please know that the website will produce results based on the following profile:
-        <p>Budget: $3.00-$20.00, No allergens, No preferred food items, and No preferred tastes </p>
-        <h3> Getting recommendation based on food items</h3>
+        <p>
+          <h3> Getting Started</h3>
+          <p>It is <b>HIGHLY RECOMMENDED</b> to customize your profile to your likeness before
+            selecting any of the recommendation options. However if you do choose to test
+            these features please know that the website will produce results based on the following profile:
+          <p>Budget: $3.00-$20.00, no allergens, no preferred food items, and no preferred tastes </p>
+
+        <h3>How Is My Rating Quantified?</h3> This system adds points in accordance to your profile's matches
+        to each food's flavor/ingredients/cost relative to your profile's information and budget. A numerical value 
+        is calculated based on the number of matches with the food item's information and is recalcuated with each 
+        profile update. <br>
+        Can be thought of as:<br><br>
+        <b>3.5 or more</b> (Relatively high match)<br>
+        <b>1.5-3</b> (Decent match)<br>
+        <b>1 or less</b> (Unlikely match)
+        <br><br>
+        (NOTE) If you are getting low scores, this could be because the profile needs to be more detailed,
+        ie you add more information, which results in more matches. The best course of action for ingredients
+        is to keep it generic (ie bread not sourdough bread or cheese not pepperjack)
+        </p>
+
+        <h3> Using Our Search Services</h3>
         <p><b>For Search:</b> the results will be based entirely on your search query, it will be provide results
           filtering out results from your allergens and your saved list.<br>
-          <b>For Random Recommendation:</b> Will Recommend food items randomly, filtering out results based
+          <b>For Random Recommendation:</b> Will recommend food items randomly, filtering out results based
           on allergens and your saved list. If you choose to leave to another part of the website your
           progress is reset. <br>
           <b>For Recommendation by Restaurant:</b> This will populate with results for a particular restaurant,

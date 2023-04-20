@@ -7,11 +7,18 @@ h2 {
 }
 
 h3 {
-  color: cornflowerblue
+  color: #8D734A;
 }
 
 p {
   font-family: 'Lucida Sans';
+}
+a:link{
+  color: lightblue
+}
+
+a:visited{
+  color: cornflowerblue
 }
 
 .white-box {
@@ -29,4 +36,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+img {
+  height:auto;
+  width: auto;
+  max-width: 80%;
+  min-width: 40%;
 }

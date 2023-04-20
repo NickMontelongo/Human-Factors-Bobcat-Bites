@@ -12,7 +12,7 @@ from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
 #Algorithm information
-from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray
+from searchalgorithm import food_recommendation,calculateRecommendationMasterList, stringToArray, stringToArrayNoLower
 from hardcodedrestaurants import masterListRestaurants
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
@@ -49,6 +49,7 @@ def load_user(user_id):
 
 
 #######################################FLASK FORMS ####################################################
+
 class FoodSearchForm(FlaskForm):
     choices = [('Name', 'Name'), ('Flavor', 'Flavor'),
                ('Ingredient', 'Ingredient')]
@@ -88,11 +89,13 @@ class ProfileForm(FlaskForm):
             raise ValidationError(
                 "Minimum budget range cannot be less than zero.")
 
+class DisplayFavoritesForm(FlaskForm):
+    remove = SubmitField(label="Remove from Favorites")
 
 class DisplayResultsForm(FlaskForm):
-    accept = SubmitField(label="Approve")
-    deny = SubmitField(label="Deny")
-    reset = SubmitField(label="Reset")
+    accept = SubmitField(label="Favorite this food item")
+    deny = SubmitField(label="Next food item")
+    reset = SubmitField(label="Reset Results")
 
 class RegisterForm(FlaskForm):
     """Class that will be utilized by register.html to create the user entry field
@@ -180,6 +183,7 @@ class Person(database.Model, UserMixin):
     preferred_ingredients = database.Column(database.String(200))
     tastes = database.relationship("Taste", secondary="person_taste", back_populates="persons")
     allergens = database.relationship("Allergen", secondary="person_allergen", back_populates="persons")
+
     #users favorite foods
     userfavoritefoods = database.relationship("Userfavoritefood", secondary="person_userfavoritefood", back_populates="persons")
 
@@ -216,24 +220,21 @@ database.Table(
 
 class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    parent_restaurant = database.Column(database.String(20), nullable=False)
-    food_name = database.Column(database.String(20), nullable=False)
+    parent_restaurant = database.Column(database.String(40), nullable=False)
+    food_name = database.Column(database.String(40), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
     def __repr__(self):
-        return self.food_name
+        return f'{self.food_name}, {self.parent_restaurant}'
 
 database.Table(
         "person_userfavoritefood",
         database.Column("person_id", database.ForeignKey("person.id"), primary_key = True),
         database.Column("userfavoritefood_id", database.ForeignKey("userfavoritefood.id"), primary_key = True)
     )
+
 def loadCurrentUserBaseProfile():
-    '''Function to load up the baseline for user profile, allows user to skip profile creation
+    '''Function to load up the base information for user profile, allows user to skip profile creation
     Parameters: (none)   Returns: (none)'''
-    baseAllergens = ['none']
-    baseTastes = ['none']
-    basePrefIngredients = 'none'
-    baseFavFoods = ['none']
     if current_user.budget_min == None:
         current_user.budget_min = 3.00
     if current_user.budget_max == None:
@@ -242,7 +243,30 @@ def loadCurrentUserBaseProfile():
         current_user.preferred_ingredients = "none"
     database.session.commit()
 
-
+def loadUserFavoriteFoods(masterListofRestaurants):
+    '''Function to load every food item into userFavoriteFoods, that starts the process to
+    building the relationship between current user and their preferred foods
+    Parameters: (List of Restaurants with food objects)   Returns: (none)'''
+    databaseUserFavFood = Userfavoritefood.query.all()
+    databaseFoodList =[]
+    databaseRestaurantList=[]
+    #Loads every pre-existing entry in database to an array (none if there is none)
+    for eachEntry in databaseUserFavFood:
+        databaseFoodList.append(eachEntry.food_name)
+        databaseRestaurantList.append(eachEntry.parent_restaurant)
+    #evaluates each food item in master list and if in the database does not attempt to add
+    #if not in the database, database model object created using restaurant name/food name and committed
+    for eachRestaurant in masterListofRestaurants:
+        for eachFoodItem in eachRestaurant.foodList:
+    #checks foodname/restaurant combination for passing since common items like fries can exist in multiple restaurants
+            if (eachFoodItem.name in databaseFoodList) and (eachRestaurant.restaurantName in databaseRestaurantList):
+                continue
+            else:
+                foodItem = Userfavoritefood(parent_restaurant=eachRestaurant.restaurantName,
+                                            food_name=eachFoodItem.name)
+                database.session.add(foodItem)
+                database.session.commit()
+    return
 
 
 def loadTastes():
@@ -290,6 +314,7 @@ def title():
     #Preload databases with tables
     loadAllergens()
     loadTastes()
+    loadUserFavoriteFoods(masterListRestaurants)
     return render_template("title.html")
 
 
@@ -318,52 +343,58 @@ def getRecommendationByRestaurant(restaurant, list_index):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    for eachEntry in masterListRestaurants:
+    favFoodArray = user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
+    for eachEntry in masterListRestaurants:     
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
             currentRestaurantRecommendationList = food_recommendation(eachEntry, currentUserMinBudget,
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
-                                                                currentUserAllergens, currentUserTastes)
+                                                                currentUserAllergens, currentUserTastes, userFavoriteList,
+                                                                restaurant)
             break
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
-    #TO DO: make File Path
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
     recommendedFoodName = currentRestaurantRecommendationList[list_index].name
-    foodPrice = currentRestaurantRecommendationList[list_index].price
-    messageToUser=''
+    recommendedFoodPrice = currentRestaurantRecommendationList[list_index].price
+    recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
-                messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
+                flash("You cycled through the entire menu, your next choice will restart you at the beginning.")
                 list_index = 0
-            print('accept was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
+            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            database.session.commit()
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
-                messageToUser='You cycled through the entire menu, your next choice will restart you at the beginning.'
-                list_index = 0
-            print('deny was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
+                flash("You cycled through the entire menu, your next choice will restart you at the beginning.")
+                list_index = 0       
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index=list_index))
         if form.reset.data:
-            print('reset was used')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodPrice=foodPrice, foodName=recommendedFoodName, 
-                           messageToUser=messageToUser,form=form)
+                           foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
 
 
-@app.route("/recommendrand/", methods=["GET", "POST"])
+@app.route("/recommendrand/<restaurantIndex>&<foodIndex>", methods=["GET", "POST"])
 @login_required
-def getRecommendationByRand():
-    #Random Instantiation and use in masterlist
+def getRecommendationByRand(restaurantIndex, foodIndex):
     form = DisplayResultsForm()
+    #DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
+    foodIndex = int(foodIndex)
+    restaurantIndex= int(restaurantIndex)
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     currentUserTastes = []
@@ -380,31 +411,37 @@ def getRecommendationByRand():
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = user.budget_max
     currentUserMinBudget = user.budget_min
-    randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
+    favFoodArray = user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     masterListWithRecommendation = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                       currentUserMaxBudget, currentUserFoodPreferences,
-                                                                      currentUserAllergens, currentUserTastes)
-    randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
-    while masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore < 1.5:
-        randomRestaurantIndex = random.randint(0,(len(masterListRestaurants) - 1))
-        randomFoodIndex = random.randint(0,(len(masterListWithRecommendation[randomRestaurantIndex].foodList) - 1))
-    restaurantLocation = masterListWithRecommendation[randomRestaurantIndex].restaurantLocation
-    restaurantName = masterListWithRecommendation[randomRestaurantIndex].restaurantName
-    recommendedRestaurantName = restaurantName
-    recommendedFoodScore = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].recommendationScore
-    recommendedFoodName = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].name
-    foodPrice = masterListWithRecommendation[randomRestaurantIndex].foodList[randomFoodIndex].price
+                                                                      currentUserAllergens, currentUserTastes,userFavoriteList)
+    recommendedRestaurantName = masterListRestaurants[restaurantIndex].restaurantName
+    restaurantLocation = masterListRestaurants[restaurantIndex].restaurantLocation
+    recommendedFoodScore = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].recommendationScore
+    recommendedFoodName = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].name
+    recommendedFoodPrice = masterListWithRecommendation[restaurantIndex].foodList[foodIndex].price
+    recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
-            print('accept was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was added to favorites')
-            return redirect(url_for("getRecommendationByRand"))
+            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
+            foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))
+            foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            database.session.commit()
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
+            return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
         if form.deny.data:
-            print('deny was used')
-            print(f'Food item: {recommendedFoodName} from Restaurant {recommendedRestaurantName} was deleted from list')          
-            return redirect(url_for("getRecommendationByRand"))
+            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
+            foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))   
+            return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
-                           foodScore = recommendedFoodScore, foodName=recommendedFoodName, foodPrice=foodPrice, form=form)
+                           foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
+
 
 
 @app.route("/recommendbysearch/", methods=["GET", "POST"])
@@ -436,11 +473,16 @@ def searchResults(searchType, searchString):
         currentUserAllergens.append(str(eachEntry))
     currentUserMaxBudget = current_user.budget_max
     currentUserMinBudget = current_user.budget_min
+    favFoodArray = current_user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
     currentRestaurantRecommendationList = calculateRecommendationMasterList(masterListRestaurants, currentUserMinBudget,
                                                                 currentUserMaxBudget, currentUserFoodPreferences,
-                                                                currentUserAllergens, currentUserTastes)
+                                                                currentUserAllergens, currentUserTastes, userFavoriteList)
     if searchType == "Name":
-        print('In name')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 if searchString in eachFoodItem.name:
@@ -450,7 +492,6 @@ def searchResults(searchType, searchString):
                                     'rlocation': eachEntry.restaurantLocation})
                     break
     elif searchType == "Ingredient":
-        print('In ingredients')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 for eachIngredient in eachFoodItem.ingredients:
@@ -461,7 +502,6 @@ def searchResults(searchType, searchString):
                                         'rlocation': eachEntry.restaurantLocation})
                         break
     else: #searchType =="Flavor"
-        print('In flavor')
         for eachEntry in currentRestaurantRecommendationList:
             for eachFoodItem in eachEntry.foodList:
                 for eachFlavor in eachFoodItem.flavorProfile:
@@ -474,29 +514,84 @@ def searchResults(searchType, searchString):
         #display the results here
     return render_template("displayresults.html", results=results, len=len(results), searchString=searchString)
 
-@app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>")
+
+@app.route("/search/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
 @login_required
-def displayFoodItem(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
+def displayFoodItem(foodName,restaurantName, 
+                    restaurantLocation, foodPrice,foodScore):
     form = DisplayResultsForm()
+    user = Person.query.filter_by(email=current_user.email).first()
+    foodPrice = f'{foodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
-            print('accept was used')
-            print(f'Food item: {foodName} from Restaurant {restaurantName} was added to favorites')
+            foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
+            user.userfavoritefoods.append(foodItem)
+            database.session.commit()
+            flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationBySearch"))
-        if form.deny.data:
-            print('deny was used')
-            print(f'Food item: {foodName} from Restaurant {restaurantName} was deleted from list')          
+        if form.deny.data:         
             return redirect(url_for("getRecommendationBySearch"))
     return render_template("displayfooditem.html", foodName=foodName,restaurantName=restaurantName,
-                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation, form=form)
+                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation,
+                            form=form)
 
 
 @app.route("/usersavedfavorites/", methods=["GET", "POST"])
 @login_required
 def displaySavedResults():
-    user = current_user.email
-    return render_template("favorites.html", user=user)
+    userEmail = current_user.email
+    results = []
+    userPrefIngred = stringToArray(current_user.preferred_ingredients)
+    userTastes = []
+    userAllergens = []
+    for eachEntry in current_user.tastes:
+        if str(eachEntry) == "none":
+            userTastes.append("none")
+            break
+        userTastes.append(str(eachEntry))   
+    for eachEntry in current_user.allergens:
+        if str(eachEntry) == "none":
+            userAllergens.append("none")
+            break
+        userAllergens.append(str(eachEntry))
+    maxBudget = current_user.budget_max
+    minBudget = current_user.budget_min
+    favFoodArray = current_user.userfavoritefoods
+    userFavoriteList = []
+    for eachDatabaseEntry in favFoodArray:
+        eachDatabaseEntry = str(eachDatabaseEntry)
+        tempArray = stringToArrayNoLower(eachDatabaseEntry)
+        userFavoriteList.append({'name': tempArray[0], 'restaurantName': tempArray[1]})
+    masterListRestaurantsRec = calculateRecommendationMasterList(masterListRestaurants, minBudget, maxBudget,
+                                                                    userPrefIngred, userTastes, userAllergens)
+    for eachFavoritedItem in userFavoriteList:
+        for eachRestaurant in masterListRestaurantsRec:
+            if eachFavoritedItem.get('restaurantName') == eachRestaurant.restaurantName:
+                for eachFoodItem in eachRestaurant.foodList:
+                    if eachFavoritedItem.get('name') == eachFoodItem.name:
+                        results.append({'name': eachFoodItem.name, 'price': eachFoodItem.price, 
+                                        'score': eachFoodItem.recommendationScore,
+                                        'rname':eachRestaurant.restaurantName,
+                                        'rlocation': eachRestaurant.restaurantLocation})
+            else:
+                continue
+    return render_template("favorites.html", results=results, len=len(results), userEmail=userEmail)
 
+
+@app.route("/favorites/foodresults?<foodName>&<restaurantName>&<restaurantLocation>&<foodPrice>&<foodScore>", methods=["GET", "POST"])
+@login_required
+def displayFavorites(foodName,restaurantName, restaurantLocation, foodPrice,foodScore):
+    form = DisplayFavoritesForm()
+    user = current_user
+    foodPrice = f'{foodPrice:.2f}'
+    if form.validate_on_submit():
+        foodItem = Userfavoritefood.query.filter_by(food_name=foodName,parent_restaurant=restaurantName).first()
+        user.userfavoritefoods.remove(foodItem)
+        database.session.commit()
+        flash(f'{foodItem.food_name} was removed from your favorites')
+        return redirect(url_for("displaySavedResults"))
+    return render_template("displayfavoriteitem.html", foodName=foodName,restaurantName=restaurantName,
+                           foodPrice=foodPrice,foodScore=foodScore,restaurantLocation=restaurantLocation, form=form)
 
 
 @app.route("/main", methods=["GET", "POST"])
@@ -505,6 +600,7 @@ def display_main():
     """route is the main route to access website features, directed from user authenticated login"""
     loadCurrentUserBaseProfile()
     return render_template("homepage.html")
+
 
 @app.route("/user_profile", methods=["Get", "POST"])
 @login_required

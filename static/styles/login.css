@@ -2,13 +2,20 @@ h1 {
   color: #8D734A;
 }
 
+a:link{
+  color: lightblue
+}
+
+a:visited{
+  color: cornflowerblue
+}
 
 h3 {
   color: white;
 }
 
 h4 {
-  color: rgb(33, 151, 33)
+  color: #8D734A;
 }
 
 p {
@@ -26,8 +33,15 @@ p {
 
 body {
 
-  background-image: url("/static/images/texasstatestatue.jpg");
+  background-image: url("/static/images/texasstatedining2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+img {
+  height:auto;
+  width:auto;
+  max-width: 80%;
+  min-width: 40%;
 }

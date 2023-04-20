@@ -1,3 +1,10 @@
+
+img {
+  height:auto;
+  width: auto;
+  max-width: 80%;
+  min-width: 40%;
+}
 .notificationimg {
   background-image: url("/static/images/texasstatedininglogo.jpg");
   background-repeat: no-repeat;
@@ -30,7 +37,11 @@ body {
 }
 
 .header h1 {
-  font-size: 50px;
+  color:whitesmoke;
+}
+
+.header h2 {
+  color:whitesmoke;
 }
 
 /* Style the top navigation bar */
