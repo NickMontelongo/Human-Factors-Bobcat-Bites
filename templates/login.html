@@ -5,11 +5,43 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/styles/login.css" rel="stylesheet" />
+    <link href="static/styles/newlogin.css" rel="stylesheet" />
     <title>Login Page</title>
 </head>
 
 <body>
+    <div class ="container" id="container">
+        <div class="form-container log-in-container">
+            <form method="POST" action="">
+                <h1> Login</h1>
+                <p>
+                    <h4 style="font-size: 10px; margin:0px;">For Debugging: Admin Account</h4>
+                    <h4 style="font-size: 10px; margin: 0px;">User: billnye@gmail.com    Password:nickm5944</h4>   
+                </p>
+                {{ form.hidden_tag() }}
+                <h3>Please enter a valid email address:
+                    {{ form.user_email }}</h3>
+                <h3>Enter a password (9 to 30 characters):
+                    {{ form.user_password}}</h3>
+                <a href="{{url_for('register')}}">Don't have an account? Sign up here</a>
+                {{ form.submit }}
+                {% for error in form.user_email.errors %} <p style="color: blue" ,style="font-size:400%" ;> <b>
+                        {{error}} </b></p> {% endfor %}
+                {% if error %}
+                <p style="color: blue" ,style="font-size:400%" ;> <b><strong>Login Error:</strong>
+                        {{ error }} </b></p>
+                {% endif %}
+            </form>
+        </div>
+        <div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+<!-- <body>
     <center>
         <div class="white-box">
             <h1> <b> Bobcat Bites: Login</b></h1>
@@ -36,5 +68,5 @@
         </div>
     </center>
 </body>
-
+-->
 </html>
