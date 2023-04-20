@@ -534,6 +534,16 @@ foodAllergens = [["gluten, shellfish", "soybeans", "wheat", "sesame", "egg", "da
 flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], 
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
+BlimpieAmericanSubs=[]
+foodNames= ["Blumple Best Rg", ""]
+foodPrices=[5.99, ]
+foodIngredients =[[""]]
+foodAllergens=[[""]]
+flavorProfile=[[""]]
+
+
+
+
 
 #DO NOT DELETE NICK 4/17/2023
 restaurantName = ""
