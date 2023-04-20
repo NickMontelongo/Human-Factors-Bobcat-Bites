@@ -535,11 +535,36 @@ flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["sav
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 BlimpieAmericanSubs=[]
-foodNames= ["Blumple Best Rg", ""]
-foodPrices=[5.99, ]
-foodIngredients =[[""]]
-foodAllergens=[[""]]
-flavorProfile=[[""]]
+foodNames= ["Blimple Best Rg", "Blimple Best Lg", "Turkey & Provolone Rg", "Turkey & Provolone Lg", "The Club Rg", "The Club Lg", "Ham & Swiss Rg", "Ham & Swiss Lg", "Roast Beef & Provolone Rg", 
+            "Roast Beef & Provolone Lg", "Tuna Rg", "Tuna Lg", "BLT Rg", "BLT Lg", "Meatball Parmigiana Rg", "Meatball Parmigiana Lg", "Philly Cheese Steak Rg", "Philly Cheese Steak Lg", 
+            "Chicken Cheddar Bacon Ranch Rg", "Chicken Cheddar Bacon Ranch Lg", "Buffalo Chicken Rg", "Buffalo Chicken Lg", "Ultimate Club Rg", "Ultimate Club Lg", "Turkey Bacon Cheddar Rg", "Turkey Bacon Cheddar Lg", 
+            "Sicilian Rg", "Sicilian Lg", "The Blimp Rg", "The Blimp Lg", "Spicy Italian Rg", "Spicy Italian Lg", "Trio Supreme Rg", "Trio Supreme Lg", "Hoboken Hero Rg", "Hoboken Hero Lg", "Italian Beef Rg", 
+             "Italian Beef Lg", "Turkey Reuben Rg", "Turkey Reuben Lg"]
+foodPrices=[5.99, 7.49, 5.29, 7.49, 5.29, 7.49, 5.29, 7.49, 5.29, 7.49, 5.29, 7.49, 5.29, 7.49, 6.49, 12.49, 8.69, 16.99, 6.49, 12.49, 6.49, 12.49, 6.99, 13.49, 6.99, 12.99, 6.49, 12.49, 8.69, 16.69, 
+            6.99, 12.99, 6.99, 12.99, 6.99, 12.99, 6.99, 12.99, 6.99, 12.99]
+foodIngredients =[["ham", "salami", "capicola", "prasciuttini", "provolone", "bread"], ["ham", "salami", "capicola", "prasciuttini", "provolone", "bread"], ["turkey", "provolone", "bread"], ["turkey", "provolone", "bread"], 
+                  ["ham", "turkey", "swiss", "bread"], ["ham", "turkey", "swiss", "bread"], ["ham", "swiss", "bread"], ["ham", "swiss", "bread"], ["roast beef", "provolone", "bread"],  ["roast beef", "provolone", "bread"], 
+                  ["tuna", "mayo", "pickles", "bread"], ["tuna", "mayo", "pickles", "bread"], ["bacon", "lettuce", "tomato", "bread"], ["bacon", "lettuce", "tomato", "bread"], ["meatball", "cheese", "bread"], ["meatball", "cheese", "bread"], 
+                  ["philly steak", "cheese", "bread"], ["philly steak", "cheese", "bread"], ["chicken", "cheddar", "bacon", "ranch", "bread"], ["chicken", "cheddar", "bacon", "ranch", "bread"], ["chicken", "buffalo sauce", "bread"], 
+                  ["chicken", "buffalo sauce", "bread"], ["ham", "turkey", "swiss", "bacon", "tomato", "onion", "peppercorn dressing"], ["ham", "turkey", "swiss", "bacon", "tomato", "onion", "peppercorn dressing"], 
+                  ["turkey", "bacon", "cheddar", "bread"], ["turkey", "bacon", "cheddar", "bread"], ["ham", "prosciuttini", "pepperoni", "provolone", "red pepper", "italian dressing", "bread"], ["ham", "prosciuttini", "pepperoni", "provolone", "red pepper", "italian dressing", "bread"], 
+                  ["turkey", "roast beef", "prosciuttini", "salami", "pepperoni", "provolone", "sweet pepper", "tomato", "lettuce", "pickles", "onion", "mayo", "vinegar", "oil", "oregano", "bread"], 
+                  ["turkey", "roast beef", "prosciuttini", "salami", "pepperoni", "provolone", "sweet pepper", "tomato", "lettuce", "pickles", "onion", "mayo", "vinegar", "oil", "oregano", "bread"], 
+                  ["ham", "salami", "pepperoni", "provolone", "tomato", "lettuce", "onion", "spicy giardiniera", "bread"], ["ham", "salami", "pepperoni", "provolone", "tomato", "lettuce", "onion", "spicy giardiniera", "bread"], 
+                  ["roast beef", "turkey", "bacon", "swiss", "tomato", "lettuce", "onion", "mayo"], ["roast beef", "turkey", "bacon", "swiss", "tomato", "lettuce", "onion", "mayo"], ["prosciuttini", "pepperoni", "salami", "provolone", "tomato", "lettuce", "onions", "vinegar", "oil", "oregano", "bread"], 
+                  ["prosciuttini", "pepperoni", "salami", "provolone", "tomato", "lettuce", "onions", "vinegar", "oil", "oregano", "bread"], ["roast beef", "au jus", "provolone", "spicy", "giardiniera", "parmesan", "bread"], 
+                  ["roast beef", "au jus", "provolone", "spicy", "giardiniera", "parmesan", "bread"], ["turkey", "sauerkaut", "swiss", "1000 island dressing", "bread"], ["turkey", "sauerkaut", "swiss", "1000 island dressing", "bread"]]
+foodAllergens=[["pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], ["dairy", "turkey", "gluten"], ["dairy", "turkey", "gluten"], ["pork", "turkey", "dairy", "gluten"], ["pork", "turkey", "dairy", "gluten"], 
+               ["pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], ["beef", "dairy", "gluten"], ["beef", "dairy", "gluten"], ["fish", "mayo", "gluten"], ["fish", "mayo", "gluten"], ["pork", "gluten"], ["pork", "gluten"], 
+               ["beef", "dairy", "gluten"], ["beef", "dairy", "gluten"], ["beef", "dairy", "gluten"], ["beef", "dairy", "gluten"], ["chicken", "dairy", "pork"], ["chicken", "dairy", "pork"], ["chicken", "gluten"], ["chicken", "gluten"], 
+               ["pork", "turkey", "dairy", "peppercorn"], ["pork", "turkey", "dairy", "peppercorn"], ["turkey", "pork", "dairy", "gluten"], ["turkey", "pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], 
+               ["turkey", "beef", "pork", "vinegar"], ["turkey", "beef", "pork", "vinegar"], ["pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], ["beef", "turkey", "pork", "dairy", "gluten"], ["beef", "turkey", "pork", "dairy", "gluten"], 
+               ["pork", "dairy", "gluten"], ["pork", "dairy", "gluten"], ["beef", "dairy"], ["beef", "dairy"], ["turkey", "dairy", "gluten"], ["turkey", "dairy", "gluten"]]
+flavorProfile=[["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory"], 
+               ["meaty", "savory"], ["meaty", "savory"], ["meaty", "savory", "fresh"], ["meaty", "savory", "fresh"], ["meaty", "savory", "fresh"], ["meaty", "savory", "fresh"], ["meaty", "savory"], ["meaty", "savory"], 
+               ["meaty", "cheesy", "savory"], ["meaty", "cheesy", "savory"], ["meaty", "savory"], ["meaty", "savory"], ["meaty", "cheesy", "savory"], ["meaty", "cheesy", "savory"], ["meaty", "cheesy", "savory"], ["meaty", "cheesy", "savory"], 
+               ["meaty", "fresh", "savory"], ["meaty", "fresh", "savory"], ["meaty", "fresh", "savory"], ["meaty", "fresh", "savory"], ["spicy", "meaty", "savory"], ["spicy", "meaty", "savory"], ["meaty", "cheesy", "savory"], ["meaty", "cheesy", "savory"], 
+               ["meaty", "cheesy", "savory", "tangy"], ["meaty", "cheesy", "savory", "tangy"], ["meaty", "spicy", "savory"], ["meaty", "spicy", "savory"], ["tangy", "sweet", "meaty", "savory"], ["tangy", "sweet", "meaty", "savory"]]
 
 
 
