@@ -431,10 +431,10 @@ foodIngredients= [["yogurt", "granola", "fruit"], ["fruit"], ["pineapple"], ["ch
                   ["ham", "cheese", "bread"], ["vegetables", "bread"], ["Chicken", "mayo", "bread"], ["chicken", "vegetables"],
                   ["vegetables"], ["vegetables", "chicken"], ["vegetables"], ["vegetables"], ["vegetables"], ["bacon", "egg", "cheese", "bread"],
                   ["chorizo", "bread", "cheese"], ["sausage", "bread", "cheese"]]
-foodAllergens = [["nuts", "dairy"], [], [], ["dairy", "poultry"], ["nuts"], ["poultry"], ["dairy"], ["dairy"], ["gluten"],
+foodAllergens = [["nuts", "dairy"], [""], [""], ["dairy", "poultry"], ["nuts"], ["poultry"], ["dairy"], ["dairy"], ["gluten"],
                  ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"],
                  ["poultry", "gluten"], ["turkey", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"], ["nuts", "gluten"],
-                 ["dairy", "gluten"], ["gluten"], ["poultry", "gluten"], ["poultry"], [], ["poultry"], [], [], ["poultry"],
+                 ["dairy", "gluten"], ["gluten"], ["poultry", "gluten"], ["poultry"], [""], ["poultry"], [""], [""], ["poultry"],
                  ["dairy", "gluten"], ["dairy", "gluten"], ["dairy", "gluten"]]
 flavorProfile = [["sweet", "healthy"], ["sweet", "healthy"], ["sweet", "healthy"], ["savory", "creamy"], ["helathy", "crunchy"],
                  ["savory"], ["savory", "sweet", "healthy"], ["meaty", "cheesy"], ["savory", "healthy"], ["meaty", "savory"],
