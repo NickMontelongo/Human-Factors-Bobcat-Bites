@@ -19,12 +19,14 @@
                     <h4 style="font-size: 10px; margin: 0px;">User: billnye@gmail.com    Password:nickm5944</h4>   
                 </p>
                 {{ form.hidden_tag() }}
-                <h3>Please enter a valid email address:
+                <h3 style="font-size:16px;">Please enter a valid email address:
                     {{ form.user_email }}</h3>
-                <h3>Enter a password (9 to 30 characters):
+                <h3 style="font-size:16px;">Enter a valid password (9 to 30 characters):
                     {{ form.user_password}}</h3>
-                <a href="{{url_for('register')}}">Don't have an account? Sign up here</a>
-                {{ form.submit }}
+                <a style="font-size:12px; margin: 6px;" href="{{url_for('register')}}">Don't have an account? Sign up here</a>
+                <div class="button">
+                    {{ form.submit }}
+                </div>
                 {% for error in form.user_email.errors %} <p style="color: blue" ,style="font-size:400%" ;> <b>
                         {{error}} </b></p> {% endfor %}
                 {% if error %}
@@ -36,6 +38,7 @@
         <div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-right">
+                    <img src="static/images/title_picture_bobcat_bites.jpg" alt="dining image" width=900px;>
 				</div>
 			</div>
 		</div>
