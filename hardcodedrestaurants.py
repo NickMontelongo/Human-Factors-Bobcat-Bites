@@ -73,7 +73,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
-ajsbbq=[]
+AJsBBQ=[]
 foodNames= ["Nachos Plain", "Nachos Chopped BBQ chicken", "Nachos Chopped brisket", "Nachos Beyond beef", "Jumbo Sandwiches", 
             "Jumbo Sandwiches with side", "1 meat BBQ Plate", "2 meat BBQ Plate", "3 meat BBQ Plate", "Jumbo sausage wrap", 
             "Brisket Mac n' Cheese", "Beyond beef Mac vegetarian", "Cheesecake Bites(3)"]
