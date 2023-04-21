@@ -58,6 +58,8 @@ def food_recommendation(restaurant, minprice, maxprice, userPreferredIngredients
             avgDistance = 1/( .001 + abs(((minprice + maxprice)/2) - eachFoodItem.price))
             foodRecommendationScore += avgDistance
             # truncates to two decimal places
+            if foodRecommendationScore > 10:
+                foodRecommendationScore = 10
             foodRecommendationScore = math.floor(foodRecommendationScore * (10 ** 2)) / (10 ** 2)
 
         eachFoodItem.recommendationScore = foodRecommendationScore
