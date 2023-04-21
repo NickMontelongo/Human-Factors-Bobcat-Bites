@@ -449,7 +449,7 @@ EiensteinsBagels=[]
 foodNames= ["Albuquerque Turkey", "Cheese Pizza Bagels", "Pepperoni Pizza Bagel", "Pepperoni Chicken Toasted Ciabatta", "Spicy Chicken Toasted Ciabatta", 
             "Cheesy Veggie Melt", "Noza Lox", "Turkey, Bacon, Avacado", "Tasty Turkey", "Avocado Veg Out", "Farmhouse 1 Egg", "Farmhouse 2 Egg", 
             "Garden Avocado 1 Egg", "Garden Avocado 2 Egg", "Big Breakfast Burrito", "All-Nighter", "Santa Fe 1 Egg White", "Santa Fe 2 Egg White", 
-            "Bacon, Avocado & Tomato 1 Egg White", "Bacon, Avocado & Tomato 2 Egg White", ""]
+            "Bacon, Avocado & Tomato 1 Egg White", "Bacon, Avocado & Tomato 2 Egg White"]
 foodPrices= [7.19, 5.99, 6.49, 7.19, 7.19, 6.79, 7.99, 7.19, 7.19, 6.79, 6.29, 7.29, 5.79, 6.79, 6.49, 6.99, 5.79, 5.99, 6.99, ]
 foodIngredients= [["bacon", "cheddar", "lettuce", "tomato", "green chiles", "plain shmear on six cheese gourmet"], ["cheese", "bagle"], 
                   ["pepperoni", "cheese", "bagle"], ["swiss", "asiago cheese", "onion", "spleach", "tomato spread", "ciabatta"], 
@@ -461,16 +461,15 @@ foodIngredients= [["bacon", "cheddar", "lettuce", "tomato", "green chiles", "pla
                   ["bacon", "turkey-sausage", "cheese", "green chiles", "hash browns", "salsa", "shmear", "tortilla", "egg"], 
                   ["bacon", "cheese", "Jalapeno garlic aioli", "hash brown", "egg"], ["egg", "turkey-sausage", "cheddar", "salsa", "shmear", "asiago"], 
                   ["egg", "turkey-sausage", "cheddar", "salsa", "shmear", "asiago"], ["egg", "avocado", "tomato", "bread", "bacon"], 
-                  ["egg", "avocado", "tomato", "bread", "bacon"], [""], ]
+                  ["egg", "avocado", "tomato", "bread", "bacon"]]
 foodAllergens = [["pork", "dairy"], ["dairy", "gluten"], ["pork", "dairy", "gluten"], ["dairy", "gluten"], ["pork", "dairy", "gluten"], 
                  ["dairy", "gluten"], ["gluten"], ["gluten"], ["gluten"], ["sesame", "gluten"], ["pork", "dairy", "gluten"], 
                  ["pork", "dairy", "gluten"], ["avocado", "egg"], ["avocado", "egg"], ["egg", "pork"], ["egg", "dairy", "pork"], 
-                 ["egg", "dairy", "turkey"], ["egg", "dairy", "turkey"], ["egg", "avocado", "pork", "gluten"], ["egg", "avocado", "pork", "gluten"], 
-                 [""]]
+                 ["egg", "dairy", "turkey"], ["egg", "dairy", "turkey"], ["egg", "avocado", "pork", "gluten"], ["egg", "avocado", "pork", "gluten"]]
 flavorProfile = [["meaty", "savory"], ["cheesy", "savory"], ["meaty", "cheesy", "savory"], ["cheesy", "savory"],  ["meaty", "cheesy", "savory"], 
                  ["fresh", "savory"],["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"], 
                  ["cheesy", "savory", "meaty"], ["cheesy", "savory", "meaty"], ["fresh"], ["fresh"], ["cheesy", "savory"], ["savory"], 
-                 ["savory", "cheesy"], ["savory", "cheesy"], ["fresh", "savory"], ["fresh", "savory"], [""]]
+                 ["savory", "cheesy"], ["savory", "cheesy"], ["fresh", "savory"], ["fresh", "savory"]]
 
 MeltLab=[]
 foodNames= ["Classic Sandwich", "Sunrise Sandwich", "The Italian Sandwich", "Mac Attack Sandwich", "The Big Cheese Sandwich", 
