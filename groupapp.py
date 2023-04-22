@@ -443,7 +443,8 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
             foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
-            if foodItem.parent_restaurant != "":
+            if recommendedRestaurantName != "":
+                print(foodItem.parent_restaurant)
                 user.userfavoritefoods.append(foodItem)
                 database.session.commit()
                 flash(f'The food item {foodItem.food_name} was added to your favorites')
