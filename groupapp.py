@@ -265,7 +265,7 @@ def loadUserFavoriteFoods(masterListofRestaurants):
                 foodItem = Userfavoritefood(parent_restaurant=eachRestaurant.restaurantName,
                                             food_name=eachFoodItem.name)
                 database.session.add(foodItem)
-                database.session.commit()
+        database.session.commit()
     return
 
 
