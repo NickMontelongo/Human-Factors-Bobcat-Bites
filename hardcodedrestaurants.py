@@ -673,6 +673,7 @@ flavorProfile = [["egg", "cheese", "savory"], ["savory"], ["savory", "salty"], [
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Tu Taco", "LBJ Student Center",
                          foodList=[])
+masterListRestaurants.append(restaurantObject)
 
 
 #24
@@ -693,6 +694,7 @@ flavorProfile = [["savory", "crunchy"], ["savory", "crunchy"], ["savory", "crunc
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Wing It", "Jones Dining Center",
                          foodList=[])
+masterListRestaurants.append(restaurantObject)
 
 
 #25
@@ -731,5 +733,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
 
-print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
+#print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
+#for eachEntry in masterListRestaurants:
+#    print(f'Restaurant Name: {eachEntry.restaurantName}')
 
