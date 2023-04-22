@@ -65,6 +65,7 @@ def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 #list objects for absurdbird creation
 
 ################### 3 test cases for High Fidelity Prototype ##########################################
+#1
 absurdbird = []
 foodNames = ["3 chicken tender basket", "4 chicken tender basket", "5 chicken tender basket", "tender slider", "snack box", "fried oreo", "mac and cheese", "fries" ]
 foodPrices = [5.99, 6.99, 7.99, 2.99, 4.99, 2.99, 2.19, 2.99]
@@ -80,6 +81,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#2
 AJsBBQ=[]
 foodNames= ["Nachos Plain", "Nachos Chopped BBQ chicken", "Nachos Chopped brisket", "Nachos Beyond beef", "Jumbo Sandwiches", 
             "Jumbo Sandwiches with side", "1 meat BBQ Plate", "2 meat BBQ Plate", "3 meat BBQ Plate", "Jumbo sausage wrap", 
@@ -102,6 +104,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#3
 AsadoLatinGrill=[]
 foodNames= ["Refried Beans", "Black Beans", "Spanish Rice", "Grilled Chili Lime Chicken",
             "Flank Steak Fajita", "Salsa Fresca", "Classic Guacamole", "Queso", "Chorizo Tofu", "cilantro lime rice"]
@@ -118,6 +121,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#4
 BlimpieAmericanSubs=[]
 foodNames= ["Blimple Best Rg", "Blimple Best Lg", "Turkey & Provolone Rg", "Turkey & Provolone Lg", "The Club Rg", "The Club Lg", "Ham & Swiss Rg", "Ham & Swiss Lg", "Roast Beef & Provolone Rg", 
             "Roast Beef & Provolone Lg", "Tuna Rg", "Tuna Lg", "BLT Rg", "BLT Lg", "Meatball Parmigiana Rg", "Meatball Parmigiana Lg", "Philly Cheese Steak Rg", "Philly Cheese Steak Lg", 
@@ -156,6 +160,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#5
 burger512 = []
 foodNames =["korean flame", "blue mushroom", "guadalupe burger", "hays co burger", "the classic", "fiesta fries", "firebird fries", "disco fries", "fries", "chicken strips"]
 foodPrices=[7.99, 7.99, 7.99, 7.99, 6.99, 6.19, 5.69, 4.69, 2.19, 5.99]
@@ -171,6 +176,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#6
 #Information may be incorrect as there were 33 ingredients entries and 31 price entries
 chickfila=[]
 foodNames= ["Chicken Sandwich", "Deluxe Sandwich w cheese", "Spicy Chicken Sandwich", "Spicy Deluxe Sandwich w cheese", "Grilled Chicken Sandwich", "Grilled Chicken Club w cheese", 
@@ -208,6 +214,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#7
 CoffeeandPiMarket=[]
 foodNames= ["chex mix", "paqui chips", "zapp's chips", "stacy's pita chips", "gardettos", "kettle chips", "PopTart",
             "nutri-grain bar", "black forest gummy", "kind bar", "belvita", "ctc cereal bar", "trix cereal bar",
@@ -237,6 +244,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#8
 #Issue -1 on the ingredients doubled last
 CreatePremiumDeli=[]
 foodNames= ["6 inch The Piglet", "6 inch Jones Club", "6 inch Pesto Chicken", "6 inch The Italian", "6 inch The OG", "6 inch Edgy Veggie", "12 inch The Piglet", "12 inch Jones Club", "12 inch Pesto Chicken", 
@@ -263,6 +271,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#9
 #issue -1 on food prices
 DunkinDoughnuts=[]
 foodNames= ["Sausage, Egg & Cheese Sandwich", "Bacon, Egg & Cheese Sandwich", "Turkey Sausage, Egg & Cheese Sandwich", "Egg & Cheese Sandwich", "Sourdough Breakfast Sandwich", "Wake-Up Wrap", "Hash Brown", 
@@ -282,6 +291,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#10
 #issue -1 on prices doubled last
 EiensteinsBagels=[]
 foodNames= ["Albuquerque Turkey", "Cheese Pizza Bagels", "Pepperoni Pizza Bagel", "Pepperoni Chicken Toasted Ciabatta", "Spicy Chicken Toasted Ciabatta", 
@@ -314,7 +324,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
 
-
+#11
 KawaSushi=[]
 foodNames= ["All American Roll", "All Star Combo", "Atomic Roll", "California Roll","California Combo",
             "California Roll Plus", "Caterpillar Roll", "Crunchy California Roll", "Crunchy Shrimp Roll", "Dragon Roll- Grilled Eel",
@@ -368,6 +378,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#12
 McCoyCafe=[]
 foodNames= ["parfait", "fruit", "pineapple", "chicken salad snacker", "apple snacker", "simply eggs", "grapes and cheddar",
             "pepperoni and cheese", "mediterranean dipper", "buffalo chicken wrap", "veggie and ranch wrap", "chicken BLT wrap",
@@ -403,6 +414,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#13
 #issue -1 on food allergens
 MeltLab=[]
 foodNames= ["Classic Sandwich", "Sunrise Sandwich", "The Italian Sandwich", "Mac Attack Sandwich", "The Big Cheese Sandwich", 
@@ -427,6 +439,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#14
 #issue -1 on food ingredients
 MondoSubs=[]
 foodNames= ["6 inch all american hero" ,"12 inch all american hero", "6 inch very veggie", "12 inch very veggie", "6 inch home on the ranch", 
@@ -463,6 +476,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#15
 PandaExpress=[]
 foodNames= ["bowl", "plate", "bigger plate"]
 foodPrices= [7.90, 9.40, 10.90]
@@ -484,6 +498,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#16
 pizzahut=[]
 foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
 foodPrices =[4.79, 4.79, 4.79, 4.79, 5.49, 5.49, 3.19, 5.39]
@@ -497,6 +512,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#17
 pomhoney=[]
 foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
 foodPrices= [7.99, 7.99, 7.99]
@@ -510,6 +526,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#18
 RevolutionNoodle=[]
 foodNames= ["Shio Ramen", "Veggie Ramen", "Spicy Miso Ramen", "Curry Ramen", "Smoked Brisket Ramen", "Tsukimi Ramen", "Flying Pig Sandwich",
             "Chicken Run Sandwich", "Kickin Tofu Sandwich", "Chicken Dumplings", "Pork Dumplings", "Veggie Dumplings", "Vietnamese Sandwich",
@@ -533,6 +550,8 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
 
+
+#19
 thesaltymenu=[]
 foodNames= ["Horchata", "Traditional Glazed", "Churro + Dulce de leche star", "Texas Chocolate sheet cake", "Boston Cream", "Ube Pina Colada(V)"]
 foodPrices= [4.50, 3.50, 4.25, 4.25, 4.65, 4.75]
@@ -546,6 +565,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#20
 ShakeSmart=[]
 foodNames= ["Rawcai bowl", "Raw-PB Bowl", "The Buzz Bowl", "Original Acai Bowl", "PB&A bowl", "Dragon Bowl", "Peanut Butter toast",
             "Almond Butter Toast", "Avocado Toast", "Turks and Matoes wrap", "Rubi's Tuna Salad", "Veggie Delight"]
@@ -566,6 +586,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#21
 Starbucks=[]
 foodNames= ["Ham & Cheese Savory Foldover", "Wheat Spinach Savory Foldover", "Pepperoni & Tomato Savory Foldover", "Cheese Danish",
             "Butter Croissant", "Chocolate Croissant", "Blueberry Scone", "Banana Nut Bread", "Iced Lemon Pound Cake",
@@ -604,6 +625,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#22
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
 foodPrices= [4.95, 4.49, 3.25]
@@ -617,6 +639,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#23
 TuTaco=[]
 foodNames= ["Migas Taco", "Bean & Cheese Taco", "Bacon, Egg, & Cheese Taco", "Chilaquiles Taco", "Chorizo & Egg Taco", "Egg Taco",
             "Chicken Quesadilla", "Cheese Quesadilla", "Al Pastor Quesadilla", "Beef Quesadilla", "Steak Quesadilla", "Beyond Meat Quesadilla",
@@ -652,6 +675,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 
 
+#24
 WingIt=[]
 foodNames= ["Regular Tender Basket", "Large Tender Basket", "5 Wings", "Loaded Baked Potato", "Fried Cauliflower Basket", "Waffle Sliders", "Mac & Cheese",
             "5 Chicken Tenders", "3 Chicken Tenders", "Twiced Baked Potato Casserole", "American Potato Salad", "Steak Fries", "Coleslaw", "Crudite"]
@@ -671,6 +695,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 
 
+#25
 #Might have something Wrong, flavor profile was minus 1
 WoodsStPizzaAndPasta=[]
 foodNames= ["Cheese Pizza Slice", "Pepperoni Pizza Slice", "Alfredo and Veggie Pizza Slice", "Bacon and Herbs Pizza Slice",
@@ -690,6 +715,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#26
 #DO NOT DELETE NICK 4/17/2023
 restaurantName = ""
 restaurantLocation = "Click the buttons to begin"
