@@ -221,7 +221,7 @@ database.Table(
 class Userfavoritefood(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     parent_restaurant = database.Column(database.String(40), nullable=False)
-    food_name = database.Column(database.String(40), nullable=False)
+    food_name = database.Column(database.String(60), nullable=False)
     persons = database.relationship("Person", secondary="person_userfavoritefood", back_populates="userfavoritefoods")
     def __repr__(self):
         return f'{self.food_name}, {self.parent_restaurant}'
