@@ -357,6 +357,12 @@ def getRecommendationByRestaurant(restaurant, list_index):
                                                                 currentUserAllergens, currentUserTastes, userFavoriteList,
                                                                 restaurant)
             break
+    if len(currentRestaurantRecommendationList) == 0:
+        restaurantName = masterListRestaurants[masterIndex].restaurantName
+        masterIndex = 25
+        list_index = 0
+        restaurant = ""
+        flash(f'{restaurantName} did not have any entries, and you were redirected to a placeholder. Try adjusting your favorites or choose a different restaurant.')
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
@@ -365,6 +371,10 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
+            if masterListRestaurants[masterIndex].restaurantName == "":
+                flash('Cannot save Placeholder Food Item')
+                list_index = 0
+                return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
@@ -376,6 +386,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
             flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
+            if masterListRestaurants[masterIndex].restaurantName == "":
+                list_index = 0
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
