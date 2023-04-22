@@ -170,6 +170,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
 
+
 #Information may be incorrect as there were 33 ingredients entries and 31 price entries
 chickfila=[]
 foodNames= ["Chicken Sandwich", "Deluxe Sandwich w cheese", "Spicy Chicken Sandwich", "Spicy Deluxe Sandwich w cheese", "Grilled Chicken Sandwich", "Grilled Chicken Club w cheese", 
@@ -236,6 +237,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#Issue -1 on the ingredients doubled last
 CreatePremiumDeli=[]
 foodNames= ["6 inch The Piglet", "6 inch Jones Club", "6 inch Pesto Chicken", "6 inch The Italian", "6 inch The OG", "6 inch Edgy Veggie", "12 inch The Piglet", "12 inch Jones Club", "12 inch Pesto Chicken", 
             "12 inch The Italian", "12 inch The OG", "12 inch Edgy Veggie", "West Coast Cobb Salad", "Chopped Wedge Salad", "Classic Ceasar Salad"]
@@ -246,7 +248,7 @@ foodIngredients= [["cheese", "ham", "lettuce", "tomato", "mayo", "Mustard"], ["t
                   ["cheese", "ham", "lettuce", "tomato", "mayo", "mustard"], ["turkey", "ham", "cheese", "bacon", "lettuce", "tomato", "jalapeno Ranch"], 
                   ["cheese", "ham", "salami", "pepperoni", "capicola", "lettuce", "tomato", "Onion", "oil & vinegar", "salt & pepper"], ["turkey", "cheese", "lettuce", "tomato", "Honey Dijon Dressing"], 
                   ["beet", "vegan cheese", "spinach", "tomato", "onion", "bell pepper", "oil & vinegar", "salt & pepper"], ["chicken", "romaine", "spinach", "bacon", "egg", "tomato", "black olives", "Guacamole"], 
-                  ["romaine", "tomato", "red onion", "bacon", "cheese", "walnut"], ["romaine", "croutons", "parmesan", "red onion"]]
+                  ["romaine", "tomato", "red onion", "bacon", "cheese", "walnut"], ["romaine", "croutons", "parmesan", "red onion"],["romaine", "croutons", "parmesan", "red onion"]]
 foodAllergens = [["dairy", "pork"],["turkey", "pork", "dairy"], ["chicken", "dairy", "olives"], ["dairy", "pork"], ["turkey", "dairy"], ["beet", "onion", "pepper"], 
                  ["dairy", "pork", "mayo", "mustard"], ["turkey", "pork", "dairy", "jalapeno"], ["pesto chicken", "spinach", "cheese", "tomato", "black olives", "pesto mayo"], 
                  ["dairy", "pork", "gluten"], ["gluten", "dairy", "turkey"], ["gluten", "onion", "beet"], ["chicken", "pork", "egg", "olive", "guacamole"], ["walnuts", "onion", "pork", "dairy"], 
@@ -261,10 +263,11 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#issue -1 on food prices
 DunkinDoughnuts=[]
 foodNames= ["Sausage, Egg & Cheese Sandwich", "Bacon, Egg & Cheese Sandwich", "Turkey Sausage, Egg & Cheese Sandwich", "Egg & Cheese Sandwich", "Sourdough Breakfast Sandwich", "Wake-Up Wrap", "Hash Brown", 
             "Muffins", "Donuts", "Munchkins Donut Hole Treats"]
-foodPrices= [5.39, 5.39, 5.39, 4.39, 5.99, 1.59, 0.99, 1.35, 3.50]
+foodPrices= [5.39, 5.39, 5.39, 4.39, 5.99, 1.59, 0.99, 1.35, 3.50, 3.50]
 foodIngredients= [["croissannt", "bagel", "english muffin", "sausage", "egg", "cheese"], ["bagel", "biscuit", "croissant", "english muffin", "bacon", "egg", "cheese"], 
                   ["english muffin", "turkey sausage", "egg", "cheese"], ["bagle", "croissant", "english muffin", "egg", "cheese"], ["sourdough bread", "egg", "bacon", "cheese"], ["tortilla", "egg" , "cheese", "bacon", "sausage", "turkey sausage"], 
                   ["potatoe"], ["buttermilk", "flour", "carrot", "blueberry", "chocolate chip", "coffee", "corn"], ["wheat flour" ,"yeast donut concentrate", "egg"], ["wheat flour" ,"yeast donut concentrate", "egg"]]
@@ -279,12 +282,13 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#issue -1 on prices doubled last
 EiensteinsBagels=[]
 foodNames= ["Albuquerque Turkey", "Cheese Pizza Bagels", "Pepperoni Pizza Bagel", "Pepperoni Chicken Toasted Ciabatta", "Spicy Chicken Toasted Ciabatta", 
             "Cheesy Veggie Melt", "Noza Lox", "Turkey, Bacon, Avacado", "Tasty Turkey", "Avocado Veg Out", "Farmhouse 1 Egg", "Farmhouse 2 Egg", 
             "Garden Avocado 1 Egg", "Garden Avocado 2 Egg", "Big Breakfast Burrito", "All-Nighter", "Santa Fe 1 Egg White", "Santa Fe 2 Egg White", 
             "Bacon, Avocado & Tomato 1 Egg White", "Bacon, Avocado & Tomato 2 Egg White"]
-foodPrices= [7.19, 5.99, 6.49, 7.19, 7.19, 6.79, 7.99, 7.19, 7.19, 6.79, 6.29, 7.29, 5.79, 6.79, 6.49, 6.99, 5.79, 5.99, 6.99, ]
+foodPrices= [7.19, 5.99, 6.49, 7.19, 7.19, 6.79, 7.99, 7.19, 7.19, 6.79, 6.29, 7.29, 5.79, 6.79, 6.49, 6.99, 5.79, 5.99, 6.99, 6.99]
 foodIngredients= [["bacon", "cheddar", "lettuce", "tomato", "green chiles", "plain shmear on six cheese gourmet"], ["cheese", "bagle"], 
                   ["pepperoni", "cheese", "bagle"], ["swiss", "asiago cheese", "onion", "spleach", "tomato spread", "ciabatta"], 
                   ["bacon", "cheddar", "jalapenos", "onion", "jalapeno salsa","chicken", "ciabatta"], ["cheddar", "swiss", "tomato", "spinach", "tomato spread", "ciabatta"], 
@@ -399,6 +403,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#issue -1 on food allergens
 MeltLab=[]
 foodNames= ["Classic Sandwich", "Sunrise Sandwich", "The Italian Sandwich", "Mac Attack Sandwich", "The Big Cheese Sandwich", 
             "Lil Buffalo Sandwich", "Turkey Melt Sandwich", "Patty Melt", "Vegan Classic", "Vegan Patty Melt", "Vegan Eggplant Parm", 
@@ -411,7 +416,7 @@ foodIngredients= [["cheese", "bread"], ["cheese", "hashbrowns", "egg", "bacon", 
                   ["cheddar", "pasta"], ["vegan cheese", "pasta"], ["cheese", "pasta", "buffalo cheese sause", "bacon", "blue cheese", "onion" "chicken"]]
 foodAllergens = [["dairy", "gluten"], ["dairy", "egg", "pork"], ["dariy", "pork", "garlic"], ["gluten", "dairy", "chicken",], ["dairy", "gluten"], 
                  ["chicken", "dairy", "gluten"], ["dariy", "turkey", "avacado", "pork", "gluten"], ["gluten"], ["gluten"], ["garlic", "basil"], 
-                 ["gluten", "dairy"], ["gluten"],["dairy", "gluten", "chicken"]]
+                 ["gluten", "dairy"], ["gluten"],["dairy", "gluten", "chicken"],["dairy", "gluten", "chicken"]]
 flavorProfile = [["cheesy", "fresh", "savory"], ["cheesy", "fresh", "savory"], ["meaty", "fresh", "savory"], ["savory" ,"cheesy"], ["savory" ,"cheesy"], 
                  ["sweet", "savory", "tangy", "meaty"], ["meaty", "savory"], ["savory" ,"cheesy", "meaty"], ["fresh", "savory"], ["fresh", "savory"], 
                 ["fresh", "savory"], ["cheesy", "savory"], ["cheesy", "fresh", "savory"], ["sweet", "cheese", "tangy", "savory"]]
@@ -422,6 +427,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
+#issue -1 on food ingredients
 MondoSubs=[]
 foodNames= ["6 inch all american hero" ,"12 inch all american hero", "6 inch very veggie", "12 inch very veggie", "6 inch home on the ranch", 
             "12 inch home on the ranch", "6 inch turkey sub", "12 inch turkey sub", "6 inch the classic italian", "12 inch the classic italian", 
@@ -439,7 +445,7 @@ foodIngredients= [["ham", "roast beef", "turkey", "cheese"], ["ham", "roast beef
                   ["chicken", "spicy buffalo sauce", "provolone", "blue cheese"], ["chicken", "mayo", "onion", "bell pepper", "tomato", "lettuce", "cheese"], 
                   ["chicken", "mayo", "onion", "bell pepper", "tomato", "lettuce", "cheese"], ["meatballs", "marinara sauce", "provolone", "parmesan cheese"], 
                   ["meatballs", "marinara sauce", "provolone", "parmesan cheese"], ["ham", "turkey", "tomato", "mayo", "cheese"], ["ham", "turkey", "tomato", "mayo", "cheese"], 
-                  ["chicken", "creamy ceasar dressing", "chopped romaine", "parmesan cheese", "tomato", "red onion"]]
+                  ["chicken", "creamy ceasar dressing", "chopped romaine", "parmesan cheese", "tomato", "red onion"],["chicken", "creamy ceasar dressing", "chopped romaine", "parmesan cheese", "tomato", "red onion"]]
 foodAllergens = [["dairy", "beef", "pork", "turkey"], ["dairy", "beef", "pork", "turkey"], ["guacamole", "peppers"], ["guacamole", "peppers"], 
                  ["pork", "turkey", "dairy"], ["pork", "turkey", "dairy"], ["turkey", "dairy"], ["turkey", "dairy"], ["pork", "dairy"], ["pork", "dairy"],
                  ["fish", "dairy"], ["fish", "dairy"], ["dairy", "beef"], ["dairy", "beef"], ["beef", "dairy"], ["beef", "dairy"], ["dairy", "chicken"], ["dairy", "chicken"],
@@ -476,6 +482,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Panda Express", "Jones Dining Center",
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
+
 
 pizzahut=[]
 foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
@@ -693,10 +700,10 @@ foodIngredients =[[""]]
 foodAllergens=[[""]]
 flavorProfile=[[""]]
 
-#restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
-#                        flavorProfile, "Placeholder", "",
-#                         foodList=[])
-#masterListRestaurants.append(restaurantObject)
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Placeholder", "",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
 
-
+print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
 
