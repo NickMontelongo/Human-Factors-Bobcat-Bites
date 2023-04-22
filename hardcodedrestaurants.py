@@ -232,11 +232,11 @@ foodAllergens = [["gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["g
                  ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "tree nuts"], ["gluten", "tree nuts"], ["gluten", "tree nuts"],
                  ["gluten", "tree nuts"], ["gluten", "tree nuts"], ["gluten"], ["gluten"], ["gluten"],
                  ["gluten"], ["gluten"], ["gluten"], ["gluten"], ["gluten"]]
-flavorProfile = [["savory", "salty"], ["savory", "salty", "spicy"], ["savory", "salty"], ["savory", "salty"],  ["savory", "salty"],  ["savory", "salty"],  ["sweet", "sugary"],
-                 ["healthy", "nutty"], ["sweet", "chewy"], ["healthy", "nutty"],["healthy", "nutty"], ["healthy", "nutty"], ["sweet", "salty"],
-                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "sugary"],["healthy", "nutty"], ["healthy", "nutty"],
-                 ["healthy", "nutty"],["healthy", "nutty"], ["sweet", "chewy"], ["sweet"], ["sweet", "chewy"],
-                 ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"], ["sweet", "chewy"]]
+flavorProfile = [["savory", "salty"], ["savory", "salty", "spicy"], ["savory", "salty"], ["savory", "salty"],  ["savory", "salty"],  ["savory", "salty"],  ["sweet"],
+                 ["savory"], ["savory"], ["savory"],["savory"], ["savory"], ["sweet", "salty"],
+                 ["savory"],["savory"], ["sweet"],["savory"], ["bitter"],
+                 ["savory"],["savory"], ["sweet"], ["sweet"], ["sweet"],
+                 ["sweet"], ["sweet"], ["sweet"], ["sweet"], ["sweet"]]
 
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Coffee and Pi Market", "Ingram Building",
@@ -257,10 +257,10 @@ foodIngredients= [["cheese", "ham", "lettuce", "tomato", "mayo", "Mustard"], ["t
                   ["cheese", "ham", "salami", "pepperoni", "capicola", "lettuce", "tomato", "Onion", "oil & vinegar", "salt & pepper"], ["turkey", "cheese", "lettuce", "tomato", "Honey Dijon Dressing"], 
                   ["beet", "vegan cheese", "spinach", "tomato", "onion", "bell pepper", "oil & vinegar", "salt & pepper"], ["chicken", "romaine", "spinach", "bacon", "egg", "tomato", "black olives", "Guacamole"], 
                   ["romaine", "tomato", "red onion", "bacon", "cheese", "walnut"], ["romaine", "croutons", "parmesan", "red onion"],["romaine", "croutons", "parmesan", "red onion"]]
-foodAllergens = [["dairy", "pork"],["chicken", "pork", "dairy"], ["chicken", "dairy", "olives"], ["dairy", "pork"], ["chicken", "dairy"], ["beet", "onion", "pepper"], 
-                 ["dairy", "pork", "mayo", "mustard"], ["chicken", "pork", "dairy", "jalapeno"], ["pesto chicken", "spinach", "cheese", "tomato", "black olives", "pesto mayo"], 
-                 ["dairy", "pork", "gluten"], ["gluten", "dairy", "chicken"], ["gluten", "onion", "beet"], ["chicken", "pork", "egg", "olive", "guacamole"], ["walnuts", "onion", "pork", "dairy"], 
-                 ["cheese", "onion", "gluten"]]
+foodAllergens = [["dairy", "pork"],["chicken", "pork", "dairy"], ["chicken", "dairy"], ["dairy", "pork"], ["chicken", "dairy"], [""], 
+                 ["dairy", "pork", "mustard"], ["chicken", "pork", "dairy"], ["chicken", "dairy"], 
+                 ["dairy", "pork", "gluten"], ["gluten", "dairy", "chicken"], ["gluten"], ["chicken", "pork", "egg"], ["tree nuts", "pork", "dairy"], 
+                 ["dairy", "gluten"]]
 flavorProfile = [["savory"], ["savory"], ["savory"], ["savory"], ["savory"], ["savory"], ["savory"], 
                  ["savory", "spicy"], ["savory", "spicy"], ["savory"], ["savory"], ["savory", "bitter"], 
                  ["savory"], ["savory"], ["savory"]]
@@ -504,7 +504,7 @@ foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Pe
 foodPrices =[4.79, 4.79, 4.79, 4.79, 5.49, 5.49, 3.19, 5.39]
 foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce", "pepperoni"],["cheese", "bread", "tomato sauce", "sausage"],["cheese", "bread", "tomato sauce", "mushroom"],["meat", "tomato sause"],["Chicken", "pasta", "sauce"],["bread", "tomato sauce"],["bread", "wings", "chicken"]]
 foodAllergens =[["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"]]
-flavorProfile =[["savory", ],["savory", ],["savory", ],["savory", ],["savory", "bitter"],["savory", "creamy"],["savory", "salty"],["savory", "bitter"]]
+flavorProfile =[["savory", ],["savory", ],["savory", ],["savory", ],["savory", "bitter"],["savory", "creamy"],["savory", "salty"],["savory", "bitter09989098"]]
 
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Pizza Hut", "LBJ Student Center",
