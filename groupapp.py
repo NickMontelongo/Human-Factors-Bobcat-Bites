@@ -448,7 +448,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                 database.session.commit()
                 flash(f'The food item {foodItem.food_name} was added to your favorites')
             else:
-                flash(f 'Placeholder food item cannot be added.')
+                flash(f'Placeholder food item cannot be added.')
             return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
         if form.deny.data:
             restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
