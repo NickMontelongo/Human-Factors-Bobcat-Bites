@@ -677,6 +677,10 @@ def logout():
     logout_user()
     return redirect(url_for("login"))
 
+@app.route("/about", methods=["GET", "POST"])
+@login_required
+def about():
+    return render_template("about.html")
 
 @login_manager.unauthorized_handler
 def unauthorized_callback():
