@@ -330,38 +330,6 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
 
 
 
-Starbucks=[]
-foodNames= ["Ham & Cheese Savory Foldover", "Wheat Spinach Savory Foldover", "Pepperoni & Tomato Savory Foldover", "Cheese Danish",
-            "Butter Croissant", "Chocolate Croissant", "Blueberry Scone", "Banana Nut Bread", "Iced Lemon Pound Cake",
-            "Morning Bun", "Chocolate Chip Cookie", "Double Chocolate Chunk Brownie", "Hearty Blueberry Oatmeal",
-            "Bacon & Gouda Breakfast Sandwich", "Sausage & Cheddar Breakfast Sandwich", "Spinach & Feta Breakfast Wrap",
-            "Reduced-Fat Turkey Bacon Breakfast Sandwich", "Slow-Roasted Ham & Swiss on Croissant Bun", "Protein Bistro Box",
-            "Cheese & Fruit Bistro Box", "Omega-3 Bistro Box", "PB&J on Wheat Bistro Box", "Turkey Rustico Panini", "Turkey Pesto Panini",
-            "Ham & Swiss Panini", "Chicken Santa Fe Flatbread", "Chicken BLT Salad Deli Sandwich", "Roasted Tomato & Mozzarella Panini",
-            "Old-Fashioned Grilled Cheese", "Cake pop"]
-foodPrices= [3.45, 3.45, 3.45, 2.45, 2.45, 2.75, 2.45, 2.75, 2.45, 2.45, 1.95, 2.35, 3.45, 3.75, 3.45, 3.75, 3.75, 4.75,
-             5.25, 4.95, 5.95, 5.25, 6.45, 6.45, 5.95, 5.95, 5.95, 5.55, 5.25, 1.95]
-foodIngredients= [["cheese", "bread", "ham"], ["cheese", "bread", "spinach"], ["pepperoni", "bread", "tomato"], ["cheese", "bread"],
-                  ["bread"], ["chocolate", "bread"], ["blueberry", "bread"], ["banana", "bread", "nuts"],
-                  ["lemon", "bread"], ["cinnamon", "bread"], ["chocolate", "bread"], ["chocolate", "bread"],
-                  ["blueberry", "oatmeal"], ["egg", "bread", "bacon"], ["sausage", "bread", "egg"], ["cheese", "bread", "spinach"],
-                  ["turkey", "bread", "bacon"], ["ham", "bread", "cheese"], ["cheese", "meat"], ["cheese", "fruit"],
-                  ["blueberry", "nuts"], ["peanut butter", "bread", "jelly"], ["turkey", "bread", "cheese"], ["cheese", "bread", "turkey"],
-                  ["cheese", "bread", "ham"], ["chicken", "bread", "cheese"], ["chicken", "bread", "bacon"], ["cheese", "bread", "tomato"],
-                  ["cheese", "bread"], ["bread"]]
-foodAllergens = [["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
-                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy", "nuts"],
-                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],["gluten"], ["gluten", "dairy"],
-                 ["gluten", "dairy"], ["gluten", "dairy"],["gluten", "dairy"], ["gluten", "dairy"], ["dairy"], ["dairy"], ["nuts"],
-                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten"],
-                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
-flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"], ["savory"],
-                 ["sweet"], ["sweet", "fruity"], ["sweet", "nutty"], ["sweet", "lemon"], ["sweet", "cinnamon"],
-                 ["sweet"], ["sweet"], ["sweet", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"],
-                 ["savory", "cheesy"], ["savory", "healthy"], ["savory", "cheesy"], ["healthy", "crunchy"], ["fruity", "healthy"],
-                 ["healthy", "crunchy"], ["sweet"], ["savory", "meaty"], ["savory", "fresh"], ["savory", "cheesy"],
-                 ["savory", "bready"], ["savory", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"], ["sweet"]]
-
 
 
 KawaSushi=[]
@@ -531,6 +499,45 @@ flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["sav
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 
+Starbucks=[]
+foodNames= ["Ham & Cheese Savory Foldover", "Wheat Spinach Savory Foldover", "Pepperoni & Tomato Savory Foldover", "Cheese Danish",
+            "Butter Croissant", "Chocolate Croissant", "Blueberry Scone", "Banana Nut Bread", "Iced Lemon Pound Cake",
+            "Morning Bun", "Chocolate Chip Cookie", "Double Chocolate Chunk Brownie", "Hearty Blueberry Oatmeal",
+            "Bacon & Gouda Breakfast Sandwich", "Sausage & Cheddar Breakfast Sandwich", "Spinach & Feta Breakfast Wrap",
+            "Reduced-Fat Turkey Bacon Breakfast Sandwich", "Slow-Roasted Ham & Swiss on Croissant Bun", "Protein Bistro Box",
+            "Cheese & Fruit Bistro Box", "Omega-3 Bistro Box", "PB&J on Wheat Bistro Box", "Turkey Rustico Panini", "Turkey Pesto Panini",
+            "Ham & Swiss Panini", "Chicken Santa Fe Flatbread", "Chicken BLT Salad Deli Sandwich", "Roasted Tomato & Mozzarella Panini",
+            "Old-Fashioned Grilled Cheese", "Cake pop"]
+foodPrices= [3.45, 3.45, 3.45, 2.45, 2.45, 2.75, 2.45, 2.75, 2.45, 2.45, 1.95, 2.35, 3.45, 3.75, 3.45, 3.75, 3.75, 4.75,
+             5.25, 4.95, 5.95, 5.25, 6.45, 6.45, 5.95, 5.95, 5.95, 5.55, 5.25, 1.95]
+foodIngredients= [["cheese", "bread", "ham"], ["cheese", "bread", "spinach"], ["pepperoni", "bread", "tomato"], ["cheese", "bread"],
+                  ["bread"], ["chocolate", "bread"], ["blueberry", "bread"], ["banana", "bread", "nuts"],
+                  ["lemon", "bread"], ["cinnamon", "bread"], ["chocolate", "bread"], ["chocolate", "bread"],
+                  ["blueberry", "oatmeal"], ["egg", "bread", "bacon"], ["sausage", "bread", "egg"], ["cheese", "bread", "spinach"],
+                  ["turkey", "bread", "bacon"], ["ham", "bread", "cheese"], ["cheese", "meat"], ["cheese", "fruit"],
+                  ["blueberry", "nuts"], ["peanut butter", "bread", "jelly"], ["turkey", "bread", "cheese"], ["cheese", "bread", "turkey"],
+                  ["cheese", "bread", "ham"], ["chicken", "bread", "cheese"], ["chicken", "bread", "bacon"], ["cheese", "bread", "tomato"],
+                  ["cheese", "bread"], ["bread"]]
+foodAllergens = [["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy", "nuts"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],["gluten"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"],["gluten", "dairy"], ["gluten", "dairy"], ["dairy"], ["dairy"], ["nuts"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
+flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"], ["savory"],
+                 ["sweet"], ["sweet", "fruity"], ["sweet", "nutty"], ["sweet", "lemon"], ["sweet", "cinnamon"],
+                 ["sweet"], ["sweet"], ["sweet", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"],
+                 ["savory", "cheesy"], ["savory", "healthy"], ["savory", "cheesy"], ["healthy", "crunchy"], ["fruity", "healthy"],
+                 ["healthy", "crunchy"], ["sweet"], ["savory", "meaty"], ["savory", "fresh"], ["savory", "cheesy"],
+                 ["savory", "bready"], ["savory", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"], ["sweet"]]
+
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Starbucks", "Alkek Library/ LBJ Student Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+
 teaco=[]
 foodNames= ["vietnamese sandwich", "spring rolls", "egg rolls"]
 foodPrices= [4.95, 4.49, 3.25]
@@ -578,6 +585,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Tu Taco", "LBJ Student Center",
                          foodList=[])
 
+
 WingIt=[]
 foodNames= ["Regular Tender Basket", "Large Tender Basket", "5 Wings", "Loaded Baked Potato", "Fried Cauliflower Basket", "Waffle Sliders", "Mac & Cheese",
             "5 Chicken Tenders", "3 Chicken Tenders", "Twiced Baked Potato Casserole", "American Potato Salad", "Steak Fries", "Coleslaw", "Crudite"]
@@ -596,6 +604,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Wing It", "Jones Dining Center",
                          foodList=[])
 
+
 #Might have something Wrong, flavor profile was minus 1
 WoodsStPizzaAndPasta=[]
 foodNames= ["Cheese Pizza Slice", "Pepperoni Pizza Slice", "Alfredo and Veggie Pizza Slice", "Bacon and Herbs Pizza Slice",
@@ -613,6 +622,8 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Woods St Pizza & Pasta", "Jones Dining Center",
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
+
+
 #DO NOT DELETE NICK 4/17/2023
 restaurantName = ""
 restaurantLocation = "Click the buttons to begin"
