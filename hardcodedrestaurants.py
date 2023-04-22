@@ -236,20 +236,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
 masterListRestaurants.append(restaurantObject)
 
 
-pizzahut=[]
-foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
-foodPrices =[4.79, 4.79, 4.79, 4.79, 5.49, 5.49, 3.19, 5.39]
-foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce", "pepperoni"],["cheese", "bread", "tomato sauce", "sausage"],["cheese", "bread", "tomato sauce", "mushroom"],["meat", "tomato sause"],["Chicken", "pasta", "sauce"],["bread", "tomato sauce"],["bread", "wings", "chicken"]]
-foodAllergens =[["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"]]
-flavorProfile =[["savory", "cheesy"],["savory", "cheesy", "meaty"],["savory", "cheesy", "meaty"],["savory", "cheesy"],["savory", "meaty", "saucy"],["savory", "creamy"],["savory", "salty"],["savory", "saucy"]]
 
-
-pomhoney=[]
-foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
-foodPrices= [7.99, 7.99, 7.99]
-foodIngredients= [["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"]]
-foodAllergens = [["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"]]
-flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"]]
 
 
 
@@ -460,6 +447,31 @@ foodAllergens = [["gluten, shellfish", "soybeans", "wheat", "sesame", "egg", "da
 flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], 
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
+
+pizzahut=[]
+foodNames =["Personal Pan Pizza - Cheese", "Personal Pan Pizza - Pepperoni", "Personal Pan Pizza - Italian Sausage", "Personal Pan Pizza - Supreme", "Meaty Marinara Pasta", "Chicken Alfredo Pasta", "Breadsticks", "6 Baked Wings"]
+foodPrices =[4.79, 4.79, 4.79, 4.79, 5.49, 5.49, 3.19, 5.39]
+foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato sauce", "pepperoni"],["cheese", "bread", "tomato sauce", "sausage"],["cheese", "bread", "tomato sauce", "mushroom"],["meat", "tomato sause"],["Chicken", "pasta", "sauce"],["bread", "tomato sauce"],["bread", "wings", "chicken"]]
+foodAllergens =[["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"]]
+flavorProfile =[["savory", "cheesy"],["savory", "cheesy", "meaty"],["savory", "cheesy", "meaty"],["savory", "cheesy"],["savory", "meaty", "saucy"],["savory", "creamy"],["savory", "salty"],["savory", "saucy"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Pizza Hut", "LBJ Student Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+
+pomhoney=[]
+foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
+foodPrices= [7.99, 7.99, 7.99]
+foodIngredients= [["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"], ["Falafel", "Chicken", "Lamb", "Beef", "Hummus"]]
+foodAllergens = [["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"], ["dairy", "eggs", "gluten", "garlic"]]
+flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Pom and Honey", "The Den Food Company",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
 
 
 RevolutionNoodle=[]
