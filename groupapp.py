@@ -443,16 +443,15 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
             foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))
             foodItem = Userfavoritefood.query.filter_by(food_name=recommendedFoodName,parent_restaurant=recommendedRestaurantName).first()
-            if recommendedRestaurantName != "":
-                print(foodItem.parent_restaurant)
+            if restaurantIndex == 25:
+                flash(f'Placeholder food item cannot be added.')
+            else:
                 user.userfavoritefoods.append(foodItem)
                 database.session.commit()
                 flash(f'The food item {foodItem.food_name} was added to your favorites')
-            else:
-                flash(f'Placeholder food item cannot be added.')
             return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
         if form.deny.data:
-            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 1))
+            restaurantIndex = random.randint(0,(len(masterListWithRecommendation) - 2))
             foodIndex = random.randint(0,(len(masterListWithRecommendation[restaurantIndex].foodList) - 1))   
             return redirect(url_for("getRecommendationByRand",foodIndex=foodIndex, restaurantIndex=restaurantIndex))
     return render_template("displayrand.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
