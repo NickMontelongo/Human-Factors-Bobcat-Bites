@@ -243,12 +243,6 @@ foodIngredients=[["cheese", "bread", "tomato sauce"],["cheese", "bread", "tomato
 foodAllergens =[["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"],["gluten", "dairy"]]
 flavorProfile =[["savory", "cheesy"],["savory", "cheesy", "meaty"],["savory", "cheesy", "meaty"],["savory", "cheesy"],["savory", "meaty", "saucy"],["savory", "creamy"],["savory", "salty"],["savory", "saucy"]]
 
-thesaltymenu=[]
-foodNames= ["Horchata", "Traditional Glazed", "Churro + Dulce de leche star", "Texas Chocolate sheet cake", "Boston Cream", "Ube Pina Colada(V)"]
-foodPrices= [4.50, 3.50, 4.25, 4.25, 4.65, 4.75]
-foodIngredients= [["brioche", "horchata mixture", "chocolate, cinnamon"],["dough", "vanilla bean glaze"],["broche", "cinnamon", "sugar", "coffee", "whipped cream"], ["chocolate", "dough", "sugar", "glaze"], ["brioche", "vinilla custard", "ganache glaze"], ["vegan brioche", "pineapple jam", "coconut milk glaze", "coconut streusel"]]
-foodAllergens = [["gluten", ""],["gluten", ""],["gluten"],["gluten"], ["gluten"], ["gluten"]]
-flavorProfile = [["sweet"], ["sweet"], ["sweet", "bitter"], ["sweet", "savory"], ["sweet"], ["sweet"]]
 
 pomhoney=[]
 foodNames= ["Salad", "Pita Wrap", "Grain Bowl"]
@@ -259,41 +253,9 @@ flavorProfile = [["fresh", "savory"], ["fresh", "savory"], ["fresh", "savory"]]
 
 
 
-ShakeSmart=[]
-foodNames= ["Rawcai bowl", "Raw-PB Bowl", "The Buzz Bowl", "Original Acai Bowl", "PB&A bowl", "Dragon Bowl", "Peanut Butter toast",
-            "Almond Butter Toast", "Avocado Toast", "Turks and Matoes wrap", "Rubi's Tuna Salad", "Veggie Delight"]
-foodPrices= [7.50, 7.50, 7.50, 7.50, 7.50, 7.50, 4.75, 5.25, 5.75, 8.45, 8.45, 7.95]
-foodIngredients= [["granola", "banana", "chocolate", "coconut"], ["granola", "banana", "peanut butter"], ["granola", "pineapple", "coconut"],
-                  ["strawberry", "apple", "granola"], ["peanut butter", "banana", "granola"], ["pineapple", "granola", "chia"],
-                  ["peanut butter", "bread"], ["almond butter", "bread", "banana"], ["avocado", "bread"],["hummus", "tomato"],
-                  ["tuna", "carrots", "spinach"], ["tomato", "hummus"]]
-foodAllergens = [[], ["peanut butter"], [], [], ["peanut butter"], [], ["peanut butter"], ["nuts"], [], [], [], []]
-flavorProfile = [["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
-                 ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
-                 ["Sweet", "bready"], ["Sweet", "healthy"], ["Savory", "healthy"], ["fresh", "healthy"],
-                 ["fresh", "healthy"], ["fresh", "healthy"]]
 
 
 
-
-
-RevolutionNoodle=[]
-foodNames= ["Shio Ramen", "Veggie Ramen", "Spicy Miso Ramen", "Curry Ramen", "Smoked Brisket Ramen", "Tsukimi Ramen", "Flying Pig Sandwich",
-            "Chicken Run Sandwich", "Kickin Tofu Sandwich", "Chicken Dumplings", "Pork Dumplings", "Veggie Dumplings", "Vietnamese Sandwich",
-            "Spring Rolls", "Egg Rolls"]
-foodPrices= [7.99, 7.99, 7.99, 7.99, 7.99, 7.99, 5.99, 5.99, 3.99, 7.29, 7.29, 7.29, 4.95, 4.49, 3.25]
-foodIngredients= [["Chicken", "Noodle", "Broth", "egg"], ["Chicken", "Noodle", "Broth", "egg"], ["Curry", "Noodle", "Broth", "egg"],
-                  ["Brisket", "Noodle", "Broth", "egg"], ["Pork", "Noodle", "Broth", "egg"], ["Por", "Noodle", "Broth", "egg"],
-                  ["pork", "bread"], ["Chicken", "bread"], ["Tofu", "bread"], ["Chicken", "bread"], ["Pork", "bread"],
-                  ["Veggies", "bread"], ["Bread", "Beef"], ["Veggies"], ["Veggies", "egg", "pork"]]
-foodAllergens = [["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"],
-                 ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
-                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
-flavorProfile = [["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
-                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
-                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty"], ["savory", "salty", "meaty"],
-                 ["savory", "salty", "meaty"], ["savory", "Fresh"], ["savory", "salty", "meaty"], ["savory", "salty"],
-                 ["savory", "salty", "meaty"]]
 
 
 
@@ -499,6 +461,63 @@ flavorProfile = [["savory", "fresh", "meaty", "crispy", "sweet", "spicy"], ["sav
                  ["savory", "fresh", "meaty", "crispy", "sweet", "spicy"]]
 
 
+
+RevolutionNoodle=[]
+foodNames= ["Shio Ramen", "Veggie Ramen", "Spicy Miso Ramen", "Curry Ramen", "Smoked Brisket Ramen", "Tsukimi Ramen", "Flying Pig Sandwich",
+            "Chicken Run Sandwich", "Kickin Tofu Sandwich", "Chicken Dumplings", "Pork Dumplings", "Veggie Dumplings", "Vietnamese Sandwich",
+            "Spring Rolls", "Egg Rolls"]
+foodPrices= [7.99, 7.99, 7.99, 7.99, 7.99, 7.99, 5.99, 5.99, 3.99, 7.29, 7.29, 7.29, 4.95, 4.49, 3.25]
+foodIngredients= [["Chicken", "Noodle", "Broth", "egg"], ["Chicken", "Noodle", "Broth", "egg"], ["Curry", "Noodle", "Broth", "egg"],
+                  ["Brisket", "Noodle", "Broth", "egg"], ["Pork", "Noodle", "Broth", "egg"], ["Por", "Noodle", "Broth", "egg"],
+                  ["pork", "bread"], ["Chicken", "bread"], ["Tofu", "bread"], ["Chicken", "bread"], ["Pork", "bread"],
+                  ["Veggies", "bread"], ["Bread", "Beef"], ["Veggies"], ["Veggies", "egg", "pork"]]
+foodAllergens = [["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"],
+                 ["gluten", "dairy", "egg"], ["gluten", "dairy", "egg"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"],
+                 ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"], ["gluten", "dairy"]]
+flavorProfile = [["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "salty", "meaty"], ["savory", "salty"], ["savory", "salty", "meaty"],
+                 ["savory", "salty", "meaty"], ["savory", "Fresh"], ["savory", "salty", "meaty"], ["savory", "salty"],
+                 ["savory", "salty", "meaty"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Revolution Noodle", "LBJ Student Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+thesaltymenu=[]
+foodNames= ["Horchata", "Traditional Glazed", "Churro + Dulce de leche star", "Texas Chocolate sheet cake", "Boston Cream", "Ube Pina Colada(V)"]
+foodPrices= [4.50, 3.50, 4.25, 4.25, 4.65, 4.75]
+foodIngredients= [["brioche", "horchata mixture", "chocolate, cinnamon"],["dough", "vanilla bean glaze"],["broche", "cinnamon", "sugar", "coffee", "whipped cream"], ["chocolate", "dough", "sugar", "glaze"], ["brioche", "vinilla custard", "ganache glaze"], ["vegan brioche", "pineapple jam", "coconut milk glaze", "coconut streusel"]]
+foodAllergens = [["gluten", ""],["gluten", ""],["gluten"],["gluten"], ["gluten"], ["gluten"]]
+flavorProfile = [["sweet"], ["sweet"], ["sweet", "bitter"], ["sweet", "savory"], ["sweet"], ["sweet"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "The Salty", "Outside the Food Co Building",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+
+ShakeSmart=[]
+foodNames= ["Rawcai bowl", "Raw-PB Bowl", "The Buzz Bowl", "Original Acai Bowl", "PB&A bowl", "Dragon Bowl", "Peanut Butter toast",
+            "Almond Butter Toast", "Avocado Toast", "Turks and Matoes wrap", "Rubi's Tuna Salad", "Veggie Delight"]
+foodPrices= [7.50, 7.50, 7.50, 7.50, 7.50, 7.50, 4.75, 5.25, 5.75, 8.45, 8.45, 7.95]
+foodIngredients= [["granola", "banana", "chocolate", "coconut"], ["granola", "banana", "peanut butter"], ["granola", "pineapple", "coconut"],
+                  ["strawberry", "apple", "granola"], ["peanut butter", "banana", "granola"], ["pineapple", "granola", "chia"],
+                  ["peanut butter", "bread"], ["almond butter", "bread", "banana"], ["avocado", "bread"],["hummus", "tomato"],
+                  ["tuna", "carrots", "spinach"], ["tomato", "hummus"]]
+foodAllergens = [[], ["peanut butter"], [], [], ["peanut butter"], [], ["peanut butter"], ["nuts"], [], [], [], []]
+flavorProfile = [["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
+                 ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"], ["fresh", "healthy", "crunchy"],
+                 ["Sweet", "bready"], ["Sweet", "healthy"], ["Savory", "healthy"], ["fresh", "healthy"],
+                 ["fresh", "healthy"], ["fresh", "healthy"]]
+
+restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
+                        flavorProfile, "Shake Smart", "Student Rec Center",
+                         foodList=[])
+masterListRestaurants.append(restaurantObject)
+
+
 Starbucks=[]
 foodNames= ["Ham & Cheese Savory Foldover", "Wheat Spinach Savory Foldover", "Pepperoni & Tomato Savory Foldover", "Cheese Danish",
             "Butter Croissant", "Chocolate Croissant", "Blueberry Scone", "Banana Nut Bread", "Iced Lemon Pound Cake",
@@ -530,7 +549,6 @@ flavorProfile = [["savory", "cheesy"], ["savory", "cheesy"], ["savory", "cheesy"
                  ["savory", "cheesy"], ["savory", "healthy"], ["savory", "cheesy"], ["healthy", "crunchy"], ["fruity", "healthy"],
                  ["healthy", "crunchy"], ["sweet"], ["savory", "meaty"], ["savory", "fresh"], ["savory", "cheesy"],
                  ["savory", "bready"], ["savory", "fresh"], ["savory", "cheesy"], ["savory", "cheesy"], ["sweet"]]
-
 
 restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                         flavorProfile, "Starbucks", "Alkek Library/ LBJ Student Center",
