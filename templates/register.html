@@ -5,10 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/styles/login.css" rel="stylesheet" />
+    <link href="static/styles/register.css" rel="stylesheet" />
     <title>Register Page</title>
 </head>
 
+<body>
+    <div class ="container" id="container">
+        <div class="form-container log-in-container">
+            <form method="POST" action="">
+                <h1 style="margin: 20px">Sign Up</h1>
+                {{ form.hidden_tag() }}
+                <h3 style="font-size:16px;">Enter your email address: {{ form.user_email}} </h3>
+                <h3 style="font-size:16px;">Enter your password (8-30 characters): {{ form.user_password}} </h3>
+                {{ form.submit }} <br>
+                {% for error in form.user_email.errors %} <p style="color: blue;" ,style="font-size:400%" ;> <b>
+                        {{error}} </b></p> {% endfor %}
+                <h4 style="font-size:14px;"> For those that want their food to bite back!</h4>
+                <a style="font-size:12px; margin: 6px;" href="{{url_for('login')}}">Already a member? Click here to login!</a>
+            </form>
+        </div>
+        <div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+                    <img src="static/images/texasstatedining2.jpg" alt="dining image2" width=1000px>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+    
+
+<!--
 <body>
     <center>
         <div class="white-box">
@@ -29,5 +56,5 @@
         </div>
     </center>
 </body>
-
+-->
 </html>
