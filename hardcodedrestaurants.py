@@ -736,7 +736,7 @@ masterListRestaurants.append(restaurantObject)
 #print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
 #for eachEntry in masterListRestaurants:
 #    print(f'Restaurant Name: {eachEntry.restaurantName}')
-totalFoodItems=0
-for eachEntry in masterListRestaurants:
-   totalFoodItems = totalFoodItems + len(eachEntry.foodList)
-print(f'Total Number of food items: {totalFoodItems}')
+#totalFoodItems=0
+#for eachEntry in masterListRestaurants:
+#   totalFoodItems = totalFoodItems + len(eachEntry.foodList)
+#print(f'Total Number of food items: {totalFoodItems}')
