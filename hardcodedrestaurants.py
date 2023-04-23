@@ -733,7 +733,7 @@ restaurantObject =setRestaurantObject(foodNames, foodIngredients, foodAllergens,
                          foodList=[])
 masterListRestaurants.append(restaurantObject)
 
-#print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
+print(f'this is the length of master list restaurants: {len(masterListRestaurants)}')
 #for eachEntry in masterListRestaurants:
 #    print(f'Restaurant Name: {eachEntry.restaurantName}')
 #totalFoodItems=0
