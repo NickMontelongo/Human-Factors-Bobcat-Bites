@@ -133,25 +133,25 @@ class Food:
 
 
 ######################################### RUNNABLE TEST CODE ###############################################################################
-food_list = []
-foodnames = ["Grilled Chicken" , "Spaghetti Carbonara", "Veggie Stir Fry", "Steak Fajitas", "Shrimp Scampi"]
-foodprice = [12.99, 15.99, 10.99, 18.99, 20.99]
-foodingredients = [["chicken", "olive oil", "salt", "pepper", "garlic"], ["spaghetti", "bacon", "eggs", "parmesan cheese", "black pepper"],
-["broccoli", "carrots", "mushrooms", "onion", "garlic", "soy sauce"], ["steak", "bell pepper", "onion", "garlic", "cumin", "chili powder"],
-["shrimp", "butter", "garlic", "white wine", "lemon", "parsley"]]
-foodallergens = [["chicken"], ["eggs", "dairy"], ["mushrooms"], [""], ["shrimp"]]
-flavorprofile = [["savory", "salty"], ["savory"], ["crunchy"], ["salty", "spicy"], ["savory"]]
+# food_list = []
+# foodnames = ["Grilled Chicken" , "Spaghetti Carbonara", "Veggie Stir Fry", "Steak Fajitas", "Shrimp Scampi"]
+# foodprice = [12.99, 15.99, 10.99, 18.99, 20.99]
+# foodingredients = [["chicken", "olive oil", "salt", "pepper", "garlic"], ["spaghetti", "bacon", "eggs", "parmesan cheese", "black pepper"],
+# ["broccoli", "carrots", "mushrooms", "onion", "garlic", "soy sauce"], ["steak", "bell pepper", "onion", "garlic", "cumin", "chili powder"],
+# ["shrimp", "butter", "garlic", "white wine", "lemon", "parsley"]]
+# foodallergens = [["chicken"], ["eggs", "dairy"], ["mushrooms"], [""], ["shrimp"]]
+# flavorprofile = [["savory", "salty"], ["savory"], ["crunchy"], ["salty", "spicy"], ["savory"]]
 
 
-for i in range(5):
-    newItem = Food(foodnames[i], foodprice[i], foodingredients[i], foodallergens[i], flavorprofile[i])
-    food_list.append(newItem)
-restaurant = Restaurant("Ginos Italian", food_list, "123 Coding way")
-userAllergens = ["gluten", "dairy", "shrimp"]
-userTastePreferences = ["salty", "spicy"]
-userMaxPrice= 15
-userMinPrice = 10
-userPreferredIngredients = ["garlic", "onion"]
+# for i in range(5):
+#     newItem = Food(foodnames[i], foodprice[i], foodingredients[i], foodallergens[i], flavorprofile[i])
+#     food_list.append(newItem)
+# restaurant = Restaurant("Ginos Italian", food_list, "123 Coding way")
+# userAllergens = ["gluten", "dairy", "shrimp"]
+# userTastePreferences = ["salty", "spicy"]
+# userMaxPrice= 15
+# userMinPrice = 10
+# userPreferredIngredients = ["garlic", "onion"]
 
-food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
+# food_recommendation(restaurant, userMinPrice, userMaxPrice, userPreferredIngredients, userAllergens, userTastePreferences)
 
