@@ -1,0 +1,1349 @@
+
+
+<!DOCTYPE html>
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+
+
+
+
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({ pageModel: null, userModel: null });  // Clear the previous attributes.
+		dataLayer.push({
+			event: 'page_view',
+			pageModel: {
+				language: 'en',
+				page_id: '30E6FCB8DDBE44C584D456E269009484',
+				page_location: 'http://www.chick-fil-a.com/menu/cobb-salad',
+				page_name: 'cobb-salad',
+				page_referrer: 'https://www.google.com/',
+				page_title: 'Cobb Salad Nutrition and Description | Chick-fil-A',
+				site_brand: 'CFACOM',
+				site_country: 'fe80::bcb5:3a73:ed8d:8f10%2',
+				site_region: ''
+			}
+		});
+	</script>
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="">
+<meta name="description" content="Chick-fil-A&#174; Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing.">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="server" content="I-02C701C444AE0" />
+<meta name="serverzone" content="0.0" />
+<meta name="site" content="CFACOM" />
+<meta name='bsk' content='80dd234943647559a245be654346b81f'/>
+<meta name='bskv' content='2.1.2637-stageb'/>
+	<link rel="canonical" href="https://www.chick-fil-a.com/menu/cobb-salad" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/Assets/Theming/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/Assets/Theming/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/Assets/Theming/favicon-16x16.png">
+<link rel="manifest" href="/Assets/Theming/site.webmanifest">
+<link rel="mask-icon" href="/Assets/Theming/safari-pinned-tab.svg" color="#dd1f37">
+<meta name="msapplication-TileColor" content="#dd1f37">
+<meta name="msapplication-config" content="/Assets/Theming/browserconfig.xml">
+<meta name="theme-color" content="#dd1f37">
+
+
+<title>Cobb Salad Nutrition and Description | Chick-fil-A</title>
+
+		<link href="https://d2wl1kt18tqdum.cloudfront.net/v2.1.2637-stageb/Assets/Theming/css/cfacom.css" rel="stylesheet" type="text/css" />
+
+	
+
+
+<!-- OneTrust Cookies Consent Notice start -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="4eeb7bf7-e1e9-49fc-84fa-3395630bec87"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+
+<!--Google Optimize Snippet start -->
+<script type="text/plain" class="optanon-category-2" src="https://www.googleoptimize.com/optimize.js?id=OPT-TXZMM4N"></script>
+<!--Google Optimize Snippet end -->
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start' :
+					new Date().getTime(),
+				event : 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NXDPGM');
+	</script>
+	<!-- End Google Tag Manager -->
+
+    <script>
+        function getExperienceType () {
+            var experienceType = "Desktop";
+
+            if (Number(document.documentElement.clientWidth) < 960) {
+                experienceType = "Mobile";
+            } else if (window.matchMedia("(orientation: landscape)") && (Number(document.documentElement.clientHeight) < 960)) {
+                experienceType = "Mobile";
+            }
+
+            return experienceType;
+        }
+
+        window.digitalData =
+        {
+            'page' : {
+                'category' : {
+                    'pageType': 'Menu Item Page'
+                },
+                'pageInfo' : {
+                    'destinationURL' : 'http://www.chick-fil-a.com/menu/cobb-salad',
+                    'experienceType' : getExperienceType(),
+                    'pageName' : 'Cobb Salad',
+                    'sysEnv' : 'Prod'
+                }
+            },
+            'user' : {
+                'profile' : {
+                    'profileInfo' : {
+                        'loginStatus' : 'not-logged-in',
+                        'profileID' : ''
+                    }
+                }
+            },'product': {'productInfo': {'productName': 'Cobb Salad w/ Nuggets','sku': 'COBB_NUGGETS','price': '0'},'category': {'primaryCategory': 'Salads'}}
+        };
+    </script>
+
+            <!-- Schema.org markup for Google+ -->
+            <meta itemprop="name" content="cobb-salad">
+            <meta itemprop="description" content="Chick-fil-A&#174; Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing.">
+            <meta itemprop="image" content="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/search-default.ashx">
+            <!-- Twitter Card data -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@ChickfilA">
+            <meta name="twitter:title" content="cobb-salad">
+            <meta name="twitter:description" content="Chick-fil-A&#174; Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, cr">
+            <meta name="twitter:creator" content="@ChickfilA">
+            <meta name="twitter:image:src" content="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/search-default.ashx">
+            <!-- Open Graph data -->
+            <meta property="og:title" content="cobb-salad"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:url" content="https://www.chick-fil-a.com/menu/cobb-salad"/>
+            <meta property="og:description" content="Chick-fil-A&#174; Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing."/>
+            <meta property="og:site_name" content="Chick-fil-A"/>
+            <meta property="article:tag" content=""/>
+            <meta property="og:image" content="http://www.chick-fil-a.com/-/media/images/cfacom/default-images/search-default.ashx"/>
+                <meta property="og:image:width" content="693"/>
+                <meta property="og:image:height" content="390"/>
+
+
+
+		<link rel="alternate" hreflang="en" href="https://www.chick-fil-a.ca/menu/cobb-salad" />
+		<link rel="alternate" hreflang="en" href="https://www.chick-fil-a.pr/menu/cobb-salad" />
+		<link rel="alternate" hreflang="es-PR" href="https://www.chick-fil-a.pr/menu/Cobb Salad" />
+
+
+	
+</head>
+<body>
+
+
+
+	<!-- Google Tag Manager -->
+	<noscript>
+		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-NXDPGM"
+						height="0"
+						width="0"
+						style="display: none; visibility: hidden;"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager -->
+
+
+		<a class="visually-hidden skip-link" href="#pdp-sticky">Skip to main content</a>
+
+
+
+	<div class="pdp">
+		
+
+		
+
+
+
+<div class="header-frame" data-sticky-position="true" data-sticky-priority="1">
+	
+	<header data-component="MainNav">
+		<div class="nav-frame">
+			<div class="header-components flex">
+				<a href="/" class="icon-logo-desktop logo"><span>Chick-Fil-A</span></a>
+
+				
+
+<div class="location-tools"
+		 data-component="locationTools"
+		 data-modal-id="pwo-modal"
+		 data-has-favorited-restaurants="false"
+		 data-layer-identifier="30E6FCB8DDBE44C584D456E269009484"
+		 data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad">
+	<div class="current-location" data-populate="current-location-menu-id">
+		<div class="icon-location-off"></div>
+		<button data-element="findRestaurant" type="button">
+			Find a restaurant
+		</button>
+	</div>
+</div>
+
+				
+<a href="https://order.chick-fil-a.com/get-started" class="order-now" title="Order Now" >Order Now</a>				
+
+
+<div class="nav-toggle" data-component="NavToggle">
+	<a data-action="toggle nav" href="#" class="icon-nav-toggle-off">
+		<span>Close Main Nav</span>
+	</a>
+</div>
+
+
+				<nav class="main-nav" role="navigation" aria-label="Main menu">
+					<ul class="flex">
+						
+
+
+
+						
+
+
+	<li id="navitem-menu"
+			class="navitem-hoverable navitem-hoverable--menu">
+
+<a href="https://www.chick-fil-a.com/menu" >			<span>Menu</span>
+				<span class="icon-arrow-down" aria-expanded="false"></span>
+</a>
+		
+			<div class="subnav">
+
+				
+				<ul id="menusubcategoricalid"
+						class="menusubcategories"
+						aria-label="Menu subcategories'">
+
+						<li>
+								
+									<a href="/menu#breakfast" data-component="clickData" data-layer-category="PrimaryMenuList" title="Breakfast" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Breakfast</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#entrees" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Entr&#233;es</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#salads" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Salads</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#sides" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Sides</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#kidsmeals" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Kid&#39;s Meals</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#treats" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Treats</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#beverages" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Drinks</a>
+								
+						</li>
+						<li>
+								
+									<a href="/menu#sauces" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Dipping Sauces and Dressings</a>
+								
+						</li>
+						<li>
+								
+									<a href="/catering" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Catering</a>
+								
+						</li>
+				</ul>
+			</div>
+	</li>
+			<li id="navitem-stories" class="navitem-hoverable navitem-hoverable--stories">
+				<a href="https://www.chick-fil-a.com/stories" id="stories-id" class="" title="Stories"
+					 data-component="clickData"
+					 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+					 data-layer-protocol="http"
+					 data-layer-category="StoryMenu">
+					<span>Stories</span> <span class="icon-arrow-down" aria-expanded="false"></span>
+				</a>
+				<div class="subnav">
+					<ul>
+						<li class="mobile-only">
+							<a href="https://www.chick-fil-a.com/stories"
+								 data-component="clickData"
+								 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+								 data-layer-protocol="http"
+								 data-layer-category="StoryMenu">All Stories</a>
+						</li>
+							<li>
+								<a href="https://www.chick-fil-a.com/stories/food" id="food-id" class="food " title="Food"
+									 data-component="clickData"
+									 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+									 data-layer-protocol="http"
+									 data-layer-category="StoryMenu-food">
+									Food
+								</a>
+							</li>
+							<li>
+								<a href="https://www.chick-fil-a.com/stories/lifestyle" id="lifestyle-id" class="lifestyle " title="Lifestyle"
+									 data-component="clickData"
+									 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+									 data-layer-protocol="http"
+									 data-layer-category="StoryMenu-lifestyle">
+									Lifestyle
+								</a>
+							</li>
+							<li>
+								<a href="https://www.chick-fil-a.com/stories/inside-chick-fil-a" id="cfa-stories-id" class="cfa-stories " title="Inside &lt;span class=&quot;nowrap&quot;&gt;Chick-fil-A&lt;/span&gt;"
+									 data-component="clickData"
+									 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+									 data-layer-protocol="http"
+									 data-layer-category="StoryMenu-cfa-stories">
+									Inside <span class="nowrap">Chick-fil-A</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.chick-fil-a.com/stories/press-room" id="news-id" class="news " title="News"
+									 data-component="clickData"
+									 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+									 data-layer-protocol="http"
+									 data-layer-category="StoryMenu-news">
+									News
+								</a>
+							</li>
+					</ul>
+					<div class="stories-feature shared">
+						<div class="wrapper flex">
+							<div>
+								<div class="cs"> <span class="visually-hidden">The Chicken Wire</span></div>
+								<a href="https://www.chick-fil-a.com/stories">View All Stories</a>
+							</div>
+										<div class="food">
+											<h2 class="tag">Food</h2>
+											<div class="story-img ">
+												<img src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Stories%20Images/2017/05/Slushies/Slushiesfinal.jpg?h=809&amp;w=1440&amp;la=en" alt="" />
+											</div>
+											<p>
+												<a href="https://www.chick-fil-a.com/stories/food/recipe-frozen-watermelon-mint-lemonade-with-freshly-squeezed-lime" title="Frozen watermelon mint lemonade&amp;nbsp;"
+													 data-component="clickData"
+													 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+													 data-layer-protocol="http"
+													 data-layer-category="StoryMenu-food">
+													Frozen watermelon mint lemonade&nbsp;
+												</a>
+											</p>
+										</div>
+										<div class="lifestyle">
+											<h2 class="tag">Lifestyle</h2>
+											<div class="story-img ">
+												<img src="https://d1fd34dzzl09j.cloudfront.net/2023/03/Family%20Friendly%20Activity%20Guide/WMS_Lifestyle_2_CW_1440x960_11zon.jpg?h=960&amp;w=1440&amp;la=en" alt="" />
+											</div>
+											<p>
+												<a href="https://www.chick-fil-a.com/stories/lifestyle/family-friendly-spring-activity-guide" title="Your spring bucket list: A family-friendly activity and recipe guide"
+													 data-component="clickData"
+													 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+													 data-layer-protocol="http"
+													 data-layer-category="StoryMenu-lifestyle">
+													Your spring bucket list: A family-friendly activity and recipe guide
+												</a>
+											</p>
+										</div>
+										<div class="cfa-stories">
+											<h2 class="tag">Inside <span class="nowrap">Chick-fil-A</span></h2>
+											<div class="story-img ">
+												<img src="https://d1fd34dzzl09j.cloudfront.net/2023/04/Scholarships%20Roundup/CFA%20Community%20Scholar%20Reveal%202023-73_11zon.jpg?h=960&amp;w=1448&amp;la=en" alt="Group of Community Scholars winners sitting on red couch and red stools with Chick-fil-A cow mascots holding checks" />
+											</div>
+											<p>
+												<a href="https://www.chick-fil-a.com/stories/inside-chick-fil-a/community-members-surprised-with-scholarships" title="Chick-fil-A surprises 13 community members with $25,000 scholarships"
+													 data-component="clickData"
+													 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+													 data-layer-protocol="http"
+													 data-layer-category="StoryMenu-cfa-stories">
+													Chick-fil-A surprises 13 community members with $25,000 scholarships
+												</a>
+											</p>
+										</div>
+										<div class="news">
+											<h2 class="tag">News</h2>
+											<div class="story-img ">
+												<img src="https://d1fd34dzzl09j.cloudfront.net/2023/04/Sauce%20Press%20Release/Merch_resize_compress.jpg?h=960&amp;w=1440&amp;la=en" alt="Seven people are outfitted in the new merchandise collection. " />
+											</div>
+											<p>
+												<a href="https://www.chick-fil-a.com/stories/news/new-sauce-merchandise-collection-and-retail-flavors" title="Chick-fil-A kicks off a sauce celebration with a new merchandise collection and two additional retail sauce flavors"
+													 data-component="clickData"
+													 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+													 data-layer-protocol="http"
+													 data-layer-category="StoryMenu-news">
+													Chick-fil-A kicks off a sauce celebration with a new merchandise collection and two additional retail sauce flavors
+												</a>
+											</p>
+										</div>
+						</div>
+					</div><!-- /stories-feature -->
+				</div><!-- /subnav -->
+			</li>
+
+
+
+
+	<li id="navitem-about"
+			class="navitem-hoverable navitem-hoverable--about">
+
+<a href="/about/who-we-are" >			<span>About</span>
+				<span class="icon-arrow-down" aria-expanded="false"></span>
+</a>
+		
+			<div class="subnav">
+
+				
+				<ul id="menusubcategoricalid"
+						class="menusubcategories"
+						aria-label="Menu subcategories'">
+
+						<li>
+								
+									<a href="/about/who-we-are" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Who We Are</a>
+								
+						</li>
+						<li>
+								
+									<a href="/about/great-food" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Great Food</a>
+								
+						</li>
+						<li>
+								
+									<a href="/about/giving-back-old" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >Giving Back</a>
+								
+						</li>
+						<li>
+								
+									<a href="/about/history" data-component="clickData" data-layer-category="PrimaryMenuList" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >History</a>
+								
+						</li>
+						<li>
+								
+									<a href="/about/s-truett-cathy-brand-restaurants" data-component="clickData" data-layer-category="PrimaryMenuList" title="S. Truett Cathy Brands" data-layer-id="30E6FCB8DDBE44C584D456E269009484" data-layer-protocol="http" >S. Truett Cathy Brands</a>
+								
+						</li>
+				</ul>
+			</div>
+	</li>
+
+
+
+	<li id="navitem-about"
+			class="navitem-hoverable navitem-hoverable--about">
+
+<a href="/careers" title="Careers" >			<span>Careers</span>
+</a>
+		
+	</li>
+
+					</ul>
+
+					
+
+
+	<div class="cfa-one" id="navitem-cfaone">
+
+				<a href="http://one.chick-fil-a.com"
+				   target=""
+					 data-component="clickData"
+					 data-layer-id="30E6FCB8DDBE44C584D456E269009484"
+					 data-layer-protocol="http"
+					 data-layer-category="ToolbarMenu">Chick-fil-A One</a>
+
+<form action="https://www.chick-fil-a.com/identity/externallogin?authenticationType=Crn&amp;ReturnUrl=%2fidentity%2fexternallogincallback%3fReturnUrl%3dhttp%253a%252f%252fwww.chick-fil-a.com%252fmenu%252fcobb-salad%26sc_site%3dCFACOM%26authenticationSource%3dDefault&amp;sc_site=CFACOM&amp;signup_redirect_uri=http%3a%2f%2fwww.chick-fil-a.com%2fmenu%2fcobb-salad" class="sign-in" id="toolbar-menu-signin" method="post">					(
+					<button type="submit">Sign In</button>
+					)
+</form>	</div>
+
+
+					
+
+<div class="location-tools"
+		 data-component="locationTools"
+		 data-modal-id="pwo-modal"
+		 data-has-favorited-restaurants="false"
+		 data-layer-identifier="30E6FCB8DDBE44C584D456E269009484"
+		 data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad">
+	<div class="current-location" data-populate="current-location-menu-id">
+		<div class="icon-location-off"></div>
+		<button data-element="findRestaurant" type="button">
+			Find a restaurant
+		</button>
+	</div>
+</div>
+
+					
+					
+
+<div class="search" id="navitem-search">
+	<form class="site-search">
+		
+<div id="search-form"
+		 class="yext-search-form "
+		 data-component="yextSearch"
+		 data-api-key="71620ba70d81b48c7c72331e25462ebc"
+		 data-business-id="2192285"
+		 data-locale="en"
+		 data-experience-key="cfa-answers"
+		 data-experience-version="PRODUCTION"
+		 data-placeholder-text="Try: Nutrition and allergens"
+		 data-redirect-url="http://search.chick-fil-a.com/"
+		 data-source-id="39335374-a80c-4a4e-bdc8-070135e262a4"></div>
+
+
+		<button type="submit" class="icon-search-off">
+			<span>Search</span>
+		</button>
+	</form>
+
+	<span role="button"
+				tabindex="0"
+				aria-label="Click here to close the site search"
+				class="icon-close"></span>
+</div>
+
+
+					<div class="order-button-group flex">
+<a href="https://order.chick-fil-a.com/get-started" class="btn-round btn-round--red" >Order food</a>
+<a href="https://order.chick-fil-a.com/get-started/catering" class="btn-round btn-round--white" target="|Custom" title="Order Catering" >Order Catering</a>					</div>
+				</nav>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+<div id="favorited-restaurants-yext"
+		 data-source="ae7b2b27-b853-46d3-b9f7-b98e2dd1fbe9"
+		 class="pwo-modal mfp-hide   ">
+	<button class="mfp-close"></button>
+	<div class="content">
+<h2>
+	Find a Restaurant
+</h2>
+
+	<form class="pwo-modal-search"
+				data-component="pwoSearchForm"
+				data-layer-identifier="ae7b2b27-b853-46d3-b9f7-b98e2dd1fbe9"
+				data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad"
+				action="/locations"
+				method="get">
+		<div class="search-container" data-element="pwoSearchContainer">
+			<div class="pwo-modals-form-error" data-element="formErrorMsg" role="alert">
+				<p>
+					Please enter an address
+				</p>
+			</div>
+			<img src="/-/media/images/cfa/feature/page-content/defaultimages/pwo/pwo-modals/search-icon.ashx?la=en&amp;hash=B242FD403BEB46FFDAA5F7367E443740" alt="Search Icon" />
+			<input class="user-input"
+						 type="text"
+						 name="locationsearch"
+						 placeholder="Enter address, city and state, or zip"
+						 aria-label="Enter address, city and state, or zip"
+						 data-element="pwoSearchInput"
+						 data-pwo="false">
+		</div>
+		<input type="hidden" id="menuItem" name="menuItem" value="30e6fcb8-ddbe-44c5-84d4-56e269009484">
+		<input class="btn-round"
+					 type="submit"
+					 value="Search"
+					 aria-label="Search">
+	</form>
+		<form action="/locations"
+					method="get"
+					class="use-location use-location-form"
+					data-component="geoLocation"
+					data-layer-identifier="ae7b2b27-b853-46d3-b9f7-b98e2dd1fbe9"
+					data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad">
+			<img src="/-/media/images/cfa/feature/page-content/defaultimages/pwo/pwo-modals/use-my-location-icon.ashx?la=en&amp;hash=2441EF1B39331BBB17269D2B7EA274FB" alt="Use My Location Icon" />
+			<a href="">
+				Use my location
+			</a>
+
+			<input type="hidden" id="loclatitude" name="latitude" value="0">
+			<input type="hidden" id="loclongitude" name="longitude" value="0">
+			<input type="hidden" id="menuItem" name="menuItem" value="30e6fcb8-ddbe-44c5-84d4-56e269009484">
+		</form>
+
+	</div>
+</div>
+
+<div id="find-restaurants-modal"
+		 data-source="0cc5ac81-a983-4001-a526-7129aecdaadf"
+		 class="pwo-modal mfp-hide   ">
+	<button class="mfp-close"></button>
+	<div class="content">
+<h2>
+	Find a Restaurant
+</h2>
+
+	<form class="pwo-modal-search"
+				data-component="pwoSearchForm"
+				data-layer-identifier="0cc5ac81-a983-4001-a526-7129aecdaadf"
+				data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad"
+				action="/locations"
+				method="get">
+		<div class="search-container" data-element="pwoSearchContainer">
+			<div class="pwo-modals-form-error" data-element="formErrorMsg" role="alert">
+				<p>
+					Please enter an address
+				</p>
+			</div>
+			<img src="/-/media/images/cfa/feature/page-content/defaultimages/pwo/pwo-modals/search-icon.ashx?la=en&amp;hash=B242FD403BEB46FFDAA5F7367E443740" alt="Search Icon" />
+			<input class="user-input"
+						 type="text"
+						 name="locationsearch"
+						 placeholder="Enter address, city and state, or zip"
+						 aria-label="Enter address, city and state, or zip"
+						 data-element="pwoSearchInput"
+						 data-pwo="false">
+		</div>
+		<input type="hidden" id="menuItem" name="menuItem" value="30e6fcb8-ddbe-44c5-84d4-56e269009484">
+		<input class="btn-round"
+					 type="submit"
+					 value="Search"
+					 aria-label="Search">
+	</form>
+		<form action="/locations"
+					method="get"
+					class="use-location use-location-form"
+					data-component="geoLocation"
+					data-layer-identifier="0cc5ac81-a983-4001-a526-7129aecdaadf"
+					data-layer-name="/sitecore/content/CFACOM/Home/menu/cobb-salad">
+			<img src="/-/media/images/cfa/feature/page-content/defaultimages/pwo/pwo-modals/use-my-location-icon.ashx?la=en&amp;hash=2441EF1B39331BBB17269D2B7EA274FB" alt="Use My Location Icon" />
+			<a href="">
+				Use my location
+			</a>
+
+			<input type="hidden" id="loclatitude" name="latitude" value="0">
+			<input type="hidden" id="loclongitude" name="longitude" value="0">
+			<input type="hidden" id="menuItem" name="menuItem" value="30e6fcb8-ddbe-44c5-84d4-56e269009484">
+		</form>
+
+	</div>
+</div>
+
+
+<!-- Page content -->
+<div class="frame" id="LocationFrameId">
+
+<main role="main">
+	<div id="pdp" class="pdp__page " data-tag="COBB_SALAD">
+		<div class="pdp__half">
+
+			<div class="pdp__sticky" id="pdp-sticky">
+				<div class="pdp__sticky-content">
+					<img id="mainImage"
+							 alt="Cobb Salad w/ Nuggets"
+							 src="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png"
+							 sizes="(min-width: 960px) 50vw, 100vw"
+							 srcset="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png 600w, https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png 1200w, https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png 1700w">
+
+	<div class="pdp-pwo-cta" data-component="pdpPwoCta">
+		<div class="btn-container" data-element="btn-container">
+				<a href="https://order.chick-fil-a.com/load-dot-com?itemTag=COBB_NUGGETS"
+					 data-id="orderpickup"
+					 data-layer-event="conversion_pickupBtn_click">
+					<img src="/-/media/images/cfacom/pdps/pickup-stand-alone.ashx?la=en&amp;hash=086EC6067E49D08E76F3E5DC0E237F27" alt="Order Pickup" />
+					Order Pickup
+				</a>
+
+<a href="https://order.chick-fil-a.com/delivery/address" data-layer-event="conversion_orderDeliveryMealLink_click" title="Order Delivery" data-id="orderDeliveryMeal" ><img src="/-/media/images/cfacom/pdps/delivery-van.ashx?la=en&amp;hash=25124D11AEB21121AC74F2872244AAF9" alt="Order Delivery" />Order Delivery</a>		</div>
+		<a href="/orderfood" title="Catering also available" >Catering also available</a>
+	</div>
+
+
+					<div class="pdp__sticky-cta pdp__sticky-cta--mobile">
+						
+					</div>
+				</div><!-- .pdp__sticky-content -->
+			</div><!-- .pdp__sticky -->
+		</div><!-- .pdp__half -->
+
+		<div class="pdp__half pdp__half--cream">
+			<div class="pdp__pad">
+				<div class="p-details">
+					<div class="p-details__head">
+						<h1 class="p-details__h1">
+							Cobb Salad
+						</h1>
+
+						<div>
+						</div>
+
+					</div><!-- .p-details__head -->
+
+
+					<div class="p-details__text">
+						<p>
+							Chick-fil-A® Nuggets, freshly breaded and pressure-cooked, sliced and served on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing.
+						</p>
+					</div><!-- .p-details__text -->
+	<div class="p-details__options">
+		<span>Options</span>
+
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-0"
+							 checked
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_NUGGETS"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png"
+							 data-calories="850"
+							 data-fats="61"
+							 data-carbs="34"
+							 data-proteins="42"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-0">
+					<span aria-label="Cobb Salad w/ Nuggets, $0.00, 850 Calories, 34g Carbs, 61g Fat, 42g Protein">
+						Cobb Salad w/ Nuggets
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-1"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_SPCYGRILL"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_spicyGrilled_pdp.png"
+							 data-calories="710"
+							 data-fats="52"
+							 data-carbs="25"
+							 data-proteins="36"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-1">
+					<span aria-label="Cobb Salad w/ Spicy Grilled Filet (Cold), $0.00, 710 Calories, 25g Carbs, 52g Fat, 36g Protein">
+						Cobb Salad w/ Spicy Grilled Filet (Cold)
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-2"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="SALAD_COBB_SPICY_STRIPS"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyStrip_pdp.png"
+							 data-calories="860"
+							 data-fats="60"
+							 data-carbs="36"
+							 data-proteins="42"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-2">
+					<span aria-label="Cobb Salad w/ Spicy Chick-n-Strips&#174;, $0.00, 860 Calories, 36g Carbs, 60g Fat, 42g Protein">
+						Cobb Salad w/ Spicy Chick-n-Strips<sup>®</sup>
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-3"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_GRILLED_NUGGETS"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_grill_pdp.png"
+							 data-calories="730"
+							 data-fats="52"
+							 data-carbs="24"
+							 data-proteins="41"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-3">
+					<span aria-label="Cobb Salad w/ Grilled Nuggets, $0.00, 730 Calories, 24g Carbs, 52g Fat, 41g Protein">
+						Cobb Salad w/ Grilled Nuggets
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-4"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_STRIPS"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_strips_pdp.png"
+							 data-calories="910"
+							 data-fats="63"
+							 data-carbs="40"
+							 data-proteins="45"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-4">
+					<span aria-label="Cobb Salad w/ Chick-fil-A Chick-n-Strips&#174;, $0.00, 910 Calories, 40g Carbs, 63g Fat, 45g Protein">
+						Cobb Salad w/ Chick-fil-A Chick-n-Strips<sup>®</sup>
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-5"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_GRILLED_CHICKEN"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_Grilled_pdp.png"
+							 data-calories="700"
+							 data-fats="51"
+							 data-carbs="25"
+							 data-proteins="36"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-5">
+					<span aria-label="Cobb Salad w/ Grilled Filet (Cold), $0.00, 700 Calories, 25g Carbs, 51g Fat, 36g Protein">
+						Cobb Salad w/ Grilled Filet (Cold)
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-6"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="SALAD_CFA_FILET_COBB"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_CFA_pdp.png"
+							 data-calories="850"
+							 data-fats="61"
+							 data-carbs="36"
+							 data-proteins="40"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-6">
+					<span aria-label="Cobb Salad w/ Chick-fil-A&#174; Filet, $0.00, 850 Calories, 36g Carbs, 61g Fat, 40g Protein">
+						Cobb Salad w/ Chick-fil-A<sup>®</sup> Filet
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-7"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="SALAD_SPCY_FILET_COBB"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyFilet_pdp.png"
+							 data-calories="880"
+							 data-fats="62"
+							 data-carbs="40"
+							 data-proteins="39"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-7">
+					<span aria-label="Cobb Salad w/ Spicy Filet, $0.00, 880 Calories, 40g Carbs, 62g Fat, 39g Protein">
+						Cobb Salad w/ Spicy Filet
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-8"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="SALAD_COBB_GRLFILET_WARM"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_grill_pdp.png"
+							 data-calories="700"
+							 data-fats="51"
+							 data-carbs="25"
+							 data-proteins="36"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-8">
+					<span aria-label="Cobb Salad w/ Grilled Filet (Warm), $0.00, 700 Calories, 25g Carbs, 51g Fat, 36g Protein">
+						Cobb Salad w/ Grilled Filet (Warm)
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-9"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_NO_MEAT"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_noMeat_pdp.png"
+							 data-calories="600"
+							 data-fats="49"
+							 data-carbs="23"
+							 data-proteins="16"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-9">
+					<span aria-label="Cobb Salad w/ No Chicken, $0.00, 600 Calories, 23g Carbs, 49g Fat, 16g Protein">
+						Cobb Salad w/ No Chicken
+					</span>
+				</label>
+			</div>
+			<div class="p-details__radio">
+				<input type="radio"
+							 name="pdp-radio-option"
+							 id="pdp-radio-option-10"
+							 
+							 data-tag="COBB_SALAD"
+							 data-variant="COBB_FRIED_CAULI"
+							 data-menutype="IndividualNational"
+							 data-clientkey="00000"
+							 data-category="Salads"
+							 data-unitabbr="g"
+							 data-price="0"
+							 data-image-url="https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/CobbSalad_mobile/221012_CobbSalad_Caulliflower_0939_1080x1080.png"
+							 data-calories="680"
+							 data-fats="56"
+							 data-carbs="28"
+							 data-proteins="17"
+							 data-nutritionUrlType="global"
+							 value="visa">
+				<label for="pdp-radio-option-10">
+					<span aria-label="Cobb Salad w/ Cauliflower Filet*, $0.00, 680 Calories, 28g Carbs, 56g Fat, 17g Protein">
+						Cobb Salad w/ Cauliflower Filet*
+					</span>
+				</label>
+			</div>
+	</div>
+
+	<div class="pdp-pwo-cta" data-component="pdpPwoCta">
+		<div class="btn-container" data-element="btn-container">
+				<a href="https://order.chick-fil-a.com/load-dot-com?itemTag=COBB_NUGGETS"
+					 data-id="orderpickup"
+					 data-layer-event="conversion_pickupBtn_click">
+					<img src="/-/media/images/cfacom/pdps/pickup-stand-alone.ashx?la=en&amp;hash=086EC6067E49D08E76F3E5DC0E237F27" alt="Order Pickup" />
+					Order Pickup
+				</a>
+
+<a href="https://order.chick-fil-a.com/delivery/address" data-layer-event="conversion_orderDeliveryMealLink_click" title="Order Delivery" data-id="orderDeliveryMeal" ><img src="/-/media/images/cfacom/pdps/delivery-van.ashx?la=en&amp;hash=25124D11AEB21121AC74F2872244AAF9" alt="Order Delivery" />Order Delivery</a>		</div>
+		<a href="/orderfood" title="Catering also available" >Catering also available</a>
+	</div>
+
+
+				</div>
+
+	<div id="nutrition-panel" class="p-nutri">
+		<div class="p-nutri__blocks">
+			<p class="p-nutri__block">
+				<span>850</span>
+				Calories
+			</p><!-- .p-nutri__block -->
+			<p class="p-nutri__block">
+				<span>61g</span>
+				Fat
+			</p><!-- .p-nutri__block -->
+			<p class="p-nutri__block">
+				<span>34g</span>
+				Carbs
+			</p><!-- .p-nutri__block -->
+			<p class="p-nutri__block">
+				<span>42g</span>
+				Protein
+			</p><!-- .p-nutri__block -->
+		</div><!-- .p-nutri__blocks -->
+
+		<a id="showFullNutrition" href="/nutrition-allergens" class="p-nutri__link">
+			Show full nutrition &amp; allergens information for this product
+		</a>
+		<span class="p-nutri__fyi">
+*Nutrition values are per Salad (includes toppings and dressing)				<br />
+			**Prices vary by location
+		</span>
+	</div>
+	<!-- .p-nutri -->
+	<div class="p-includes">
+		<h2 class="p-includes__heading">
+			Includes
+		</h2><!-- .p-includes__heading -->
+		<div class="p-includes__content">
+			<div class="p-includes__block-wrap">
+					<div class="p-includes__block">
+						<img alt="Crispy Bell Peppers" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/CFA-Toppings_full-res_Charred-Tomato-Crispy-Red-Bell-Peppers_PDP.png">
+						<h3>
+							Crispy Bell Peppers
+						</h3>
+							<span>
+								80  Cal
+							</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Avocado Lime Ranch Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Avocado-Lime-Ranch_PDP.png">
+						<h3>
+							Avocado Lime Ranch Dressing
+						</h3>
+							<span>
+								310  Cal
+							</span>
+					</div><!-- .p-includes__block -->
+			</div>
+		</div>
+	</div>
+	<div class="p-includes">
+		<h2 role="button"
+				class="p-includes__heading p-includes__heading--accord"
+				id="pdp-accord-heading"
+				aria-expanded="false"
+				aria-controls="pdp-accord"
+				tabindex="0">
+			Extras
+		</h2><!-- .p-includes__heading -->
+		<div class="p-includes__content"
+				 id="pdp-accord"
+				 role="region"
+				 aria-labelledby="pdp-accord-heading">
+			<div class="p-includes__block-wrap">
+					<div class="p-includes__block">
+						<img alt="Garden Herb Ranch Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Garden-Herb-Ranch_PDP.png">
+						<h3>
+							Garden Herb Ranch Dressing
+						</h3>
+						<span>
+
+280 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Zesty Apple Cider Vinaigrette Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Zesty-Apple-Cider_PDP.png">
+						<h3>
+							Zesty Apple Cider Vinaigrette Dressing
+						</h3>
+						<span>
+
+230 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Creamy Salsa Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Creamy-Salsa_PDP.png">
+						<h3>
+							Creamy Salsa Dressing
+						</h3>
+						<span>
+
+290 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Light Balsamic Vinaigrette Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Light-Balsamic-Vinaigrette_PDP.png">
+						<h3>
+							Light Balsamic Vinaigrette Dressing
+						</h3>
+						<span>
+
+80 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Fat Free Honey Mustard Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Fat-Free-Honey-Mustard_PDP.png">
+						<h3>
+							Fat Free Honey Mustard Dressing
+						</h3>
+						<span>
+
+90 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Light Italian Dressing" src="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Dressing/2ozPDP/2oz-Dressing_full-res_Light-Italian_PDP.png">
+						<h3>
+							Light Italian Dressing
+						</h3>
+						<span>
+
+25 Cal						</span>
+					</div><!-- .p-includes__block -->
+					<div class="p-includes__block">
+						<img alt="Honey Poppyseed Dressing" src="https://www.cfacdn.com/img/order/menu/Mobile/Modifiers/Dressing/Honey-Poppyseed-Dresssing_overhead_1080.png">
+						<h3>
+							Honey Poppyseed Dressing
+						</h3>
+						<span>
+
+220 Cal						</span>
+					</div><!-- .p-includes__block -->
+			</div>
+		</div>
+	</div>
+		<div id="pdp-ingredientstatement" class="p-nutri p-nutri--accord">
+			<h2 role="button" class="p-nutri__heading p-nutri__heading--accord" id="pdp-ingredients-accord-heading" aria-expanded="false" aria-controls="pdp-ingredients-accord" tabindex="0">
+				Ingredients
+			</h2><!-- .p-nutri__heading -->
+
+			<div class="p-nutri__content" id="pdp-ingredients-accord" role="region" aria-labelledby="pdp-ingredients-accord-heading">
+				<p>To see further ingredients, you need to check your location and look at the restaurant&#39;s menu. </p>
+				<div class="location-pdp"
+						 data-component="locationTools"
+						 data-has-favorited-restaurants="false">
+					<div class="current-location" data-populate="current-location-menu-id">
+						<button data-element="findRestaurant" type="button">
+							Find a restaurant
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- .p-nutri -->
+
+
+				<div class="p-block p-block--text">
+					<p>*Nutrition is calculated from the base recipe. Nutritional information may no longer be accurate if ingredients are added or removed. <a href="https://www.chick-fil-a.com/nutrition-allergens">Learn more here</a></p>
+<p>**2,000 calories a day is used for general nutrition advice, but calorie needs vary. Additional nutrition information available upon request.</p>
+				</div>
+			</div><!-- .pdp__pad -->
+		</div><!-- .pdp__half -->
+	</div><!-- .pdp__page -->
+</main>
+<input type="hidden" id="dataSourceId" value="{30E6FCB8-DDBE-44C5-84D4-56E269009484}" />
+
+<script type="application/ld+json">
+	{"@context":"http://schema.org","@type":"NutritionInformation","name":"Cobb Salad w/ Nuggets","description":"Chick-fil-A® Nuggets, freshly breaded and pressure-cooked, sliced and served hot on a fresh bed of mixed greens, topped with roasted corn kernels, a blend of shredded Monterey Jack and Cheddar cheeses, crumbled bacon, sliced hard-boiled egg and grape tomatoes. Prepared fresh daily. Served with Charred Tomato and Crispy Red Bell Peppers. Pairs well with Avocado Lime Ranch dressing.","image":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png","calories":"850 calories","fatContent":"61 grams fat","fiberContent":"5 grams fiber","sugarContent":"10 grams sugar","proteinContent":"42 grams protein","saturatedFatContent":"13 grams saturated fat","transFatContent":"0 grams trans fat","cholesterolContent":"235 milligrams cholesterol","sodiumContent":"2220 milligrams sodium","carbohydrateContent":"34 grams carbohydrates"}
+</script>
+
+<script type="text/javascript">
+	var variations = [{"name":"Cobb Salad w/ Nuggets","id":"18798b2b-1a08-4307-94f1-952c52c54ec4","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png","Ingredients":"Romaine lettuce, Chicken (boneless, skinless chicken breast meat nuggets, salt, monosodium glutamate, sugar, spices, paprika, enriched bleached flour [with malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid], sugar, salt, monosodium glutamate, nonfat milk, leavening [baking soda, sodium aluminum phosphate, monocalcium phosphate], spice, soybean oil, color [paprika], pasteurized nonfat milk, pasteurized egg, fully refined peanut oil [with dimethylpolysiloxane {an anti-foam agent} added]), grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_nug_pdp.png","HasNutritionInfo":"1","TotalCalories":"850","HasTotalFatAmount":"1","TotalFatAmount":"61","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"10","HasProteinAmount":"1","ProteinAmount":"42","HasSaturatedFatAmount":"1","SaturatedFatAmount":"13","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"235","HasSodiumAmount":"1","SodiumAmount":"2220","HasCarbohydratesAmount":"1","CarbohydratesAmount":"34","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Spicy Grilled Filet (Cold)","id":"7fbd24c5-239f-4695-a8a5-600e1483f767","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_spicyGrilled_pdp.png","Ingredients":"Romaine lettuce, spicy grilled chicken (boneless, skinless chicken breast filets, water, seasoning [corn maltodextrin, spice,  modified rice starch, tapioca maltodextrin, salt, cottonseed oil, spice and color {contains paprika}, garlic powder, natural flavoring, soy lecithin], modified food starch, salt, monosodium glutamate, sugar, spices, paprika, water, apple cider vinegar, soybean oil, sugar, cane molasses, salt, modified corn starch, spices (including celery seed), mustard bran, yeast extract, extractives of paprika, xanthan gum and natural flavor, chicken fat and chicken broth., grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_spicyGrilled_pdp.png","HasNutritionInfo":"1","TotalCalories":"710","HasTotalFatAmount":"1","TotalFatAmount":"52","HasFiberAmount":"1","FiberAmount":"6","HasSugarAmount":"1","SugarAmount":"9","HasProteinAmount":"1","ProteinAmount":"36","HasSaturatedFatAmount":"1","SaturatedFatAmount":"11","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"220","HasSodiumAmount":"1","SodiumAmount":"1780","HasCarbohydratesAmount":"1","CarbohydratesAmount":"25","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Soy, Wheat."},{"name":"Cobb Salad w/ Spicy Chick-n-Strips®","id":"a5cecd85-3469-470b-a0f9-6971e219d763","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyStrip_pdp.png","Ingredients":"Chicken tenderloins, (boneless, skinless chicken, seasoning [water, maltodextrin, flavor, modified rice starch, tapioca dextrin, cottonseed oil, contains less than 2% of enzyme modified milkfat, soy lecithin, salt, monosodium glutamate, sugar, spices, paprika, modified food starch], spicy seasoned coater [enriched bleached flour {bleached wheat flour, malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid}, sugar, salt, monosodium glutamate, leavening, spice, nonfat milk, soybean oil, whey, color {paprika, yellow #6}], milk wash [water, nonfat milk, egg], peanut oil [fully refined peanut oil, with dimethylpolysiloxane, an anti-foam agent added), romaine lettuce, grape tomatoes, egg, red & green leaf lettuce, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey jack cheese (pasteurized milk, cheese culture, salt, enzymes), cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto (vegetable color)], potato starch and powdered cellulose (to prevent caking), natamycin (a natural mold inhibitor), bacon (cured with water, salt, sugar sodium erythorbate, sodium nitrite). may also contain smoke flavoring, dextrose, sodium phosphate, potassium chloride, sodium diacetate, flavoring, honey)","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyStrip_pdp.png","HasNutritionInfo":"1","TotalCalories":"860","HasTotalFatAmount":"1","TotalFatAmount":"60","HasFiberAmount":"1","FiberAmount":"6","HasSugarAmount":"1","SugarAmount":"8","HasProteinAmount":"1","ProteinAmount":"42","HasSaturatedFatAmount":"1","SaturatedFatAmount":"13","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"215","HasSodiumAmount":"1","SodiumAmount":"2560","HasCarbohydratesAmount":"1","CarbohydratesAmount":"36","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"15","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"40","HasAllergens":"1","Allergens":"Contains Egg, Milk, Soy, Wheat."},{"name":"Cobb Salad w/ Grilled Nuggets","id":"72271108-6850-40cf-9c47-95caf0796053","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_grill_pdp.png","Ingredients":"Romaine lettuce, Chicken (boneless skinless chicken breast, water, apple cider vinegar, soybean oil, modified corn starch, salt, yeast extract, sugar, chicken breast meat, chicken broth, dehydrated onion, dehydrated garlic, sea salt, cane molasses, spices, chicken fat, natural flavor [including smoke], lemon peel, red bell pepper, paprika, lemon juice concentrate, parsley and vinegar solids, xanthan gum, and calcium disodium EDTA [to protect quality])., grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_grill_pdp.png","HasNutritionInfo":"1","TotalCalories":"730","HasTotalFatAmount":"1","TotalFatAmount":"52","HasFiberAmount":"1","FiberAmount":"6","HasSugarAmount":"1","SugarAmount":"9","HasProteinAmount":"1","ProteinAmount":"41","HasSaturatedFatAmount":"1","SaturatedFatAmount":"11","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"240","HasSodiumAmount":"1","SodiumAmount":"1450","HasCarbohydratesAmount":"1","CarbohydratesAmount":"24","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Chick-fil-A Chick-n-Strips®","id":"736d5563-2b30-4cd0-a46c-65eb40178a71","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_strips_pdp.png","Ingredients":"Chicken (boneless, skinless breast tenderloins, yeast extract, salt, maltodextrin, potassium chloride, spice, flavor, chicken fat, garlic powder, sugar syrup, onion powder, citric acid, paprika [color], sodium diacetate, silicon dioxide [anticaking agent], molasses, tomato powder, smoke flavor, modified food starch), enriched bleached flour [with malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid], sugar, salt, monosodium glutamate, nonfat milk, leavening [baking soda, sodium aluminum phosphate, monocalcium phosphate], spice, soybean oil, color [paprika], pasteurized nonfat milk, pasteurized egg, fully refined peanut oil [with dimethylpolysiloxane {an anti-foam agent} added])., romaine lettuce, grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_strips_pdp.png","HasNutritionInfo":"1","TotalCalories":"910","HasTotalFatAmount":"1","TotalFatAmount":"63","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"10","HasProteinAmount":"1","ProteinAmount":"45","HasSaturatedFatAmount":"1","SaturatedFatAmount":"13","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"230","HasSodiumAmount":"1","SodiumAmount":"1880","HasCarbohydratesAmount":"1","CarbohydratesAmount":"40","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Grilled Filet (Cold)","id":"5faccdec-68c9-48d1-8e91-737ca910e271","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_Grilled_pdp.png","Ingredients":"Romaine lettuce, Chicken (boneless skinless chicken breast, water, apple cider vinegar, soybean oil, modified corn starch, salt, yeast extract, sugar, chicken breast meat, chicken broth, dehydrated onion, dehydrated garlic, sea salt, cane molasses, spices, chicken fat, natural flavor [including smoke], lemon peel, red bell pepper, paprika, lemon juice concentrate, parsley and vinegar solids, xanthan gum, and calcium disodium EDTA [to protect quality])., grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_Grilled_pdp.png","HasNutritionInfo":"1","TotalCalories":"700","HasTotalFatAmount":"1","TotalFatAmount":"51","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"9","HasProteinAmount":"1","ProteinAmount":"36","HasSaturatedFatAmount":"1","SaturatedFatAmount":"11","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"225","HasSodiumAmount":"1","SodiumAmount":"1380","HasCarbohydratesAmount":"1","CarbohydratesAmount":"25","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Chick-fil-A® Filet","id":"da377512-49d8-4d64-8378-948f82304100","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_CFA_pdp.png","Ingredients":"Chicken (boneless, skinless chicken breast with rib meat, salt, monosodium glutamate, sugar, spices, paprika, enriched bleached flour [with malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid], sugar, salt, monosodium glutamate, nonfat milk, leavening [baking soda, sodium aluminum phosphate, monocalcium phosphate], spice, soybean oil, color [paprika], pasteurized nonfat milk, pasteurized egg, fully refined peanut oil [with dimethylpolysiloxane {an anti-foam agent} added]), romaine lettuce, grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_CFA_pdp.png","HasNutritionInfo":"1","TotalCalories":"850","HasTotalFatAmount":"1","TotalFatAmount":"61","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"10","HasProteinAmount":"1","ProteinAmount":"40","HasSaturatedFatAmount":"1","SaturatedFatAmount":"13","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"225","HasSodiumAmount":"1","SodiumAmount":"2130","HasCarbohydratesAmount":"1","CarbohydratesAmount":"36","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Spicy Filet","id":"629fab4e-8ff2-4425-bef0-4bd9c72fac95","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyFilet_pdp.png","Ingredients":"Chicken (boneless, skinless chicken breast filets, water, seasoning [maltodextrin, spice and herb, modified food starch, tapioca maltodextrin, salt, cottonseed oil, spice and color {contains paprika}, garlic powder, natural flavoring {milk, soy}], modified food starch, salt, monosodium glutamate, sugar, spices, paprika, enriched bleached flour [bleached wheat flour, malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid], sugar, salt, monosodium glutamate, leavening, spice, nonfat milk, soybean oil, whey, color [paprika, yellow #6], pasteurized nonfat milk, pasteurized egg, fully refined peanut oil [with dimethylpolysiloxane {an anti-foam agent} added]), romaine lettuce, grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_SpicyFilet_pdp.png","HasNutritionInfo":"1","TotalCalories":"880","HasTotalFatAmount":"1","TotalFatAmount":"62","HasFiberAmount":"1","FiberAmount":"6","HasSugarAmount":"1","SugarAmount":"10","HasProteinAmount":"1","ProteinAmount":"39","HasSaturatedFatAmount":"1","SaturatedFatAmount":"13","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"220","HasSodiumAmount":"1","SodiumAmount":"2400","HasCarbohydratesAmount":"1","CarbohydratesAmount":"40","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Soy, Wheat."},{"name":"Cobb Salad w/ Grilled Filet (Warm)","id":"ddab7c73-b1ce-48cc-bc1e-e7136f754c53","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_grill_pdp.png","Ingredients":"Romaine lettuce, Chicken (boneless skinless chicken breast, water, apple cider vinegar, soybean oil, modified corn starch, salt, yeast extract, sugar, chicken breast meat, chicken broth, dehydrated onion, dehydrated garlic, sea salt, cane molasses, spices, chicken fat, natural flavor [including smoke], lemon peel, red bell pepper, paprika, lemon juice concentrate, parsley and vinegar solids, xanthan gum, and calcium disodium EDTA [to protect quality]), grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/Jun2020_cobb_grill_pdp.png","HasNutritionInfo":"1","TotalCalories":"700","HasTotalFatAmount":"1","TotalFatAmount":"51","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"9","HasProteinAmount":"1","ProteinAmount":"36","HasSaturatedFatAmount":"1","SaturatedFatAmount":"11","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"225","HasSodiumAmount":"1","SodiumAmount":"1380","HasCarbohydratesAmount":"1","CarbohydratesAmount":"25","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ No Chicken","id":"53ae2314-6ff3-41d9-a16c-1704ab47428f","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_noMeat_pdp.png","Ingredients":"Romaine lettuce, grape tomato, egg, green cabbage, corn, red bell peppers, enriched flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), sunflower, safflower and/or canola oil, seasoning (tomato powder, salt, onion powder, sugar, chili pepper, garlic powder, yeast extract, citric acid, malic acid, natural and artificial flavors [with modified corn starch, succinic acid], extractive of paprika (color), natural smoke flavors), Monterey Jack Cheddar Cheese (Monterey Jack cheese [pasteurized milk, cheese culture, salt, enzymes], Cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto {vegetable color}], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon (cured with water, salt, sugar, sodium erythorbate, sodium nitrite. may also contain dextrose, flavoring, honey, dehydrated pork broth, potassium chloride, potassium lactate, smoke flavoring, sodium diacetate, sodium phosphate), red leaf lettuce, green leaf lettuce","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Online/Salads%26wraps/cobbSalad_noMeat_pdp.png","HasNutritionInfo":"1","TotalCalories":"600","HasTotalFatAmount":"1","TotalFatAmount":"49","HasFiberAmount":"1","FiberAmount":"5","HasSugarAmount":"1","SugarAmount":"9","HasProteinAmount":"1","ProteinAmount":"16","HasSaturatedFatAmount":"1","SaturatedFatAmount":"11","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"155","HasSodiumAmount":"1","SodiumAmount":"1010","HasCarbohydratesAmount":"1","CarbohydratesAmount":"23","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"6","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"45","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."},{"name":"Cobb Salad w/ Cauliflower Filet*","id":"811348a1-8a8b-4e0f-a225-a79446888e79","FriendlyName":"","isMeal":"False","DesktopImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/CobbSalad_mobile/221012_CobbSalad_Caulliflower_0939_1080x1080.png","Ingredients":"Romaine lettuce, cauliflower, honey buffalo sauce (spices, water,  distilled vinegar, soybean oil, brown sugar, sugar, honey, salt, garlic powder, xanthan gum, potassium sorbate and sodium benzoate [to protect quality] and natural flavor, enriched bleached flour [with malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid], sugar, salt, monosodium glutamate, nonfat milk, leavening [baking soda, sodium aluminum phosphate, monocalcium phosphate], spice, soybean oil, color [paprika], fully refined peanut oil, with dimethylpolysiloxane [an anti-foam agent]) added, pasteurized nonfat milk, pasteurized egg, water, grape tomatoes, egg, petite red & green leaf lettuce, green cabbage, corn, Monterey jack cheese ([pasteurized milk, cheese culture, salt, enzymes], cheddar cheese [pasteurized milk, cheese culture, salt, enzymes, annatto (vegetable color)], potato starch and powdered cellulose [to prevent caking], natamycin [a natural mold inhibitor]), bacon ([cured with water, salt, sugar, sodium erythorbate, sodium nitrite], may also contain smoke flavoring, dextrose, sodium phosphate, potassium chloride, sodium diacetate, flavoring, honey)","Price":"0","MobileImageSrc":"https://www.cfacdn.com/img/order/menu/Mobile/Salads/Menu%20Item/CobbSalad_mobile/221012_CobbSalad_Caulliflower_0939_1080x1080.png","HasNutritionInfo":"1","TotalCalories":"680","HasTotalFatAmount":"1","TotalFatAmount":"56","HasFiberAmount":"1","FiberAmount":"7","HasSugarAmount":"1","SugarAmount":"10","HasProteinAmount":"1","ProteinAmount":"17","HasSaturatedFatAmount":"1","SaturatedFatAmount":"12","HasTransFatAmount":"1","TransFatAmount":"0","HasCholesterolAmount":"1","CholesterolAmount":"145","HasSodiumAmount":"1","SodiumAmount":"1420","HasCarbohydratesAmount":"1","CarbohydratesAmount":"28","HasIronDailyValue":"1","IronDailyValue":"15","HasCalciumDailyValue":"1","CalciumDailyValue":"10","HasVitaminADailyValue":"1","VitaminADailyValue":"0","HasVitaminCDailyValue":"1","VitaminCDailyValue":"40","HasAllergens":"1","Allergens":"Contains Egg, Milk, Wheat."}];
+</script>
+	
+	<div class="footer">
+		<footer>
+	<div class="lrg-app-banner">
+		<div id="CFAOneBanner" class="wrapper account-offers">
+			<img src="/-/media/images/cfacom/cfa-one/cfa_one_red_pms.ashx?h=99&amp;w=316&amp;la=en&amp;hash=C85A056E5C62AA3053CD497DA971E577" alt="Chick-fil-A One" />
+			<h2 class="tagline">
+				Join Chick-fil-A One<sup>&reg;</sup>. Earn points with every qualifying purchase. Redeem available rewards of your choice.
+			</h2>
+
+			<p class="disclaimer-txt">
+				<span>The <span class="nowrap">Chick-fil-A</span>&nbsp;App is not presently accepted at <span class="nowrap">Chick-fil-A</span> Express&trade; and <span class="nowrap">Chick-fil-A</span> licensed locations such as those in airports and college campuses. These locations are operated by professional third-party food contractors and their operating systems do not currently offer guests the ability to earn points or redeem rewards through the <span class="nowrap">Chick-fil-A App.</span></span>
+			</p>
+
+			<div class="app-stores">
+				<a href="https://itunes.apple.com/us/app/chick-fil-a/id488818252" class="apple cfa-one-app-goal" rel="noopener noreferrer" target="_blank" title="Download on the App Store" >Download on the App Store</a>
+				<a href="https://play.google.com/store/apps/details?id=com.chickfila.cfaflagship" class="google cfa-one-app-goal" rel="noopener noreferrer" target="_blank" >Get it on Google Play</a>
+			</div>
+
+			<a href="https://www.chick-fil-a.com/One" class="btn--vis" title="Learn more about the Chick-fil-A One program" >Learn more</a>
+
+			<div class="signin-wrapper">
+				<p>Already have an account? </p>
+
+<form action="/identity/externallogin?authenticationType=Crn&amp;ReturnUrl=%2fidentity%2fexternallogincallback%3fReturnUrl%3d%252f%26sc_site%3dCFACOM%26authenticationSource%3dDefault&amp;sc_site=CFACOM&amp;signup_redirect_uri=%2f" method="post">					<button type="submit">
+						Sign-in
+					</button>
+</form>			</div>
+		</div>
+
+		<div class="app-banner-image">
+			<img src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Footer%20Images/footer-burger-phone-desktop-new-3.jpg" alt="CFA One" class="lrg-img">
+			<img src="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Footer%20Images/footer-burger-phone-mobile-new-3.jpg" alt="CFA One" class="sml-img">
+		</div>
+	</div>
+
+			
+			<div class="footer-modules wrapper">
+				<nav class="footer-nav" aria-label="footer">
+						<ul aria-label="">
+
+        <li>
+<a href="/nutrition-allergens" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" title="Click here to view Chick-fil-A&#39;s Nutrition and Allergens information" data-layer-name="Footer Menu" data-layer-index="1" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Nutrition &amp; Allergens</a>        </li>
+        <li>
+<a href="/customer-support" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu" data-layer-index="2" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Customer Support</a>        </li>
+        <li>
+<a href="/careers" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu" data-layer-index="3" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Careers</a>        </li>
+        <li>
+<a href="/franchising" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu" data-layer-index="4" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Franchising</a>        </li>
+        <li>
+<a href="https://shop.chick-fil-a.com/" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu" data-layer-index="5" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Merchandise</a>        </li>
+        <li>
+<a href="https://www.chick-fil-a.com/stories/press-room" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu" data-layer-index="6" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Press Room</a>        </li>
+
+
+			<li>
+				<ul>
+
+        <li>
+<a href="/do-business-with-us" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="1" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Do business with us</a>        </li>
+        <li>
+<a href="https://www.chick-fil-a.com/legal#terms_and_conditions" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="2" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Terms and Conditions of Use</a>        </li>
+        <li>
+<a href="/legal#privacy_policy" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="3" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Privacy Policy</a>        </li>
+        <li>
+<a href="/legal#california_privacy_policy" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="4" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >California Privacy Notice</a>        </li>
+        <li>
+<a href="https://www.chick-fil-a.com/legal#chick-fil-a_cookie_and_interest-based_advertising_policy" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="5" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Cookie and Internet-Based Advertising Policy</a>        </li>
+        <li>
+<a href="/#optanon-toggle-display" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" class="optanon-toggle-display" data-layer-index="6" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Do Not Sell Or Share My Personal Information</a>        </li>
+        <li>
+<a href="/#optanon-toggle-display" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" title="Cookie Preference Center" data-layer-name="Footer Menu secondary" class="optanon-toggle-display" data-layer-index="7" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Cookie Preference Center</a>        </li>
+        <li>
+<a href="https://www.chick-fil-a.com/legal#accessibility" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="8" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Accessibility</a>        </li>
+        <li>
+<a href="/locations/browse" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="9" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Locations listing</a>        </li>
+        <li>
+<a href="/legal" data-layer-list-type="LinkList" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Footer Menu secondary" data-layer-index="10" data-layer-identifier="9E75ADB167294B9587607FD08785A576" >Legal</a>        </li>
+        <li>
+&#169; 2023 CFA Properties, Inc. All rights reserved.        </li>
+
+				</ul>
+			</li>
+	</ul>
+
+
+
+				</nav><!-- /footer-nav -->
+				<div class="social">
+						<ul class="social-icons" aria-label="">
+
+        <li>
+<a href="https://www.facebook.com/ChickfilA/" data-layer-list-type="LinkList" target="_blank" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Social Menu" class="icon-facebook-over" rel="noopener noreferrer" data-layer-index="1" data-layer-identifier="6D9735F1CC27465A85120B0BEF1C976F" >                        <span>Facebook</span>
+</a>        </li>
+        <li>
+<a href="https://www.instagram.com/chickfila/" data-layer-list-type="LinkList" target="_blank" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Social Menu" class="icon-instagram-over" rel="noopener noreferrer" data-layer-index="2" data-layer-identifier="6D9735F1CC27465A85120B0BEF1C976F" >                        <span>Instagram</span>
+</a>        </li>
+        <li>
+<a href="https://twitter.com/ChickfilA" data-layer-list-type="LinkList" target="_blank" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Social Menu" class="icon-twitter-over" rel="noopener noreferrer" data-layer-index="3" data-layer-identifier="6D9735F1CC27465A85120B0BEF1C976F" >                        <span>Twitter</span>
+</a>        </li>
+        <li>
+<a href="https://www.youtube.com/user/chickfila" data-layer-list-type="LinkList" target="_blank" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Social Menu" class="icon-youtube-over" rel="noopener noreferrer" data-layer-index="4" data-layer-identifier="6D9735F1CC27465A85120B0BEF1C976F" >                        <span>YouTube</span>
+</a>        </li>
+        <li>
+<a href="https://www.linkedin.com/company/chick-fil-a-corporate/jobs/" data-layer-list-type="LinkList" target="_blank" data-component="contentLink" data-layer-content-type="LinkList" data-layer-name="Social Menu" class="icon-linkedin-over" rel="noopener noreferrer" data-layer-index="5" data-layer-identifier="6D9735F1CC27465A85120B0BEF1C976F" >                        <span>LinkedIn</span>
+</a>        </li>
+
+
+	</ul>
+
+
+
+				</div><!-- /social-->
+			</div><!-- /footer-modules -->
+		</footer>
+	</div>
+
+
+</div>
+
+	</div>
+	<!-- /Page content -->
+
+
+<div class="print-footer">
+    <div class="icon-logo-desktop"></div>
+    
+</div><!-- /print-footer -->
+
+<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+
+<script>
+	window.jQuery || document.write('<script src="https://d2wl1kt18tqdum.cloudfront.net/v2.1.2637-stageb/Assets/Theming/js/lib/jquery.js"><\/script>');
+</script>
+
+<script src="https://d2wl1kt18tqdum.cloudfront.net/v2.1.2637-stageb/Assets/Theming/js/vendor-js.js"></script>
+<script src="https://d2wl1kt18tqdum.cloudfront.net/v2.1.2637-stageb/Assets/Theming/js/CFACom.js"></script>
+<script src="https://d2wl1kt18tqdum.cloudfront.net/v2.1.2637-stageb/Assets/Theming/js/menu-js.js"></script>
+
+
+	
+
+	
+
+	<div id="defaultsiteoverlay" class="lightbox mfp-hide"></div>
+
+	<div class="rt-placeholder hidden"></div>
+
+
+	
+
+</body>
+</html>
