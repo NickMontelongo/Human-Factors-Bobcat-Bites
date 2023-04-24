@@ -14,7 +14,6 @@ from flask_login import logout_user, login_user, login_required, current_user
 # Algorithm information
 from searchalgorithm import (
     food_recommendation,
-    calculateRecommendationMasterList,
     stringToArray,
     stringToArrayNoLower,
 )
@@ -438,7 +437,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
-            print(f"master index: {masterIndex}")
             currentRestaurantRecommendationList = food_recommendation(
                 eachEntry,
                 currentUserMinBudget,
@@ -490,7 +488,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
                         list_index=list_index,
                     )
                 )
-            if list_index < len(currentRestaurantRecommendationList) - 1:
+            elif list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
                 flash(
@@ -526,7 +524,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
                         list_index=list_index,
                     )
                 )
-            if list_index < len(currentRestaurantRecommendationList) - 1:
+            elif list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
                 flash(
@@ -586,27 +584,27 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-    masterListWithRecommendation = calculateRecommendationMasterList(
-        masterListRestaurants,
-        currentUserMinBudget,
-        currentUserMaxBudget,
-        currentUserFoodPreferences,
-        currentUserAllergens,
-        currentUserTastes,
-        userFavoriteList,
-    )
+    for eachEntry in masterListRestaurants:
+        food_recommendation(
+            eachEntry,
+            currentUserMinBudget,
+            currentUserMaxBudget,
+            currentUserFoodPreferences,
+            currentUserAllergens,
+            currentUserTastes,
+            userFavoriteList,
+        )
+        eachEntry.foodList.sort(key=lambda x: x.recommendationScore, reverse=True)
     recommendedRestaurantName = masterListRestaurants[restaurantIndex].restaurantName
     restaurantLocation = masterListRestaurants[restaurantIndex].restaurantLocation
     recommendedFoodScore = (
-        masterListWithRecommendation[restaurantIndex]
-        .foodList[foodIndex]
-        .recommendationScore
+        masterListRestaurants[restaurantIndex].foodList[foodIndex].recommendationScore
     )
     recommendedFoodName = (
-        masterListWithRecommendation[restaurantIndex].foodList[foodIndex].name
+        masterListRestaurants[restaurantIndex].foodList[foodIndex].name
     )
     recommendedFoodPrice = (
-        masterListWithRecommendation[restaurantIndex].foodList[foodIndex].price
+        masterListRestaurants[restaurantIndex].foodList[foodIndex].price
     )
     recommendedFoodPrice = f"{recommendedFoodPrice:.2f}"
     if form.validate_on_submit():
@@ -614,11 +612,9 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             if restaurantIndex == 25:
                 flash(f"Placeholder food item cannot be added.")
             else:
-                restaurantIndex = random.randint(
-                    0, (len(masterListWithRecommendation) - 1)
-                )
+                restaurantIndex = random.randint(0, (len(masterListRestaurants) - 1))
                 foodIndex = random.randint(
-                    0, (len(masterListWithRecommendation[restaurantIndex].foodList) - 1)
+                    0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
                 )
                 foodItem = Userfavoritefood.query.filter_by(
                     food_name=recommendedFoodName,
@@ -635,9 +631,9 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                     )
                 )
         if form.deny.data:
-            restaurantIndex = random.randint(0, (len(masterListWithRecommendation) - 2))
+            restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
             foodIndex = random.randint(
-                0, (len(masterListWithRecommendation[restaurantIndex].foodList) - 1)
+                0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
             )
             return redirect(
                 url_for(
@@ -698,17 +694,18 @@ def searchResults(searchType, searchString):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-    currentRestaurantRecommendationList = calculateRecommendationMasterList(
-        masterListRestaurants,
-        currentUserMinBudget,
-        currentUserMaxBudget,
-        currentUserFoodPreferences,
-        currentUserAllergens,
-        currentUserTastes,
-        userFavoriteList,
-    )
+    for eachRestaurant in masterListRestaurants:
+        food_recommendation(
+            eachRestaurant,
+            currentUserMinBudget,
+            currentUserMaxBudget,
+            currentUserFoodPreferences,
+            currentUserAllergens,
+            currentUserTastes,
+            userFavoriteList,
+        )
     if searchType == "Name":
-        for eachEntry in currentRestaurantRecommendationList:
+        for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 if searchString in eachFoodItem.name:
                     results.append(
@@ -722,7 +719,7 @@ def searchResults(searchType, searchString):
                     )
                     break
     elif searchType == "Ingredient":
-        for eachEntry in currentRestaurantRecommendationList:
+        for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachIngredient in eachFoodItem.ingredients:
                     if searchString in eachIngredient:
@@ -737,7 +734,7 @@ def searchResults(searchType, searchString):
                         )
                         break
     else:  # searchType =="Flavor"
-        for eachEntry in currentRestaurantRecommendationList:
+        for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachFlavor in eachFoodItem.flavorProfile:
                     if searchString in eachFlavor:
@@ -818,16 +815,17 @@ def displaySavedResults():
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-    masterListRestaurantsRec = calculateRecommendationMasterList(
-        masterListRestaurants,
-        minBudget,
-        maxBudget,
-        userPrefIngred,
-        userTastes,
-        userAllergens,
-    )
+    for eachRestaurant in masterListRestaurants:
+        food_recommendation(
+            eachRestaurant,
+            minBudget,
+            maxBudget,
+            userPrefIngred,
+            userTastes,
+            userAllergens,
+        )
     for eachFavoritedItem in userFavoriteList:
-        for eachRestaurant in masterListRestaurantsRec:
+        for eachRestaurant in masterListRestaurants:
             if eachFavoritedItem.get("restaurantName") == eachRestaurant.restaurantName:
                 for eachFoodItem in eachRestaurant.foodList:
                     if eachFavoritedItem.get("name") == eachFoodItem.name:
