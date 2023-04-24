@@ -482,7 +482,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 flash(
                     "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
                 )
-                masterIndex = 25
                 list_index = 0
                 return redirect(
                     url_for(
@@ -519,7 +518,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 flash(
                     "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
                 )
-                masterIndex = 25
                 list_index = 0
                 return redirect(
                     url_for(
