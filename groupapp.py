@@ -438,6 +438,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
+            print(f'master index: {masterIndex}')
             currentRestaurantRecommendationList = food_recommendation(
                 eachEntry,
                 currentUserMinBudget,
@@ -449,6 +450,12 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 restaurant,
             )
             break
+    #Statement ensures an empty list ie one that for whatever
+    #reason doesn't have any food items due to allergens, favoriting all etc
+    #will go to the placeholder
+    #if len(currentRestaurantRecommendationList) == 0:
+    #   masterIndex = 25
+    #   list_index = 0
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[
@@ -459,6 +466,12 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodPrice = f"{recommendedFoodPrice:.2f}"
     if form.validate_on_submit():
         if form.accept.data:
+            # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
+            #if masterIndex == 25 and list_index == 0:
+                #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
+                #masterIndex = 25
+                #list_index = 0
+                #return redirect(url_for("getRecommendationByRestaurant",restaurant=restaurant,list_index=list_index,))
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
@@ -481,6 +494,11 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 )
             )
         if form.deny.data:
+            #if masterIndex == 25 and list_index == 0:
+                #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
+                #masterIndex = 25
+                #list_index = 0
+                #return redirect(url_for("getRecommendationByRestaurant",restaurant=restaurant,list_index=list_index,))
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
