@@ -4,7 +4,7 @@ flask forms documentation"""
 
 import random
 import os
-from flask import Flask, url_for, redirect, render_template, request, flash
+from flask import Flask, url_for, redirect, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
 # login information
@@ -292,12 +292,12 @@ def loadAllergens():
     for eachentry in user_allergens:
         userAllergenList.append(eachentry.allergen_name)
     for eachentry in allergen_array:
-            if eachentry in userAllergenList:
-                continue
-            else:
-                allergen1 = Allergen(allergen_name=eachentry)
-                database.session.add(allergen1)
-            database.session.commit()
+        if eachentry in userAllergenList:
+            continue
+        else:
+            allergen1 = Allergen(allergen_name=eachentry)
+            database.session.add(allergen1)
+        database.session.commit()
     return
 ########################################################################################################
 
@@ -357,12 +357,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
                                                                 currentUserAllergens, currentUserTastes, userFavoriteList,
                                                                 restaurant)
             break
-    if len(currentRestaurantRecommendationList) == 0:
-        restaurantName = masterListRestaurants[masterIndex].restaurantName
-        masterIndex = 25
-        list_index = 0
-        restaurant = ""
-        flash(f'{restaurantName} did not have any entries, and you were redirected to a placeholder. Try adjusting your favorites or choose a different restaurant.')
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[list_index].recommendationScore
@@ -371,10 +365,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodPrice= f'{recommendedFoodPrice:.2f}'
     if form.validate_on_submit():
         if form.accept.data:
-            if masterListRestaurants[masterIndex].restaurantName == "":
-                flash('Cannot save Placeholder Food Item')
-                list_index = 0
-                return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
@@ -386,8 +376,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
             flash(f'The food item {foodItem.food_name} was added to your favorites')
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = list_index))
         if form.deny.data:
-            if masterListRestaurants[masterIndex].restaurantName == "":
-                list_index = 0
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
@@ -398,6 +386,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
             return redirect(url_for("getRecommendationByRestaurant",restaurant = restaurant, list_index = 0))
     return render_template("displayrec.html", restaurantLoc = restaurantLocation, restaurantName = recommendedRestaurantName,
                            foodScore = recommendedFoodScore, foodPrice=recommendedFoodPrice, foodName=recommendedFoodName, form=form)
+
 
 
 @app.route("/recommendrand/<restaurantIndex>&<foodIndex>", methods=["GET", "POST"])
