@@ -450,6 +450,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 restaurant,
             )
             break
+    #comment lines 453-459    
     #Statement ensures an empty list ie one that for whatever
     #reason doesn't have any food items due to allergens, favoriting all etc
     #will go to the placeholder
@@ -466,6 +467,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
     recommendedFoodPrice = f"{recommendedFoodPrice:.2f}"
     if form.validate_on_submit():
         if form.accept.data:
+            # comment lines 469-475
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
             #if masterIndex == 25 and list_index == 0:
                 #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
@@ -494,6 +496,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 )
             )
         if form.deny.data:
+            # comment lines 497-503
+            # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
             #if masterIndex == 25 and list_index == 0:
                 #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
                 #masterIndex = 25
