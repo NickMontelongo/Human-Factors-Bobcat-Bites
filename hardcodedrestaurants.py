@@ -123,7 +123,7 @@ masterListRestaurants.append(restaurantObject)
 
 #4
 BlimpieAmericanSubs=[]
-foodNames= ["Blimple Best Rg", "Blimple Best Lg", "Turkey & Provolone Rg", "Turkey & Provolone Lg", "The Club Rg", "The Club Lg", "Ham & Swiss Rg", "Ham & Swiss Lg", "Roast Beef & Provolone Rg", 
+foodNames= ["Blimpie Best Rg", "Blimple Best Lg", "Turkey & Provolone Rg", "Turkey & Provolone Lg", "The Club Rg", "The Club Lg", "Ham & Swiss Rg", "Ham & Swiss Lg", "Roast Beef & Provolone Rg",
             "Roast Beef & Provolone Lg", "Tuna Rg", "Tuna Lg", "BLT Rg", "BLT Lg", "Meatball Parmigiana Rg", "Meatball Parmigiana Lg", "Philly Cheese Steak Rg", "Philly Cheese Steak Lg", 
             "Chicken Cheddar Bacon Ranch Rg", "Chicken Cheddar Bacon Ranch Lg", "Buffalo Chicken Rg", "Buffalo Chicken Lg", "Ultimate Club Rg", "Ultimate Club Lg", "Turkey Bacon Cheddar Rg", "Turkey Bacon Cheddar Lg", 
             "Sicilian Rg", "Sicilian Lg", "The Blimp Rg", "The Blimp Lg", "Spicy Italian Rg", "Spicy Italian Lg", "Trio Supreme Rg", "Trio Supreme Lg", "Hoboken Hero Rg", "Hoboken Hero Lg", "Italian Beef Rg", 
