@@ -438,7 +438,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
     for eachEntry in masterListRestaurants:
         if eachEntry.restaurantName == restaurant:
             masterIndex = masterListRestaurants.index(eachEntry)
-            print(f'master index: {masterIndex}')
+            print(f"master index: {masterIndex}")
             currentRestaurantRecommendationList = food_recommendation(
                 eachEntry,
                 currentUserMinBudget,
@@ -450,13 +450,22 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 restaurant,
             )
             break
-    #comment lines 453-459    
-    #Statement ensures an empty list ie one that for whatever
-    #reason doesn't have any food items due to allergens, favoriting all etc
-    #will go to the placeholder
-    #if len(currentRestaurantRecommendationList) == 0:
-    #   masterIndex = 25
-    #   list_index = 0
+    # comment lines 453-459
+    # Statement ensures an empty list ie one that for whatever
+    # reason doesn't have any food items due to allergens, favoriting all etc
+    # will go to the placeholder
+    if len(currentRestaurantRecommendationList) == 0:
+        masterIndex = 25
+        list_index = 0
+        currentRestaurantRecommendationList = food_recommendation(
+            masterListRestaurants[masterIndex],
+            currentUserMinBudget,
+            currentUserMaxBudget,
+            currentUserFoodPreferences,
+            currentUserAllergens,
+            currentUserTastes,
+            userFavoriteList,
+        )
     recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
     restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[
@@ -469,11 +478,19 @@ def getRecommendationByRestaurant(restaurant, list_index):
         if form.accept.data:
             # comment lines 469-475
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
-            #if masterIndex == 25 and list_index == 0:
-                #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
-                #masterIndex = 25
-                #list_index = 0
-                #return redirect(url_for("getRecommendationByRestaurant",restaurant=restaurant,list_index=list_index,))
+            if masterIndex == 25 and list_index == 0:
+                flash(
+                    "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
+                )
+                masterIndex = 25
+                list_index = 0
+                return redirect(
+                    url_for(
+                        "getRecommendationByRestaurant",
+                        restaurant=restaurant,
+                        list_index=list_index,
+                    )
+                )
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
@@ -498,11 +515,19 @@ def getRecommendationByRestaurant(restaurant, list_index):
         if form.deny.data:
             # comment lines 497-503
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
-            #if masterIndex == 25 and list_index == 0:
-                #flash("The Restaurant has no more items, either unfavorite some items or try one without your allergen.")
-                #masterIndex = 25
-                #list_index = 0
-                #return redirect(url_for("getRecommendationByRestaurant",restaurant=restaurant,list_index=list_index,))
+            if masterIndex == 25 and list_index == 0:
+                flash(
+                    "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
+                )
+                masterIndex = 25
+                list_index = 0
+                return redirect(
+                    url_for(
+                        "getRecommendationByRestaurant",
+                        restaurant=restaurant,
+                        list_index=list_index,
+                    )
+                )
             if list_index < len(currentRestaurantRecommendationList) - 1:
                 list_index = list_index + 1
             else:
