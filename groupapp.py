@@ -615,6 +615,9 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                 foodIndex = random.randint(
                     0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
                 )
+                while masterListRestaurants[restaurantIndex].foodList[foodIndex].reccomendationScore < 1.5:
+                    restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
+                    foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
                 foodItem = Userfavoritefood.query.filter_by(
                     food_name=recommendedFoodName,
                     parent_restaurant=recommendedRestaurantName,
@@ -634,6 +637,9 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             foodIndex = random.randint(
                 0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
             )
+            while masterListRestaurants[restaurantIndex].foodList[foodIndex].reccomendationScore < 1.5:
+                restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
+                foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
             return redirect(
                 url_for(
                     "getRecommendationByRand",
@@ -718,6 +724,7 @@ def searchResults(searchType, searchString):
                     )
                     break
     elif searchType == "Ingredient":
+        searchString = searchString.lower()
         for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachIngredient in eachFoodItem.ingredients:
@@ -733,6 +740,7 @@ def searchResults(searchType, searchString):
                         )
                         break
     else:  # searchType =="Flavor"
+        searchString = searchString.lower()
         for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachFlavor in eachFoodItem.flavorProfile:
