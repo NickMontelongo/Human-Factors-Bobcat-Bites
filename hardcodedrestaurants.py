@@ -740,7 +740,3 @@ masterListRestaurants.append(restaurantObject)
 #for eachEntry in masterListRestaurants:
 #   totalFoodItems = totalFoodItems + len(eachEntry.foodList)
 #print(f'Total Number of food items: {totalFoodItems}')
-masterListRestaurants2 =[]
-masterListRestaurants2.append(masterListRestaurants[0])
-masterListRestaurants2.append(masterListRestaurants[2])
-masterListRestaurants2.append(masterListRestaurants[24])

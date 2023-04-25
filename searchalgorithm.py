@@ -97,31 +97,6 @@ def food_recommendation(
     return restaurantFoodListEdited
 
 
-def calculateRecommendationMasterList(
-    userRestaurantMasterList,
-    minBudget,
-    maxBudget,
-    userPrefIngred,
-    userTastes,
-    userAllergens,
-    userFavoriteFoodsList=[],
-):
-    for eachRestaurant in userRestaurantMasterList:
-        # calculate for each sublist the appropriate recommendation ist
-        sortedRecommendationsIndividualRestaurantList = food_recommendation(
-            eachRestaurant,
-            minBudget,
-            maxBudget,
-            userPrefIngred,
-            userAllergens,
-            userTastes,
-            userFavoriteFoodsList,
-            eachRestaurant,
-        )
-        eachRestaurant.foodList = sortedRecommendationsIndividualRestaurantList
-    return userRestaurantMasterList
-
-
 # Needs another argument that is defaulted to FALSE, if FALSE returns that specific restaurant result
 # if TRue returns the largest result
 # To DO: Figure out how to get images
