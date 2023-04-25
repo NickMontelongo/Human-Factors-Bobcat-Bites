@@ -46,11 +46,6 @@ def setRestaurantObject(foodNames, foodIngredients, foodAllergens,
     for i in range(len(foodNames)):
         newFoodItem = Food(foodNames[i], foodPrices[i], foodIngredients[i], foodAllergens[i], flavorProfile[i])
         if showResults:
-            print(f' Name: {newFoodItem.name}')
-            print(f' Price: {newFoodItem.price}')
-            print(f' Ingredients: {newFoodItem.ingredients}')
-            print(f' Allergens: {newFoodItem.allergens}')
-            print(f' Flavors: {newFoodItem.flavorProfile}')
         foodList.append(newFoodItem)
     if showResults:    
         print(f' This is restaurantName: {restaurantName}')

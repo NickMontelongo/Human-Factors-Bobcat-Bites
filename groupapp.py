@@ -11,13 +11,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
+from hardcodedrestaurants import masterListRestaurants
+
 # Algorithm information
 from searchalgorithm import (
     food_recommendation,
     stringToArray,
     stringToArrayNoLower,
 )
-from hardcodedrestaurants import masterListRestaurants
 
 # used to create form objects such as the search bar
 from flask_wtf import FlaskForm
@@ -401,7 +402,6 @@ def title():
     loadTastes()
     loadUserFavoriteFoods(masterListRestaurants)
     return render_template("title.html")
-
 
 
 @app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
