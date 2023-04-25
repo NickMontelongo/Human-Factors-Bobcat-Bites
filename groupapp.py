@@ -403,9 +403,7 @@ def title():
     return render_template("title.html")
 
 
-# NOTES
-# NEED TO DEBUG 4/11/2023
-# 1) Need to figure out how to reset everything since importing master list
+
 @app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
 @login_required
 def getRecommendationByRestaurant(restaurant, list_index):
@@ -448,10 +446,6 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 restaurant,
             )
             break
-    # comment lines 453-459
-    # Statement ensures an empty list ie one that for whatever
-    # reason doesn't have any food items due to allergens, favoriting all etc
-    # will go to the placeholder
     if len(currentRestaurantRecommendationList) == 0:
         masterIndex = 25
         list_index = 0
