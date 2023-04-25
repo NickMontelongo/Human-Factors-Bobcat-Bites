@@ -4,7 +4,7 @@ flask forms documentation"""
 
 import random
 import os
-import searchalgorithm
+from hardcodedrestaurants import masterListRestaurants
 from flask import Flask, url_for, redirect, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
