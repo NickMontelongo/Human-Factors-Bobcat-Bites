@@ -579,7 +579,6 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
     for eachEntry in masterListRestaurants:
-        print(f'each entry {eachEntry.restaurantName} has a foodList of size {len(eachEntry.foodList)}')
         food_recommendation(
             eachEntry,
             currentUserMinBudget,
@@ -590,10 +589,6 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             userFavoriteList,
         )
         eachEntry.foodList.sort(key=lambda x: x.recommendationScore, reverse=True)
-    print(f"This is masterListRestaurant Size: {len(masterListRestaurants)}")
-    print(
-        f"This is foodList size: {len(masterListRestaurants[restaurantIndex].foodList)}"
-    )
     recommendedRestaurantName = masterListRestaurants[restaurantIndex].restaurantName
     restaurantLocation = masterListRestaurants[restaurantIndex].restaurantLocation
     recommendedFoodScore = (
