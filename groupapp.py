@@ -710,9 +710,10 @@ def searchResults(searchType, searchString):
             userFavoriteList,
         )
     if searchType == "Name":
+        searchString = searchString.lower()
         for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
-                if searchString in eachFoodItem.name:
+                if searchString in eachFoodItem.name.lower():
                     results.append(
                         {
                             "name": eachFoodItem.name,
@@ -728,7 +729,7 @@ def searchResults(searchType, searchString):
         for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachIngredient in eachFoodItem.ingredients:
-                    if searchString in eachIngredient:
+                    if searchString in eachIngredient.lower():
                         results.append(
                             {
                                 "name": eachFoodItem.name,
@@ -744,7 +745,7 @@ def searchResults(searchType, searchString):
         for eachEntry in masterListRestaurants:
             for eachFoodItem in eachEntry.foodList:
                 for eachFlavor in eachFoodItem.flavorProfile:
-                    if searchString in eachFlavor:
+                    if searchString in eachFlavor.lower():
                         results.append(
                             {
                                 "name": eachFoodItem.name,
