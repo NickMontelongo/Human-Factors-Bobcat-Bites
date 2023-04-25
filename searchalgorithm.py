@@ -1,5 +1,4 @@
 import math
-from hardcodedrestaurants import masterListRestaurants2
 
 
 # Note valuecase does matter KEEP EVERYTHING LOWERCASE WHEN CREATING RESTAURANT FOOD LISTS
@@ -182,24 +181,4 @@ class Food:
 # userMinPrice = 10
 # userPreferredIngredients = ["sugar"]
 
-# print("Food Recommendation Single Restaurant calculation")
-# food_recommendation(
-#     masterListRestaurants2[2],
-#     userMinPrice,
-#     userMaxPrice,
-#     userPreferredIngredients,
-#     userAllergens,
-#     userTastePreferences,
-# )
-# print("")
-# print("")
-# print("Calculate Recommendation Master List Function")
-# calculateRecommendationMasterList(
-#     masterListRestaurants2,
-#     userMinPrice,
-#     userMaxPrice,
-#     userPreferredIngredients,
-#     userTastePreferences,
-#     userAllergens,
-#     userFavoriteFoodsList=[],
-# )
+
