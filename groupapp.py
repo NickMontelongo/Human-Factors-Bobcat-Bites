@@ -615,7 +615,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                 foodIndex = random.randint(
                     0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
                 )
-                while masterListRestaurants[restaurantIndex].foodList[foodIndex].reccomendationScore < 1.5:
+                while masterListRestaurants[restaurantIndex].foodList[foodIndex].recommendationScore < 1.5:
                     restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
                     foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
                 foodItem = Userfavoritefood.query.filter_by(
@@ -637,7 +637,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             foodIndex = random.randint(
                 0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
             )
-            while masterListRestaurants[restaurantIndex].foodList[foodIndex].reccomendationScore < 1.5:
+            while masterListRestaurants[restaurantIndex].foodList[foodIndex].recommendationScore < 1.5:
                 restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
                 foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
             return redirect(
