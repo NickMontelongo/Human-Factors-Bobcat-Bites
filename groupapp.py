@@ -4,6 +4,7 @@ flask forms documentation"""
 
 import random
 import os
+import searchalgorithm
 from flask import Flask, url_for, redirect, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
@@ -11,7 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin
 from flask_login import logout_user, login_user, login_required, current_user
 
-from hardcodedrestaurants import masterListRestaurants
+
 
 # Algorithm information
 from searchalgorithm import (
