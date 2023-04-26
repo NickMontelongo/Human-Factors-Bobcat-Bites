@@ -94,7 +94,7 @@
 <body>
 
   <div class="header">
-    <img style="margin-top: 0px;width: 950px;float:right; height:150px " src="static/images/bobcatbitesbanner2.jpg" alt="txstbanner">
+    <img style="margin-top: 0px;width: 950px;float:right; height:150px;" src="static/images/bobcatbitesbanner2.jpg" alt="txstbanner">
     <h1 style="font-size: 35px;padding: 20px;padding-top: 45px; margin-bottom: -55px;padding-left: 40px;" ><strong>Bobcat Bites</strong></h1>
     <h2 style="font-size: 20px; padding: 20px; padding-left: 40px">Food Recommendation </h2>
   </div>
@@ -106,7 +106,7 @@
     <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
     <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" href="{{url_for('getRecommendationByRand',restaurantIndex=25, foodIndex=0)}}">Random Recommendation</a>
     <div class="dropdown">
-      <button style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" class="dropbtn" onclick="myFunction()">Recommendation by Place
+      <button style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);" class="dropbtn" onclick="myFunction()">Recommendation by Place
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content" id="myDropdown">
@@ -181,12 +181,13 @@
         </p><br>
       </div>
       <div class="card">
-        <h3>Follow Us</h3>
-        <ul class="social media list">
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <a href="https://github.com/NickMontelongo/Human-Factors-Bobcat-Bites">Project Github</a>
-        </ul>
+        <h3 style="font-size: 20px;margin-top: 10px;">Follow Us</h3>
+        <div style="margin-left: 20px;"class="fbimg"></div>
+        <span style="font-size: 12px; margin-left: 20px;">Facebook</span>
+        <div style="margin-top: 10px; margin-left: 20px;" class="twimg"></div>
+        <span style="font-size: 12px;margin-left: 20px;">Twitter</span>
+        <div style="margin-top: 10px; margin-left: 20px;" class="ghimg"></div>
+        <a style="font-size: 12px; margin-left: 20px;" href="https://github.com/NickMontelongo/Human-Factors-Bobcat-Bites">Project Github</a>
       </div>
     </div>
   </div>
