@@ -619,7 +619,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                     masterListRestaurants[restaurantIndex]
                     .foodList[foodIndex]
                     .recommendationScore
-                    < 1.5
+                    < 1
                 ):
                     restaurantIndex = random.randint(
                         0, (len(masterListRestaurants) - 2)
@@ -650,7 +650,7 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                 masterListRestaurants[restaurantIndex]
                 .foodList[foodIndex]
                 .recommendationScore
-                < 1.5
+                < 1
             ):
                 restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
                 foodIndex = random.randint(
