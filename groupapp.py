@@ -334,7 +334,7 @@ def loadUserFavoriteFoods(masterListofRestaurants):
                     food_name=eachFoodItem.name,
                 )
                 database.session.add(foodItem)
-        database.session.commit()
+    database.session.commit()
     return
 
 
@@ -435,7 +435,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-        currentRestaurantRecommendationList = food_recommendation(
+    currentRestaurantRecommendationList = food_recommendation(
             masterListRestaurants[restaurant_index],
             currentUserMinBudget,
             currentUserMaxBudget,
@@ -471,7 +471,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
             if restaurant_index == 25 and list_index == 0:
                 flash(
-                    "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
+                    "Cannot save placeholder. The Restaurant you originally selected has no more items, either unfavorite some items or try another restaurant."
                 )
                 list_index = 0
                 return redirect(
@@ -486,8 +486,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
                 list_index = list_index + 1
             else:
                 flash(
-                    "You cycled through the entire menu, your next choice will restart you at the beginning."
-                )
+                    "You cycled through the entire menu, you are now at the beginning of the list.")
                 list_index = 0
             foodItem = Userfavoritefood.query.filter_by(
                 food_name=recommendedFoodName,
@@ -509,7 +508,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
             if restaurant_index == 25 and list_index == 0:
                 flash(
-                    "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
+                    "The Restaurant has no more items, either unfavorite some items or try restaurant."
                 )
                 list_index = 0
                 return redirect(
@@ -524,7 +523,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
                 list_index = list_index + 1
             else:
                 flash(
-                    "You cycled through the entire menu, your next choice will restart you at the beginning."
+                    "You cycled through the entire menu, you are now at the beginning of the list."
                 )
                 list_index = 0
             return redirect(
