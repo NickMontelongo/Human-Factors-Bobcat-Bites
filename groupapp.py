@@ -435,7 +435,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-        currentRestaurantRecommendationList = food_recommendation(
+    currentRestaurantRecommendationList = food_recommendation(
             masterListRestaurants[restaurant_index],
             currentUserMinBudget,
             currentUserMaxBudget,
