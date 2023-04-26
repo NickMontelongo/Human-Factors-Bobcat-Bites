@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+img {
+  height:auto;
+  width: auto;
+  max-width: 80%;
+  min-width: 40%;
+}
+.notificationimg {
+  background-image: url("/static/images/texasstatedininglogo.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  background: #867865;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 0px;
+  text-align: left;
+  font-family: serif;
+  background-color: #501214;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -25px;
+  height: 155px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.header h1 {
+  color:whitesmoke;
+}
+
+.header h2 {
+  color:whitesmoke;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #806e54;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: Black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+    
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #501214;
+  color: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #867865;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #776956;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+
+
+
