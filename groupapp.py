@@ -350,7 +350,7 @@ def loadTastes():
         else:
             taste1 = Taste(taste_name=eachentry)
             database.session.add(taste1)
-        database.session.commit()
+    database.session.commit()
     return
 
 
@@ -369,7 +369,6 @@ def loadAllergens():
         "pork",
         "potatoes",
         "shellfish",
-        "tree nuts",
     ]
     user_allergens = Allergen.query.all()
     userAllergenList = []
@@ -381,7 +380,7 @@ def loadAllergens():
         else:
             allergen1 = Allergen(allergen_name=eachentry)
             database.session.add(allergen1)
-        database.session.commit()
+    database.session.commit()
     return
 
 
@@ -404,12 +403,16 @@ def title():
     return render_template("title.html")
 
 
-@app.route("/recommendbyrestaurant/<restaurant><list_index>", methods=["GET", "POST"])
+@app.route(
+    "/recommendbyrestaurant/<restaurant>&<restaurant_index>&<list_index>",
+    methods=["GET", "POST"],
+)
 @login_required
-def getRecommendationByRestaurant(restaurant, list_index):
+def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
     form = DisplayResultsForm()
     # DEFINITION OF USER AND ASSOCIATED PROFILE VARIABLES
     list_index = int(list_index)
+    restaurant_index = int(restaurant_index)
     user = Person.query.filter_by(email=current_user.email).first()
     currentUserFoodPreferences = stringToArray(user.preferred_ingredients)
     currentUserTastes = []
@@ -432,25 +435,21 @@ def getRecommendationByRestaurant(restaurant, list_index):
         eachDatabaseEntry = str(eachDatabaseEntry)
         tempArray = stringToArrayNoLower(eachDatabaseEntry)
         userFavoriteList.append({"name": tempArray[0], "restaurantName": tempArray[1]})
-    for eachEntry in masterListRestaurants:
-        if eachEntry.restaurantName == restaurant:
-            masterIndex = masterListRestaurants.index(eachEntry)
-            currentRestaurantRecommendationList = food_recommendation(
-                eachEntry,
-                currentUserMinBudget,
-                currentUserMaxBudget,
-                currentUserFoodPreferences,
-                currentUserAllergens,
-                currentUserTastes,
-                userFavoriteList,
-                restaurant,
-            )
-            break
+        currentRestaurantRecommendationList = food_recommendation(
+            masterListRestaurants[restaurant_index],
+            currentUserMinBudget,
+            currentUserMaxBudget,
+            currentUserFoodPreferences,
+            currentUserAllergens,
+            currentUserTastes,
+            userFavoriteList,
+            restaurant,
+        )
     if len(currentRestaurantRecommendationList) == 0:
-        masterIndex = 25
+        restaurant_index = 25
         list_index = 0
         currentRestaurantRecommendationList = food_recommendation(
-            masterListRestaurants[masterIndex],
+            masterListRestaurants[restaurant_index],
             currentUserMinBudget,
             currentUserMaxBudget,
             currentUserFoodPreferences,
@@ -458,8 +457,8 @@ def getRecommendationByRestaurant(restaurant, list_index):
             currentUserTastes,
             userFavoriteList,
         )
-    recommendedRestaurantName = masterListRestaurants[masterIndex].restaurantName
-    restaurantLocation = masterListRestaurants[masterIndex].restaurantLocation
+    recommendedRestaurantName = masterListRestaurants[restaurant_index].restaurantName
+    restaurantLocation = masterListRestaurants[restaurant_index].restaurantLocation
     recommendedFoodScore = currentRestaurantRecommendationList[
         list_index
     ].recommendationScore
@@ -470,7 +469,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
         if form.accept.data:
             # comment lines 469-475
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
-            if masterIndex == 25 and list_index == 0:
+            if restaurant_index == 25 and list_index == 0:
                 flash(
                     "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
                 )
@@ -479,6 +478,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
                     url_for(
                         "getRecommendationByRestaurant",
                         restaurant=restaurant,
+                        restaurant_index=restaurant_index,
                         list_index=list_index,
                     )
                 )
@@ -500,13 +500,14 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 url_for(
                     "getRecommendationByRestaurant",
                     restaurant=restaurant,
+                    restaurant_index=restaurant_index,
                     list_index=list_index,
                 )
             )
         if form.deny.data:
             # comment lines 497-503
             # if on the placeholder because of empty restaurant list, nowhere to go until user selects differently
-            if masterIndex == 25 and list_index == 0:
+            if restaurant_index == 25 and list_index == 0:
                 flash(
                     "The Restaurant has no more items, either unfavorite some items or try one without your allergen."
                 )
@@ -515,6 +516,7 @@ def getRecommendationByRestaurant(restaurant, list_index):
                     url_for(
                         "getRecommendationByRestaurant",
                         restaurant=restaurant,
+                        restaurant_index=restaurant_index,
                         list_index=list_index,
                     )
                 )
@@ -529,13 +531,17 @@ def getRecommendationByRestaurant(restaurant, list_index):
                 url_for(
                     "getRecommendationByRestaurant",
                     restaurant=restaurant,
+                    restaurant_index=restaurant_index,
                     list_index=list_index,
                 )
             )
         if form.reset.data:
             return redirect(
                 url_for(
-                    "getRecommendationByRestaurant", restaurant=restaurant, list_index=0
+                    "getRecommendationByRestaurant",
+                    restaurant=restaurant,
+                    restaurant_index=restaurant_index,
+                    list_index=0,
                 )
             )
     return render_template(
@@ -610,9 +616,18 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
                 foodIndex = random.randint(
                     0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
                 )
-                while masterListRestaurants[restaurantIndex].foodList[foodIndex].recommendationScore < 1.5:
-                    restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
-                    foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
+                while (
+                    masterListRestaurants[restaurantIndex]
+                    .foodList[foodIndex]
+                    .recommendationScore
+                    < 1.5
+                ):
+                    restaurantIndex = random.randint(
+                        0, (len(masterListRestaurants) - 2)
+                    )
+                    foodIndex = random.randint(
+                        0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
+                    )
                 foodItem = Userfavoritefood.query.filter_by(
                     food_name=recommendedFoodName,
                     parent_restaurant=recommendedRestaurantName,
@@ -632,9 +647,16 @@ def getRecommendationByRand(restaurantIndex, foodIndex):
             foodIndex = random.randint(
                 0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
             )
-            while masterListRestaurants[restaurantIndex].foodList[foodIndex].recommendationScore < 1.5:
+            while (
+                masterListRestaurants[restaurantIndex]
+                .foodList[foodIndex]
+                .recommendationScore
+                < 1.5
+            ):
                 restaurantIndex = random.randint(0, (len(masterListRestaurants) - 2))
-                foodIndex = random.randint(0, (len(masterListRestaurants[restaurantIndex].foodList) - 1))
+                foodIndex = random.randint(
+                    0, (len(masterListRestaurants[restaurantIndex].foodList) - 1)
+                )
             return redirect(
                 url_for(
                     "getRecommendationByRand",

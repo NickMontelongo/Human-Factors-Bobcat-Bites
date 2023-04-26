@@ -1,5 +1,5 @@
 import math
-
+from hardcodedrestaurants import masterListRestaurants
 
 # Note valuecase does matter KEEP EVERYTHING LOWERCASE WHEN CREATING RESTAURANT FOOD LISTS
 
@@ -173,12 +173,21 @@ class Food:
 #     )
 #     food_list.append(newItem)
 # restaurant = Restaurant("Ginos Italian", food_list, "123 Coding way")
-# restaurantMasterList = []
-# restaurantMasterList.append(restaurant)
-# userAllergens = ["nuts"]
-# userTastePreferences = ["sweet"]
-# userMaxPrice = 15
-# userMinPrice = 10
-# userPreferredIngredients = ["sugar"]
 
+userAllergens = ["nuts, shellfish, tree nuts, chicken"]
+userTastePreferences = ["sweet,salty"]
+userMaxPrice = 3
+userMinPrice = 20
+userPreferredIngredients = ["sugar"]
 
+# print(f'Name: {masterListRestaurants[6].restaurantName}')
+# for eachEntry in masterListRestaurants[6].foodList:
+#     print(f'food number: {masterListRestaurants[6].foodList.index(eachEntry)}')
+#     print(f' name: {eachEntry.name}')
+#     print(f' price: {eachEntry.price}')
+#     print(f' ingredients: {eachEntry.ingredients}')
+#     print(f' recommendation score: {eachEntry.recommendationScore}')
+#     print(f' allergens: {eachEntry.allergens}')
+#     print(f' flavor profile: {eachEntry.flavorProfile}')
+#     print('')
+#     print('')

@@ -74,7 +74,7 @@ def setRestaurantObject(
 # Rules
 # restaurant list names must equal query string on main page
 # restaurant ingredients and info all lowercase
-# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, tree nuts, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
+# acceptable allergens: dairy, eggs, chicken, beef, pork, fish, shellfish, peanuts, gluten, beans, mustard, cinnamin, (possibly other spices NOT HERBS, NOT SALT, NOT PEPPER< NOT POTATOES)
 # tastes: sweet, salty, sour, spicy, bitter, and savory
 # list objects for absurdbird creation
 
@@ -1092,7 +1092,7 @@ foodIngredients = [
     ["bread", "sugar"],
     ["bread", "sugar"],
     ["gluten", "sugar"],
-    ["granola", "tree nuts"],
+    ["granola"],
     ["bread"],
     ["cereal"],
     ["cereal", "sugar"],
@@ -1122,17 +1122,17 @@ foodAllergens = [
     ["gluten", "dairy"],
     ["gluten", "dairy"],
     ["gluten"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
     ["gluten"],
     ["gluten", "dairy"],
     ["gluten", "dairy"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
-    ["gluten", "tree nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
+    ["gluten", "nuts"],
     ["gluten"],
     ["gluten"],
     ["gluten"],
@@ -1302,7 +1302,7 @@ foodAllergens = [
     ["gluten", "dairy", "chicken"],
     ["gluten"],
     ["chicken", "pork", "egg"],
-    ["tree nuts", "pork", "dairy"],
+    ["nuts", "pork", "dairy"],
     ["dairy", "gluten"],
 ]
 flavorProfile = [
@@ -1928,11 +1928,11 @@ foodIngredients = [
     ["sausage", "bread", "cheese"],
 ]
 foodAllergens = [
-    ["tree nuts", "dairy"],
+    ["nuts", "dairy"],
     [""],
     [""],
     ["dairy", "chicken"],
-    ["tree nuts"],
+    ["nuts"],
     ["chicken"],
     ["dairy"],
     ["dairy"],
@@ -1948,7 +1948,7 @@ foodAllergens = [
     ["chicken", "gluten"],
     ["dairy", "gluten"],
     ["dairy", "gluten"],
-    ["tree nuts", "gluten"],
+    ["nuts", "gluten"],
     ["dairy", "gluten"],
     ["gluten"],
     ["chicken", "gluten"],
@@ -2750,13 +2750,13 @@ foodIngredients = [
 ]
 foodAllergens = [
     [],
-    ["tree nuts"],
+    ["nuts"],
     [],
-    ["tree nuts"],
-    ["tree nuts"],
+    ["nuts"],
+    ["nuts"],
     [],
-    ["tree nuts"],
-    ["tree nuts"],
+    ["nuts"],
+    ["nuts"],
     ["gluten"],
     [],
     ["fish"],
@@ -2895,7 +2895,7 @@ foodAllergens = [
     ["gluten", "dairy"],
     ["gluten", "dairy"],
     ["gluten", "dairy"],
-    ["gluten", "dairy", "tree nuts"],
+    ["gluten", "dairy", "nuts"],
     ["gluten", "dairy"],
     ["gluten", "dairy"],
     ["gluten", "dairy"],
@@ -2908,7 +2908,7 @@ foodAllergens = [
     ["gluten", "dairy"],
     ["dairy"],
     ["dairy"],
-    ["tree nuts"],
+    ["nuts"],
     ["gluten", "dairy"],
     ["gluten", "dairy"],
     ["gluten"],
