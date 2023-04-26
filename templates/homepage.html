@@ -94,7 +94,7 @@
 <body>
 
   <div class="header">
-    <img style="margin-top: 0px;width: 950px;float:right; height:150px;" src="static/images/bobcatbitesbanner2.jpg" alt="txstbanner">
+    <img style="margin-top: 0px;width: 70%;float:right; height:150px;" src="static/images/bobcatbitesbanner2.jpg" alt="txstbanner">
     <h1 style="font-size: 35px;padding: 20px;padding-top: 45px; margin-bottom: -55px;padding-left: 40px;" ><strong>Bobcat Bites</strong></h1>
     <h2 style="font-size: 20px; padding: 20px; padding-left: 40px">Food Recommendation </h2>
   </div>
@@ -149,7 +149,7 @@
       </div>
     </div>
     <a  style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"" href="{{url_for('about')}}"> About Us</a>
-    <a href="https://forms.gle/sTzdMcBxncWQruvh8" style="float:right;font-size: 14px;">Survey</a>
+    <a href="{{url_for('logout')}}" style="float:right;font-size: 14px;">Log Out</a>
   </div>
 
   <div class="row">
@@ -175,9 +175,10 @@
     </div>
     <div class="rightcolumn">
       <div class="card">
-        <h3>Need to Logout?</h3>
-        <p> Logout here:
-            <a href="{{url_for('logout')}}">Logout</a>
+        <h3>Help Us Out!</h3>
+        <p> Bobcat Bites usability improves with the feedback of its users. Fill out 
+            <a href="https://forms.gle/sTzdMcBxncWQruvh8">this survey</a>  
+            so we can provide a better future experience.
         </p><br>
       </div>
       <div class="card">
