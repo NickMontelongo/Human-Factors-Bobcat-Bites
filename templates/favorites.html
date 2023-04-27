@@ -88,68 +88,69 @@
         }
     </script>
     <title>Bobcat Bites: User Favorites</title>
-    <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css" />
+    <link rel="stylesheet" href="/static/styles/newhome.css" type="text/css" />
 </head>
 
 <body>
 
-    <div class="header">
-        <h1><strong>Bobcat Bites</strong></h1>
-        <h2>Food Recommendation </h2>
-    </div>
+  <div class="header">
+    <img style="margin-top: 0px;width: 70%;float:right; height:150px;" src="static/images/bobcatbitesbanner2.jpg" alt="txstbanner">
+    <h1 style="font-size: 35px;padding: 20px;padding-top: 45px; margin-bottom: -55px;padding-left: 40px;" ><strong>Bobcat Bites</strong></h1>
+    <h2 style="font-size: 20px; padding: 20px; padding-left: 40px">Food Recommendation </h2>
+  </div>
 
-    <div class="navbar">
-        <a href="{{url_for('display_main')}}"> Main Page</a>
-        <a href="{{url_for('create_profile')}}">My Profile</a>
-        <a href="{{url_for('displaySavedResults')}}">My Favorites</a>
-        <a href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
-        <a href="{{url_for('getRecommendationByRand',restaurantIndex=25, foodIndex=0)}}">Random Recommendation</a>
-        <div class="dropdown">
-          <button class="dropbtn" onclick="myFunction()">Recommendation by Place
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content" id="myDropdown">
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird',restaurant_index=0,list_index=0)}}">Absurd Bird</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ',restaurant_index=1,list_index=0)}}">AJs BBQ</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',restaurant_index=2,list_index=0)}}">Asado Latin
-              Grill</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',restaurant_index=3,list_index=0)}}">Blimpie
-              American
-              Subs</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512',restaurant_index=4,list_index=0)}}">Burger 512</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A',restaurant_index=5,list_index=0)}}">Chick Fil A</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',restaurant_index=6,list_index=0)}}">Coffee and
-              Pi
-              Market</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',restaurant_index=7,list_index=0)}}">Create
-              Premium Deli</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',restaurant_index=8,list_index=0)}}">Dunkin
-              Doughnuts</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einstein Bros Bagels',restaurant_index=9,list_index=0)}}">Einstein's
-              Bagels</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi',restaurant_index=10,list_index=0)}}">Kawa Sushi</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe',restaurant_index=11,list_index=0)}}">McCoy Cafe</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab',restaurant_index=12,list_index=0)}}">Melt Lab</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Mondo Subs',restaurant_index=13,list_index=0)}}">Mondo Subs</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express',restaurant_index=14,list_index=0)}}">Panda Express</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut',restaurant_index=15,list_index=0)}}">Pizza Hut Express</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey',restaurant_index=16,list_index=0)}}">Pom and Honey</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',restaurant_index=17,list_index=0)}}">Revolution
-              Noodle</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty',restaurant_index=18,list_index=0)}}">The Salty</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart',restaurant_index=19,list_index=0)}}">Shake Smart</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks',restaurant_index=20,list_index=0)}}">Starbucks</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co',restaurant_index=21,list_index=0)}}">The Tea Co</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',restaurant_index=22,list_index=0)}}">Tu Taco</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',restaurant_index=23,list_index=0)}}">Wing it</a>
-            <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',restaurant_index=24,list_index=0)}}">Woods St
-              Pizza &
-              Pasta</a>
-          </div>
-        </div>
-        <a href="{{url_for('about')}}"> About Us</a>
-        <a href="https://forms.gle/sTzdMcBxncWQruvh8" style="float:right">Survey</a>
+  <div style="margin-top:-5px;" class="navbar">
+    <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);" href="{{url_for('display_main')}}"> Main Page</a>
+    <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);" href="{{url_for('create_profile')}}">My Profile</a>
+    <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);" href="{{url_for('displaySavedResults')}}">My Favorites</a>
+    <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" href="{{url_for('getRecommendationBySearch')}}">Search for Recommendation</a>
+    <a style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" href="{{url_for('getRecommendationByRand',restaurantIndex=25, foodIndex=0)}}">Random Recommendation</a>
+    <div class="dropdown">
+      <button style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);" class="dropbtn" onclick="myFunction()">Recommendation by Place
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Absurd Bird',restaurant_index=0,list_index=0)}}">Absurd Bird</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='AJs BBQ',restaurant_index=1,list_index=0)}}">AJs BBQ</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Asado Latin Grill',restaurant_index=2,list_index=0)}}">Asado Latin
+          Grill</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Blimpie American Subs',restaurant_index=3,list_index=0)}}">Blimpie
+          American
+          Subs</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Burger 512',restaurant_index=4,list_index=0)}}">Burger 512</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Chick Fil A',restaurant_index=5,list_index=0)}}">Chick Fil A</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Coffee and Pi Market',restaurant_index=6,list_index=0)}}">Coffee and
+          Pi
+          Market</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Create Premium Deli',restaurant_index=7,list_index=0)}}">Create
+          Premium Deli</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Dunkin Doughnuts',restaurant_index=8,list_index=0)}}">Dunkin
+          Doughnuts</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Einstein Bros Bagels',restaurant_index=9,list_index=0)}}">Einstein's
+          Bagels</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Kawa Sushi',restaurant_index=10,list_index=0)}}">Kawa Sushi</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='McCoy Cafe',restaurant_index=11,list_index=0)}}">McCoy Cafe</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Melt Lab',restaurant_index=12,list_index=0)}}">Melt Lab</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Mondo Subs',restaurant_index=13,list_index=0)}}">Mondo Subs</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Panda Express',restaurant_index=14,list_index=0)}}">Panda Express</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pizza Hut',restaurant_index=15,list_index=0)}}">Pizza Hut Express</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Pom and Honey',restaurant_index=16,list_index=0)}}">Pom and Honey</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Revolution Noodle',restaurant_index=17,list_index=0)}}">Revolution
+          Noodle</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='The Salty',restaurant_index=18,list_index=0)}}">The Salty</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Shake Smart',restaurant_index=19,list_index=0)}}">Shake Smart</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Starbucks',restaurant_index=20,list_index=0)}}">Starbucks</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tea Co',restaurant_index=21,list_index=0)}}">The Tea Co</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Tu Taco',restaurant_index=22,list_index=0)}}">Tu Taco</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Wing It',restaurant_index=23,list_index=0)}}">Wing it</a>
+        <a href="{{url_for('getRecommendationByRestaurant',restaurant='Woods St Pizza & Pasta',restaurant_index=24,list_index=0)}}">Woods St
+          Pizza &
+          Pasta</a>
       </div>
+    </div>
+    <a  style="font-size: 14px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)" href="{{url_for('about')}}"> About Us</a>
+    <a href="{{url_for('logout')}}" style="float:right;font-size: 14px;">Log Out</a>
+  </div>
 
     <div class="row">
         <div class="leftcolumn">
