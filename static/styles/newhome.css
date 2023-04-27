@@ -11,10 +11,22 @@ img {
   background-repeat: no-repeat;
   width: 100%;
   padding: 20px;
+  margin-bottom: -120px;
+  display: block;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.hpageimg{
+  background-image: url("/static/images/txstdininghall.jpg");
+  background-repeat: no-repeat;
+  width: 600px;
+  padding: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 * {
   box-sizing: border-box;
