@@ -156,7 +156,7 @@
         <div class="leftcolumn">
             <div class="card">
                 <center>
-                <h1><b>User: {% if current_user.is_authenticated %}
+                <h1><b>{% if current_user.is_authenticated %}
                         {{ userEmail }}
                         {% endif %}'s Favorited Foods</b></h1>
                 <!--             BUTTONS GO HERE            -->
@@ -184,11 +184,12 @@
         </div>
         <div class="rightcolumn">
             <div class="card">
-                <h3>Need to Logout?</h3>
-                <p> Logout here:
-                    <a href="{{url_for('logout')}}">Logout</a>
+                <h3>Help Us Out!</h3>
+                <p> Bobcat Bites usability improves with the feedback of its users. Fill out 
+                    <a href="https://forms.gle/sTzdMcBxncWQruvh8"><strong>this survey</strong></a>  
+                    so we can provide a better future experience.
                 </p><br>
-            </div>
+              </div>
         </div>
     </div>
 
