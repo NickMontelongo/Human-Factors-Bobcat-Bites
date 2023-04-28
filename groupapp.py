@@ -486,7 +486,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
                 list_index = list_index + 1
             else:
                 flash(
-                    "You cycled through the entire menu, you are now at the beginning of the list.")
+                    "You cycled through the entire menu, your next choice will bring you back to the beginning of the list.")
                 list_index = 0
             foodItem = Userfavoritefood.query.filter_by(
                 food_name=recommendedFoodName,
@@ -523,7 +523,7 @@ def getRecommendationByRestaurant(restaurant, restaurant_index, list_index):
                 list_index = list_index + 1
             else:
                 flash(
-                    "You cycled through the entire menu, you are now at the beginning of the list."
+                    "You cycled through the entire menu, your next choice will bring you back to the beginning of the list."
                 )
                 list_index = 0
             return redirect(
